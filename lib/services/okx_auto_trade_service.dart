@@ -25,6 +25,22 @@ class OkxAutoTradeService {
     11: 20,
     12: 10,
   };
+  static const List<double> _fallbackLeverages = <double>[
+    100,
+    75,
+    50,
+    40,
+    30,
+    25,
+    20,
+    15,
+    10,
+    8,
+    5,
+    3,
+    2,
+    1,
+  ];
 
   Future<void> placeShortLadder({
     required OkxInstrument instrument,
@@ -46,20 +62,7 @@ class OkxAutoTradeService {
       _positionModeConfigured = true;
     }
 
-    late final double maxLeverage;
-    try {
-      maxLeverage = await _fetchMaxLeverage(instrument.instId);
-    } catch (error) {
-      throw OkxApiException('获取最大杠杆失败: $error');
-    }
-    try {
-      await _apiService.setLeverage(
-        instId: instrument.instId,
-        leverage: maxLeverage,
-      );
-    } catch (error) {
-      throw OkxApiException('设置杠杆失败: $error');
-    }
+    final maxLeverage = await _configureLeverage(instrument.instId);
 
     final takeProfitPrice = _computeTakeProfitPrice(targets);
     for (final target in targets) {
@@ -131,20 +134,7 @@ class OkxAutoTradeService {
       _positionModeConfigured = true;
     }
 
-    late final double maxLeverage;
-    try {
-      maxLeverage = await _fetchMaxLeverage(instrument.instId);
-    } catch (error) {
-      throw OkxApiException('获取最大杠杆失败: $error');
-    }
-    try {
-      await _apiService.setLeverage(
-        instId: instrument.instId,
-        leverage: maxLeverage,
-      );
-    } catch (error) {
-      throw OkxApiException('设置杠杆失败: $error');
-    }
+    final maxLeverage = await _configureLeverage(instrument.instId);
 
     final size = _computeOrderSize(
       instrument: instrument,
@@ -180,6 +170,42 @@ class OkxAutoTradeService {
     final maxLeverage = await _apiService.fetchMaxLeverage(instId);
     _maxLeverageCache[instId] = maxLeverage;
     return maxLeverage;
+  }
+
+  Future<double> _configureLeverage(String instId) async {
+    final cached = _maxLeverageCache[instId];
+    if (cached != null && cached > 0) {
+      try {
+        await _apiService.setLeverage(instId: instId, leverage: cached);
+        return cached;
+      } catch (_) {
+        _maxLeverageCache.remove(instId);
+      }
+    }
+
+    Object? fetchError;
+    try {
+      final maxLeverage = await _fetchMaxLeverage(instId);
+      await _apiService.setLeverage(instId: instId, leverage: maxLeverage);
+      return maxLeverage;
+    } catch (error) {
+      fetchError = error;
+    }
+
+    Object? lastSetError = fetchError;
+    for (final candidate in _fallbackLeverages) {
+      try {
+        await _apiService.setLeverage(instId: instId, leverage: candidate);
+        _maxLeverageCache[instId] = candidate;
+        return candidate;
+      } catch (error) {
+        lastSetError = error;
+      }
+    }
+
+    throw OkxApiException(
+      '获取最大杠杆失败，且回退设置常用杠杆也失败: ${lastSetError ?? fetchError}',
+    );
   }
 
   double _computeTakeProfitPrice(List<OkxAutoTradeTarget> targets) {

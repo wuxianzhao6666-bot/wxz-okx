@@ -4,6 +4,7 @@ class OkxPosition {
     required this.posSide,
     required this.mgnMode,
     required this.leverage,
+    required this.rawPositionSize,
     required this.positionSize,
     required this.avgPrice,
     required this.markPrice,
@@ -19,6 +20,7 @@ class OkxPosition {
       posSide: json['posSide']?.toString() ?? '',
       mgnMode: json['mgnMode']?.toString() ?? '',
       leverage: double.tryParse(json['lever']?.toString() ?? '') ?? 0,
+      rawPositionSize: json['pos']?.toString() ?? '',
       positionSize: double.tryParse(json['pos']?.toString() ?? '') ?? 0,
       avgPrice: double.tryParse(json['avgPx']?.toString() ?? '') ?? 0,
       markPrice: double.tryParse(json['markPx']?.toString() ?? '') ?? 0,
@@ -33,6 +35,7 @@ class OkxPosition {
   final String posSide;
   final String mgnMode;
   final double leverage;
+  final String rawPositionSize;
   final double positionSize;
   final double avgPrice;
   final double markPrice;

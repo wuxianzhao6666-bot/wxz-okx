@@ -4,38 +4,28 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import '../models/candle_interval.dart';
+import '../models/gate_contract.dart';
+import '../models/gate_ranked_contract.dart';
+import '../models/gate_ticker.dart';
 import '../models/hourly_candle.dart';
-import '../models/okx_endpoint_config.dart';
-import '../models/okx_instrument.dart';
-import '../models/okx_ranked_instrument.dart';
-import '../models/okx_ticker.dart';
+import '../services/gate_api_service.dart';
+import '../services/gate_market_stream_service.dart';
 import '../services/local_notification_service.dart';
-import '../services/okx_api_service.dart';
-import '../services/okx_auto_trade_service.dart';
-import '../services/okx_market_stream_service.dart';
 
-class ContractScannerPage extends StatefulWidget {
-  const ContractScannerPage({
-    super.key,
-    required this.endpoint,
-    required this.onEndpointChanged,
-  });
-
-  final OkxEndpointConfig endpoint;
-  final ValueChanged<OkxEndpointConfig> onEndpointChanged;
+class GateScannerPage extends StatefulWidget {
+  const GateScannerPage({super.key});
 
   @override
-  State<ContractScannerPage> createState() => _ContractScannerPageState();
+  State<GateScannerPage> createState() => _GateScannerPageState();
 }
 
-class _ContractScannerPageState extends State<ContractScannerPage> {
+class _GateScannerPageState extends State<GateScannerPage> {
   static const int _rankingLimit = 30;
   static const int _historyLimit = 20;
   static const List<int> _targetMultipliers = <int>[9, 10, 11, 12];
 
-  late OkxApiService _apiService;
-  late OkxAutoTradeService _autoTradeService;
-  late OkxMarketStreamService _marketStreamService;
+  late final GateApiService _apiService;
+  late final GateMarketStreamService _marketStreamService;
   final Map<CandleInterval, Map<String, List<HourlyCandle>>> _historyCache = {
     CandleInterval.h1: <String, List<HourlyCandle>>{},
     CandleInterval.h4: <String, List<HourlyCandle>>{},
@@ -45,75 +35,42 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
     CandleInterval.h4: <String>{},
   };
   final Set<String> _expandedInstIds = <String>{};
-  final Set<String> _manualOrderingInstIds = <String>{};
   final Set<String> _loadingHistoryKeys = <String>{};
   final Set<String> _triggeredMonitorSignatures = <String>{};
+  final Map<String, GateTicker24h> _pendingTickerUpdates =
+      <String, GateTicker24h>{};
 
-  Map<String, OkxInstrument> _instrumentsById = const <String, OkxInstrument>{};
-  Map<String, OkxTicker24h> _tickersByInstId = const <String, OkxTicker24h>{};
-  List<OkxRankedInstrument> _rankings = const <OkxRankedInstrument>[];
+  Map<String, GateContract> _contractsById = const <String, GateContract>{};
+  Map<String, GateTicker24h> _tickersByInstId = const <String, GateTicker24h>{};
+  List<GateRankedContract> _rankings = const <GateRankedContract>[];
   List<_PinnedAlertEntry> _pinnedAlerts = const <_PinnedAlertEntry>[];
   CandleInterval _selectedInterval = CandleInterval.h1;
-  bool _autoTradeEnabled = false;
   bool _isRefreshing = false;
   bool _hasShownMonitorDialog = false;
   bool _isMonitorDialogVisible = false;
   String? _errorMessage;
   DateTime? _lastUpdatedAt;
+  Timer? _refreshTimer;
+  Timer? _tickerFlushTimer;
 
   @override
   void initState() {
     super.initState();
-    _configureServices();
-    unawaited(
-      _bootstrapMarketData(initialLoad: true),
-    );
-  }
-
-  @override
-  void didUpdateWidget(covariant ContractScannerPage oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    if (oldWidget.endpoint.id == widget.endpoint.id) {
-      return;
-    }
-
-    _marketStreamService.dispose();
-    _apiService.dispose();
-    _configureServices();
-    setState(() {
-      for (final cache in _historyCache.values) {
-        cache.clear();
-      }
-      for (final initialized in _historyInitialized.values) {
-        initialized.clear();
-      }
-      _expandedInstIds.clear();
-      _manualOrderingInstIds.clear();
-      _loadingHistoryKeys.clear();
-      _triggeredMonitorSignatures.clear();
-      _instrumentsById = const <String, OkxInstrument>{};
-      _tickersByInstId = const <String, OkxTicker24h>{};
-      _rankings = const <OkxRankedInstrument>[];
-      _pinnedAlerts = const <_PinnedAlertEntry>[];
-      _errorMessage = null;
-      _lastUpdatedAt = null;
-      _hasShownMonitorDialog = false;
-      _isMonitorDialogVisible = false;
-    });
+    _apiService = GateApiService();
+    _marketStreamService = GateMarketStreamService();
     unawaited(_bootstrapMarketData(initialLoad: true));
+    _refreshTimer = Timer.periodic(const Duration(minutes: 5), (_) {
+      unawaited(_bootstrapMarketData());
+    });
   }
 
   @override
   void dispose() {
+    _refreshTimer?.cancel();
+    _tickerFlushTimer?.cancel();
     _marketStreamService.dispose();
     _apiService.dispose();
     super.dispose();
-  }
-
-  void _configureServices() {
-    _apiService = OkxApiService(endpoint: widget.endpoint);
-    _autoTradeService = OkxAutoTradeService(_apiService);
-    _marketStreamService = OkxMarketStreamService(endpoint: widget.endpoint);
   }
 
   Future<void> _bootstrapMarketData({bool initialLoad = false}) async {
@@ -130,23 +87,23 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
 
     try {
       final results = await Future.wait([
-        _apiService.fetchUsdtSwapInstruments(),
-        _apiService.fetchSwapTickerMap(),
+        _apiService.fetchUsdtContracts(),
+        _apiService.fetchTickerMap(),
       ]);
-      final instruments = results[0] as List<OkxInstrument>;
-      final tickerMap = results[1] as Map<String, OkxTicker24h>;
-      final instrumentsById = <String, OkxInstrument>{
-        for (final instrument in instruments) instrument.instId: instrument,
+      final contracts = results[0] as List<GateContract>;
+      final tickerMap = results[1] as Map<String, GateTicker24h>;
+      final contractsById = <String, GateContract>{
+        for (final contract in contracts) contract.name: contract,
       };
       final previousIds = _currentRankingIds();
-      final filteredTickerMap = <String, OkxTicker24h>{
+      final filteredTickerMap = <String, GateTicker24h>{
         for (final entry in tickerMap.entries)
-          if (instrumentsById.containsKey(entry.key) &&
-              entry.value.todayChangePercent.isFinite)
+          if (contractsById.containsKey(entry.key) &&
+              entry.value.changePercent24h.isFinite)
             entry.key: entry.value,
       };
-      final rankings = _buildTopRankings(instrumentsById, filteredTickerMap);
-      final nextIds = rankings.map((item) => item.instrument.instId).toSet();
+      final rankings = _buildTopRankings(contractsById, filteredTickerMap);
+      final nextIds = rankings.map((item) => item.contract.name).toSet();
       final newIds = nextIds.difference(previousIds);
 
       if (!mounted) {
@@ -154,7 +111,7 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
       }
 
       setState(() {
-        _instrumentsById = instrumentsById;
+        _contractsById = contractsById;
         _tickersByInstId = filteredTickerMap;
         _rankings = rankings;
         _lastUpdatedAt = DateTime.now();
@@ -175,9 +132,9 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
         onCandle: _handleCandleUpdate,
         onError: _handleStreamError,
       );
-      await _marketStreamService.updateTickerSubscriptions(_instrumentsById.keys);
+      await _marketStreamService.updateTickerSubscriptions(_contractsById.keys);
       await _marketStreamService.updateCandleSubscriptions(
-        instIds: nextIds,
+        contracts: nextIds,
         intervals: const [CandleInterval.h1, CandleInterval.h4],
       );
     } catch (error) {
@@ -196,21 +153,31 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
     }
   }
 
-  void _handleTickerUpdate(OkxTicker24h ticker) {
-    final instId = ticker.instId;
-    if (!_instrumentsById.containsKey(instId) || !ticker.todayChangePercent.isFinite) {
+  void _handleTickerUpdate(GateTicker24h ticker) {
+    final instId = ticker.contract;
+    if (!_contractsById.containsKey(instId) || !ticker.changePercent24h.isFinite) {
+      return;
+    }
+
+    _pendingTickerUpdates[instId] = ticker;
+    _tickerFlushTimer ??= Timer(const Duration(milliseconds: 250), () {
+      _tickerFlushTimer = null;
+      _flushTickerUpdates();
+    });
+  }
+
+  void _flushTickerUpdates() {
+    if (!mounted || _pendingTickerUpdates.isEmpty) {
       return;
     }
 
     final previousIds = _currentRankingIds();
-    final nextTickerMap = Map<String, OkxTicker24h>.from(_tickersByInstId)
-      ..[instId] = ticker;
-    final nextRankings = _buildTopRankings(_instrumentsById, nextTickerMap);
-    final nextIds = nextRankings.map((item) => item.instrument.instId).toSet();
+    final nextTickerMap = Map<String, GateTicker24h>.from(_tickersByInstId)
+      ..addAll(_pendingTickerUpdates);
+    _pendingTickerUpdates.clear();
 
-    if (!mounted) {
-      return;
-    }
+    final nextRankings = _buildTopRankings(_contractsById, nextTickerMap);
+    final nextIds = nextRankings.map((item) => item.contract.name).toSet();
 
     setState(() {
       _tickersByInstId = nextTickerMap;
@@ -251,7 +218,7 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
       return;
     }
 
-    final updated = _mergeCandles(existing ?? const <HourlyCandle>[], [candle]);
+    final updated = _mergeCandles(existing, [candle]);
 
     setState(() {
       cache[instId] = updated;
@@ -297,6 +264,31 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
     await _ensureHistoryForRankings(interval: interval);
   }
 
+  Future<void> _ensureHistoryForRankings({
+    required CandleInterval interval,
+    Set<String> onlyIds = const <String>{},
+    Set<String> fullReloadIds = const <String>{},
+  }) async {
+    final targetIds = (onlyIds.isEmpty
+            ? _rankings.map((item) => item.contract.name)
+            : onlyIds)
+        .toSet();
+
+    if (targetIds.isEmpty) {
+      return;
+    }
+
+    await Future.wait(
+      targetIds.map(
+        (instId) => _syncHistory(
+          instId: instId,
+          interval: interval,
+          fullReload: fullReloadIds.contains(instId),
+        ),
+      ),
+    );
+  }
+
   Future<void> _handleRankingMembershipChanged({
     required Set<String> previousIds,
     required Set<String> nextIds,
@@ -314,33 +306,8 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
     }
 
     await _marketStreamService.updateCandleSubscriptions(
-      instIds: nextIds,
+      contracts: nextIds,
       intervals: const [CandleInterval.h1, CandleInterval.h4],
-    );
-  }
-
-  Future<void> _ensureHistoryForRankings({
-    required CandleInterval interval,
-    Set<String> onlyIds = const <String>{},
-    Set<String> fullReloadIds = const <String>{},
-  }) async {
-    final targetIds = (onlyIds.isEmpty
-            ? _rankings.map((item) => item.instrument.instId)
-            : onlyIds)
-        .toSet();
-
-    if (targetIds.isEmpty) {
-      return;
-    }
-
-    await Future.wait(
-      targetIds.map(
-        (instId) => _syncHistory(
-          instId: instId,
-          interval: interval,
-          fullReload: fullReloadIds.contains(instId),
-        ),
-      ),
     );
   }
 
@@ -372,7 +339,7 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
     try {
       final incoming = await _apiService.fetchCandles(
         instId,
-        bar: interval.okxBar,
+        interval: interval,
         limit: shouldFullReload ? _historyLimit : 3,
       );
 
@@ -380,9 +347,7 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
         return;
       }
 
-      final merged = shouldFullReload
-          ? incoming
-          : _mergeCandles(existing, incoming);
+      final merged = shouldFullReload ? incoming : _mergeCandles(existing, incoming);
 
       setState(() {
         cache[instId] = merged;
@@ -409,11 +374,11 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
   }
 
   List<HourlyCandle> _mergeCandles(
-    List<HourlyCandle> existing,
+    List<HourlyCandle>? existing,
     List<HourlyCandle> incoming,
   ) {
     final merged = <int, HourlyCandle>{
-      for (final candle in existing)
+      for (final candle in existing ?? const <HourlyCandle>[])
         candle.openTime.millisecondsSinceEpoch: candle,
     };
 
@@ -452,25 +417,25 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
     return candles != null && candles.isNotEmpty && initialized.contains(instId);
   }
 
-  List<OkxRankedInstrument> _buildTopRankings(
-    Map<String, OkxInstrument> instrumentsById,
-    Map<String, OkxTicker24h> tickersByInstId,
+  List<GateRankedContract> _buildTopRankings(
+    Map<String, GateContract> contractsById,
+    Map<String, GateTicker24h> tickersByInstId,
   ) {
-    final ranked = instrumentsById.values
-        .map((instrument) {
-          final ticker = tickersByInstId[instrument.instId];
-          final todayChangePercent =
-              ticker?.todayChangePercent ?? double.negativeInfinity;
-          return OkxRankedInstrument(
-            instrument: instrument,
-            todayChangePercent: todayChangePercent,
+    final ranked = contractsById.values
+        .map((contract) {
+          final ticker = tickersByInstId[contract.name];
+          final changePercent24h =
+              ticker?.changePercent24h ?? double.negativeInfinity;
+          return GateRankedContract(
+            contract: contract,
+            changePercent24h: changePercent24h,
             lastPrice: ticker?.lastPrice ?? 0,
           );
         })
-        .where((item) => item.todayChangePercent.isFinite)
+        .where((item) => item.changePercent24h.isFinite)
         .toList()
       ..sort(
-        (a, b) => b.todayChangePercent.compareTo(a.todayChangePercent),
+        (a, b) => b.changePercent24h.compareTo(a.changePercent24h),
       );
 
     if (ranked.length <= _rankingLimit) {
@@ -480,7 +445,7 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
   }
 
   Set<String> _currentRankingIds() {
-    return _rankings.map((item) => item.instrument.instId).toSet();
+    return _rankings.map((item) => item.contract.name).toSet();
   }
 
   bool _setChanged(Set<String> left, Set<String> right) {
@@ -500,8 +465,8 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
     required CandleInterval interval,
     required List<HourlyCandle> candles,
   }) {
-    final instrument = _instrumentsById[instId];
-    if (instrument == null) {
+    final contract = _contractsById[instId];
+    if (contract == null) {
       return;
     }
 
@@ -523,20 +488,14 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
         )
         .toList();
 
-    if (_autoTradeEnabled) {
-      for (final hit in hits) {
-        unawaited(_submitAutoTrade(instrument, hit));
-      }
-    }
-
     final nextEntry = _upsertPinnedAlert(
-      instrument: instrument,
+      contract: contract,
       badges: nextBadges,
     );
 
     unawaited(
       LocalNotificationService.instance.showMonitorAlert(
-        title: '${instrument.displayName} 监控命中',
+        title: '${contract.displayName} 监控命中',
         body: '命中标签: ${nextBadges.map(_formatPinnedBadgeText).join(' / ')}，已加入顶部置顶。',
       ),
     );
@@ -589,11 +548,11 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
   }
 
   _PinnedAlertEntry _upsertPinnedAlert({
-    required OkxInstrument instrument,
+    required GateContract contract,
     required List<_PinnedAlertBadge> badges,
   }) {
     final existingIndex = _pinnedAlerts.indexWhere(
-      (entry) => entry.instId == instrument.instId,
+      (entry) => entry.instId == contract.name,
     );
     final existing = existingIndex >= 0 ? _pinnedAlerts[existingIndex] : null;
     final existingBadges = existing?.badges ?? const <_PinnedAlertBadge>[];
@@ -603,8 +562,8 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
     }.values.toList();
 
     final nextEntry = _PinnedAlertEntry(
-      instId: instrument.instId,
-      instrument: instrument,
+      instId: contract.name,
+      contract: contract,
       badges: mergedBadges,
       triggeredAt: DateTime.now(),
     );
@@ -615,7 +574,7 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
 
     setState(() {
       final nextList = List<_PinnedAlertEntry>.from(_pinnedAlerts);
-      nextList.removeWhere((entry) => entry.instId == instrument.instId);
+      nextList.removeWhere((entry) => entry.instId == contract.name);
       nextList.insert(0, nextEntry);
       _pinnedAlerts = nextList;
     });
@@ -639,9 +598,9 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
         return PopScope(
           canPop: false,
           child: AlertDialog(
-            title: const Text('实时监控命中'),
+            title: const Text('Gate 实时监控命中'),
             content: Text(
-              '${entry.instrument.displayName} 已进入置顶。\n命中标签: '
+              '${entry.contract.displayName} 已进入置顶。\n命中标签: '
               '${badges.map(_formatPinnedBadgeText).join(' / ')}',
             ),
             actions: [
@@ -687,286 +646,6 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
     return interval == CandleInterval.h1 ? '1小时' : '4小时';
   }
 
-  Future<void> _submitAutoTrade(
-    OkxInstrument instrument,
-    _MonitorHit hit,
-  ) async {
-    if (!_apiService.hasTradingCredentials) {
-      if (!mounted) {
-        return;
-      }
-      setState(() {
-        _errorMessage = '未配置 OKX API 凭证，无法自动交易';
-      });
-      return;
-    }
-    try {
-      await _autoTradeService.placeShortLadder(
-        instrument: instrument,
-        targets: hit.targetPrices
-            .map(
-              (level) => OkxAutoTradeTarget(
-                multiplier: level.multiplier,
-                entryPrice: level.price,
-              ),
-            )
-            .toList(),
-      );
-    } catch (error) {
-      if (!mounted) {
-        return;
-      }
-      setState(() {
-        _errorMessage = '自动交易失败: $error';
-      });
-    }
-  }
-
-  Future<void> _toggleAutoTradeEnabled(bool enabled) async {
-    if (enabled && !_apiService.hasTradingCredentials) {
-      if (!mounted) {
-        return;
-      }
-      setState(() {
-        _errorMessage = '请先通过 dart-define 配置 OKX_API_KEY / SECRET / PASSPHRASE';
-        _autoTradeEnabled = false;
-      });
-      return;
-    }
-
-    setState(() {
-      _autoTradeEnabled = enabled;
-      if (enabled) {
-        _errorMessage = null;
-      }
-    });
-  }
-
-  Future<void> _confirmManualTrade(_PinnedAlertEntry entry) async {
-    if (!_apiService.hasTradingCredentials) {
-      setState(() {
-        _errorMessage = '未配置 OKX API 凭证，无法下单';
-      });
-      return;
-    }
-    if (!mounted) {
-      return;
-    }
-
-    final confirmed = await showDialog<bool>(
-      context: context,
-      barrierDismissible: false,
-      builder: (context) {
-        return AlertDialog(
-          title: const Text('确认下单'),
-          content: Text(
-            '将为 ${entry.instrument.displayName} 下模拟盘限价单，并带上止盈止损单，是否继续？',
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(false),
-              child: const Text('取消'),
-            ),
-            FilledButton(
-              onPressed: () => Navigator.of(context).pop(true),
-              child: const Text('确认'),
-            ),
-          ],
-        );
-      },
-    );
-
-    if (confirmed != true) {
-      return;
-    }
-
-    try {
-      await _autoTradeService.placeShortLadder(
-        instrument: entry.instrument,
-        targets: _buildTradeTargetsFromBadges(entry.badges),
-      );
-      if (!mounted) {
-        return;
-      }
-      setState(() {
-        _errorMessage = null;
-      });
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('${entry.instrument.displayName} 已提交限价止盈止损单')),
-      );
-    } catch (error) {
-      if (!mounted) {
-        return;
-      }
-      setState(() {
-        _errorMessage = '手动下单失败: $error';
-      });
-    }
-  }
-
-  Future<void> _showQuickOrderDialog(OkxRankedInstrument item) async {
-    if (!_apiService.hasTradingCredentials) {
-      setState(() {
-        _errorMessage = '未配置 OKX API 凭证，无法下单';
-      });
-      return;
-    }
-    if (!mounted) {
-      return;
-    }
-
-    final amount = await showDialog<double>(
-      context: context,
-      barrierDismissible: false,
-      builder: (context) {
-        final controller = TextEditingController(text: '10');
-        String? dialogError;
-        const presets = <double>[20, 30, 50, 60];
-        return StatefulBuilder(
-          builder: (context, setDialogState) {
-            void submit() {
-              final margin = double.tryParse(controller.text.trim());
-              if (margin == null || margin <= 0) {
-                setDialogState(() {
-                  dialogError = '请输入大于 0 的保证金金额';
-                });
-                return;
-              }
-              Navigator.of(context).pop(margin);
-            }
-
-            return AlertDialog(
-              title: Text('下单 ${item.instrument.displayName}'),
-              content: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    '默认按全仓、最大杠杆、做空，输入的是保证金金额，不是仓位金额。',
-                  ),
-                  const SizedBox(height: 6),
-                  Text(
-                    '例如 20 倍杠杆输入 10U，预期保证金约 10U，仓位价值约 200U。',
-                    style: Theme.of(context).textTheme.bodySmall,
-                  ),
-                  const SizedBox(height: 12),
-                  Wrap(
-                    spacing: 8,
-                    runSpacing: 8,
-                    children: presets
-                        .map(
-                          (preset) => ActionChip(
-                            label: Text('${preset.toStringAsFixed(0)}U'),
-                            onPressed: () {
-                              controller.text = preset.toStringAsFixed(0);
-                              setDialogState(() {
-                                dialogError = null;
-                              });
-                            },
-                          ),
-                        )
-                        .toList(),
-                  ),
-                  const SizedBox(height: 12),
-                  TextField(
-                    controller: controller,
-                    keyboardType: const TextInputType.numberWithOptions(
-                      decimal: true,
-                    ),
-                    decoration: InputDecoration(
-                      labelText: '保证金金额（USDT）',
-                      hintText: '例如 10',
-                      errorText: dialogError,
-                    ),
-                    onSubmitted: (_) => submit(),
-                  ),
-                ],
-              ),
-              actions: [
-                TextButton(
-                  onPressed: () => Navigator.of(context).pop(),
-                  child: const Text('取消'),
-                ),
-                FilledButton(
-                  onPressed: submit,
-                  child: const Text('确认下单'),
-                ),
-              ],
-            );
-          },
-        );
-      },
-    );
-
-    if (amount == null || amount <= 0) {
-      return;
-    }
-
-    final instId = item.instrument.instId;
-    setState(() {
-      _manualOrderingInstIds.add(instId);
-    });
-
-    try {
-      await _autoTradeService.placeManualShortAtPrice(
-        instrument: item.instrument,
-        entryPrice: item.lastPrice,
-        marginUsd: amount,
-      );
-      if (!mounted) {
-        return;
-      }
-      setState(() {
-        _errorMessage = null;
-      });
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            '${item.instrument.displayName} 已提交 ${amount.toStringAsFixed(amount % 1 == 0 ? 0 : 2)}U 做空市价单',
-          ),
-        ),
-      );
-    } catch (error) {
-      if (!mounted) {
-        return;
-      }
-      setState(() {
-        _errorMessage = '手动下单失败: $error';
-      });
-    } finally {
-      if (mounted) {
-        setState(() {
-          _manualOrderingInstIds.remove(instId);
-        });
-      }
-    }
-  }
-
-  List<OkxAutoTradeTarget> _buildTradeTargetsFromBadges(
-    List<_PinnedAlertBadge> badges,
-  ) {
-    final merged = <int, double>{};
-    for (final badge in badges) {
-      for (final level in badge.targetPrices) {
-        final existing = merged[level.multiplier];
-        if (existing == null || level.price > existing) {
-          merged[level.multiplier] = level.price;
-        }
-      }
-    }
-
-    final targets = merged.entries
-        .map(
-          (entry) => OkxAutoTradeTarget(
-            multiplier: entry.key,
-            entryPrice: entry.value,
-          ),
-        )
-        .toList()
-      ..sort((a, b) => a.multiplier.compareTo(b.multiplier));
-    return targets;
-  }
-
   List<_TargetPriceLevel> _computeCondition1TargetPrices({
     required HourlyCandle previous,
     required HourlyCandle latest,
@@ -992,38 +671,10 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('OKX'),
+        title: const Text('Gate'),
         actions: [
-          PopupMenuButton<OkxEndpointConfig>(
-            tooltip: '切换域名',
-            initialValue: widget.endpoint,
-            onSelected: widget.onEndpointChanged,
-            itemBuilder: (context) => OkxEndpointConfig.values
-                .map(
-                  (endpoint) => PopupMenuItem<OkxEndpointConfig>(
-                    value: endpoint,
-                    child: Text(endpoint.label),
-                  ),
-                )
-                .toList(),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12),
-              child: Center(
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    const Icon(Icons.public, size: 18),
-                    const SizedBox(width: 6),
-                    Text(widget.endpoint.label),
-                  ],
-                ),
-              ),
-            ),
-          ),
           IconButton(
-            onPressed: _isRefreshing
-                ? null
-                : () => _bootstrapMarketData(),
+            onPressed: _isRefreshing ? null : () => _bootstrapMarketData(),
             tooltip: '立即刷新',
             icon: _isRefreshing
                 ? const SizedBox(
@@ -1050,18 +701,15 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
               _PinnedAlertsSection(
                 alerts: _pinnedAlerts,
                 onRemove: _removePinnedAlert,
-                onTrade: _confirmManualTrade,
               ),
               const SizedBox(height: 12),
             ],
             _StatusCard(
-              autoTradeEnabled: _autoTradeEnabled,
               rankingCount: _rankings.length,
               isRefreshing: _isRefreshing,
               selectedInterval: _selectedInterval,
               lastUpdatedAt: _lastUpdatedAt,
               errorMessage: _errorMessage,
-              onAutoTradeChanged: _toggleAutoTradeEnabled,
             ),
             const SizedBox(height: 16),
             Text(
@@ -1081,7 +729,7 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
             else
               ...List.generate(_rankings.length, (index) {
                 final item = _rankings[index];
-                final instId = item.instrument.instId;
+                final instId = item.contract.name;
                 final history =
                     _historyCache[_selectedInterval]![instId] ??
                     const <HourlyCandle>[];
@@ -1099,9 +747,7 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
                     history: history,
                     isExpanded: isExpanded,
                     isHistoryLoading: isHistoryLoading,
-                    isOrdering: _manualOrderingInstIds.contains(instId),
                     onTap: () => _toggleExpanded(instId),
-                    onOrder: () => _showQuickOrderDialog(item),
                   ),
                 );
               }),
@@ -1183,22 +829,18 @@ class _IntervalButton extends StatelessWidget {
 
 class _StatusCard extends StatelessWidget {
   const _StatusCard({
-    required this.autoTradeEnabled,
     required this.rankingCount,
     required this.isRefreshing,
     required this.selectedInterval,
     required this.lastUpdatedAt,
     required this.errorMessage,
-    required this.onAutoTradeChanged,
   });
 
-  final bool autoTradeEnabled;
   final int rankingCount;
   final bool isRefreshing;
   final CandleInterval selectedInterval;
   final DateTime? lastUpdatedAt;
   final String? errorMessage;
-  final ValueChanged<bool> onAutoTradeChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -1228,46 +870,14 @@ class _StatusCard extends StatelessWidget {
                 ),
                 _InfoChip(
                   label: '最近更新',
-                  value: lastUpdatedAt == null
-                      ? '--'
-                      : _formatDateTime(lastUpdatedAt!),
+                  value: lastUpdatedAt == null ? '--' : _formatDateTime(lastUpdatedAt!),
                 ),
               ],
             ),
             const SizedBox(height: 12),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-              decoration: BoxDecoration(
-                color: theme.colorScheme.surfaceContainerHighest,
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          '自动交易',
-                          style: theme.textTheme.titleSmall?.copyWith(
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                        const SizedBox(height: 2),
-                        Text(
-                          autoTradeEnabled ? '命中条件后自动下单' : '关闭后可手动确认买入',
-                          style: theme.textTheme.bodySmall,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Switch.adaptive(
-                    value: autoTradeEnabled,
-                    onChanged: onAutoTradeChanged,
-                  ),
-                ],
-              ),
+            Text(
+              'Gate 标签页仅展示行情和监控，不提供下单。',
+              style: theme.textTheme.bodySmall,
             ),
             if (errorMessage != null) ...[
               const SizedBox(height: 12),
@@ -1289,12 +899,10 @@ class _PinnedAlertsSection extends StatelessWidget {
   const _PinnedAlertsSection({
     required this.alerts,
     required this.onRemove,
-    required this.onTrade,
   });
 
   final List<_PinnedAlertEntry> alerts;
   final ValueChanged<String> onRemove;
-  final ValueChanged<_PinnedAlertEntry> onTrade;
 
   @override
   Widget build(BuildContext context) {
@@ -1324,14 +932,14 @@ class _PinnedAlertsSection extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            alert.instrument.displayName,
+                            alert.contract.displayName,
                             style: theme.textTheme.titleMedium?.copyWith(
                               fontWeight: FontWeight.w700,
                             ),
                           ),
                           const SizedBox(height: 4),
                           Text(
-                            alert.instrument.instId,
+                            alert.contract.name,
                             style: theme.textTheme.bodySmall,
                           ),
                           const SizedBox(height: 10),
@@ -1364,20 +972,10 @@ class _PinnedAlertsSection extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(width: 12),
-                    Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        FilledButton.tonal(
-                          onPressed: () => onTrade(alert),
-                          child: const Text('买入'),
-                        ),
-                        const SizedBox(height: 8),
-                        IconButton(
-                          tooltip: '移除',
-                          onPressed: () => onRemove(alert.instId),
-                          icon: const Icon(Icons.close),
-                        ),
-                      ],
+                    IconButton(
+                      tooltip: '移除',
+                      onPressed: () => onRemove(alert.instId),
+                      icon: const Icon(Icons.close),
                     ),
                   ],
                 ),
@@ -1432,20 +1030,16 @@ class _RankingCard extends StatelessWidget {
     required this.history,
     required this.isExpanded,
     required this.isHistoryLoading,
-    required this.isOrdering,
     required this.onTap,
-    required this.onOrder,
   });
 
   final int rank;
-  final OkxRankedInstrument item;
+  final GateRankedContract item;
   final CandleInterval interval;
   final List<HourlyCandle> history;
   final bool isExpanded;
   final bool isHistoryLoading;
-  final bool isOrdering;
   final VoidCallback onTap;
-  final VoidCallback onOrder;
 
   @override
   Widget build(BuildContext context) {
@@ -1485,14 +1079,14 @@ class _RankingCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          item.instrument.displayName,
+                          item.contract.displayName,
                           style: theme.textTheme.titleMedium?.copyWith(
                             fontWeight: FontWeight.w700,
                           ),
                         ),
                         const SizedBox(height: 4),
                         Text(
-                          item.instrument.instId,
+                          item.contract.name,
                           style: theme.textTheme.bodySmall,
                         ),
                       ],
@@ -1502,15 +1096,17 @@ class _RankingCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Text(
-                        _formatSignedPercent(item.todayChangePercent),
+                        _formatSignedPercent(item.changePercent24h),
                         style: theme.textTheme.titleMedium?.copyWith(
-                          color: Colors.greenAccent.shade400,
+                          color: item.changePercent24h >= 0
+                              ? Colors.greenAccent.shade400
+                              : Colors.redAccent.shade200,
                           fontWeight: FontWeight.w800,
                         ),
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        '今日涨跌',
+                        '24小时涨跌',
                         style: theme.textTheme.labelSmall,
                       ),
                       const SizedBox(height: 8),
@@ -1526,20 +1122,6 @@ class _RankingCard extends StatelessWidget {
                         style: theme.textTheme.labelSmall,
                       ),
                     ],
-                  ),
-                  const SizedBox(width: 8),
-                  FilledButton.tonal(
-                    onPressed: isOrdering ? null : onOrder,
-                    style: FilledButton.styleFrom(
-                      visualDensity: VisualDensity.compact,
-                    ),
-                    child: isOrdering
-                        ? const SizedBox(
-                            width: 16,
-                            height: 16,
-                            child: CircularProgressIndicator(strokeWidth: 2),
-                          )
-                        : const Text('下单'),
                   ),
                   const SizedBox(width: 8),
                   Icon(
@@ -1659,7 +1241,7 @@ class _ExpandedHistory extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           Text(
-            '展示最近 ${visibleHistory.length} 根，缓存保留在内存里，后续刷新只会把新收线叠加进来。',
+            '展示最近 ${visibleHistory.length} 根，缓存保留在内存里，后续刷新只会把新K线叠加进来。',
             style: theme.textTheme.bodySmall,
           ),
           const SizedBox(height: 12),
@@ -1731,12 +1313,8 @@ class _ChartLegend extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final latest = candles.last;
-    final highest = candles
-        .map((candle) => candle.high)
-        .reduce(math.max);
-    final lowest = candles
-        .map((candle) => candle.low)
-        .reduce(math.min);
+    final highest = candles.map((candle) => candle.high).reduce(math.max);
+    final lowest = candles.map((candle) => candle.low).reduce(math.min);
 
     return Wrap(
       spacing: 12,
@@ -1939,13 +1517,13 @@ class _TargetPriceLevel {
 class _PinnedAlertEntry {
   const _PinnedAlertEntry({
     required this.instId,
-    required this.instrument,
+    required this.contract,
     required this.badges,
     required this.triggeredAt,
   });
 
   final String instId;
-  final OkxInstrument instrument;
+  final GateContract contract;
   final List<_PinnedAlertBadge> badges;
   final DateTime triggeredAt;
 }
@@ -1981,12 +1559,12 @@ String _formatDateTime(DateTime dateTime) {
   String twoDigits(int value) => value.toString().padLeft(2, '0');
 
   return '${local.month}-${twoDigits(local.day)} '
-      '${twoDigits(local.hour)}:${twoDigits(local.minute)}';
+      '${twoDigits(local.hour)}:${twoDigits(local.minute)}:${twoDigits(local.second)}';
 }
 
 String _formatSignedPercent(double percent) {
   final sign = percent > 0 ? '+' : '';
-  return '$sign${percent.toStringAsFixed(2)}%';
+  return '$sign${percent.toStringAsFixed(4)}%';
 }
 
 String _formatPrice(double price) {

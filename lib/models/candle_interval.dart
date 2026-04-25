@@ -11,6 +11,40 @@ enum CandleInterval {
   final String okxBar;
   final String label;
 
+  String get gateInterval {
+    switch (this) {
+      case CandleInterval.m1:
+        return '1m';
+      case CandleInterval.m5:
+        return '5m';
+      case CandleInterval.m15:
+        return '15m';
+      case CandleInterval.h1:
+        return '1h';
+      case CandleInterval.h4:
+        return '4h';
+      case CandleInterval.d1:
+        return '1d';
+    }
+  }
+
+  Duration get duration {
+    switch (this) {
+      case CandleInterval.m1:
+        return const Duration(minutes: 1);
+      case CandleInterval.m5:
+        return const Duration(minutes: 5);
+      case CandleInterval.m15:
+        return const Duration(minutes: 15);
+      case CandleInterval.h1:
+        return const Duration(hours: 1);
+      case CandleInterval.h4:
+        return const Duration(hours: 4);
+      case CandleInterval.d1:
+        return const Duration(days: 1);
+    }
+  }
+
   String get wsChannel {
     switch (this) {
       case CandleInterval.m1:

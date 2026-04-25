@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../models/okx_endpoint_config.dart';
 import 'contract_scanner_page.dart';
+import 'gate_scanner_page.dart';
 import 'trading_board_page.dart';
 
 class AppShellPage extends StatefulWidget {
@@ -23,6 +24,7 @@ class _AppShellPageState extends State<AppShellPage> {
         endpoint: _selectedEndpoint,
         onEndpointChanged: _handleEndpointChanged,
       ),
+      const GateScannerPage(),
       TradingBoardPage(
         key: ValueKey('trade-${_selectedEndpoint.id}'),
         endpoint: _selectedEndpoint,
@@ -46,7 +48,12 @@ class _AppShellPageState extends State<AppShellPage> {
           NavigationDestination(
             icon: Icon(Icons.home_outlined),
             selectedIcon: Icon(Icons.home),
-            label: '首页',
+            label: 'OKX',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.candlestick_chart_outlined),
+            selectedIcon: Icon(Icons.candlestick_chart),
+            label: 'Gate',
           ),
           NavigationDestination(
             icon: Icon(Icons.list_alt_outlined),

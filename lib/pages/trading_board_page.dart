@@ -22,10 +22,11 @@ class TradingBoardPage extends StatefulWidget {
 }
 
 class _TradingBoardPageState extends State<TradingBoardPage> {
-  late final OkxApiService _apiService;
+  late OkxApiService _apiService;
 
   List<OkxPendingOrder> _pendingOrders = const <OkxPendingOrder>[];
   List<OkxPosition> _positions = const <OkxPosition>[];
+  final Set<String> _closingPositionKeys = <String>{};
   bool _isLoading = false;
   String? _errorMessage;
   Timer? _refreshTimer;
@@ -38,6 +39,24 @@ class _TradingBoardPageState extends State<TradingBoardPage> {
     _refreshTimer = Timer.periodic(const Duration(seconds: 6), (_) {
       unawaited(_refreshData());
     });
+  }
+
+  @override
+  void didUpdateWidget(covariant TradingBoardPage oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.endpoint.id == widget.endpoint.id) {
+      return;
+    }
+
+    _apiService.dispose();
+    _apiService = OkxApiService(endpoint: widget.endpoint);
+    setState(() {
+      _pendingOrders = const <OkxPendingOrder>[];
+      _positions = const <OkxPosition>[];
+      _closingPositionKeys.clear();
+      _errorMessage = null;
+    });
+    unawaited(_refreshData(initialLoad: true));
   }
 
   @override
@@ -98,6 +117,70 @@ class _TradingBoardPageState extends State<TradingBoardPage> {
       }
     }
   }
+
+  Future<void> _closePosition(OkxPosition position) async {
+    if (_closingPositionKeys.contains(_positionKey(position))) {
+      return;
+    }
+
+    final confirmed = await showDialog<bool>(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => AlertDialog(
+        title: const Text('确认市价平仓'),
+        content: Text(
+          '确认以市价平掉 ${position.instId} 的 ${position.posSide.toUpperCase()} 仓位吗？',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: const Text('取消'),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.of(context).pop(true),
+            child: const Text('确认平仓'),
+          ),
+        ],
+      ),
+    );
+
+    if (confirmed != true || !mounted) {
+      return;
+    }
+
+    final key = _positionKey(position);
+    setState(() {
+      _closingPositionKeys.add(key);
+      _errorMessage = null;
+    });
+
+    try {
+      await _apiService.closePositionMarket(position);
+      await _refreshData();
+      if (!mounted) {
+        return;
+      }
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('${position.instId} 已提交市价平仓')),
+      );
+    } catch (error) {
+      if (!mounted) {
+        return;
+      }
+      setState(() {
+        _errorMessage = '市价平仓失败: $error';
+      });
+    } finally {
+      if (mounted) {
+        setState(() {
+          _closingPositionKeys.remove(key);
+        });
+      }
+    }
+  }
+
+  String _positionKey(OkxPosition position) =>
+      '${position.instId}:${position.posSide}:${position.rawPositionSize}';
 
   @override
   Widget build(BuildContext context) {
@@ -163,8 +246,10 @@ class _TradingBoardPageState extends State<TradingBoardPage> {
             _PositionsTab(
               positions: _positions,
               isLoading: _isLoading,
+              closingPositionKeys: _closingPositionKeys,
               errorMessage: _errorMessage,
               onRefresh: _refreshData,
+              onClosePosition: _closePosition,
             ),
           ],
         ),
@@ -267,14 +352,18 @@ class _PositionsTab extends StatelessWidget {
   const _PositionsTab({
     required this.positions,
     required this.isLoading,
+    required this.closingPositionKeys,
     required this.errorMessage,
     required this.onRefresh,
+    required this.onClosePosition,
   });
 
   final List<OkxPosition> positions;
   final bool isLoading;
+  final Set<String> closingPositionKeys;
   final String? errorMessage;
   final Future<void> Function() onRefresh;
+  final Future<void> Function(OkxPosition position) onClosePosition;
 
   @override
   Widget build(BuildContext context) {
@@ -308,6 +397,23 @@ class _PositionsTab extends StatelessWidget {
                                 position.instId,
                                 style: Theme.of(context).textTheme.titleMedium
                                     ?.copyWith(fontWeight: FontWeight.w700),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(right: 8),
+                              child: OutlinedButton(
+                                onPressed: closingPositionKeys.contains(
+                                      '${position.instId}:${position.posSide}:${position.rawPositionSize}',
+                                    )
+                                    ? null
+                                    : () => onClosePosition(position),
+                                child: Text(
+                                  closingPositionKeys.contains(
+                                        '${position.instId}:${position.posSide}:${position.rawPositionSize}',
+                                      )
+                                      ? '平仓中...'
+                                      : '市价平仓',
+                                ),
                               ),
                             ),
                             _TagChip(

@@ -1,0 +1,166 @@
+<svg width="1800" height="1050" viewBox="0 0 1800 1050" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #070707; }
+      .title { fill: #ffffff; font: 700 54px 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+      .subtitle { fill: #9aa0a6; font: 400 20px 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+      .brand { fill: #ffffff; font: 700 24px 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+      .legend { fill: #0b0b0b; font: 700 22px 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+      .label { fill: #ffffff; font: 700 18px 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+      .date { fill: #ffffff; font: 700 20px 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+      .body { fill: #d8d8d8; font: 400 16px 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+      .tiny { fill: #8f8f8f; font: 400 14px 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+      .festival { fill: #ff4869; }
+      .commerce { fill: #29dbe9; }
+      .major { fill: #3568ff; }
+      .timeline { stroke: #3c3c3c; stroke-width: 14; stroke-linecap: round; }
+      .connector-festival { stroke: #ff4869; stroke-width: 3; stroke-dasharray: 9 8; }
+      .connector-commerce { stroke: #29dbe9; stroke-width: 3; stroke-dasharray: 9 8; }
+      .connector-major { stroke: #3568ff; stroke-width: 3; stroke-dasharray: 9 8; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1800" height="1050"/>
+
+  <text x="56" y="94" class="title">2026 年泰国营销节点洞察</text>
+  <text x="738" y="94" class="title" fill="#ff4869">THAILAND 2026</text>
+  <text x="56" y="128" class="subtitle">适合跨境电商内容排期、站内大促和 TikTok/Shopee/Lazada 投放预排。日期按 2026 年公开节日与固定大促规则整理。</text>
+  <text x="1578" y="76" class="brand">营销时间线</text>
+
+  <line x1="60" y1="535" x2="1740" y2="535" class="timeline"/>
+
+  <rect x="64" y="930" rx="18" ry="18" width="150" height="52" class="festival"/>
+  <text x="93" y="963" class="legend">节日庆祝</text>
+  <rect x="238" y="930" rx="18" ry="18" width="150" height="52" class="commerce"/>
+  <text x="267" y="963" class="legend">促销旺季</text>
+  <rect x="412" y="930" rx="18" ry="18" width="150" height="52" class="major"/>
+  <text x="441" y="963" class="legend">重大活动</text>
+
+  <text x="56" y="1015" class="tiny">数据参考：Trade.gov Thailand eCommerce（2026-04-09 更新）、TikTok/平台固定大促规则、2026 泰国公开节庆日期资料。</text>
+
+  <circle cx="120" cy="535" r="9" class="festival"/>
+  <line x1="120" y1="520" x2="120" y2="362" class="connector-festival"/>
+  <rect x="84" y="230" rx="18" ry="18" width="92" height="42" fill="none" stroke="#ff4869" stroke-width="3"/>
+  <text x="102" y="258" class="label">新年</text>
+  <text x="72" y="300" class="body">泰国消费者在新年档更容易接受</text>
+  <text x="72" y="325" class="body">礼赠、焕新、家居与美妆促销。</text>
+  <text x="94" y="418" class="date">1 月 1 日</text>
+  <text x="101" y="445" class="date">新年</text>
+
+  <circle cx="220" cy="535" r="9" class="festival"/>
+  <line x1="220" y1="550" x2="220" y2="710" class="connector-festival"/>
+  <rect x="165" y="734" rx="18" ry="18" width="110" height="42" fill="none" stroke="#ff4869" stroke-width="3"/>
+  <text x="183" y="762" class="label">儿童节</text>
+  <text x="148" y="804" class="body">泰国儿童节固定在 1 月第 2 个周六，</text>
+  <text x="148" y="829" class="body">亲子、零食、玩具和线下活动热度高。</text>
+  <text x="160" y="620" class="date">1 月 10 日</text>
+  <text x="173" y="647" class="date">儿童节</text>
+
+  <circle cx="390" cy="535" r="9" class="major"/>
+  <line x1="390" y1="520" x2="390" y2="362" class="connector-major"/>
+  <rect x="330" y="230" rx="18" ry="18" width="120" height="42" fill="none" stroke="#3568ff" stroke-width="3"/>
+  <text x="348" y="258" class="label">中国春节</text>
+  <text x="306" y="300" class="body">华人家庭团聚、送礼与年货氛围明显，</text>
+  <text x="306" y="325" class="body">红金视觉、礼盒装与折扣更容易转化。</text>
+  <text x="336" y="418" class="date">2 月 17 日</text>
+  <text x="336" y="445" class="date">中国春节</text>
+
+  <circle cx="485" cy="535" r="9" class="commerce"/>
+  <line x1="485" y1="550" x2="485" y2="710" class="connector-commerce"/>
+  <rect x="430" y="734" rx="18" ry="18" width="110" height="42" fill="none" stroke="#29dbe9" stroke-width="3"/>
+  <text x="448" y="762" class="label">情人节</text>
+  <text x="410" y="804" class="body">香氛、美妆、饰品、花礼与情侣单品</text>
+  <text x="410" y="829" class="body">适合做短视频种草与礼赠套餐。</text>
+  <text x="435" y="620" class="date">2 月 14 日</text>
+  <text x="448" y="647" class="date">情人节</text>
+
+  <rect x="590" y="527" rx="9" ry="9" width="64" height="16" class="major"/>
+  <line x1="622" y1="520" x2="622" y2="362" class="connector-major"/>
+  <rect x="565" y="230" rx="18" ry="18" width="114" height="42" fill="none" stroke="#3568ff" stroke-width="3"/>
+  <text x="585" y="258" class="label">泼水节</text>
+  <text x="540" y="300" class="body">全年最重要的泰国节庆之一，</text>
+  <text x="540" y="325" class="body">防晒、彩妆、防水数码和旅行用品适合爆发。</text>
+  <text x="575" y="418" class="date">4 月 13-15 日</text>
+  <text x="568" y="445" class="date">泼水节 / 泰国新年</text>
+
+  <circle cx="735" cy="535" r="9" class="commerce"/>
+  <line x1="735" y1="550" x2="735" y2="710" class="connector-commerce"/>
+  <rect x="680" y="734" rx="18" ry="18" width="110" height="42" fill="none" stroke="#29dbe9" stroke-width="3"/>
+  <text x="698" y="762" class="label">劳动节</text>
+  <text x="660" y="804" class="body">适合家居、小家电与出行场景促销，</text>
+  <text x="660" y="829" class="body">也是二季度活动内容承接点。</text>
+  <text x="685" y="620" class="date">5 月 1 日</text>
+  <text x="698" y="647" class="date">劳动节</text>
+
+  <circle cx="865" cy="535" r="9" class="festival"/>
+  <line x1="865" y1="520" x2="865" y2="362" class="connector-festival"/>
+  <rect x="810" y="230" rx="18" ry="18" width="110" height="42" fill="none" stroke="#ff4869" stroke-width="3"/>
+  <text x="828" y="258" class="label">母亲节</text>
+  <text x="784" y="300" class="body">泰国母亲节与皇后生日同日，</text>
+  <text x="784" y="325" class="body">礼盒、美容护理、鲜花和家庭场景更有效。</text>
+  <text x="815" y="418" class="date">8 月 12 日</text>
+  <text x="828" y="445" class="date">母亲节</text>
+
+  <circle cx="1010" cy="535" r="9" class="commerce"/>
+  <line x1="1010" y1="520" x2="1010" y2="362" class="connector-commerce"/>
+  <rect x="945" y="230" rx="18" ry="18" width="128" height="42" fill="none" stroke="#29dbe9" stroke-width="3"/>
+  <text x="972" y="258" class="label">双 9 大促</text>
+  <text x="928" y="300" class="body">Shopee、Lazada、TikTok Shop</text>
+  <text x="928" y="325" class="body">都会把 9.9 当作 Q4 预热开端。</text>
+  <text x="972" y="418" class="date">9 月 9 日</text>
+  <text x="966" y="445" class="date">9.9 购物节</text>
+
+  <rect x="1090" y="527" rx="9" ry="9" width="74" height="16" class="major"/>
+  <line x1="1127" y1="550" x2="1127" y2="710" class="connector-major"/>
+  <rect x="1060" y="734" rx="18" ry="18" width="134" height="42" fill="none" stroke="#3568ff" stroke-width="3"/>
+  <text x="1076" y="762" class="label">素食节</text>
+  <text x="1027" y="804" class="body">2026 年泰国九皇斋节常见公开日期为</text>
+  <text x="1027" y="829" class="body">9 月 17-25 日，健康饮食内容可提前做。</text>
+  <text x="1050" y="620" class="date">9 月 17-25 日</text>
+  <text x="1085" y="647" class="date">泰国素食节</text>
+
+  <circle cx="1210" cy="535" r="9" class="commerce"/>
+  <line x1="1210" y1="520" x2="1210" y2="362" class="connector-commerce"/>
+  <rect x="1145" y="230" rx="18" ry="18" width="128" height="42" fill="none" stroke="#29dbe9" stroke-width="3"/>
+  <text x="1172" y="258" class="label">双 11 大促</text>
+  <text x="1128" y="300" class="body">泰国平台成熟度最高的电商大促之一，</text>
+  <text x="1128" y="325" class="body">建议提前 3-4 周完成内容起量和备货。</text>
+  <text x="1172" y="418" class="date">11 月 11 日</text>
+  <text x="1166" y="445" class="date">11.11 购物节</text>
+
+  <circle cx="1355" cy="535" r="9" class="festival"/>
+  <line x1="1355" y1="550" x2="1355" y2="710" class="connector-festival"/>
+  <rect x="1290" y="734" rx="18" ry="18" width="128" height="42" fill="none" stroke="#ff4869" stroke-width="3"/>
+  <text x="1317" y="762" class="label">水灯节</text>
+  <text x="1272" y="804" class="body">泰国重要文化节庆，适合做氛围型内容、</text>
+  <text x="1272" y="829" class="body">礼赠包装和生活方式类投放。</text>
+  <text x="1317" y="620" class="date">11 月 25 日</text>
+  <text x="1317" y="647" class="date">水灯节</text>
+
+  <circle cx="1460" cy="535" r="9" class="festival"/>
+  <line x1="1460" y1="550" x2="1460" y2="710" class="connector-festival"/>
+  <rect x="1395" y="734" rx="18" ry="18" width="128" height="42" fill="none" stroke="#ff4869" stroke-width="3"/>
+  <text x="1422" y="762" class="label">父亲节</text>
+  <text x="1375" y="804" class="body">与国王诞辰同日，礼赠、家庭聚会和</text>
+  <text x="1375" y="829" class="body">男性护理相关内容更容易获得共鸣。</text>
+  <text x="1422" y="620" class="date">12 月 5 日</text>
+  <text x="1422" y="647" class="date">父亲节</text>
+
+  <circle cx="1575" cy="535" r="9" class="commerce"/>
+  <line x1="1575" y1="520" x2="1575" y2="362" class="connector-commerce"/>
+  <rect x="1510" y="230" rx="18" ry="18" width="128" height="42" fill="none" stroke="#29dbe9" stroke-width="3"/>
+  <text x="1537" y="258" class="label">双 12 大促</text>
+  <text x="1494" y="300" class="body">年末冲量节点，适合清库存、礼品装、</text>
+  <text x="1494" y="325" class="body">节庆组合包与直播促转化。</text>
+  <text x="1537" y="418" class="date">12 月 12 日</text>
+  <text x="1531" y="445" class="date">12.12 购物节</text>
+
+  <circle cx="1685" cy="535" r="9" class="festival"/>
+  <line x1="1685" y1="550" x2="1685" y2="710" class="connector-festival"/>
+  <rect x="1610" y="734" rx="18" ry="18" width="150" height="42" fill="none" stroke="#ff4869" stroke-width="3"/>
+  <text x="1638" y="762" class="label">圣诞节</text>
+  <text x="1594" y="804" class="body">虽然不是全民宗教大节，但商场、平台和</text>
+  <text x="1594" y="829" class="body">礼品消费都会明显升温。</text>
+  <text x="1647" y="620" class="date">12 月 25 日</text>
+  <text x="1638" y="647" class="date">圣诞节</text>
+</svg>

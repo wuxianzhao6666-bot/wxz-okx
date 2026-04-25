@@ -28,6 +28,26 @@ class HourlyCandle {
     );
   }
 
+  factory HourlyCandle.fromGateJson(
+    Map<String, dynamic> json, {
+    required Duration interval,
+  }) {
+    final openTime = DateTime.fromMillisecondsSinceEpoch(
+      (int.parse(json['t'].toString())) * 1000,
+      isUtc: true,
+    );
+
+    return HourlyCandle(
+      openTime: openTime,
+      open: double.parse(json['o'].toString()),
+      high: double.parse(json['h'].toString()),
+      low: double.parse(json['l'].toString()),
+      close: double.parse(json['c'].toString()),
+      volume: double.tryParse(json['v'].toString()) ?? 0,
+      isConfirmed: DateTime.now().toUtc().isAfter(openTime.add(interval)),
+    );
+  }
+
   final DateTime openTime;
   final double open;
   final double high;

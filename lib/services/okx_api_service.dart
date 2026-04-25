@@ -282,7 +282,7 @@ extension OkxPrivateApi on OkxApiService {
   }) async {
     await _postPrivateJson('/api/v5/account/set-leverage', {
       'instId': instId,
-      'lever': leverage.toStringAsFixed(0),
+      'lever': _formatDecimal(leverage),
       'mgnMode': 'cross',
     });
   }
@@ -315,6 +315,29 @@ extension OkxPrivateApi on OkxApiService {
       throw OkxApiException(detail.isEmpty ? '下单失败' : detail);
     }
     return decoded;
+  }
+
+  Future<void> closePositionMarket(OkxPosition position) async {
+    final side = switch (position.posSide.toLowerCase()) {
+      'long' => 'sell',
+      'short' => 'buy',
+      _ => throw OkxApiException('暂不支持的持仓方向: ${position.posSide}'),
+    };
+    final size = position.rawPositionSize;
+    if (size.isEmpty || size == '0') {
+      throw const OkxApiException('当前持仓数量为空，无法平仓');
+    }
+
+    await placeOrder(
+      OkxTradeOrderRequest(
+        instId: position.instId,
+        side: side,
+        posSide: position.posSide,
+        tdMode: position.mgnMode.isEmpty ? 'cross' : position.mgnMode,
+        ordType: 'market',
+        sz: size,
+      ),
+    );
   }
 
   Future<Map<String, dynamic>> _getPrivateJson(
@@ -409,6 +432,13 @@ extension OkxPrivateApi on OkxApiService {
       );
     }
     return decoded;
+  }
+
+  String _formatDecimal(double value) {
+    if (value == value.roundToDouble()) {
+      return value.toStringAsFixed(0);
+    }
+    return value.toString().replaceFirst(RegExp(r'\.?0+$'), '');
   }
 }
 
