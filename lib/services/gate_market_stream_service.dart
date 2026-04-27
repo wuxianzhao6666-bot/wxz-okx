@@ -28,6 +28,9 @@ class GateMarketStreamService {
   GateTickerCallback? _onTicker;
   GateCandleCallback? _onCandle;
   GateStreamErrorCallback? _onError;
+  Set<String> _tickerContracts = const <String>{};
+  Set<String> _candleContracts = const <String>{};
+  Set<CandleInterval> _candleIntervals = const <CandleInterval>{};
 
   Future<void> start({
     required GateTickerCallback onTicker,
@@ -42,28 +45,40 @@ class GateMarketStreamService {
   }
 
   Future<void> updateTickerSubscriptions(Iterable<String> contracts) {
-    final sorted = contracts.toSet().toList()..sort();
-    final args = sorted.isEmpty
-        ? const <_GateSubscription>[]
-        : <_GateSubscription>[_GateSubscription.tickers(sorted)];
-    return _client.replaceSubscriptions(args);
+    _tickerContracts = contracts.toSet();
+    return _applySubscriptions();
   }
 
   Future<void> updateCandleSubscriptions({
     required Iterable<String> contracts,
     required Iterable<CandleInterval> intervals,
   }) {
-    final args = <_GateSubscription>[];
-    for (final interval in intervals) {
-      for (final contract in contracts) {
-        args.add(_GateSubscription.candlestick(contract, interval));
-      }
-    }
-    return _client.replaceSubscriptions(args);
+    _candleContracts = contracts.toSet();
+    _candleIntervals = intervals.toSet();
+    return _applySubscriptions();
   }
 
   void dispose() {
     _client.dispose();
+  }
+
+  Future<void> _applySubscriptions() {
+    final args = <_GateSubscription>[];
+    final sortedTickerContracts = _tickerContracts.toList()..sort();
+    if (sortedTickerContracts.isNotEmpty) {
+      args.add(_GateSubscription.tickers(sortedTickerContracts));
+    }
+
+    final sortedCandleContracts = _candleContracts.toList()..sort();
+    final sortedIntervals = _candleIntervals.toList()
+      ..sort((a, b) => a.duration.compareTo(b.duration));
+    for (final interval in sortedIntervals) {
+      for (final contract in sortedCandleContracts) {
+        args.add(_GateSubscription.candlestick(contract, interval));
+      }
+    }
+
+    return _client.replaceSubscriptions(args);
   }
 
   void _handleMessage(Map<String, dynamic> message) {

@@ -48,11 +48,13 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
   final Set<String> _manualOrderingInstIds = <String>{};
   final Set<String> _loadingHistoryKeys = <String>{};
   final Set<String> _triggeredMonitorSignatures = <String>{};
+  final Set<String> _dismissedMonitorSignatures = <String>{};
 
   Map<String, OkxInstrument> _instrumentsById = const <String, OkxInstrument>{};
   Map<String, OkxTicker24h> _tickersByInstId = const <String, OkxTicker24h>{};
   List<OkxRankedInstrument> _rankings = const <OkxRankedInstrument>[];
   List<_PinnedAlertEntry> _pinnedAlerts = const <_PinnedAlertEntry>[];
+  List<_MonitorHistoryEntry> _monitorHistory = const <_MonitorHistoryEntry>[];
   CandleInterval _selectedInterval = CandleInterval.h1;
   bool _autoTradeEnabled = false;
   bool _isRefreshing = false;
@@ -91,10 +93,12 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
       _manualOrderingInstIds.clear();
       _loadingHistoryKeys.clear();
       _triggeredMonitorSignatures.clear();
+      _dismissedMonitorSignatures.clear();
       _instrumentsById = const <String, OkxInstrument>{};
       _tickersByInstId = const <String, OkxTicker24h>{};
       _rankings = const <OkxRankedInstrument>[];
       _pinnedAlerts = const <_PinnedAlertEntry>[];
+      _monitorHistory = const <_MonitorHistoryEntry>[];
       _errorMessage = null;
       _lastUpdatedAt = null;
       _hasShownMonitorDialog = false;
@@ -514,18 +518,34 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
       return;
     }
 
-    final nextBadges = hits
+    _upsertMonitorHistory(
+      instrument: instrument,
+      hits: hits,
+    );
+
+    final visibleHits = hits
+        .where((hit) => !_dismissedMonitorSignatures.contains(hit.signature))
+        .toList();
+    if (visibleHits.isEmpty) {
+      return;
+    }
+
+    final nextBadges = visibleHits
         .map(
           (hit) => _PinnedAlertBadge(
+            signature: hit.signature,
             label: hit.label,
             targetPrices: hit.targetPrices,
+            maxReachedMultiple: hit.maxReachedMultiple,
           ),
         )
         .toList();
 
     if (_autoTradeEnabled) {
-      for (final hit in hits) {
-        unawaited(_submitAutoTrade(instrument, hit));
+      for (final hit in visibleHits) {
+        if (hit.isNew) {
+          unawaited(_submitAutoTrade(instrument, hit));
+        }
       }
     }
 
@@ -534,14 +554,30 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
       badges: nextBadges,
     );
 
-    unawaited(
-      LocalNotificationService.instance.showMonitorAlert(
-        title: '${instrument.displayName} 监控命中',
-        body: '命中标签: ${nextBadges.map(_formatPinnedBadgeText).join(' / ')}，已加入顶部置顶。',
-      ),
-    );
+    final newHits = visibleHits.where((hit) => hit.isNew).toList();
+    if (newHits.isNotEmpty) {
+      final newBadges = newHits
+          .map(
+            (hit) => _PinnedAlertBadge(
+              signature: hit.signature,
+              label: hit.label,
+              targetPrices: hit.targetPrices,
+              maxReachedMultiple: hit.maxReachedMultiple,
+            ),
+          )
+          .toList();
+      unawaited(
+        LocalNotificationService.instance.showMonitorAlert(
+          title: '${instrument.displayName} 监控命中',
+          body:
+              '命中标签: ${newBadges.map(_formatPinnedBadgeText).join(' / ')}，已加入顶部置顶。',
+        ),
+      );
+    }
 
-    if (!_hasShownMonitorDialog && !_isMonitorDialogVisible) {
+    if (newHits.isNotEmpty &&
+        !_hasShownMonitorDialog &&
+        !_isMonitorDialogVisible) {
       _hasShownMonitorDialog = true;
       _isMonitorDialogVisible = true;
       unawaited(_showMonitorDialog(nextEntry, nextBadges));
@@ -571,18 +607,19 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
         rule: 'c1',
         openTime: latest.openTime,
       );
-      if (_triggeredMonitorSignatures.add(signature)) {
-        hits.add(
-          _MonitorHit(
-            signature: signature,
-            label: '${_intervalLabel(interval)} · 条件1',
-            targetPrices: _computeCondition1TargetPrices(
-              previous: previous,
-              latest: latest,
-            ),
+      final isNew = _triggeredMonitorSignatures.add(signature);
+      hits.add(
+        _MonitorHit(
+          signature: signature,
+          label: '${_intervalLabel(interval)} · 条件1',
+          targetPrices: _computeCondition1TargetPrices(
+            previous: previous,
+            latest: latest,
           ),
-        );
-      }
+          maxReachedMultiple: latest.amplitudeRatio / previous.amplitudeRatio,
+          isNew: isNew,
+        ),
+      );
     }
 
     return hits;
@@ -599,7 +636,8 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
     final existingBadges = existing?.badges ?? const <_PinnedAlertBadge>[];
     final mergedBadges = <String, _PinnedAlertBadge>{
       for (final badge in existingBadges) badge.label: badge,
-      for (final badge in badges) badge.label: badge,
+      for (final badge in badges)
+        badge.label: _mergePinnedBadge(existing: existingBadges, next: badge),
     }.values.toList();
 
     final nextEntry = _PinnedAlertEntry(
@@ -621,6 +659,124 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
     });
 
     return nextEntry;
+  }
+
+  _PinnedAlertBadge _mergePinnedBadge({
+    required List<_PinnedAlertBadge> existing,
+    required _PinnedAlertBadge next,
+  }) {
+    _PinnedAlertBadge? current;
+    for (final badge in existing) {
+      if (badge.label == next.label) {
+        current = badge;
+        break;
+      }
+    }
+    if (current == null) {
+      return next;
+    }
+    return _PinnedAlertBadge(
+      signature: next.signature,
+      label: next.label,
+      targetPrices: next.targetPrices,
+      maxReachedMultiple: math.max(
+        current.maxReachedMultiple,
+        next.maxReachedMultiple,
+      ),
+    );
+  }
+
+  void _upsertMonitorHistory({
+    required OkxInstrument instrument,
+    required List<_MonitorHit> hits,
+  }) {
+    if (!mounted || hits.isEmpty) {
+      return;
+    }
+
+    setState(() {
+      final nextList = List<_MonitorHistoryEntry>.from(_monitorHistory);
+      for (final hit in hits) {
+        final index = nextList.indexWhere((entry) => entry.signature == hit.signature);
+        if (index >= 0) {
+          final current = nextList[index];
+          nextList[index] = current.copyWith(
+            maxReachedMultiple: math.max(
+              current.maxReachedMultiple,
+              hit.maxReachedMultiple,
+            ),
+            updatedAt: DateTime.now(),
+          );
+        } else {
+          nextList.insert(
+            0,
+            _MonitorHistoryEntry(
+              signature: hit.signature,
+              instId: instrument.instId,
+              displayName: instrument.displayName,
+              label: hit.label,
+              triggeredAt: DateTime.now(),
+              updatedAt: DateTime.now(),
+              maxReachedMultiple: hit.maxReachedMultiple,
+            ),
+          );
+        }
+      }
+      _monitorHistory = nextList;
+    });
+  }
+
+  Future<void> _showMonitorHistoryDialog() async {
+    if (!mounted) {
+      return;
+    }
+    await showDialog<void>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text('OKX 命中历史（${_monitorHistory.length} 条）'),
+        content: SizedBox(
+          width: 520,
+          height: 420,
+          child: _monitorHistory.isEmpty
+              ? const Center(child: Text('暂无命中历史'))
+              : ListView.separated(
+                  itemCount: _monitorHistory.length,
+                  separatorBuilder: (_, _) => const Divider(height: 16),
+                  itemBuilder: (context, index) {
+                    final item = _monitorHistory[index];
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          '#${_monitorHistory.length - index}  ${item.displayName}',
+                          style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                                fontWeight: FontWeight.w700,
+                              ),
+                        ),
+                        const SizedBox(height: 4),
+                        Text(item.instId, style: Theme.of(context).textTheme.bodySmall),
+                        const SizedBox(height: 6),
+                        Text(item.label),
+                        const SizedBox(height: 4),
+                        Text('最高到 ${item.maxReachedMultiple.toStringAsFixed(2)} 倍截止'),
+                        const SizedBox(height: 4),
+                        Text(
+                          '命中: ${_formatDateTime(item.triggeredAt)}  更新: ${_formatDateTime(item.updatedAt)}',
+                          style: Theme.of(context).textTheme.bodySmall,
+                        ),
+                      ],
+                    );
+                  },
+                ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(),
+            child: const Text('关闭'),
+          ),
+        ],
+      ),
+    );
   }
 
   Future<void> _showMonitorDialog(
@@ -668,10 +824,20 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
 
   void _removePinnedAlert(String instId) {
     setState(() {
+      final match = _pinnedAlerts.where((entry) => entry.instId == instId);
+      for (final entry in match) {
+        _dismissedMonitorSignatures.addAll(
+          entry.badges.map((badge) => badge.signature),
+        );
+      }
       _pinnedAlerts = _pinnedAlerts
           .where((entry) => entry.instId != instId)
           .toList();
     });
+  }
+
+  Future<void> _toggleAlarmSound() async {
+    await LocalNotificationService.instance.togglePersistentAlarm();
   }
 
   String _monitorSignature({
@@ -994,6 +1160,21 @@ class _ContractScannerPageState extends State<ContractScannerPage> {
       appBar: AppBar(
         title: const Text('OKX'),
         actions: [
+          ValueListenableBuilder<bool>(
+            valueListenable: LocalNotificationService.instance.alarmActive,
+            builder: (context, isActive, _) => IconButton(
+              onPressed: _toggleAlarmSound,
+              tooltip: isActive ? '停止警报声' : '启动警报声',
+              icon: Icon(
+                isActive ? Icons.notifications_active : Icons.volume_up_outlined,
+              ),
+            ),
+          ),
+          IconButton(
+            onPressed: _showMonitorHistoryDialog,
+            tooltip: '命中历史',
+            icon: const Icon(Icons.history),
+          ),
           PopupMenuButton<OkxEndpointConfig>(
             tooltip: '切换域名',
             initialValue: widget.endpoint,
@@ -1909,21 +2090,29 @@ class _MonitorHit {
     required this.signature,
     required this.label,
     required this.targetPrices,
+    required this.maxReachedMultiple,
+    required this.isNew,
   });
 
   final String signature;
   final String label;
   final List<_TargetPriceLevel> targetPrices;
+  final double maxReachedMultiple;
+  final bool isNew;
 }
 
 class _PinnedAlertBadge {
   const _PinnedAlertBadge({
+    required this.signature,
     required this.label,
     required this.targetPrices,
+    required this.maxReachedMultiple,
   });
 
+  final String signature;
   final String label;
   final List<_TargetPriceLevel> targetPrices;
+  final double maxReachedMultiple;
 }
 
 class _TargetPriceLevel {
@@ -1950,6 +2139,41 @@ class _PinnedAlertEntry {
   final DateTime triggeredAt;
 }
 
+class _MonitorHistoryEntry {
+  const _MonitorHistoryEntry({
+    required this.signature,
+    required this.instId,
+    required this.displayName,
+    required this.label,
+    required this.triggeredAt,
+    required this.updatedAt,
+    required this.maxReachedMultiple,
+  });
+
+  final String signature;
+  final String instId;
+  final String displayName;
+  final String label;
+  final DateTime triggeredAt;
+  final DateTime updatedAt;
+  final double maxReachedMultiple;
+
+  _MonitorHistoryEntry copyWith({
+    DateTime? updatedAt,
+    double? maxReachedMultiple,
+  }) {
+    return _MonitorHistoryEntry(
+      signature: signature,
+      instId: instId,
+      displayName: displayName,
+      label: label,
+      triggeredAt: triggeredAt,
+      updatedAt: updatedAt ?? this.updatedAt,
+      maxReachedMultiple: maxReachedMultiple ?? this.maxReachedMultiple,
+    );
+  }
+}
+
 class _EmptyState extends StatelessWidget {
   const _EmptyState();
 
@@ -1972,7 +2196,7 @@ String _formatPinnedBadgeText(_PinnedAlertBadge badge) {
         (level) => '${level.multiplier}倍 ${level.price.toStringAsFixed(4)}',
       )
       .join(' · ');
-  return '${badge.label} · $targets';
+  return '${badge.label} · $targets · 最高到 ${badge.maxReachedMultiple.toStringAsFixed(2)} 倍截止';
 }
 
 String _formatDateTime(DateTime dateTime) {

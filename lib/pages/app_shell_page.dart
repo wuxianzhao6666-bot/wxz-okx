@@ -14,7 +14,7 @@ class AppShellPage extends StatefulWidget {
 
 class _AppShellPageState extends State<AppShellPage> {
   int _selectedIndex = 0;
-  OkxEndpointConfig _selectedEndpoint = OkxEndpointConfig.global;
+  OkxEndpointConfig _selectedEndpoint = OkxEndpointConfig.us;
 
   @override
   Widget build(BuildContext context) {

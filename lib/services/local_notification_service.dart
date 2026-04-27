@@ -1,16 +1,25 @@
+import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:flutter/services.dart';
 
 class LocalNotificationService {
   LocalNotificationService._();
 
   static final LocalNotificationService instance = LocalNotificationService._();
+  static const MethodChannel _attentionChannel = MethodChannel(
+    'aiokx/app_attention',
+  );
 
   final FlutterLocalNotificationsPlugin _plugin =
       FlutterLocalNotificationsPlugin();
 
+  final ValueNotifier<bool> alarmActive = ValueNotifier<bool>(false);
+
   bool _initialized = false;
   int _notificationId = 0;
+  Timer? _iosAlarmTimer;
 
   Future<void> initialize() async {
     if (_initialized) {
@@ -47,11 +56,12 @@ class LocalNotificationService {
       importance: Importance.max,
       priority: Priority.high,
       ticker: 'ticker',
+      playSound: false,
     );
     const darwinDetails = DarwinNotificationDetails(
       presentAlert: true,
       presentBadge: true,
-      presentSound: true,
+      presentSound: false,
     );
     const details = NotificationDetails(
       android: androidDetails,
@@ -66,6 +76,78 @@ class LocalNotificationService {
       body: body,
       notificationDetails: details,
     );
+    await startPersistentAlarm();
+    await _requestDockAttention();
+  }
+
+  Future<void> togglePersistentAlarm() async {
+    if (alarmActive.value) {
+      await stopPersistentAlarm();
+      return;
+    }
+    await startPersistentAlarm();
+  }
+
+  Future<void> startPersistentAlarm() async {
+    if (alarmActive.value) {
+      return;
+    }
+    alarmActive.value = true;
+
+    if (kIsWeb) {
+      return;
+    }
+
+    try {
+      switch (defaultTargetPlatform) {
+        case TargetPlatform.iOS:
+          _playIosAlarmTick();
+          _iosAlarmTimer?.cancel();
+          _iosAlarmTimer = Timer.periodic(
+            const Duration(seconds: 2),
+            (_) => _playIosAlarmTick(),
+          );
+        case TargetPlatform.macOS:
+          await _attentionChannel.invokeMethod<void>('startPersistentAlarm');
+        case TargetPlatform.android:
+          await HapticFeedback.vibrate();
+        case TargetPlatform.fuchsia:
+        case TargetPlatform.linux:
+        case TargetPlatform.windows:
+          break;
+      }
+    } catch (_) {
+      alarmActive.value = false;
+    }
+  }
+
+  Future<void> stopPersistentAlarm() async {
+    _iosAlarmTimer?.cancel();
+    _iosAlarmTimer = null;
+
+    if (!alarmActive.value) {
+      return;
+    }
+    alarmActive.value = false;
+
+    if (kIsWeb) {
+      return;
+    }
+
+    try {
+      switch (defaultTargetPlatform) {
+        case TargetPlatform.macOS:
+          await _attentionChannel.invokeMethod<void>('stopPersistentAlarm');
+        case TargetPlatform.iOS:
+        case TargetPlatform.android:
+        case TargetPlatform.fuchsia:
+        case TargetPlatform.linux:
+        case TargetPlatform.windows:
+          break;
+      }
+    } catch (_) {
+      // Ignore stop failures and let the UI continue.
+    }
   }
 
   Future<void> _requestPermissions() async {
@@ -92,5 +174,21 @@ class LocalNotificationService {
       badge: true,
       sound: true,
     );
+  }
+
+  Future<void> _requestDockAttention() async {
+    if (kIsWeb || defaultTargetPlatform != TargetPlatform.macOS) {
+      return;
+    }
+    try {
+      await _attentionChannel.invokeMethod<void>('requestDockAttention');
+    } catch (_) {
+      // Keep notifications working even if the native macOS bridge is unavailable.
+    }
+  }
+
+  void _playIosAlarmTick() {
+    unawaited(SystemSound.play(SystemSoundType.alert));
+    unawaited(HapticFeedback.heavyImpact());
   }
 }

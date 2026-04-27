@@ -1,7 +1,5 @@
 import 'dart:convert';
-import 'dart:io' show Platform;
 
-import 'package:cupertino_http/cupertino_http.dart';
 import 'package:http/http.dart' as http;
 
 import '../models/candle_interval.dart';
@@ -15,9 +13,8 @@ class GateApiService {
   final http.Client _client;
 
   static http.Client _createClient() {
-    if (Platform.isIOS || Platform.isMacOS) {
-      return CupertinoClient.defaultSessionConfiguration();
-    }
+    // Gate requests can stall behind the Apple networking stack on some
+    // proxy/VPN setups, so prefer the default Dart IO client here.
     return http.Client();
   }
 
@@ -73,7 +70,7 @@ class GateApiService {
             'User-Agent': 'aiokx-scanner/1.0',
           },
         )
-        .timeout(const Duration(seconds: 15));
+        .timeout(const Duration(seconds: 30));
 
     if (response.statusCode != 200) {
       throw GateApiException(

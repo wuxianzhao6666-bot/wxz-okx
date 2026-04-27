@@ -37,6 +37,7 @@ class _GateScannerPageState extends State<GateScannerPage> {
   final Set<String> _expandedInstIds = <String>{};
   final Set<String> _loadingHistoryKeys = <String>{};
   final Set<String> _triggeredMonitorSignatures = <String>{};
+  final Set<String> _dismissedMonitorSignatures = <String>{};
   final Map<String, GateTicker24h> _pendingTickerUpdates =
       <String, GateTicker24h>{};
 
@@ -100,7 +101,7 @@ class _GateScannerPageState extends State<GateScannerPage> {
         for (final entry in tickerMap.entries)
           if (contractsById.containsKey(entry.key) &&
               entry.value.changePercent24h.isFinite)
-            entry.key: entry.value,
+              entry.key: entry.value,
       };
       final rankings = _buildTopRankings(contractsById, filteredTickerMap);
       final nextIds = rankings.map((item) => item.contract.name).toSet();
@@ -479,11 +480,20 @@ class _GateScannerPageState extends State<GateScannerPage> {
       return;
     }
 
-    final nextBadges = hits
+    final visibleHits = hits
+        .where((hit) => !_dismissedMonitorSignatures.contains(hit.signature))
+        .toList();
+    if (visibleHits.isEmpty) {
+      return;
+    }
+
+    final nextBadges = visibleHits
         .map(
           (hit) => _PinnedAlertBadge(
+            signature: hit.signature,
             label: hit.label,
             targetPrices: hit.targetPrices,
+            maxReachedMultiple: hit.maxReachedMultiple,
           ),
         )
         .toList();
@@ -493,14 +503,30 @@ class _GateScannerPageState extends State<GateScannerPage> {
       badges: nextBadges,
     );
 
-    unawaited(
-      LocalNotificationService.instance.showMonitorAlert(
-        title: '${contract.displayName} 监控命中',
-        body: '命中标签: ${nextBadges.map(_formatPinnedBadgeText).join(' / ')}，已加入顶部置顶。',
-      ),
-    );
+    final newHits = visibleHits.where((hit) => hit.isNew).toList();
+    if (newHits.isNotEmpty) {
+      final newBadges = newHits
+          .map(
+            (hit) => _PinnedAlertBadge(
+              signature: hit.signature,
+              label: hit.label,
+              targetPrices: hit.targetPrices,
+              maxReachedMultiple: hit.maxReachedMultiple,
+            ),
+          )
+          .toList();
+      unawaited(
+        LocalNotificationService.instance.showMonitorAlert(
+          title: '${contract.displayName} 监控命中',
+          body:
+              '命中标签: ${newBadges.map(_formatPinnedBadgeText).join(' / ')}，已加入顶部置顶。',
+        ),
+      );
+    }
 
-    if (!_hasShownMonitorDialog && !_isMonitorDialogVisible) {
+    if (newHits.isNotEmpty &&
+        !_hasShownMonitorDialog &&
+        !_isMonitorDialogVisible) {
       _hasShownMonitorDialog = true;
       _isMonitorDialogVisible = true;
       unawaited(_showMonitorDialog(nextEntry, nextBadges));
@@ -530,18 +556,19 @@ class _GateScannerPageState extends State<GateScannerPage> {
         rule: 'c1',
         openTime: latest.openTime,
       );
-      if (_triggeredMonitorSignatures.add(signature)) {
-        hits.add(
-          _MonitorHit(
-            signature: signature,
-            label: '${_intervalLabel(interval)} · 条件1',
-            targetPrices: _computeCondition1TargetPrices(
-              previous: previous,
-              latest: latest,
-            ),
+      final isNew = _triggeredMonitorSignatures.add(signature);
+      hits.add(
+        _MonitorHit(
+          signature: signature,
+          label: '${_intervalLabel(interval)} · 条件1',
+          targetPrices: _computeCondition1TargetPrices(
+            previous: previous,
+            latest: latest,
           ),
-        );
-      }
+          maxReachedMultiple: latest.amplitudeRatio / previous.amplitudeRatio,
+          isNew: isNew,
+        ),
+      );
     }
 
     return hits;
@@ -558,7 +585,8 @@ class _GateScannerPageState extends State<GateScannerPage> {
     final existingBadges = existing?.badges ?? const <_PinnedAlertBadge>[];
     final mergedBadges = <String, _PinnedAlertBadge>{
       for (final badge in existingBadges) badge.label: badge,
-      for (final badge in badges) badge.label: badge,
+      for (final badge in badges)
+        badge.label: _mergePinnedBadge(existing: existingBadges, next: badge),
     }.values.toList();
 
     final nextEntry = _PinnedAlertEntry(
@@ -580,6 +608,31 @@ class _GateScannerPageState extends State<GateScannerPage> {
     });
 
     return nextEntry;
+  }
+
+  _PinnedAlertBadge _mergePinnedBadge({
+    required List<_PinnedAlertBadge> existing,
+    required _PinnedAlertBadge next,
+  }) {
+    _PinnedAlertBadge? current;
+    for (final badge in existing) {
+      if (badge.label == next.label) {
+        current = badge;
+        break;
+      }
+    }
+    if (current == null) {
+      return next;
+    }
+    return _PinnedAlertBadge(
+      signature: next.signature,
+      label: next.label,
+      targetPrices: next.targetPrices,
+      maxReachedMultiple: math.max(
+        current.maxReachedMultiple,
+        next.maxReachedMultiple,
+      ),
+    );
   }
 
   Future<void> _showMonitorDialog(
@@ -627,10 +680,20 @@ class _GateScannerPageState extends State<GateScannerPage> {
 
   void _removePinnedAlert(String instId) {
     setState(() {
+      final match = _pinnedAlerts.where((entry) => entry.instId == instId);
+      for (final entry in match) {
+        _dismissedMonitorSignatures.addAll(
+          entry.badges.map((badge) => badge.signature),
+        );
+      }
       _pinnedAlerts = _pinnedAlerts
           .where((entry) => entry.instId != instId)
           .toList();
     });
+  }
+
+  Future<void> _toggleAlarmSound() async {
+    await LocalNotificationService.instance.togglePersistentAlarm();
   }
 
   String _monitorSignature({
@@ -673,6 +736,16 @@ class _GateScannerPageState extends State<GateScannerPage> {
       appBar: AppBar(
         title: const Text('Gate'),
         actions: [
+          ValueListenableBuilder<bool>(
+            valueListenable: LocalNotificationService.instance.alarmActive,
+            builder: (context, isActive, _) => IconButton(
+              onPressed: _toggleAlarmSound,
+              tooltip: isActive ? '停止警报声' : '启动警报声',
+              icon: Icon(
+                isActive ? Icons.notifications_active : Icons.volume_up_outlined,
+              ),
+            ),
+          ),
           IconButton(
             onPressed: _isRefreshing ? null : () => _bootstrapMarketData(),
             tooltip: '立即刷新',
@@ -1487,21 +1560,29 @@ class _MonitorHit {
     required this.signature,
     required this.label,
     required this.targetPrices,
+    required this.maxReachedMultiple,
+    required this.isNew,
   });
 
   final String signature;
   final String label;
   final List<_TargetPriceLevel> targetPrices;
+  final double maxReachedMultiple;
+  final bool isNew;
 }
 
 class _PinnedAlertBadge {
   const _PinnedAlertBadge({
+    required this.signature,
     required this.label,
     required this.targetPrices,
+    required this.maxReachedMultiple,
   });
 
+  final String signature;
   final String label;
   final List<_TargetPriceLevel> targetPrices;
+  final double maxReachedMultiple;
 }
 
 class _TargetPriceLevel {
@@ -1550,7 +1631,7 @@ String _formatPinnedBadgeText(_PinnedAlertBadge badge) {
         (level) => '${level.multiplier}倍 ${level.price.toStringAsFixed(4)}',
       )
       .join(' · ');
-  return '${badge.label} · $targets';
+  return '${badge.label} · $targets · 最高到 ${badge.maxReachedMultiple.toStringAsFixed(2)} 倍截止';
 }
 
 String _formatDateTime(DateTime dateTime) {
