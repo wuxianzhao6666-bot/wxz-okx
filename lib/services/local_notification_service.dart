@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter/services.dart';
@@ -19,7 +17,6 @@ class LocalNotificationService {
 
   bool _initialized = false;
   int _notificationId = 0;
-  Timer? _iosAlarmTimer;
 
   Future<void> initialize() async {
     if (_initialized) {
@@ -101,12 +98,7 @@ class LocalNotificationService {
     try {
       switch (defaultTargetPlatform) {
         case TargetPlatform.iOS:
-          _playIosAlarmTick();
-          _iosAlarmTimer?.cancel();
-          _iosAlarmTimer = Timer.periodic(
-            const Duration(seconds: 2),
-            (_) => _playIosAlarmTick(),
-          );
+          await _attentionChannel.invokeMethod<void>('startPersistentAlarm');
         case TargetPlatform.macOS:
           await _attentionChannel.invokeMethod<void>('startPersistentAlarm');
         case TargetPlatform.android:
@@ -122,9 +114,6 @@ class LocalNotificationService {
   }
 
   Future<void> stopPersistentAlarm() async {
-    _iosAlarmTimer?.cancel();
-    _iosAlarmTimer = null;
-
     if (!alarmActive.value) {
       return;
     }
@@ -137,8 +126,8 @@ class LocalNotificationService {
     try {
       switch (defaultTargetPlatform) {
         case TargetPlatform.macOS:
-          await _attentionChannel.invokeMethod<void>('stopPersistentAlarm');
         case TargetPlatform.iOS:
+          await _attentionChannel.invokeMethod<void>('stopPersistentAlarm');
         case TargetPlatform.android:
         case TargetPlatform.fuchsia:
         case TargetPlatform.linux:
@@ -185,10 +174,5 @@ class LocalNotificationService {
     } catch (_) {
       // Keep notifications working even if the native macOS bridge is unavailable.
     }
-  }
-
-  void _playIosAlarmTick() {
-    unawaited(SystemSound.play(SystemSoundType.alert));
-    unawaited(HapticFeedback.heavyImpact());
   }
 }
