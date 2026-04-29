@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="730" viewBox="0 0 1400 730">
+<rect width="100%" height="100%" fill="#fcfcfc"/>
+<text x="48" y="58" font-size="30" font-weight="700" fill="#111111">最高倍数 Top 10</text>
+<text x="48" y="96" font-size="18" fill="#555555">按每个币历史最高候选倍数排序；命中次数为达到 10 倍的总次数</text>
+<text x="240" y="142" font-size="19" fill="#111111" text-anchor="end">MOODENG-USDT-SWAP</text>
+<rect x="260" y="120" width="1020.00" height="30" rx="8" fill="#efefef"/>
+<rect x="260" y="120" width="1020.00" height="30" rx="8" fill="#e74c3c"/>
+<text x="1292.00" y="142" font-size="18" fill="#333333">37.12x | 命中 1 次</text>
+<text x="240" y="194" font-size="19" fill="#111111" text-anchor="end">ORDER-USDT-SWAP</text>
+<rect x="260" y="172" width="1020.00" height="30" rx="8" fill="#efefef"/>
+<rect x="260" y="172" width="808.79" height="30" rx="8" fill="#e74c3c"/>
+<text x="1080.79" y="194" font-size="18" fill="#333333">29.44x | 命中 1 次</text>
+<text x="240" y="246" font-size="19" fill="#111111" text-anchor="end">AUCTION-USDT-SWAP</text>
+<rect x="260" y="224" width="1020.00" height="30" rx="8" fill="#efefef"/>
+<rect x="260" y="224" width="770.75" height="30" rx="8" fill="#e74c3c"/>
+<text x="1042.75" y="246" font-size="18" fill="#333333">28.05x | 命中 1 次</text>
+<text x="240" y="298" font-size="19" fill="#111111" text-anchor="end">VANA-USDT-SWAP</text>
+<rect x="260" y="276" width="1020.00" height="30" rx="8" fill="#efefef"/>
+<rect x="260" y="276" width="620.71" height="30" rx="8" fill="#e74c3c"/>
+<text x="892.71" y="298" font-size="18" fill="#333333">22.59x | 命中 1 次</text>
+<text x="240" y="350" font-size="19" fill="#111111" text-anchor="end">ONT-USDT-SWAP</text>
+<rect x="260" y="328" width="1020.00" height="30" rx="8" fill="#efefef"/>
+<rect x="260" y="328" width="598.65" height="30" rx="8" fill="#e74c3c"/>
+<text x="870.65" y="350" font-size="18" fill="#333333">21.79x | 命中 2 次</text>
+<text x="240" y="402" font-size="19" fill="#111111" text-anchor="end">LAYER-USDT-SWAP</text>
+<rect x="260" y="380" width="1020.00" height="30" rx="8" fill="#efefef"/>
+<rect x="260" y="380" width="548.48" height="30" rx="8" fill="#e74c3c"/>
+<text x="820.48" y="402" font-size="18" fill="#333333">19.96x | 命中 1 次</text>
+<text x="240" y="454" font-size="19" fill="#111111" text-anchor="end">HMSTR-USDT-SWAP</text>
+<rect x="260" y="432" width="1020.00" height="30" rx="8" fill="#efefef"/>
+<rect x="260" y="432" width="519.90" height="30" rx="8" fill="#e74c3c"/>
+<text x="791.90" y="454" font-size="18" fill="#333333">18.92x | 命中 1 次</text>
+<text x="240" y="506" font-size="19" fill="#111111" text-anchor="end">MAGIC-USDT-SWAP</text>
+<rect x="260" y="484" width="1020.00" height="30" rx="8" fill="#efefef"/>
+<rect x="260" y="484" width="483.01" height="30" rx="8" fill="#e74c3c"/>
+<text x="755.01" y="506" font-size="18" fill="#333333">17.58x | 命中 2 次</text>
+<text x="240" y="558" font-size="19" fill="#111111" text-anchor="end">FLOW-USDT-SWAP</text>
+<rect x="260" y="536" width="1020.00" height="30" rx="8" fill="#efefef"/>
+<rect x="260" y="536" width="473.00" height="30" rx="8" fill="#e74c3c"/>
+<text x="745.00" y="558" font-size="18" fill="#333333">17.22x | 命中 1 次</text>
+<text x="240" y="610" font-size="19" fill="#111111" text-anchor="end">JTO-USDT-SWAP</text>
+<rect x="260" y="588" width="1020.00" height="30" rx="8" fill="#efefef"/>
+<rect x="260" y="588" width="448.02" height="30" rx="8" fill="#e74c3c"/>
+<text x="720.02" y="610" font-size="18" fill="#333333">16.31x | 命中 1 次</text>
+</svg>

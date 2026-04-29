@@ -4,6 +4,8 @@ import csv
 import json
 import math
 import os
+import signal
+import shutil
 import subprocess
 import sys
 import time
@@ -17,6 +19,7 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEFAULT_OUTPUT_DIR = os.path.join(PROJECT_ROOT, "analysis_outputs", "okx_tenfold")
 DEFAULT_SCANNED_FILE = os.path.join(DEFAULT_OUTPUT_DIR, "scanned_symbols.txt")
 DEFAULT_HIT_LIST_FILE = os.path.join(DEFAULT_OUTPUT_DIR, "tenfold_hit_symbols.txt")
+DEFAULT_PROGRESS_FILE = os.path.join(DEFAULT_OUTPUT_DIR, "scan_progress.jsonl")
 NINEFOLD_CHART_THRESHOLD = 9.0
 
 
@@ -27,6 +30,7 @@ class Candle:
     high: float
     low: float
     close: float
+    volume: float
 
     @property
     def is_bullish(self) -> bool:
@@ -184,6 +188,14 @@ def parse_args() -> argparse.Namespace:
         ),
     )
     parser.add_argument(
+        "--progress-file",
+        default=DEFAULT_PROGRESS_FILE,
+        help=(
+            "Path to save per-symbol scan progress with full candle data as JSONL. "
+            "Default: analysis_outputs/okx_tenfold/scan_progress.jsonl"
+        ),
+    )
+    parser.add_argument(
         "--rescan",
         action="store_true",
         help="Ignore scanned_symbols.txt and rescan all selected symbols.",
@@ -325,6 +337,7 @@ def fetch_candles(
             high=float(row[2]),
             low=float(row[3]),
             close=float(row[4]),
+            volume=float(row[5]),
         )
         for row in rows
         if str(row[8]) == "1"
@@ -564,14 +577,20 @@ def analyze_symbol(candles: list[Candle], threshold: float) -> dict[str, Any]:
             continue
 
         multiple = latest.amplitude_ratio / previous.amplitude_ratio
+        volume_multiple = (
+            latest.volume / previous.volume if previous.volume > 0 else None
+        )
         candidate = {
             "time_cn": format_ts(latest.ts),
             "hit_ts": latest.ts,
             "multiple": multiple,
             "previous_amplitude_percent": previous.amplitude_percent,
             "previous_change_percent": previous.change_percent,
+            "previous_volume": previous.volume,
             "hit_amplitude_percent": latest.amplitude_percent,
             "hit_change_percent": latest.change_percent,
+            "hit_volume": latest.volume,
+            "volume_multiple": volume_multiple,
             "hit_ohlc": [latest.open, latest.high, latest.low, latest.close],
             "next_candle_change_percent": (
                 candles[index + 1].change_percent if index + 1 < len(candles) else None
@@ -584,7 +603,7 @@ def analyze_symbol(candles: list[Candle], threshold: float) -> dict[str, Any]:
         if highest_candidate is None or candidate["multiple"] > highest_candidate["multiple"]:
             highest_candidate = candidate
 
-        if multiple >= NINEFOLD_CHART_THRESHOLD:
+        if NINEFOLD_CHART_THRESHOLD <= multiple < threshold:
             ninefold_events.append(candidate)
 
         if multiple >= threshold:
@@ -636,6 +655,15 @@ def print_report(inst_id: str, summary: dict[str, Any], threshold: float) -> Non
         print(
             f"- 当时这一根涨跌幅: {highest_candidate['hit_change_percent']:.4f}%",
         )
+        if highest_candidate["volume_multiple"] is None:
+            print("- 当时成交量倍数: 无法计算（前一根成交量为0）")
+        else:
+            print(
+                "- 当时成交量倍数: "
+                f"{highest_candidate['hit_volume']:.4f} / "
+                f"{highest_candidate['previous_volume']:.4f} = "
+                f"{highest_candidate['volume_multiple']:.4f}x",
+            )
         if highest_candidate["next_candle_change_percent"] is not None:
             print(
                 "- 该根后的第二根涨跌幅: "
@@ -659,6 +687,15 @@ def print_report(inst_id: str, summary: dict[str, Any], threshold: float) -> Non
         print(f"     - 十倍前涨幅: {event['previous_change_percent']:.4f}%")
         print(f"     - 命中K线振幅: {event['hit_amplitude_percent']:.4f}%")
         print(f"     - 命中K线涨跌幅: {event['hit_change_percent']:.4f}%")
+        if event["volume_multiple"] is None:
+            print("     - 成交量倍数: 无法计算（前一根成交量为0）")
+        else:
+            print(
+                "     - 成交量倍数: "
+                f"{event['hit_volume']:.4f} / "
+                f"{event['previous_volume']:.4f} = "
+                f"{event['volume_multiple']:.4f}x",
+            )
         if event["next_candle_change_percent"] is None:
             print("     - 命中后第二根涨跌幅: 无后续确认K线")
         else:
@@ -688,8 +725,11 @@ def write_csv(path: str, results: dict[str, Any], threshold: float) -> None:
                 "event_multiple",
                 "previous_amplitude_percent",
                 "previous_change_percent",
+                "previous_volume",
                 "hit_amplitude_percent",
                 "hit_change_percent",
+                "hit_volume",
+                "volume_multiple",
                 "next_candle_change_percent",
                 "next_candle_time_cn",
             ],
@@ -713,7 +753,7 @@ def write_csv(path: str, results: dict[str, Any], threshold: float) -> None:
             ]
 
             if not events:
-                writer.writerow(common + ["", "", "", "", "", "", "", ""])
+                writer.writerow(common + ["", "", "", "", "", "", "", "", "", ""])
                 continue
 
             for index, event in enumerate(events, start=1):
@@ -725,8 +765,15 @@ def write_csv(path: str, results: dict[str, Any], threshold: float) -> None:
                         f"{event['multiple']:.6f}",
                         f"{event['previous_amplitude_percent']:.6f}",
                         f"{event['previous_change_percent']:.6f}",
+                        f"{event['previous_volume']:.6f}",
                         f"{event['hit_amplitude_percent']:.6f}",
                         f"{event['hit_change_percent']:.6f}",
+                        f"{event['hit_volume']:.6f}",
+                        (
+                            ""
+                            if event["volume_multiple"] is None
+                            else f"{event['volume_multiple']:.6f}"
+                        ),
                         (
                             ""
                             if event["next_candle_change_percent"] is None
@@ -753,6 +800,162 @@ def write_json(path: str, results: dict[str, Any]) -> None:
         json.dump(json_ready, file, ensure_ascii=False, indent=2)
 
 
+def build_progress_report_text(
+    inst_id: str,
+    summary: dict[str, Any],
+    threshold: float,
+) -> str:
+    lines = [
+        inst_id,
+        f"- 确认K线数量: {summary['confirmed_candle_count']}",
+        f"- {threshold:g}倍命中次数: {summary['hit_count']}",
+    ]
+
+    highest_candidate = summary["highest_candidate"]
+    if highest_candidate is None:
+        lines.append("- 没有可用于比较的有效样本")
+        return "\n".join(lines)
+
+    lines.append(
+        f"- 最高到: {highest_candidate['multiple']:.4f} 倍"
+        f"（{highest_candidate['time_cn']}）",
+    )
+
+    if summary["hit_count"] == 0:
+        lines.append(f"- 结论: 历史上未达到 {threshold:g} 倍条件")
+        lines.append(
+            f"- 当时十倍前振幅: {highest_candidate['previous_amplitude_percent']:.4f}%",
+        )
+        lines.append(
+            f"- 当时十倍前涨幅: {highest_candidate['previous_change_percent']:.4f}%",
+        )
+        lines.append(
+            f"- 命中K线振幅: {highest_candidate['hit_amplitude_percent']:.4f}%",
+        )
+        lines.append(
+            f"- 命中K线涨跌幅: {highest_candidate['hit_change_percent']:.4f}%",
+        )
+        if highest_candidate["volume_multiple"] is None:
+            lines.append("- 成交量倍数: 无法计算（前一根成交量为0）")
+        else:
+            lines.append(
+                "- 成交量倍数: "
+                f"{highest_candidate['hit_volume']:.4f} / "
+                f"{highest_candidate['previous_volume']:.4f} = "
+                f"{highest_candidate['volume_multiple']:.4f}x",
+            )
+        if highest_candidate["next_candle_change_percent"] is not None:
+            lines.append(
+                "- 命中后第二根涨跌幅: "
+                f"{highest_candidate['next_candle_change_percent']:.4f}%"
+                f"（{highest_candidate['next_candle_time_cn']}）",
+            )
+        return "\n".join(lines)
+
+    first_hit = summary["first_hit"]
+    highest_hit = summary["highest_hit"]
+    lines.append(f"- 首次达到{threshold:g}倍时间: {first_hit['time_cn']}")
+    lines.append(f"- 命中中的最高倍数: {highest_hit['multiple']:.4f} 倍")
+    lines.append("- 命中明细:")
+
+    for index, event in enumerate(summary["events"], start=1):
+        lines.append(
+            f"  {index}. 时间: {event['time_cn']} | 倍数: {event['multiple']:.4f}x",
+        )
+        lines.append(f"     - 十倍前振幅: {event['previous_amplitude_percent']:.4f}%")
+        lines.append(f"     - 十倍前涨幅: {event['previous_change_percent']:.4f}%")
+        lines.append(f"     - 命中K线振幅: {event['hit_amplitude_percent']:.4f}%")
+        lines.append(f"     - 命中K线涨跌幅: {event['hit_change_percent']:.4f}%")
+        if event["volume_multiple"] is None:
+            lines.append("     - 成交量倍数: 无法计算（前一根成交量为0）")
+        else:
+            lines.append(
+                "     - 成交量倍数: "
+                f"{event['hit_volume']:.4f} / "
+                f"{event['previous_volume']:.4f} = "
+                f"{event['volume_multiple']:.4f}x",
+            )
+        if event["next_candle_change_percent"] is None:
+            lines.append("     - 命中后第二根涨跌幅: 无后续确认K线")
+        else:
+            lines.append(
+                "     - 命中后第二根涨跌幅: "
+                f"{event['next_candle_change_percent']:.4f}%"
+                f"（{event['next_candle_time_cn']}）",
+            )
+    return "\n".join(lines)
+
+
+def serialize_progress_summary(
+    inst_id: str,
+    summary: dict[str, Any],
+    threshold: float,
+    status: str,
+    scan_index: int,
+    total_targets: int,
+    elapsed_seconds: float,
+    generated_svg_count: int = 0,
+) -> dict[str, Any]:
+    payload: dict[str, Any] = {
+        "inst_id": inst_id,
+        "status": status,
+        "scan_index": scan_index,
+        "total_targets": total_targets,
+        "elapsed_seconds": round(elapsed_seconds, 3),
+        "generated_svg_count": generated_svg_count,
+    }
+    if "error" in summary:
+        payload["error"] = summary["error"]
+        return payload
+
+    payload.update(
+        {
+            "confirmed_candle_count": summary["confirmed_candle_count"],
+            "hit_count": summary["hit_count"],
+            "ninefold_hit_count": summary.get("ninefold_hit_count", 0),
+            "highest_candidate": summary["highest_candidate"],
+            "first_hit": summary["first_hit"],
+            "highest_hit": summary["highest_hit"],
+            "events": summary["events"],
+            "report_text": build_progress_report_text(inst_id, summary, threshold),
+        },
+    )
+    return payload
+
+
+def init_progress_file(path: str) -> None:
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+    with open(path, "w", encoding="utf-8"):
+        pass
+
+
+def append_progress_record(
+    path: str,
+    inst_id: str,
+    summary: dict[str, Any],
+    threshold: float,
+    status: str,
+    scan_index: int,
+    total_targets: int,
+    elapsed_seconds: float,
+    generated_svg_count: int = 0,
+) -> None:
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+    payload = serialize_progress_summary(
+        inst_id=inst_id,
+        summary=summary,
+        threshold=threshold,
+        status=status,
+        scan_index=scan_index,
+        total_targets=total_targets,
+        elapsed_seconds=elapsed_seconds,
+        generated_svg_count=generated_svg_count,
+    )
+    with open(path, "a", encoding="utf-8") as file:
+        file.write(json.dumps(payload, ensure_ascii=False))
+        file.write("\n")
+
+
 def render_charts(
     chart_dir: str,
     results: dict[str, Any],
@@ -761,10 +964,8 @@ def render_charts(
 ) -> list[str]:
     ninefold_chart_dir = os.path.join(chart_dir, "ninefold_hit_svgs")
     hit_chart_dir = os.path.join(chart_dir, "tenfold_hit_svgs")
-    sample_chart_dir = os.path.join(chart_dir, "highest_sample_svgs")
     os.makedirs(ninefold_chart_dir, exist_ok=True)
     os.makedirs(hit_chart_dir, exist_ok=True)
-    os.makedirs(sample_chart_dir, exist_ok=True)
     saved_paths: list[str] = []
 
     for inst_id, summary in results.items():
@@ -784,10 +985,7 @@ def render_charts(
             render_sets.append((tenfold_targets, f"{threshold:g}x_hit", hit_chart_dir))
 
         if not render_sets:
-            highest = summary.get("highest_candidate")
-            if highest is None:
-                continue
-            render_sets.append(([highest], "highest_sample", sample_chart_dir))
+            continue
 
         for targets, label_prefix, target_dir in render_sets:
             for index, target in enumerate(targets, start=1):
@@ -832,10 +1030,10 @@ def render_charts(
                 def x_of(candle_index: int) -> float:
                     return margin_left + candle_step * candle_index + candle_step / 2
 
-                title = "最高倍数样本"
+                title = "9倍命中"
                 if label_prefix == "9x_hit":
                     title = "9倍命中"
-                elif label_prefix != "highest_sample":
+                else:
                     title = "10倍命中"
 
                 svg_lines = [
@@ -931,12 +1129,7 @@ def render_charts(
 
                 time_label = compact_ts_label(hit_candle.ts)
                 multiple_label = f"{target['multiple']:.2f}x".replace(".", "_")
-                if label_prefix == "highest_sample":
-                    filename = (
-                        f"{slugify_inst_id(inst_id)}__HIGHEST_SAMPLE__"
-                        f"{time_label}__{multiple_label}.svg"
-                    )
-                elif label_prefix == "9x_hit":
+                if label_prefix == "9x_hit":
                     filename = (
                         f"{slugify_inst_id(inst_id)}__NINEFOLD_HIT__"
                         f"{time_label}__{multiple_label}__event_{index}.svg"
@@ -954,6 +1147,47 @@ def render_charts(
     return saved_paths
 
 
+def clear_chart_svgs(chart_dir: str, subdirs: tuple[str, ...]) -> None:
+    for subdir in subdirs:
+        target_dir = os.path.join(chart_dir, subdir)
+        if not os.path.isdir(target_dir):
+            continue
+        for filename in os.listdir(target_dir):
+            if filename.endswith(".svg"):
+                os.remove(os.path.join(target_dir, filename))
+
+
+def backup_chart_svgs(chart_dir: str, subdirs: tuple[str, ...]) -> str | None:
+    backup_root: str | None = None
+    timestamp = datetime.now(tz=CN_TZ).strftime("%Y%m%d_%H%M%S")
+
+    for subdir in subdirs:
+        target_dir = os.path.join(chart_dir, subdir)
+        if not os.path.isdir(target_dir):
+            continue
+
+        svg_names = [
+            filename
+            for filename in os.listdir(target_dir)
+            if filename.endswith(".svg")
+        ]
+        if not svg_names:
+            continue
+
+        if backup_root is None:
+            backup_root = os.path.join(chart_dir, "_backup_runs", timestamp)
+
+        backup_subdir = os.path.join(backup_root, subdir)
+        os.makedirs(backup_subdir, exist_ok=True)
+        for filename in svg_names:
+            shutil.move(
+                os.path.join(target_dir, filename),
+                os.path.join(backup_subdir, filename),
+            )
+
+    return backup_root
+
+
 def clear_existing_symbol_charts(chart_dir: str, inst_id: str) -> None:
     symbol_prefix = f"{slugify_inst_id(inst_id)}__"
     for subdir in ("ninefold_hit_svgs", "tenfold_hit_svgs", "highest_sample_svgs"):
@@ -963,6 +1197,22 @@ def clear_existing_symbol_charts(chart_dir: str, inst_id: str) -> None:
         for filename in os.listdir(target_dir):
             if filename.startswith(symbol_prefix) and filename.endswith(".svg"):
                 os.remove(os.path.join(target_dir, filename))
+
+
+def render_symbol_charts(
+    chart_dir: str,
+    inst_id: str,
+    summary: dict[str, Any],
+    threshold: float,
+    chart_window: int,
+) -> list[str]:
+    clear_existing_symbol_charts(chart_dir, inst_id)
+    return render_charts(
+        chart_dir=chart_dir,
+        results={inst_id: summary},
+        threshold=threshold,
+        chart_window=chart_window,
+    )
 
 
 def render_summary_charts(
@@ -1196,7 +1446,7 @@ def render_summary_charts(
     return saved_paths
 
 
-def persist_progress_outputs(
+def finalize_outputs(
     results: dict[str, Any],
     threshold: float,
     output_json: str | None,
@@ -1205,38 +1455,44 @@ def persist_progress_outputs(
     chart_window: int,
     hit_list_file: str,
     hit_symbols: list[str],
-    latest_inst_id: str | None = None,
-) -> None:
+    generate_charts: bool,
+) -> tuple[list[str], list[str]]:
     if output_json:
         write_json(output_json, results)
 
     if output_csv:
         write_csv(output_csv, results, threshold)
 
-    if output_chart_dir:
-        if latest_inst_id is not None and latest_inst_id in results:
-            clear_existing_symbol_charts(output_chart_dir, latest_inst_id)
-            render_charts(
-                chart_dir=output_chart_dir,
-                results={latest_inst_id: results[latest_inst_id]},
-                threshold=threshold,
-                chart_window=chart_window,
-            )
-        render_summary_charts(
+    chart_paths: list[str] = []
+    summary_chart_paths: list[str] = []
+    if output_chart_dir and generate_charts:
+        clear_chart_svgs(output_chart_dir, ("summary_svgs",))
+        summary_chart_paths = render_summary_charts(
             chart_dir=output_chart_dir,
             results=results,
             threshold=threshold,
         )
 
     write_hit_list(hit_list_file, sorted(set(hit_symbols)))
+    return chart_paths, summary_chart_paths
+
+
+def install_signal_handlers() -> None:
+    def handle_termination(_signum: int, _frame: Any) -> None:
+        raise KeyboardInterrupt
+
+    signal.signal(signal.SIGTERM, handle_termination)
+    signal.signal(signal.SIGINT, handle_termination)
 
 
 def main() -> int:
     start_time = time.time()
+    install_signal_handlers()
     args = parse_args()
     output_json = args.json_out or os.path.join(DEFAULT_OUTPUT_DIR, "result.json")
     output_csv = args.csv_out or os.path.join(DEFAULT_OUTPUT_DIR, "result.csv")
     output_chart_dir = args.chart_dir or os.path.join(DEFAULT_OUTPUT_DIR, "charts")
+    progress_file = args.progress_file
     scanned_file = args.scanned_file
     hit_list_file = args.hit_list_file
     results: dict[str, Any] = {}
@@ -1298,39 +1554,112 @@ def main() -> int:
         print("没有新的币需要扫描。")
         return 0
 
+    init_progress_file(progress_file)
+    print(f"扫描进度文件: {progress_file}")
+    if output_chart_dir:
+        backup_dir = backup_chart_svgs(
+            output_chart_dir,
+            (
+                "ninefold_hit_svgs",
+                "tenfold_hit_svgs",
+                "highest_sample_svgs",
+                "summary_svgs",
+            ),
+        )
+        if backup_dir is not None:
+            print(f"已备份旧SVG到: {backup_dir}")
+
     cumulative_hit_symbols = 0
     cumulative_hit_events = 0
     hit_symbols: list[str] = []
+    interrupted = False
+    unexpected_error: Exception | None = None
 
-    for index, inst_id in enumerate(pending_symbols, start=1):
-        symbol_start_time = time.time()
-        print(
-            f"========== 开始扫描 [{index}/{len(pending_symbols)}] {inst_id} ==========",
-        )
-        try:
-            candles = fetch_candles(
-                host=args.host,
-                inst_id=inst_id,
-                bar=args.bar,
-                page_limit=args.page_limit,
-                max_pages=args.max_pages,
+    try:
+        for index, inst_id in enumerate(pending_symbols, start=1):
+            symbol_start_time = time.time()
+            print(
+                f"========== 开始扫描 [{index}/{len(pending_symbols)}] {inst_id} ==========",
             )
-            summary = analyze_symbol(candles, args.threshold)
-        except Exception as exc:  # noqa: BLE001
-            results[inst_id] = {"error": str(exc)}
-            persist_progress_outputs(
-                results=results,
-                threshold=args.threshold,
-                output_json=output_json,
-                output_csv=output_csv,
-                output_chart_dir=output_chart_dir,
-                chart_window=args.chart_window,
-                hit_list_file=hit_list_file,
-                hit_symbols=hit_symbols,
-                latest_inst_id=inst_id,
+            try:
+                candles = fetch_candles(
+                    host=args.host,
+                    inst_id=inst_id,
+                    bar=args.bar,
+                    page_limit=args.page_limit,
+                    max_pages=args.max_pages,
+                )
+                summary = analyze_symbol(candles, args.threshold)
+            except Exception as exc:  # noqa: BLE001
+                results[inst_id] = {"error": str(exc)}
+                append_progress_record(
+                    progress_file,
+                    inst_id,
+                    results[inst_id],
+                    args.threshold,
+                    "error",
+                    index,
+                    len(normalized_scan_targets),
+                    time.time() - symbol_start_time,
+                )
+                print(inst_id)
+                print(f"- 分析失败: {exc}")
+                print(
+                    f"[进度 {index}/{len(pending_symbols)}] 累计10倍命中币种: "
+                    f"{cumulative_hit_symbols}，累计10倍命中次数: {cumulative_hit_events}",
+                )
+                print(
+                    f"[扫描统计] 总目标: {len(normalized_scan_targets)} | "
+                    f"已扫描: {index} | 剩余: {len(pending_symbols) - index}",
+                )
+                print(
+                    f"[状态] 分析失败 | 本币耗时: "
+                    f"{format_duration(time.time() - symbol_start_time)}"
+                )
+                print()
+                continue
+
+            results[inst_id] = summary
+            print_report(inst_id, summary, args.threshold)
+            append_scanned_symbol(scanned_file, inst_id)
+            symbol_chart_paths: list[str] = []
+            if output_chart_dir:
+                symbol_chart_paths = render_symbol_charts(
+                    chart_dir=output_chart_dir,
+                    inst_id=inst_id,
+                    summary=summary,
+                    threshold=args.threshold,
+                    chart_window=args.chart_window,
+                )
+                print(f"- 已生成单币SVG: {len(symbol_chart_paths)} 张")
+            append_progress_record(
+                progress_file,
+                inst_id,
+                summary,
+                args.threshold,
+                "hit" if summary["hit_count"] > 0 else "no_hit",
+                index,
+                len(normalized_scan_targets),
+                time.time() - symbol_start_time,
+                generated_svg_count=len(symbol_chart_paths),
             )
-            print(inst_id)
-            print(f"- 分析失败: {exc}")
+            if summary["hit_count"] > 0:
+                cumulative_hit_symbols += 1
+                cumulative_hit_events += summary["hit_count"]
+                hit_symbols.append(inst_id)
+                print(
+                    f"!!! 10倍命中 {inst_id} | 次数: {summary['hit_count']} | "
+                    f"最高: {summary['highest_hit']['multiple']:.4f}x !!!",
+                )
+                print(
+                    f"[状态] 命中 | 本币耗时: "
+                    f"{format_duration(time.time() - symbol_start_time)}",
+                )
+            else:
+                print(
+                    f"[状态] 未命中 | 本币耗时: "
+                    f"{format_duration(time.time() - symbol_start_time)}",
+                )
             print(
                 f"[进度 {index}/{len(pending_symbols)}] 累计10倍命中币种: "
                 f"{cumulative_hit_symbols}，累计10倍命中次数: {cumulative_hit_events}",
@@ -1339,51 +1668,29 @@ def main() -> int:
                 f"[扫描统计] 总目标: {len(normalized_scan_targets)} | "
                 f"已扫描: {index} | 剩余: {len(pending_symbols) - index}",
             )
-            print(f"[状态] 分析失败 | 本币耗时: {format_duration(time.time() - symbol_start_time)}")
+            print(f"- 已写入扫描记录: {scanned_file}")
+            print(f"- 已写入扫描进度文件: {progress_file}")
             print()
-            continue
-
-        results[inst_id] = summary
-        print_report(inst_id, summary, args.threshold)
-        append_scanned_symbol(scanned_file, inst_id)
-        if summary["hit_count"] > 0:
-            cumulative_hit_symbols += 1
-            cumulative_hit_events += summary["hit_count"]
-            hit_symbols.append(inst_id)
-            print(
-                f"!!! 10倍命中 {inst_id} | 次数: {summary['hit_count']} | "
-                f"最高: {summary['highest_hit']['multiple']:.4f}x !!!",
-            )
-            print(
-                f"[状态] 命中 | 本币耗时: {format_duration(time.time() - symbol_start_time)}",
-            )
-        else:
-            print(
-                f"[状态] 未命中 | 本币耗时: {format_duration(time.time() - symbol_start_time)}",
-            )
-        persist_progress_outputs(
-            results=results,
-            threshold=args.threshold,
-            output_json=output_json,
-            output_csv=output_csv,
-            output_chart_dir=output_chart_dir,
-            chart_window=args.chart_window,
-            hit_list_file=hit_list_file,
-            hit_symbols=hit_symbols,
-            latest_inst_id=inst_id,
-        )
-        print(
-            f"[进度 {index}/{len(pending_symbols)}] 累计10倍命中币种: "
-            f"{cumulative_hit_symbols}，累计10倍命中次数: {cumulative_hit_events}",
-        )
-        print(
-            f"[扫描统计] 总目标: {len(normalized_scan_targets)} | "
-            f"已扫描: {index} | 剩余: {len(pending_symbols) - index}",
-        )
-        print(f"- 已写入扫描记录: {scanned_file}")
-        if output_chart_dir:
-            print(f"- 已实时更新图表目录: {output_chart_dir}")
+    except KeyboardInterrupt:
+        interrupted = True
         print()
+        print("检测到扫描被中断，开始基于当前已扫描结果生成输出文件和SVG图表...")
+    except Exception as exc:  # noqa: BLE001
+        unexpected_error = exc
+        print()
+        print(f"扫描过程中发生异常，开始基于当前已扫描结果生成输出文件和SVG图表: {exc}")
+
+    chart_paths, summary_chart_paths = finalize_outputs(
+        results=results,
+        threshold=args.threshold,
+        output_json=output_json,
+        output_csv=output_csv,
+        output_chart_dir=output_chart_dir,
+        chart_window=args.chart_window,
+        hit_list_file=hit_list_file,
+        hit_symbols=hit_symbols,
+        generate_charts=True,
+    )
 
     if output_json:
         print(f"JSON 已写入: {output_json}")
@@ -1392,34 +1699,24 @@ def main() -> int:
         print(f"CSV 已写入: {output_csv}")
 
     if output_chart_dir:
-        chart_paths = render_charts(
-            chart_dir=output_chart_dir,
-            results=results,
-            threshold=args.threshold,
-            chart_window=args.chart_window,
-        )
-        summary_chart_paths = render_summary_charts(
-            chart_dir=output_chart_dir,
-            results=results,
-            threshold=args.threshold,
-        )
-        print(f"图表已生成: {len(chart_paths)} 张")
-        for path in chart_paths:
-            print(f"- {path}")
+        print("单币SVG已在扫描过程中逐个生成。")
         print(f"汇总分析图已生成: {len(summary_chart_paths)} 张")
         for path in summary_chart_paths:
             print(f"- {path}")
         print(f"- 9倍命中图目录: {os.path.join(output_chart_dir, 'ninefold_hit_svgs')}")
         print(f"- 10倍命中图目录: {os.path.join(output_chart_dir, 'tenfold_hit_svgs')}")
-        print(f"- 非命中最高样本图目录: {os.path.join(output_chart_dir, 'highest_sample_svgs')}")
         print(f"- 汇总分析图目录: {os.path.join(output_chart_dir, 'summary_svgs')}")
 
     unique_hit_symbols = sorted(set(hit_symbols))
-    write_hit_list(hit_list_file, unique_hit_symbols)
     print(f"10倍命中币清单已写入: {hit_list_file}")
     print(f"10倍命中币种总数: {len(unique_hit_symbols)}")
     print(f"本次扫描总耗时: {format_duration(time.time() - start_time)}")
 
+    if interrupted:
+        return 130
+    if unexpected_error is not None:
+        print(f"未预期异常详情: {unexpected_error}")
+        return 1
     return 0
 
 

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+<rect width="100%" height="100%" fill="#fcfcfc"/>
+<text x="48" y="58" font-size="30" font-weight="700" fill="#111111">10倍扫描结果占比</text>
+<text x="48" y="96" font-size="18" fill="#555555">总币数: 300 | 命中币种: 49 | 命中次数: 58</text>
+<path d="M 320.00 360.00 L 320.00 150.00 A 210 210 0 0 1 499.63 251.21 Z" fill="#e74c3c" opacity="0.92"/>
+<path d="M 320.00 360.00 L 499.63 251.21 A 210 210 0 1 1 320.00 150.00 Z" fill="#3498db" opacity="0.92"/>
+<circle cx="320" cy="360" r="98" fill="#fcfcfc"/>
+<text x="320" y="354" font-size="36" font-weight="700" fill="#111111" text-anchor="middle">300</text>
+<text x="320" y="388" font-size="18" fill="#666666" text-anchor="middle">扫描总数</text>
+<rect x="690" y="202" width="28" height="28" rx="6" fill="#e74c3c"/>
+<text x="734" y="220" font-size="24" font-weight="600" fill="#111111">命中</text>
+<text x="734" y="250" font-size="18" fill="#555555">49 个币，占比 16.33%</text>
+<rect x="690" y="294" width="28" height="28" rx="6" fill="#3498db"/>
+<text x="734" y="312" font-size="24" font-weight="600" fill="#111111">未命中</text>
+<text x="734" y="342" font-size="18" fill="#555555">251 个币，占比 83.67%</text>
+<rect x="690" y="386" width="28" height="28" rx="6" fill="#95a5a6"/>
+<text x="734" y="404" font-size="24" font-weight="600" fill="#111111">失败</text>
+<text x="734" y="434" font-size="18" fill="#555555">0 个币，占比 0.00%</text>
+</svg>
