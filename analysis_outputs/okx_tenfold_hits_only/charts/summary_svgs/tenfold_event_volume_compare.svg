@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="636" viewBox="0 0 1600 636">
+<rect width="100%" height="100%" fill="#fcfcfc"/>
+<text x="48" y="58" font-size="30" font-weight="700" fill="#111111">10倍命中成交量倍数对比</text>
+<text x="48" y="96" font-size="18" fill="#555555">展示所有10倍命中事件的成交量倍数，从高到低排序</text>
+<text x="362" y="145" font-size="14" fill="#111111" text-anchor="end">VANA-USDT-SWAP 2026-02-09 21:00:00</text>
+<rect x="380" y="130" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="130" width="1100.00" height="18" rx="6" fill="#8e44ad"/>
+<text x="1490.00" y="145" font-size="13" fill="#333333">236.44x</text>
+<text x="362" y="175" font-size="14" fill="#111111" text-anchor="end">VIRTUAL-USDT-SWAP 2025-04-11 18:00:00</text>
+<rect x="380" y="160" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="160" width="539.16" height="18" rx="6" fill="#8e44ad"/>
+<text x="929.16" y="175" font-size="13" fill="#333333">115.89x</text>
+<text x="362" y="205" font-size="14" fill="#111111" text-anchor="end">UMA-USDT-SWAP 2025-11-09 16:00:00</text>
+<rect x="380" y="190" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="190" width="501.12" height="18" rx="6" fill="#8e44ad"/>
+<text x="891.12" y="205" font-size="13" fill="#333333">107.71x</text>
+<text x="362" y="235" font-size="14" fill="#111111" text-anchor="end">UMA-USDT-SWAP 2025-06-06 22:00:00</text>
+<rect x="380" y="220" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="220" width="461.34" height="18" rx="6" fill="#8e44ad"/>
+<text x="851.34" y="235" font-size="13" fill="#333333">99.16x</text>
+<text x="362" y="265" font-size="14" fill="#111111" text-anchor="end">1INCH-USDT-SWAP 2023-11-08 15:00:00</text>
+<rect x="380" y="250" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="250" width="456.85" height="18" rx="6" fill="#8e44ad"/>
+<text x="846.85" y="265" font-size="13" fill="#333333">98.20x</text>
+<text x="362" y="295" font-size="14" fill="#111111" text-anchor="end">0G-USDT-SWAP 2026-04-13 00:00:00</text>
+<rect x="380" y="280" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="280" width="348.14" height="18" rx="6" fill="#8e44ad"/>
+<text x="738.14" y="295" font-size="13" fill="#333333">74.83x</text>
+<text x="362" y="325" font-size="14" fill="#111111" text-anchor="end">APE-USDT-SWAP 2024-10-20 05:00:00</text>
+<rect x="380" y="310" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="310" width="205.15" height="18" rx="6" fill="#8e44ad"/>
+<text x="595.15" y="325" font-size="13" fill="#333333">44.10x</text>
+<text x="362" y="355" font-size="14" fill="#111111" text-anchor="end">UMA-USDT-SWAP 2025-03-22 22:00:00</text>
+<rect x="380" y="340" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="340" width="180.13" height="18" rx="6" fill="#8e44ad"/>
+<text x="570.13" y="355" font-size="13" fill="#333333">38.72x</text>
+<text x="362" y="385" font-size="14" fill="#111111" text-anchor="end">2Z-USDT-SWAP 2025-11-22 00:00:00</text>
+<rect x="380" y="370" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="370" width="124.62" height="18" rx="6" fill="#8e44ad"/>
+<text x="514.62" y="385" font-size="13" fill="#333333">26.79x</text>
+<text x="362" y="415" font-size="14" fill="#111111" text-anchor="end">ANIME-USDT-SWAP 2025-11-22 04:00:00</text>
+<rect x="380" y="400" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="400" width="82.99" height="18" rx="6" fill="#8e44ad"/>
+<text x="472.99" y="415" font-size="13" fill="#333333">17.84x</text>
+<text x="362" y="445" font-size="14" fill="#111111" text-anchor="end">ZRX-USDT-SWAP 2025-12-30 08:00:00</text>
+<rect x="380" y="430" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="430" width="82.75" height="18" rx="6" fill="#8e44ad"/>
+<text x="472.75" y="445" font-size="13" fill="#333333">17.79x</text>
+<text x="362" y="475" font-size="14" fill="#111111" text-anchor="end">ZAMA-USDT-SWAP 2026-04-14 13:00:00</text>
+<rect x="380" y="460" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="460" width="79.76" height="18" rx="6" fill="#8e44ad"/>
+<text x="469.76" y="475" font-size="13" fill="#333333">17.14x</text>
+<text x="362" y="505" font-size="14" fill="#111111" text-anchor="end">VIRTUAL-USDT-SWAP 2025-01-31 16:00:00</text>
+<rect x="380" y="490" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="490" width="75.14" height="18" rx="6" fill="#8e44ad"/>
+<text x="465.14" y="505" font-size="13" fill="#333333">16.15x</text>
+<text x="362" y="535" font-size="14" fill="#111111" text-anchor="end">YGG-USDT-SWAP 2025-10-15 13:00:00</text>
+<rect x="380" y="520" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="520" width="59.30" height="18" rx="6" fill="#8e44ad"/>
+<text x="449.30" y="535" font-size="13" fill="#333333">12.75x</text>
+</svg>

@@ -1,0 +1,53 @@
+inst_id,status,confirmed_candle_count,hit_count,highest_multiple,highest_multiple_time_cn,first_hit_time_cn_10x,event_index,event_time_cn,event_multiple,previous_amplitude_percent,previous_change_percent,previous_volume,hit_amplitude_percent,hit_change_percent,hit_volume,volume_multiple,threshold_price,hit_close_vs_threshold_percent,hit_close_above_threshold,next_candle_change_percent,next_candle_time_cn,next_candle_close_vs_threshold_multiple,next_candle_close_vs_threshold_percent,next_candle_close_below_threshold,next_candle_low_vs_threshold_multiple,next_candle_low_vs_threshold_percent,next_candle_low_below_threshold,next_candle_high_vs_threshold_multiple,next_candle_high_vs_threshold_percent
+0G-USDT-SWAP,ok,5258,1,13.925020,2026-04-13 00:00:00,2026-04-13 00:00:00,1,2026-04-13 00:00:00,13.925020,1.868660,1.067806,224042.000000,26.021127,7.799296,16765411.000000,74.831554,0.673940,-9.146199,false,0.571709,2026-04-13 01:00:00,0.913583,-8.641703,true,0.889100,-11.089993,true,0.922486,-7.751416
+1INCH-USDT-SWAP,ok,24999,1,10.923386,2023-11-08 15:00:00,2023-11-08 15:00:00,1,2023-11-08 15:00:00,10.923386,1.928133,1.197780,484918.000000,21.061743,12.261973,47617362.000000,98.196730,0.412129,-5.587836,false,-2.057613,2023-11-08 16:00:00,0.923982,-7.601768,true,0.898262,-10.173777,true,0.948004,-5.199608
+2Z-USDT-SWAP,ok,5015,1,14.931071,2025-11-22 00:00:00,2025-11-22 00:00:00,1,2025-11-22 00:00:00,14.931071,3.833333,2.583333,649636.000000,57.235772,25.691057,17402024.000000,26.787346,0.168650,-8.330863,false,-3.171521,2025-11-22 01:00:00,0.887044,-11.295583,true,0.875778,-12.422176,true,0.972428,-2.757189
+ANIME-USDT-SWAP,ok,11061,1,12.733027,2025-11-22 04:00:00,2025-11-22 04:00:00,1,2025-11-22 04:00:00,12.733027,2.941637,2.081051,5276547.000000,37.455939,2.298851,94119142.000000,17.837260,0.008422,-20.747224,false,0.224719,2025-11-22 05:00:00,0.794309,-20.569128,true,0.767238,-23.276189,true,0.821379,-17.862067
+APE-USDT-SWAP,ok,24999,1,15.398009,2024-10-20 05:00:00,2024-10-20 05:00:00,1,2024-10-20 05:00:00,15.398009,1.460734,1.420531,4630161.000000,22.492401,20.589401,204170504.000000,44.095768,0.867234,5.219611,true,-3.660274,2024-10-20 06:00:00,1.013683,1.368285,false,1.000422,0.042230,false,1.060383,6.038306
+API3-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=API3-USDT-SWAP&bar=1H&limit=100&after=1737867600000: 
+ARKM-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=ARKM-USDT-SWAP&bar=1H&limit=100: 
+AUCTION-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=AUCTION-USDT-SWAP&bar=1H&limit=100: 
+BABY-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=BABY-USDT-SWAP&bar=1H&limit=100: 
+BAND-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=BAND-USDT-SWAP&bar=1H&limit=100: 
+BEAT-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=BEAT-USDT-SWAP&bar=1H&limit=100: 
+BIGTIME-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=BIGTIME-USDT-SWAP&bar=1H&limit=100: 
+BIO-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=BIO-USDT-SWAP&bar=1H&limit=100: 
+COMP-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=COMP-USDT-SWAP&bar=1H&limit=100: 
+FLOKI-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=FLOKI-USDT-SWAP&bar=1H&limit=100: 
+FLOW-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=FLOW-USDT-SWAP&bar=1H&limit=100: 
+GLM-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=GLM-USDT-SWAP&bar=1H&limit=100: 
+HMSTR-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=HMSTR-USDT-SWAP&bar=1H&limit=100: 
+IP-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=IP-USDT-SWAP&bar=1H&limit=100: 
+JTO-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=JTO-USDT-SWAP&bar=1H&limit=100: 
+KAITO-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=KAITO-USDT-SWAP&bar=1H&limit=100: 
+LAYER-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=LAYER-USDT-SWAP&bar=1H&limit=100: 
+LRC-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=LRC-USDT-SWAP&bar=1H&limit=100: 
+MAGIC-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=MAGIC-USDT-SWAP&bar=1H&limit=100: 
+MMT-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=MMT-USDT-SWAP&bar=1H&limit=100: 
+MON-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=MON-USDT-SWAP&bar=1H&limit=100: 
+MOODENG-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=MOODENG-USDT-SWAP&bar=1H&limit=100: 
+MOVE-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=MOVE-USDT-SWAP&bar=1H&limit=100: 
+MUBARAK-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=MUBARAK-USDT-SWAP&bar=1H&limit=100: 
+OL-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=OL-USDT-SWAP&bar=1H&limit=100: 
+ONT-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=ONT-USDT-SWAP&bar=1H&limit=100: 
+ORDER-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=ORDER-USDT-SWAP&bar=1H&limit=100: 
+ORDI-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=ORDI-USDT-SWAP&bar=1H&limit=100: 
+PEOPLE-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=PEOPLE-USDT-SWAP&bar=1H&limit=100: 
+PIEVERSE-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=PIEVERSE-USDT-SWAP&bar=1H&limit=100: 
+PUMP-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=PUMP-USDT-SWAP&bar=1H&limit=100: 
+RENDER-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=RENDER-USDT-SWAP&bar=1H&limit=100: 
+RESOLV-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=RESOLV-USDT-SWAP&bar=1H&limit=100: 
+ROBO-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=ROBO-USDT-SWAP&bar=1H&limit=100: 
+SHELL-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=SHELL-USDT-SWAP&bar=1H&limit=100: 
+SUSHI-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=SUSHI-USDT-SWAP&bar=1H&limit=100: 
+TRB-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=TRB-USDT-SWAP&bar=1H&limit=100: 
+TURBO-USDT-SWAP,error: curl failed (7) for https://my.okx.com/api/v5/market/history-candles?instId=TURBO-USDT-SWAP&bar=1H&limit=100: 
+UMA-USDT-SWAP,ok,24999,3,15.332583,2025-06-06 22:00:00,2025-03-22 22:00:00,1,2025-03-22 22:00:00,14.810769,1.741105,1.059803,2574324.000000,25.787106,19.040480,99671257.000000,38.717449,1.551263,2.368171,true,-1.636249,2025-03-22 23:00:00,1.007566,0.756581,false,0.967598,-3.240161,true,1.042376,4.237614
+UMA-USDT-SWAP,ok,24999,3,15.332583,2025-06-06 22:00:00,2025-03-22 22:00:00,2,2025-06-06 22:00:00,15.332583,1.637853,1.000910,296295.000000,25.112511,21.422142,29381209.000000,99.162014,1.290965,4.495440,true,-0.964392,2025-06-06 23:00:00,1.034110,3.410980,false,0.980661,-1.933857,true,1.111571,11.157121
+UMA-USDT-SWAP,ok,24999,3,15.332583,2025-06-06 22:00:00,2025-03-22 22:00:00,3,2025-11-09 16:00:00,14.326719,1.646943,1.282051,363583.000000,23.595287,9.007693,39162762.000000,107.713402,1.190425,-5.966321,false,-7.640068,2025-11-09 17:00:00,0.868262,-13.173834,true,0.867002,-13.299840,true,1.059790,5.978997
+VANA-USDT-SWAP,ok,11960,1,22.591265,2026-02-09 21:00:00,2026-02-09 21:00:00,1,2026-02-09 21:00:00,22.591265,1.318529,1.040944,81157.000000,29.787234,18.737131,19188717.000000,236.439457,1.648110,4.968744,true,2.719907,2026-02-09 22:00:00,1.076991,7.699145,false,1.026024,2.602397,false,1.115824,11.582382
+VIRTUAL-USDT-SWAP,ok,12098,2,12.339170,2025-04-11 18:00:00,2025-01-31 16:00:00,1,2025-01-31 16:00:00,11.513902,2.781470,1.604884,619448.000000,32.025574,11.241887,10005174.000000,16.151758,2.599562,-11.650511,false,-0.522739,2025-01-31 17:00:00,0.878456,-12.154442,true,0.867492,-13.250781,true,0.912346,-8.765410
+VIRTUAL-USDT-SWAP,ok,12098,2,12.339170,2025-04-11 18:00:00,2025-01-31 16:00:00,2,2025-04-11 18:00:00,12.339170,1.826196,1.091520,115187.000000,22.533749,12.045691,13348935.000000,115.889250,0.566731,-4.804986,false,-1.926996,2025-04-11 19:00:00,0.933952,-6.604780,true,0.919660,-8.034029,true,0.956714,-4.328569
+YGG-USDT-SWAP,ok,24999,1,10.893304,2025-10-15 13:00:00,2025-10-15 13:00:00,1,2025-10-15 13:00:00,10.893304,7.033426,3.272981,22795712.000000,76.617251,36.657682,290576336.000000,12.746973,0.252776,-19.770878,false,-2.910705,2025-10-15 14:00:00,0.778555,-22.144521,true,0.759170,-24.082996,true,0.879039,-12.096101
+ZAMA-USDT-SWAP,ok,2638,1,10.307155,2026-04-14 13:00:00,2026-04-14 13:00:00,1,2026-04-14 13:00:00,10.307155,2.290650,1.276756,694123.000000,23.610082,11.564122,11900022.000000,17.143967,0.033040,-8.898781,false,-7.009967,2026-04-14 14:00:00,0.847151,-15.284947,true,0.840492,-15.950803,true,0.937949,-6.205091
+ZRX-USDT-SWAP,ok,24999,1,11.043723,2025-12-30 08:00:00,2025-12-30 08:00:00,1,2025-12-30 08:00:00,11.043723,2.328967,1.018923,435293.000000,25.720461,18.659942,7742034.000000,17.785799,0.167126,-1.451632,false,-3.523694,2025-12-30 09:00:00,0.950181,-4.981901,true,0.926845,-7.315469,true,0.996852,-0.314766

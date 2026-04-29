@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+<rect width="100%" height="100%" fill="#fcfcfc"/>
+<text x="48" y="58" font-size="30" font-weight="700" fill="#111111">最高倍数分布</text>
+<text x="48" y="96" font-size="18" fill="#555555">统计每个币历史最高候选倍数落在哪个区间</text>
+<line x1="120" y1="110.00" x2="1130" y2="110.00" stroke="#dddddd" stroke-dasharray="4 4"/>
+<text x="102" y="116.00" font-size="14" fill="#666666" text-anchor="end">11</text>
+<line x1="120" y1="218.00" x2="1130" y2="218.00" stroke="#dddddd" stroke-dasharray="4 4"/>
+<text x="102" y="224.00" font-size="14" fill="#666666" text-anchor="end">9</text>
+<line x1="120" y1="326.00" x2="1130" y2="326.00" stroke="#dddddd" stroke-dasharray="4 4"/>
+<text x="102" y="332.00" font-size="14" fill="#666666" text-anchor="end">7</text>
+<line x1="120" y1="434.00" x2="1130" y2="434.00" stroke="#dddddd" stroke-dasharray="4 4"/>
+<text x="102" y="440.00" font-size="14" fill="#666666" text-anchor="end">4</text>
+<line x1="120" y1="542.00" x2="1130" y2="542.00" stroke="#dddddd" stroke-dasharray="4 4"/>
+<text x="102" y="548.00" font-size="14" fill="#666666" text-anchor="end">2</text>
+<line x1="120" y1="650.00" x2="1130" y2="650.00" stroke="#dddddd" stroke-dasharray="4 4"/>
+<text x="102" y="656.00" font-size="14" fill="#666666" text-anchor="end">0</text>
+<rect x="151.98" y="650.00" width="104.37" height="0.00" rx="10" fill="#95a5a6"/>
+<text x="204.17" y="638.00" font-size="18" fill="#222222" text-anchor="middle">0</text>
+<text x="204.17" y="716" font-size="18" fill="#555555" text-anchor="middle"><2x</text>
+<rect x="320.32" y="650.00" width="104.37" height="0.00" rx="10" fill="#5dade2"/>
+<text x="372.50" y="638.00" font-size="18" fill="#222222" text-anchor="middle">0</text>
+<text x="372.50" y="716" font-size="18" fill="#555555" text-anchor="middle">2-4x</text>
+<rect x="488.65" y="650.00" width="104.37" height="0.00" rx="10" fill="#48c9b0"/>
+<text x="540.83" y="638.00" font-size="18" fill="#222222" text-anchor="middle">0</text>
+<text x="540.83" y="716" font-size="18" fill="#555555" text-anchor="middle">4-6x</text>
+<rect x="656.98" y="650.00" width="104.37" height="0.00" rx="10" fill="#f5b041"/>
+<text x="709.17" y="638.00" font-size="18" fill="#222222" text-anchor="middle">0</text>
+<text x="709.17" y="716" font-size="18" fill="#555555" text-anchor="middle">6-8x</text>
+<rect x="825.32" y="650.00" width="104.37" height="0.00" rx="10" fill="#eb984e"/>
+<text x="877.50" y="638.00" font-size="18" fill="#222222" text-anchor="middle">0</text>
+<text x="877.50" y="716" font-size="18" fill="#555555" text-anchor="middle">8-10x</text>
+<rect x="993.65" y="110.00" width="104.37" height="540.00" rx="10" fill="#e74c3c"/>
+<text x="1045.83" y="98.00" font-size="18" fill="#222222" text-anchor="middle">11</text>
+<text x="1045.83" y="716" font-size="18" fill="#555555" text-anchor="middle">>=10x</text>
+</svg>
