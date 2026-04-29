@@ -1,0 +1,289 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2574" viewBox="0 0 1600 2574">
+<rect width="100%" height="100%" fill="#fcfcfc"/>
+<text x="48" y="58" font-size="30" font-weight="700" fill="#111111">10倍命中成交量倍数对比</text>
+<text x="48" y="96" font-size="18" fill="#555555">展示所有10倍命中事件的成交量倍数，从高到低排序</text>
+<text x="362" y="145" font-size="14" fill="#111111" text-anchor="end">UMA-USDT-SWAP 2026-02-16 20:00:00</text>
+<rect x="380" y="130" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="130" width="1100.00" height="18" rx="6" fill="#8e44ad"/>
+<text x="1490.00" y="145" font-size="13" fill="#333333">696.45x</text>
+<text x="362" y="175" font-size="14" fill="#111111" text-anchor="end">QTUM-USDT-SWAP 2025-01-31 20:00:00</text>
+<rect x="380" y="160" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="160" width="365.49" height="18" rx="6" fill="#8e44ad"/>
+<text x="755.49" y="175" font-size="13" fill="#333333">231.40x</text>
+<text x="362" y="205" font-size="14" fill="#111111" text-anchor="end">YGG-USDT-SWAP 2026-02-21 08:00:00</text>
+<rect x="380" y="190" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="190" width="302.33" height="18" rx="6" fill="#8e44ad"/>
+<text x="692.33" y="205" font-size="13" fill="#333333">191.42x</text>
+<text x="362" y="235" font-size="14" fill="#111111" text-anchor="end">MMT-USDT-SWAP 2026-03-12 08:00:00</text>
+<rect x="380" y="220" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="220" width="293.97" height="18" rx="6" fill="#8e44ad"/>
+<text x="683.97" y="235" font-size="13" fill="#333333">186.12x</text>
+<text x="362" y="265" font-size="14" fill="#111111" text-anchor="end">UMA-USDT-SWAP 2025-06-06 20:00:00</text>
+<rect x="380" y="250" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="250" width="280.83" height="18" rx="6" fill="#8e44ad"/>
+<text x="670.83" y="265" font-size="13" fill="#333333">177.80x</text>
+<text x="362" y="295" font-size="14" fill="#111111" text-anchor="end">RAY-USDT-SWAP 2026-04-26 08:00:00</text>
+<rect x="380" y="280" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="280" width="263.68" height="18" rx="6" fill="#8e44ad"/>
+<text x="653.68" y="295" font-size="13" fill="#333333">166.95x</text>
+<text x="362" y="325" font-size="14" fill="#111111" text-anchor="end">EGLD-USDT-SWAP 2023-11-05 08:00:00</text>
+<rect x="380" y="310" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="310" width="228.72" height="18" rx="6" fill="#8e44ad"/>
+<text x="618.72" y="325" font-size="13" fill="#333333">144.81x</text>
+<text x="362" y="355" font-size="14" fill="#111111" text-anchor="end">LPT-USDT-SWAP 2026-04-10 20:00:00</text>
+<rect x="380" y="340" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="340" width="214.03" height="18" rx="6" fill="#8e44ad"/>
+<text x="604.03" y="355" font-size="13" fill="#333333">135.51x</text>
+<text x="362" y="385" font-size="14" fill="#111111" text-anchor="end">TRB-USDT-SWAP 2022-06-08 04:00:00</text>
+<rect x="380" y="370" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="370" width="204.64" height="18" rx="6" fill="#8e44ad"/>
+<text x="594.64" y="385" font-size="13" fill="#333333">129.56x</text>
+<text x="362" y="415" font-size="14" fill="#111111" text-anchor="end">IMX-USDT-SWAP 2023-09-21 08:00:00</text>
+<rect x="380" y="400" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="400" width="188.93" height="18" rx="6" fill="#8e44ad"/>
+<text x="578.93" y="415" font-size="13" fill="#333333">119.62x</text>
+<text x="362" y="445" font-size="14" fill="#111111" text-anchor="end">GLM-USDT-SWAP 2024-09-21 08:00:00</text>
+<rect x="380" y="430" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="430" width="180.47" height="18" rx="6" fill="#8e44ad"/>
+<text x="570.47" y="445" font-size="13" fill="#333333">114.26x</text>
+<text x="362" y="475" font-size="14" fill="#111111" text-anchor="end">EDEN-USDT-SWAP 2025-12-16 12:00:00</text>
+<rect x="380" y="460" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="460" width="178.93" height="18" rx="6" fill="#8e44ad"/>
+<text x="568.93" y="475" font-size="13" fill="#333333">113.29x</text>
+<text x="362" y="505" font-size="14" fill="#111111" text-anchor="end">QTUM-USDT-SWAP 2025-12-13 08:00:00</text>
+<rect x="380" y="490" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="490" width="163.47" height="18" rx="6" fill="#8e44ad"/>
+<text x="553.47" y="505" font-size="13" fill="#333333">103.50x</text>
+<text x="362" y="535" font-size="14" fill="#111111" text-anchor="end">RVN-USDT-SWAP 2026-03-17 08:00:00</text>
+<rect x="380" y="520" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="520" width="159.95" height="18" rx="6" fill="#8e44ad"/>
+<text x="549.95" y="535" font-size="13" fill="#333333">101.27x</text>
+<text x="362" y="565" font-size="14" fill="#111111" text-anchor="end">LA-USDT-SWAP 2026-02-07 08:00:00</text>
+<rect x="380" y="550" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="550" width="151.73" height="18" rx="6" fill="#8e44ad"/>
+<text x="541.73" y="565" font-size="13" fill="#333333">96.07x</text>
+<text x="362" y="595" font-size="14" fill="#111111" text-anchor="end">WCT-USDT-SWAP 2025-12-30 16:00:00</text>
+<rect x="380" y="580" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="580" width="134.81" height="18" rx="6" fill="#8e44ad"/>
+<text x="524.81" y="595" font-size="13" fill="#333333">85.35x</text>
+<text x="362" y="625" font-size="14" fill="#111111" text-anchor="end">DOGE-USDT-SWAP 2021-01-28 12:00:00</text>
+<rect x="380" y="610" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="610" width="119.96" height="18" rx="6" fill="#8e44ad"/>
+<text x="509.96" y="625" font-size="13" fill="#333333">75.95x</text>
+<text x="362" y="655" font-size="14" fill="#111111" text-anchor="end">SOPH-USDT-SWAP 2025-12-20 00:00:00</text>
+<rect x="380" y="640" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="640" width="116.28" height="18" rx="6" fill="#8e44ad"/>
+<text x="506.28" y="655" font-size="13" fill="#333333">73.62x</text>
+<text x="362" y="685" font-size="14" fill="#111111" text-anchor="end">WAL-USDT-SWAP 2026-04-16 16:00:00</text>
+<rect x="380" y="670" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="670" width="116.24" height="18" rx="6" fill="#8e44ad"/>
+<text x="506.24" y="685" font-size="13" fill="#333333">73.59x</text>
+<text x="362" y="715" font-size="14" fill="#111111" text-anchor="end">LA-USDT-SWAP 2025-09-18 16:00:00</text>
+<rect x="380" y="700" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="700" width="110.99" height="18" rx="6" fill="#8e44ad"/>
+<text x="500.99" y="715" font-size="13" fill="#333333">70.27x</text>
+<text x="362" y="745" font-size="14" fill="#111111" text-anchor="end">ZETA-USDT-SWAP 2025-03-22 08:00:00</text>
+<rect x="380" y="730" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="730" width="106.50" height="18" rx="6" fill="#8e44ad"/>
+<text x="496.50" y="745" font-size="13" fill="#333333">67.43x</text>
+<text x="362" y="775" font-size="14" fill="#111111" text-anchor="end">LUNA-USDT-SWAP 2024-03-05 20:00:00</text>
+<rect x="380" y="760" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="760" width="103.05" height="18" rx="6" fill="#8e44ad"/>
+<text x="493.05" y="775" font-size="13" fill="#333333">65.24x</text>
+<text x="362" y="805" font-size="14" fill="#111111" text-anchor="end">F-USDT-SWAP 2026-02-08 08:00:00</text>
+<rect x="380" y="790" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="790" width="100.78" height="18" rx="6" fill="#8e44ad"/>
+<text x="490.78" y="805" font-size="13" fill="#333333">63.81x</text>
+<text x="362" y="835" font-size="14" fill="#111111" text-anchor="end">UMA-USDT-SWAP 2025-11-09 16:00:00</text>
+<rect x="380" y="820" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="820" width="97.90" height="18" rx="6" fill="#8e44ad"/>
+<text x="487.90" y="835" font-size="13" fill="#333333">61.98x</text>
+<text x="362" y="865" font-size="14" fill="#111111" text-anchor="end">PROVE-USDT-SWAP 2026-03-26 04:00:00</text>
+<rect x="380" y="850" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="850" width="96.37" height="18" rx="6" fill="#8e44ad"/>
+<text x="486.37" y="865" font-size="13" fill="#333333">61.01x</text>
+<text x="362" y="895" font-size="14" fill="#111111" text-anchor="end">EGLD-USDT-SWAP 2025-04-25 08:00:00</text>
+<rect x="380" y="880" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="880" width="90.95" height="18" rx="6" fill="#8e44ad"/>
+<text x="480.95" y="895" font-size="13" fill="#333333">57.58x</text>
+<text x="362" y="925" font-size="14" fill="#111111" text-anchor="end">KAITO-USDT-SWAP 2025-09-09 08:00:00</text>
+<rect x="380" y="910" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="910" width="85.22" height="18" rx="6" fill="#8e44ad"/>
+<text x="475.22" y="925" font-size="13" fill="#333333">53.96x</text>
+<text x="362" y="955" font-size="14" fill="#111111" text-anchor="end">GMX-USDT-SWAP 2024-08-24 16:00:00</text>
+<rect x="380" y="940" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="940" width="78.30" height="18" rx="6" fill="#8e44ad"/>
+<text x="468.30" y="955" font-size="13" fill="#333333">49.57x</text>
+<text x="362" y="985" font-size="14" fill="#111111" text-anchor="end">RLS-USDT-SWAP 2026-02-02 20:00:00</text>
+<rect x="380" y="970" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="970" width="71.25" height="18" rx="6" fill="#8e44ad"/>
+<text x="461.25" y="985" font-size="13" fill="#333333">45.11x</text>
+<text x="362" y="1015" font-size="14" fill="#111111" text-anchor="end">NMR-USDT-SWAP 2024-01-20 08:00:00</text>
+<rect x="380" y="1000" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1000" width="68.33" height="18" rx="6" fill="#8e44ad"/>
+<text x="458.33" y="1015" font-size="13" fill="#333333">43.26x</text>
+<text x="362" y="1045" font-size="14" fill="#111111" text-anchor="end">MEME-USDT-SWAP 2025-04-18 12:00:00</text>
+<rect x="380" y="1030" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1030" width="64.35" height="18" rx="6" fill="#8e44ad"/>
+<text x="454.35" y="1045" font-size="13" fill="#333333">40.74x</text>
+<text x="362" y="1075" font-size="14" fill="#111111" text-anchor="end">LPT-USDT-SWAP 2021-09-22 12:00:00</text>
+<rect x="380" y="1060" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1060" width="60.01" height="18" rx="6" fill="#8e44ad"/>
+<text x="450.01" y="1075" font-size="13" fill="#333333">37.99x</text>
+<text x="362" y="1105" font-size="14" fill="#111111" text-anchor="end">ORDER-USDT-SWAP 2025-10-24 12:00:00</text>
+<rect x="380" y="1090" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1090" width="59.06" height="18" rx="6" fill="#8e44ad"/>
+<text x="449.06" y="1105" font-size="13" fill="#333333">37.39x</text>
+<text x="362" y="1135" font-size="14" fill="#111111" text-anchor="end">BERA-USDT-SWAP 2026-04-04 16:00:00</text>
+<rect x="380" y="1120" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1120" width="57.95" height="18" rx="6" fill="#8e44ad"/>
+<text x="447.95" y="1135" font-size="13" fill="#333333">36.69x</text>
+<text x="362" y="1165" font-size="14" fill="#111111" text-anchor="end">ONT-USDT-SWAP 2025-12-27 16:00:00</text>
+<rect x="380" y="1150" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1150" width="57.92" height="18" rx="6" fill="#8e44ad"/>
+<text x="447.92" y="1165" font-size="13" fill="#333333">36.67x</text>
+<text x="362" y="1195" font-size="14" fill="#111111" text-anchor="end">LTC-USDT-SWAP 2021-09-13 20:00:00</text>
+<rect x="380" y="1180" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1180" width="57.88" height="18" rx="6" fill="#8e44ad"/>
+<text x="447.88" y="1195" font-size="13" fill="#333333">36.65x</text>
+<text x="362" y="1225" font-size="14" fill="#111111" text-anchor="end">UMA-USDT-SWAP 2024-05-09 00:00:00</text>
+<rect x="380" y="1210" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1210" width="56.81" height="18" rx="6" fill="#8e44ad"/>
+<text x="446.81" y="1225" font-size="13" fill="#333333">35.97x</text>
+<text x="362" y="1255" font-size="14" fill="#111111" text-anchor="end">BICO-USDT-SWAP 2023-11-15 12:00:00</text>
+<rect x="380" y="1240" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1240" width="56.47" height="18" rx="6" fill="#8e44ad"/>
+<text x="446.47" y="1255" font-size="13" fill="#333333">35.75x</text>
+<text x="362" y="1285" font-size="14" fill="#111111" text-anchor="end">CFX-USDT-SWAP 2022-03-24 16:00:00</text>
+<rect x="380" y="1270" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1270" width="53.59" height="18" rx="6" fill="#8e44ad"/>
+<text x="443.59" y="1285" font-size="13" fill="#333333">33.93x</text>
+<text x="362" y="1315" font-size="14" fill="#111111" text-anchor="end">LPT-USDT-SWAP 2025-04-22 20:00:00</text>
+<rect x="380" y="1300" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1300" width="52.45" height="18" rx="6" fill="#8e44ad"/>
+<text x="442.45" y="1315" font-size="13" fill="#333333">33.21x</text>
+<text x="362" y="1345" font-size="14" fill="#111111" text-anchor="end">BARD-USDT-SWAP 2026-02-28 12:00:00</text>
+<rect x="380" y="1330" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1330" width="51.32" height="18" rx="6" fill="#8e44ad"/>
+<text x="441.32" y="1345" font-size="13" fill="#333333">32.49x</text>
+<text x="362" y="1375" font-size="14" fill="#111111" text-anchor="end">PARTI-USDT-SWAP 2025-11-22 00:00:00</text>
+<rect x="380" y="1360" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1360" width="50.37" height="18" rx="6" fill="#8e44ad"/>
+<text x="440.37" y="1375" font-size="13" fill="#333333">31.89x</text>
+<text x="362" y="1405" font-size="14" fill="#111111" text-anchor="end">WET-USDT-SWAP 2026-04-13 16:00:00</text>
+<rect x="380" y="1390" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1390" width="45.75" height="18" rx="6" fill="#8e44ad"/>
+<text x="435.75" y="1405" font-size="13" fill="#333333">28.97x</text>
+<text x="362" y="1435" font-size="14" fill="#111111" text-anchor="end">LRC-USDT-SWAP 2021-08-22 20:00:00</text>
+<rect x="380" y="1420" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1420" width="45.68" height="18" rx="6" fill="#8e44ad"/>
+<text x="435.68" y="1435" font-size="13" fill="#333333">28.92x</text>
+<text x="362" y="1465" font-size="14" fill="#111111" text-anchor="end">BCH-USDT-SWAP 2024-03-02 08:00:00</text>
+<rect x="380" y="1450" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1450" width="42.82" height="18" rx="6" fill="#8e44ad"/>
+<text x="432.82" y="1465" font-size="13" fill="#333333">27.11x</text>
+<text x="362" y="1495" font-size="14" fill="#111111" text-anchor="end">JELLYJELLY-USDT-SWAP 2026-03-10 08:00:00</text>
+<rect x="380" y="1480" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1480" width="42.72" height="18" rx="6" fill="#8e44ad"/>
+<text x="432.72" y="1495" font-size="13" fill="#333333">27.05x</text>
+<text x="362" y="1525" font-size="14" fill="#111111" text-anchor="end">IOST-USDT-SWAP 2022-03-31 08:00:00</text>
+<rect x="380" y="1510" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1510" width="40.25" height="18" rx="6" fill="#8e44ad"/>
+<text x="430.25" y="1525" font-size="13" fill="#333333">25.49x</text>
+<text x="362" y="1555" font-size="14" fill="#111111" text-anchor="end">CELO-USDT-SWAP 2022-03-17 08:00:00</text>
+<rect x="380" y="1540" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1540" width="39.37" height="18" rx="6" fill="#8e44ad"/>
+<text x="429.37" y="1555" font-size="13" fill="#333333">24.93x</text>
+<text x="362" y="1585" font-size="14" fill="#111111" text-anchor="end">MINA-USDT-SWAP 2021-11-11 00:00:00</text>
+<rect x="380" y="1570" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1570" width="39.25" height="18" rx="6" fill="#8e44ad"/>
+<text x="429.25" y="1585" font-size="13" fill="#333333">24.85x</text>
+<text x="362" y="1615" font-size="14" fill="#111111" text-anchor="end">IP-USDT-SWAP 2025-08-30 20:00:00</text>
+<rect x="380" y="1600" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1600" width="36.14" height="18" rx="6" fill="#8e44ad"/>
+<text x="426.14" y="1615" font-size="13" fill="#333333">22.88x</text>
+<text x="362" y="1645" font-size="14" fill="#111111" text-anchor="end">RAY-USDT-SWAP 2025-03-19 04:00:00</text>
+<rect x="380" y="1630" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1630" width="35.94" height="18" rx="6" fill="#8e44ad"/>
+<text x="425.94" y="1645" font-size="13" fill="#333333">22.75x</text>
+<text x="362" y="1675" font-size="14" fill="#111111" text-anchor="end">DYDX-USDT-SWAP 2024-10-20 20:00:00</text>
+<rect x="380" y="1660" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1660" width="35.29" height="18" rx="6" fill="#8e44ad"/>
+<text x="425.29" y="1675" font-size="13" fill="#333333">22.35x</text>
+<text x="362" y="1705" font-size="14" fill="#111111" text-anchor="end">SOON-USDT-SWAP 2026-04-17 12:00:00</text>
+<rect x="380" y="1690" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1690" width="34.68" height="18" rx="6" fill="#8e44ad"/>
+<text x="424.68" y="1705" font-size="13" fill="#333333">21.96x</text>
+<text x="362" y="1735" font-size="14" fill="#111111" text-anchor="end">XTZ-USDT-SWAP 2025-11-06 20:00:00</text>
+<rect x="380" y="1720" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1720" width="30.52" height="18" rx="6" fill="#8e44ad"/>
+<text x="420.52" y="1735" font-size="13" fill="#333333">19.32x</text>
+<text x="362" y="1765" font-size="14" fill="#111111" text-anchor="end">AGLD-USDT-SWAP 2026-02-22 16:00:00</text>
+<rect x="380" y="1750" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1750" width="29.93" height="18" rx="6" fill="#8e44ad"/>
+<text x="419.93" y="1765" font-size="13" fill="#333333">18.95x</text>
+<text x="362" y="1795" font-size="14" fill="#111111" text-anchor="end">UMA-USDT-SWAP 2024-03-09 08:00:00</text>
+<rect x="380" y="1780" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1780" width="29.06" height="18" rx="6" fill="#8e44ad"/>
+<text x="419.06" y="1795" font-size="13" fill="#333333">18.40x</text>
+<text x="362" y="1825" font-size="14" fill="#111111" text-anchor="end">API3-USDT-SWAP 2024-01-28 00:00:00</text>
+<rect x="380" y="1810" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1810" width="28.77" height="18" rx="6" fill="#8e44ad"/>
+<text x="418.77" y="1825" font-size="13" fill="#333333">18.21x</text>
+<text x="362" y="1855" font-size="14" fill="#111111" text-anchor="end">ZKP-USDT-SWAP 2026-02-01 08:00:00</text>
+<rect x="380" y="1840" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1840" width="26.42" height="18" rx="6" fill="#8e44ad"/>
+<text x="416.42" y="1855" font-size="13" fill="#333333">16.73x</text>
+<text x="362" y="1885" font-size="14" fill="#111111" text-anchor="end">LRC-USDT-SWAP 2021-10-15 16:00:00</text>
+<rect x="380" y="1870" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1870" width="26.16" height="18" rx="6" fill="#8e44ad"/>
+<text x="416.16" y="1885" font-size="13" fill="#333333">16.56x</text>
+<text x="362" y="1915" font-size="14" fill="#111111" text-anchor="end">YGG-USDT-SWAP 2021-12-15 12:00:00</text>
+<rect x="380" y="1900" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1900" width="24.79" height="18" rx="6" fill="#8e44ad"/>
+<text x="414.79" y="1915" font-size="13" fill="#333333">15.70x</text>
+<text x="362" y="1945" font-size="14" fill="#111111" text-anchor="end">LUNA-USDT-SWAP 2024-05-30 20:00:00</text>
+<rect x="380" y="1930" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1930" width="24.12" height="18" rx="6" fill="#8e44ad"/>
+<text x="414.12" y="1945" font-size="13" fill="#333333">15.27x</text>
+<text x="362" y="1975" font-size="14" fill="#111111" text-anchor="end">JELLYJELLY-USDT-SWAP 2025-09-09 20:00:00</text>
+<rect x="380" y="1960" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1960" width="24.10" height="18" rx="6" fill="#8e44ad"/>
+<text x="414.10" y="1975" font-size="13" fill="#333333">15.26x</text>
+<text x="362" y="2005" font-size="14" fill="#111111" text-anchor="end">BAT-USDT-SWAP 2020-12-18 16:00:00</text>
+<rect x="380" y="1990" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="1990" width="20.54" height="18" rx="6" fill="#8e44ad"/>
+<text x="410.54" y="2005" font-size="13" fill="#333333">13.01x</text>
+<text x="362" y="2035" font-size="14" fill="#111111" text-anchor="end">CFX-USDT-SWAP 2021-09-19 00:00:00</text>
+<rect x="380" y="2020" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="2020" width="19.56" height="18" rx="6" fill="#8e44ad"/>
+<text x="409.56" y="2035" font-size="13" fill="#333333">12.39x</text>
+<text x="362" y="2065" font-size="14" fill="#111111" text-anchor="end">BIO-USDT-SWAP 2025-10-20 12:00:00</text>
+<rect x="380" y="2050" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="2050" width="18.27" height="18" rx="6" fill="#8e44ad"/>
+<text x="408.27" y="2065" font-size="13" fill="#333333">11.57x</text>
+<text x="362" y="2095" font-size="14" fill="#111111" text-anchor="end">MASK-USDT-SWAP 2021-05-07 20:00:00</text>
+<rect x="380" y="2080" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="2080" width="17.51" height="18" rx="6" fill="#8e44ad"/>
+<text x="407.51" y="2095" font-size="13" fill="#333333">11.09x</text>
+<text x="362" y="2125" font-size="14" fill="#111111" text-anchor="end">TRX-USDT-SWAP 2021-01-29 20:00:00</text>
+<rect x="380" y="2110" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="2110" width="13.01" height="18" rx="6" fill="#8e44ad"/>
+<text x="403.01" y="2125" font-size="13" fill="#333333">8.24x</text>
+<text x="362" y="2155" font-size="14" fill="#111111" text-anchor="end">MMT-USDT-SWAP 2025-11-21 20:00:00</text>
+<rect x="380" y="2140" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="2140" width="12.45" height="18" rx="6" fill="#8e44ad"/>
+<text x="402.45" y="2155" font-size="13" fill="#333333">7.88x</text>
+<text x="362" y="2185" font-size="14" fill="#111111" text-anchor="end">BEAT-USDT-SWAP 2025-11-20 20:00:00</text>
+<rect x="380" y="2170" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="2170" width="10.61" height="18" rx="6" fill="#8e44ad"/>
+<text x="400.61" y="2185" font-size="13" fill="#333333">6.72x</text>
+<text x="362" y="2215" font-size="14" fill="#111111" text-anchor="end">SOON-USDT-SWAP 2025-11-15 00:00:00</text>
+<rect x="380" y="2200" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="2200" width="6.36" height="18" rx="6" fill="#8e44ad"/>
+<text x="396.36" y="2215" font-size="13" fill="#333333">4.03x</text>
+<text x="362" y="2245" font-size="14" fill="#111111" text-anchor="end">SOON-USDT-SWAP 2025-11-18 20:00:00</text>
+<rect x="380" y="2230" width="1100.00" height="18" rx="6" fill="#efefef"/>
+<rect x="380" y="2230" width="5.47" height="18" rx="6" fill="#8e44ad"/>
+<text x="395.47" y="2245" font-size="13" fill="#333333">3.46x</text>
+</svg>

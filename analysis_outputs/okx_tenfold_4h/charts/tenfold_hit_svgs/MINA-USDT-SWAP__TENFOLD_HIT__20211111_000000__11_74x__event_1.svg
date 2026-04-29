@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760">
+<rect width="100%" height="100%" fill="#fcfcfc"/>
+<text x="90" y="36" font-size="26" font-weight="700" fill="#111111">MINA-USDT-SWAP 4H - 10倍命中</text>
+<line x1="90" y1="70.00" x2="1360" y2="70.00" stroke="#d9d9d9" stroke-dasharray="4 4" stroke-width="1"/>
+<text x="12" y="74.00" font-size="12" fill="#555555">6.590000</text>
+<line x1="90" y1="186.00" x2="1360" y2="186.00" stroke="#d9d9d9" stroke-dasharray="4 4" stroke-width="1"/>
+<text x="12" y="190.00" font-size="12" fill="#555555">6.105400</text>
+<line x1="90" y1="302.00" x2="1360" y2="302.00" stroke="#d9d9d9" stroke-dasharray="4 4" stroke-width="1"/>
+<text x="12" y="306.00" font-size="12" fill="#555555">5.620800</text>
+<line x1="90" y1="418.00" x2="1360" y2="418.00" stroke="#d9d9d9" stroke-dasharray="4 4" stroke-width="1"/>
+<text x="12" y="422.00" font-size="12" fill="#555555">5.136200</text>
+<line x1="90" y1="534.00" x2="1360" y2="534.00" stroke="#d9d9d9" stroke-dasharray="4 4" stroke-width="1"/>
+<text x="12" y="538.00" font-size="12" fill="#555555">4.651600</text>
+<line x1="90" y1="650.00" x2="1360" y2="650.00" stroke="#d9d9d9" stroke-dasharray="4 4" stroke-width="1"/>
+<text x="12" y="654.00" font-size="12" fill="#555555">4.167000</text>
+<rect x="687.65" y="70" width="74.71" height="580.00" fill="#f1c40f" opacity="0.16"/>
+<rect x="612.94" y="70" width="74.71" height="580.00" fill="#3498db" opacity="0.10"/>
+<line x1="127.35" y1="566.46" x2="127.35" y2="605.48" stroke="#e74c3c" stroke-width="2"/>
+<rect x="105.69" y="580.82" width="43.33" height="19.39" fill="#e74c3c" stroke="#e74c3c" stroke-width="1"/>
+<text x="127.35" y="704" font-size="11" fill="#555555" text-anchor="middle">11-09</text>
+<text x="127.35" y="720" font-size="11" fill="#555555" text-anchor="middle">16:00</text>
+<line x1="202.06" y1="593.75" x2="202.06" y2="627.98" stroke="#e74c3c" stroke-width="2"/>
+<rect x="180.39" y="600.69" width="43.33" height="16.28" fill="#e74c3c" stroke="#e74c3c" stroke-width="1"/>
+<text x="202.06" y="704" font-size="11" fill="#555555" text-anchor="middle">11-09</text>
+<text x="202.06" y="720" font-size="11" fill="#555555" text-anchor="middle">20:00</text>
+<line x1="276.76" y1="612.90" x2="276.76" y2="633.00" stroke="#e74c3c" stroke-width="2"/>
+<rect x="255.10" y="617.68" width="43.33" height="6.70" fill="#e74c3c" stroke="#e74c3c" stroke-width="1"/>
+<text x="276.76" y="704" font-size="11" fill="#555555" text-anchor="middle">11-10</text>
+<text x="276.76" y="720" font-size="11" fill="#555555" text-anchor="middle">00:00</text>
+<line x1="351.47" y1="599.97" x2="351.47" y2="627.50" stroke="#e74c3c" stroke-width="2"/>
+<rect x="329.81" y="624.63" width="43.33" height="2.15" fill="#e74c3c" stroke="#e74c3c" stroke-width="1"/>
+<text x="351.47" y="704" font-size="11" fill="#555555" text-anchor="middle">11-10</text>
+<text x="351.47" y="720" font-size="11" fill="#555555" text-anchor="middle">04:00</text>
+<line x1="426.18" y1="614.33" x2="426.18" y2="637.55" stroke="#e74c3c" stroke-width="2"/>
+<rect x="404.51" y="626.54" width="43.33" height="9.81" fill="#e74c3c" stroke="#e74c3c" stroke-width="1"/>
+<text x="426.18" y="704" font-size="11" fill="#555555" text-anchor="middle">11-10</text>
+<text x="426.18" y="720" font-size="11" fill="#555555" text-anchor="middle">08:00</text>
+<line x1="500.88" y1="621.51" x2="500.88" y2="650.00" stroke="#2ecc71" stroke-width="2"/>
+<rect x="479.22" y="621.99" width="43.33" height="14.36" fill="#2ecc71" stroke="#2ecc71" stroke-width="1"/>
+<text x="500.88" y="704" font-size="11" fill="#555555" text-anchor="middle">11-10</text>
+<text x="500.88" y="720" font-size="11" fill="#555555" text-anchor="middle">12:00</text>
+<line x1="575.59" y1="614.81" x2="575.59" y2="627.50" stroke="#e74c3c" stroke-width="2"/>
+<rect x="553.92" y="622.71" width="43.33" height="2.39" fill="#e74c3c" stroke="#e74c3c" stroke-width="1"/>
+<text x="575.59" y="704" font-size="11" fill="#555555" text-anchor="middle">11-10</text>
+<text x="575.59" y="720" font-size="11" fill="#555555" text-anchor="middle">16:00</text>
+<line x1="650.29" y1="607.15" x2="650.29" y2="640.90" stroke="#2ecc71" stroke-width="2"/>
+<rect x="628.63" y="612.66" width="43.33" height="12.21" fill="#2ecc71" stroke="#2ecc71" stroke-width="1"/>
+<text x="650.29" y="704" font-size="11" fill="#555555" text-anchor="middle">11-10</text>
+<text x="650.29" y="720" font-size="11" fill="#555555" text-anchor="middle">20:00</text>
+<line x1="725.00" y1="216.74" x2="725.00" y2="617.68" stroke="#2ecc71" stroke-width="2"/>
+<rect x="703.34" y="515.95" width="43.33" height="96.95" fill="#2ecc71" stroke="#2ecc71" stroke-width="1"/>
+<text x="725.00" y="704" font-size="11" fill="#555555" text-anchor="middle">11-11</text>
+<text x="725.00" y="720" font-size="11" fill="#555555" text-anchor="middle">00:00</text>
+<line x1="799.71" y1="330.92" x2="799.71" y2="548.75" stroke="#2ecc71" stroke-width="2"/>
+<rect x="778.04" y="417.81" width="43.33" height="97.66" fill="#2ecc71" stroke="#2ecc71" stroke-width="1"/>
+<text x="799.71" y="704" font-size="11" fill="#555555" text-anchor="middle">11-11</text>
+<text x="799.71" y="720" font-size="11" fill="#555555" text-anchor="middle">04:00</text>
+<line x1="874.41" y1="285.20" x2="874.41" y2="471.19" stroke="#e74c3c" stroke-width="2"/>
+<rect x="852.75" y="417.57" width="43.33" height="29.68" fill="#e74c3c" stroke="#e74c3c" stroke-width="1"/>
+<text x="874.41" y="704" font-size="11" fill="#555555" text-anchor="middle">11-11</text>
+<text x="874.41" y="720" font-size="11" fill="#555555" text-anchor="middle">08:00</text>
+<line x1="949.12" y1="391.00" x2="949.12" y2="452.28" stroke="#2ecc71" stroke-width="2"/>
+<rect x="927.45" y="425.71" width="43.33" height="21.54" fill="#2ecc71" stroke="#2ecc71" stroke-width="1"/>
+<text x="949.12" y="704" font-size="11" fill="#555555" text-anchor="middle">11-11</text>
+<text x="949.12" y="720" font-size="11" fill="#555555" text-anchor="middle">12:00</text>
+<line x1="1023.82" y1="83.17" x2="1023.82" y2="425.71" stroke="#2ecc71" stroke-width="2"/>
+<rect x="1002.16" y="98.72" width="43.33" height="326.98" fill="#2ecc71" stroke="#2ecc71" stroke-width="1"/>
+<text x="1023.82" y="704" font-size="11" fill="#555555" text-anchor="middle">11-11</text>
+<text x="1023.82" y="720" font-size="11" fill="#555555" text-anchor="middle">16:00</text>
+<line x1="1098.53" y1="70.00" x2="1098.53" y2="265.33" stroke="#e74c3c" stroke-width="2"/>
+<rect x="1076.86" y="98.01" width="43.33" height="120.17" fill="#e74c3c" stroke="#e74c3c" stroke-width="1"/>
+<text x="1098.53" y="704" font-size="11" fill="#555555" text-anchor="middle">11-11</text>
+<text x="1098.53" y="720" font-size="11" fill="#555555" text-anchor="middle">20:00</text>
+<line x1="1173.24" y1="158.33" x2="1173.24" y2="306.98" stroke="#e74c3c" stroke-width="2"/>
+<rect x="1151.57" y="217.69" width="43.33" height="33.75" fill="#e74c3c" stroke="#e74c3c" stroke-width="1"/>
+<text x="1173.24" y="704" font-size="11" fill="#555555" text-anchor="middle">11-12</text>
+<text x="1173.24" y="720" font-size="11" fill="#555555" text-anchor="middle">00:00</text>
+<line x1="1247.94" y1="174.13" x2="1247.94" y2="265.81" stroke="#2ecc71" stroke-width="2"/>
+<rect x="1226.28" y="236.36" width="43.33" height="14.84" fill="#2ecc71" stroke="#2ecc71" stroke-width="1"/>
+<text x="1247.94" y="704" font-size="11" fill="#555555" text-anchor="middle">11-12</text>
+<text x="1247.94" y="720" font-size="11" fill="#555555" text-anchor="middle">04:00</text>
+<line x1="1322.65" y1="128.41" x2="1322.65" y2="332.11" stroke="#e74c3c" stroke-width="2"/>
+<rect x="1300.98" y="236.12" width="43.33" height="87.61" fill="#e74c3c" stroke="#e74c3c" stroke-width="1"/>
+<text x="1322.65" y="704" font-size="11" fill="#555555" text-anchor="middle">11-12</text>
+<text x="1322.65" y="720" font-size="11" fill="#555555" text-anchor="middle">08:00</text>
+<line x1="725.00" y1="216.74" x2="805.00" y2="146.74" stroke="#f1c40f" stroke-width="2"/>
+<rect x="805.00" y="98.74" width="220" height="72" rx="8" fill="#fff8dc" stroke="#f1c40f"/>
+<text x="815.00" y="122.74" font-size="12" fill="#111111">目标K线 2021-11-11 00:00</text>
+<text x="815.00" y="140.74" font-size="12" fill="#111111">振幅 38.76%</text>
+<text x="815.00" y="158.74" font-size="12" fill="#111111">倍数 11.74x</text>
+<line x1="650.29" y1="607.15" x2="620.29" y2="567.15" stroke="#3498db" stroke-width="2"/>
+<rect x="400.29" y="531.15" width="220" height="58" rx="8" fill="#eef6ff" stroke="#3498db"/>
+<text x="410.29" y="553.15" font-size="12" fill="#111111">前一根涨幅 1.19%</text>
+<text x="410.29" y="571.15" font-size="12" fill="#111111">前一根振幅 3.30%</text>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="730" viewBox="0 0 1400 730">
+<rect width="100%" height="100%" fill="#fcfcfc"/>
+<text x="48" y="58" font-size="30" font-weight="700" fill="#111111">最高倍数 Top 10</text>
+<text x="48" y="96" font-size="18" fill="#555555">按每个币历史最高候选倍数排序；同时显示该最高样本对应的成交量倍数</text>
+<text x="240" y="142" font-size="19" fill="#111111" text-anchor="end">GMX-USDT-SWAP</text>
+<rect x="260" y="120" width="1020.00" height="30" rx="8" fill="#efefef"/>
+<rect x="260" y="120" width="1020.00" height="30" rx="8" fill="#e74c3c"/>
+<text x="1292.00" y="142" font-size="18" fill="#333333">22.78x | 命中 1 次 | 成交量 49.57x</text>
+<text x="240" y="194" font-size="19" fill="#111111" text-anchor="end">CELO-USDT-SWAP</text>
+<rect x="260" y="172" width="1020.00" height="30" rx="8" fill="#efefef"/>
+<rect x="260" y="172" width="1016.55" height="30" rx="8" fill="#e74c3c"/>
+<text x="1288.55" y="194" font-size="18" fill="#333333">22.70x | 命中 1 次 | 成交量 24.93x</text>
+<text x="240" y="246" font-size="19" fill="#111111" text-anchor="end">LUNA-USDT-SWAP</text>
+<rect x="260" y="224" width="1020.00" height="30" rx="8" fill="#efefef"/>
+<rect x="260" y="224" width="987.92" height="30" rx="8" fill="#e74c3c"/>
+<text x="1259.92" y="246" font-size="18" fill="#333333">22.06x | 命中 2 次 | 成交量 65.24x</text>
+<text x="240" y="298" font-size="19" fill="#111111" text-anchor="end">PROVE-USDT-SWAP</text>
+<rect x="260" y="276" width="1020.00" height="30" rx="8" fill="#efefef"/>
+<rect x="260" y="276" width="921.33" height="30" rx="8" fill="#e74c3c"/>
+<text x="1193.33" y="298" font-size="18" fill="#333333">20.58x | 命中 1 次 | 成交量 61.01x</text>
+<text x="240" y="350" font-size="19" fill="#111111" text-anchor="end">CFX-USDT-SWAP</text>
+<rect x="260" y="328" width="1020.00" height="30" rx="8" fill="#efefef"/>
+<rect x="260" y="328" width="892.16" height="30" rx="8" fill="#e74c3c"/>
+<text x="1164.16" y="350" font-size="18" fill="#333333">19.92x | 命中 2 次 | 成交量 12.39x</text>
+<text x="240" y="402" font-size="19" fill="#111111" text-anchor="end">LPT-USDT-SWAP</text>
+<rect x="260" y="380" width="1020.00" height="30" rx="8" fill="#efefef"/>
+<rect x="260" y="380" width="863.47" height="30" rx="8" fill="#e74c3c"/>
+<text x="1135.47" y="402" font-size="18" fill="#333333">19.28x | 命中 3 次 | 成交量 135.51x</text>
+<text x="240" y="454" font-size="19" fill="#111111" text-anchor="end">PARTI-USDT-SWAP</text>
+<rect x="260" y="432" width="1020.00" height="30" rx="8" fill="#efefef"/>
+<rect x="260" y="432" width="848.08" height="30" rx="8" fill="#e74c3c"/>
+<text x="1120.08" y="454" font-size="18" fill="#333333">18.94x | 命中 1 次 | 成交量 31.89x</text>
+<text x="240" y="506" font-size="19" fill="#111111" text-anchor="end">DYDX-USDT-SWAP</text>
+<rect x="260" y="484" width="1020.00" height="30" rx="8" fill="#efefef"/>
+<rect x="260" y="484" width="837.16" height="30" rx="8" fill="#e74c3c"/>
+<text x="1109.16" y="506" font-size="18" fill="#333333">18.70x | 命中 1 次 | 成交量 22.35x</text>
+<text x="240" y="558" font-size="19" fill="#111111" text-anchor="end">TRB-USDT-SWAP</text>
+<rect x="260" y="536" width="1020.00" height="30" rx="8" fill="#efefef"/>
+<rect x="260" y="536" width="818.10" height="30" rx="8" fill="#e74c3c"/>
+<text x="1090.10" y="558" font-size="18" fill="#333333">18.27x | 命中 1 次 | 成交量 129.56x</text>
+<text x="240" y="610" font-size="19" fill="#111111" text-anchor="end">BEAT-USDT-SWAP</text>
+<rect x="260" y="588" width="1020.00" height="30" rx="8" fill="#efefef"/>
+<rect x="260" y="588" width="801.63" height="30" rx="8" fill="#e74c3c"/>
+<text x="1073.63" y="610" font-size="18" fill="#333333">17.90x | 命中 1 次 | 成交量 6.72x</text>
+</svg>

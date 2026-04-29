@@ -79,7 +79,7 @@ class TickerRecord:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
-            "Analyze OKX 1H history for symbols that meet the project's "
+            "Analyze OKX candle history for symbols that meet the project's "
             "tenfold condition."
         ),
     )
@@ -580,6 +580,48 @@ def analyze_symbol(candles: list[Candle], threshold: float) -> dict[str, Any]:
         volume_multiple = (
             latest.volume / previous.volume if previous.volume > 0 else None
         )
+        threshold_price = latest.low + (latest.open * previous.amplitude_ratio * threshold)
+        hit_close_vs_threshold_percent = (
+            (latest.close - threshold_price) / threshold_price * 100
+            if threshold_price > 0
+            else None
+        )
+        next_candle = candles[index + 1] if index + 1 < len(candles) else None
+        next_candle_ohlc = (
+            None
+            if next_candle is None
+            else [next_candle.open, next_candle.high, next_candle.low, next_candle.close]
+        )
+        next_candle_high_vs_threshold_percent = (
+            None
+            if next_candle is None or threshold_price <= 0
+            else (next_candle.high - threshold_price) / threshold_price * 100
+        )
+        next_candle_high_vs_threshold_multiple = (
+            None
+            if next_candle is None or threshold_price <= 0
+            else next_candle.high / threshold_price
+        )
+        next_candle_low_vs_threshold_percent = (
+            None
+            if next_candle is None or threshold_price <= 0
+            else (next_candle.low - threshold_price) / threshold_price * 100
+        )
+        next_candle_low_vs_threshold_multiple = (
+            None
+            if next_candle is None or threshold_price <= 0
+            else next_candle.low / threshold_price
+        )
+        next_candle_close_vs_threshold_percent = (
+            None
+            if next_candle is None or threshold_price <= 0
+            else (next_candle.close - threshold_price) / threshold_price * 100
+        )
+        next_candle_close_vs_threshold_multiple = (
+            None
+            if next_candle is None or threshold_price <= 0
+            else next_candle.close / threshold_price
+        )
         candidate = {
             "time_cn": format_ts(latest.ts),
             "hit_ts": latest.ts,
@@ -591,12 +633,32 @@ def analyze_symbol(candles: list[Candle], threshold: float) -> dict[str, Any]:
             "hit_change_percent": latest.change_percent,
             "hit_volume": latest.volume,
             "volume_multiple": volume_multiple,
+            "threshold_price": threshold_price,
+            "hit_close_vs_threshold_percent": hit_close_vs_threshold_percent,
+            "hit_close_above_threshold": latest.close >= threshold_price,
             "hit_ohlc": [latest.open, latest.high, latest.low, latest.close],
             "next_candle_change_percent": (
-                candles[index + 1].change_percent if index + 1 < len(candles) else None
+                next_candle.change_percent if next_candle is not None else None
             ),
             "next_candle_time_cn": (
-                format_ts(candles[index + 1].ts) if index + 1 < len(candles) else None
+                format_ts(next_candle.ts) if next_candle is not None else None
+            ),
+            "next_candle_ohlc": next_candle_ohlc,
+            "next_candle_high_vs_threshold_percent": next_candle_high_vs_threshold_percent,
+            "next_candle_high_vs_threshold_multiple": next_candle_high_vs_threshold_multiple,
+            "next_candle_low_vs_threshold_percent": next_candle_low_vs_threshold_percent,
+            "next_candle_low_vs_threshold_multiple": next_candle_low_vs_threshold_multiple,
+            "next_candle_close_vs_threshold_percent": next_candle_close_vs_threshold_percent,
+            "next_candle_close_vs_threshold_multiple": next_candle_close_vs_threshold_multiple,
+            "next_candle_low_below_threshold": (
+                None
+                if next_candle is None
+                else next_candle.low < threshold_price
+            ),
+            "next_candle_close_below_threshold": (
+                None
+                if next_candle is None
+                else next_candle.close < threshold_price
             ),
         }
 
@@ -655,6 +717,12 @@ def print_report(inst_id: str, summary: dict[str, Any], threshold: float) -> Non
         print(
             f"- 当时这一根涨跌幅: {highest_candidate['hit_change_percent']:.4f}%",
         )
+        if highest_candidate["hit_close_vs_threshold_percent"] is not None:
+            print(
+                "- 收盘相对10倍价: "
+                f"{highest_candidate['hit_close_vs_threshold_percent']:.4f}%"
+                f"（{'高于' if highest_candidate['hit_close_above_threshold'] else '低于'}10倍价）",
+            )
         if highest_candidate["volume_multiple"] is None:
             print("- 当时成交量倍数: 无法计算（前一根成交量为0）")
         else:
@@ -687,6 +755,12 @@ def print_report(inst_id: str, summary: dict[str, Any], threshold: float) -> Non
         print(f"     - 十倍前涨幅: {event['previous_change_percent']:.4f}%")
         print(f"     - 命中K线振幅: {event['hit_amplitude_percent']:.4f}%")
         print(f"     - 命中K线涨跌幅: {event['hit_change_percent']:.4f}%")
+        if event["hit_close_vs_threshold_percent"] is not None:
+            print(
+                "     - 收盘相对10倍价: "
+                f"{event['hit_close_vs_threshold_percent']:.4f}%"
+                f"（{'高于' if event['hit_close_above_threshold'] else '低于'}10倍价）",
+            )
         if event["volume_multiple"] is None:
             print("     - 成交量倍数: 无法计算（前一根成交量为0）")
         else:
@@ -703,6 +777,12 @@ def print_report(inst_id: str, summary: dict[str, Any], threshold: float) -> Non
                 "     - 命中后第二根涨跌幅: "
                 f"{event['next_candle_change_percent']:.4f}%"
                 f"（{event['next_candle_time_cn']}）",
+            )
+        if event["next_candle_high_vs_threshold_percent"] is not None:
+            print(
+                "     - 第二根最高价相对10倍价: "
+                f"{event['next_candle_high_vs_threshold_multiple']:.4f}x "
+                f"({event['next_candle_high_vs_threshold_percent']:.4f}%)",
             )
     print()
 
@@ -730,8 +810,19 @@ def write_csv(path: str, results: dict[str, Any], threshold: float) -> None:
                 "hit_change_percent",
                 "hit_volume",
                 "volume_multiple",
+                "threshold_price",
+                "hit_close_vs_threshold_percent",
+                "hit_close_above_threshold",
                 "next_candle_change_percent",
                 "next_candle_time_cn",
+                "next_candle_close_vs_threshold_multiple",
+                "next_candle_close_vs_threshold_percent",
+                "next_candle_close_below_threshold",
+                "next_candle_low_vs_threshold_multiple",
+                "next_candle_low_vs_threshold_percent",
+                "next_candle_low_below_threshold",
+                "next_candle_high_vs_threshold_multiple",
+                "next_candle_high_vs_threshold_percent",
             ],
         )
 
@@ -753,7 +844,7 @@ def write_csv(path: str, results: dict[str, Any], threshold: float) -> None:
             ]
 
             if not events:
-                writer.writerow(common + ["", "", "", "", "", "", "", "", "", ""])
+                writer.writerow(common + ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""])
                 continue
 
             for index, event in enumerate(events, start=1):
@@ -774,12 +865,59 @@ def write_csv(path: str, results: dict[str, Any], threshold: float) -> None:
                             if event["volume_multiple"] is None
                             else f"{event['volume_multiple']:.6f}"
                         ),
+                        f"{event['threshold_price']:.6f}",
+                        (
+                            ""
+                            if event["hit_close_vs_threshold_percent"] is None
+                            else f"{event['hit_close_vs_threshold_percent']:.6f}"
+                        ),
+                        str(event["hit_close_above_threshold"]).lower(),
                         (
                             ""
                             if event["next_candle_change_percent"] is None
                             else f"{event['next_candle_change_percent']:.6f}"
                         ),
                         event["next_candle_time_cn"] or "",
+                        (
+                            ""
+                            if event["next_candle_close_vs_threshold_multiple"] is None
+                            else f"{event['next_candle_close_vs_threshold_multiple']:.6f}"
+                        ),
+                        (
+                            ""
+                            if event["next_candle_close_vs_threshold_percent"] is None
+                            else f"{event['next_candle_close_vs_threshold_percent']:.6f}"
+                        ),
+                        (
+                            ""
+                            if event["next_candle_close_below_threshold"] is None
+                            else str(event["next_candle_close_below_threshold"]).lower()
+                        ),
+                        (
+                            ""
+                            if event["next_candle_low_vs_threshold_multiple"] is None
+                            else f"{event['next_candle_low_vs_threshold_multiple']:.6f}"
+                        ),
+                        (
+                            ""
+                            if event["next_candle_low_vs_threshold_percent"] is None
+                            else f"{event['next_candle_low_vs_threshold_percent']:.6f}"
+                        ),
+                        (
+                            ""
+                            if event["next_candle_low_below_threshold"] is None
+                            else str(event["next_candle_low_below_threshold"]).lower()
+                        ),
+                        (
+                            ""
+                            if event["next_candle_high_vs_threshold_multiple"] is None
+                            else f"{event['next_candle_high_vs_threshold_multiple']:.6f}"
+                        ),
+                        (
+                            ""
+                            if event["next_candle_high_vs_threshold_percent"] is None
+                            else f"{event['next_candle_high_vs_threshold_percent']:.6f}"
+                        ),
                     ],
                 )
 
@@ -883,6 +1021,18 @@ def build_progress_report_text(
                 f"{event['next_candle_change_percent']:.4f}%"
                 f"（{event['next_candle_time_cn']}）",
             )
+        if event.get("next_candle_close_vs_threshold_percent") is not None:
+            lines.append(
+                "     - 第二根收盘相对10倍价: "
+                f"{event['next_candle_close_vs_threshold_percent']:.4f}%"
+                f"（{'低于' if event.get('next_candle_close_below_threshold') else '高于或等于'}10倍价）",
+            )
+        if event.get("next_candle_low_vs_threshold_percent") is not None:
+            lines.append(
+                "     - 第二根最低价相对10倍价: "
+                f"{event['next_candle_low_vs_threshold_percent']:.4f}%"
+                f"（{'低于' if event.get('next_candle_low_below_threshold') else '高于或等于'}10倍价）",
+            )
     return "\n".join(lines)
 
 
@@ -961,6 +1111,7 @@ def render_charts(
     results: dict[str, Any],
     threshold: float,
     chart_window: int,
+    bar_label: str,
 ) -> list[str]:
     ninefold_chart_dir = os.path.join(chart_dir, "ninefold_hit_svgs")
     hit_chart_dir = os.path.join(chart_dir, "tenfold_hit_svgs")
@@ -1039,7 +1190,7 @@ def render_charts(
                 svg_lines = [
                     f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
                     '<rect width="100%" height="100%" fill="#fcfcfc"/>',
-                    f'<text x="{margin_left}" y="36" font-size="26" font-weight="700" fill="#111111">{inst_id} 1H - {title}</text>',
+                    f'<text x="{margin_left}" y="36" font-size="26" font-weight="700" fill="#111111">{inst_id} {bar_label} - {title}</text>',
                 ]
 
                 # grid
@@ -1205,6 +1356,7 @@ def render_symbol_charts(
     summary: dict[str, Any],
     threshold: float,
     chart_window: int,
+    bar_label: str,
 ) -> list[str]:
     clear_existing_symbol_charts(chart_dir, inst_id)
     return render_charts(
@@ -1212,6 +1364,7 @@ def render_symbol_charts(
         results={inst_id: summary},
         threshold=threshold,
         chart_window=chart_window,
+        bar_label=bar_label,
     )
 
 
@@ -1228,7 +1381,8 @@ def render_summary_charts(
     hit_count = 0
     no_hit_count = 0
     hit_event_count = 0
-    top_candidates: list[tuple[str, float, int]] = []
+    top_candidates: list[tuple[str, float, int, float | None]] = []
+    tenfold_events: list[dict[str, Any]] = []
     bucket_labels = ["<2x", "2-4x", "4-6x", "6-8x", "8-10x", ">=10x"]
     bucket_counts = [0 for _ in bucket_labels]
 
@@ -1240,7 +1394,18 @@ def render_summary_charts(
         highest = summary.get("highest_candidate")
         if highest is not None:
             multiple = float(highest["multiple"])
-            top_candidates.append((inst_id, multiple, int(summary["hit_count"])))
+            top_candidates.append(
+                (
+                    inst_id,
+                    multiple,
+                    int(summary["hit_count"]),
+                    (
+                        None
+                        if highest.get("volume_multiple") is None
+                        else float(highest["volume_multiple"])
+                    ),
+                ),
+            )
             if multiple < 2:
                 bucket_counts[0] += 1
             elif multiple < 4:
@@ -1257,10 +1422,65 @@ def render_summary_charts(
         if summary["hit_count"] > 0:
             hit_count += 1
             hit_event_count += int(summary["hit_count"])
+            for event in summary.get("events", []):
+                threshold_price = event.get("threshold_price")
+                if threshold_price is None:
+                    hit_ohlc = event.get("hit_ohlc")
+                    prev_amp_percent = event.get("previous_amplitude_percent")
+                    if hit_ohlc and prev_amp_percent is not None:
+                        threshold_price = hit_ohlc[2] + (
+                            hit_ohlc[0] * (prev_amp_percent / 100.0) * threshold
+                        )
+                close_vs_threshold = event.get("hit_close_vs_threshold_percent")
+                if close_vs_threshold is None and threshold_price:
+                    close_vs_threshold = (
+                        (event["hit_ohlc"][3] - threshold_price) / threshold_price * 100
+                    )
+                close_above_threshold = event.get("hit_close_above_threshold")
+                if close_above_threshold is None and close_vs_threshold is not None:
+                    close_above_threshold = close_vs_threshold >= 0
+                tenfold_events.append(
+                    {
+                        "inst_id": inst_id,
+                        "time_cn": event.get("time_cn"),
+                        "multiple": float(event.get("multiple", 0.0)),
+                        "volume_multiple": (
+                            None
+                            if event.get("volume_multiple") is None
+                            else float(event["volume_multiple"])
+                        ),
+                        "threshold_price": threshold_price,
+                        "close_vs_threshold_percent": close_vs_threshold,
+                        "close_above_threshold": close_above_threshold,
+                        "next_candle_high_vs_threshold_percent": event.get(
+                            "next_candle_high_vs_threshold_percent",
+                        ),
+                        "next_candle_high_vs_threshold_multiple": event.get(
+                            "next_candle_high_vs_threshold_multiple",
+                        ),
+                    },
+                )
         else:
             no_hit_count += 1
 
     total_count = error_count + hit_count + no_hit_count
+    close_above_count = sum(
+        1 for event in tenfold_events if event.get("close_above_threshold") is True
+    )
+    close_below_count = sum(
+        1 for event in tenfold_events if event.get("close_above_threshold") is False
+    )
+
+    def render_message_svg(output_path: str, title: str, message: str) -> None:
+        lines = [
+            f'<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420">',
+            '<rect width="100%" height="100%" fill="#fcfcfc"/>',
+            f'<text x="48" y="58" font-size="30" font-weight="700" fill="#111111">{xml_escape(title)}</text>',
+            f'<text x="48" y="130" font-size="24" fill="#666666">{xml_escape(message)}</text>',
+            "</svg>",
+        ]
+        with open(output_path, "w", encoding="utf-8") as file:
+            file.write("\n".join(lines))
 
     def render_pie_svg(output_path: str) -> None:
         slices = [
@@ -1342,6 +1562,9 @@ def render_summary_charts(
 
     def render_top_multiple_bar_svg(output_path: str) -> None:
         ranked = sorted(top_candidates, key=lambda item: item[1], reverse=True)[:10]
+        if not ranked:
+            render_message_svg(output_path, "最高倍数 Top 10", "当前没有可展示的数据。")
+            return
         width = 1400
         height = max(520, 150 + len(ranked) * 58)
         left = 260
@@ -1356,13 +1579,18 @@ def render_summary_charts(
             f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
             '<rect width="100%" height="100%" fill="#fcfcfc"/>',
             '<text x="48" y="58" font-size="30" font-weight="700" fill="#111111">最高倍数 Top 10</text>',
-            f'<text x="48" y="96" font-size="18" fill="#555555">按每个币历史最高候选倍数排序；命中次数为达到 {threshold:g} 倍的总次数</text>',
+            f'<text x="48" y="96" font-size="18" fill="#555555">按每个币历史最高候选倍数排序；同时显示该最高样本对应的成交量倍数</text>',
         ]
 
-        for index, (inst_id, multiple, event_count) in enumerate(ranked):
+        for index, (inst_id, multiple, event_count, volume_multiple) in enumerate(ranked):
             y = top + index * row_gap
             bar_width = plot_width * (multiple / max_multiple if max_multiple else 0.0)
             fill = "#e74c3c" if multiple >= threshold else "#f39c12"
+            volume_label = (
+                "成交量 无法计算"
+                if volume_multiple is None
+                else f"成交量 {volume_multiple:.2f}x"
+            )
             svg_lines.append(
                 f'<text x="{left - 20}" y="{y + 22}" font-size="19" fill="#111111" text-anchor="end">{xml_escape(inst_id)}</text>',
             )
@@ -1373,7 +1601,7 @@ def render_summary_charts(
                 f'<rect x="{left}" y="{y}" width="{bar_width:.2f}" height="{bar_height}" rx="8" fill="{fill}"/>',
             )
             svg_lines.append(
-                f'<text x="{left + bar_width + 12:.2f}" y="{y + 22}" font-size="18" fill="#333333">{multiple:.2f}x | 命中 {event_count} 次</text>',
+                f'<text x="{left + bar_width + 12:.2f}" y="{y + 22}" font-size="18" fill="#333333">{multiple:.2f}x | 命中 {event_count} 次 | {volume_label}</text>',
             )
 
         svg_lines.append("</svg>")
@@ -1430,9 +1658,244 @@ def render_summary_charts(
         with open(output_path, "w", encoding="utf-8") as file:
             file.write("\n".join(svg_lines))
 
+    def render_close_vs_threshold_pie(output_path: str) -> None:
+        slices = [
+            ("收盘高于10倍价", close_above_count, "#2ecc71"),
+            ("收盘低于10倍价", close_below_count, "#e74c3c"),
+        ]
+        total_hits = close_above_count + close_below_count
+        width = 1200
+        height = 760
+        cx = 320
+        cy = 360
+        radius = 210
+        inner_radius = 98
+        svg_lines = [
+            f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
+            '<rect width="100%" height="100%" fill="#fcfcfc"/>',
+            f'<text x="48" y="58" font-size="30" font-weight="700" fill="#111111">{threshold:g}倍命中收盘价位置统计</text>',
+            f'<text x="48" y="96" font-size="18" fill="#555555">统计所有{threshold:g}倍命中事件的收盘价是在10倍价之上还是之下</text>',
+        ]
+        non_zero = [(label, value, color) for label, value, color in slices if value > 0]
+        if not non_zero:
+            non_zero = [("无数据", 1, "#dcdcdc")]
+        if len(non_zero) == 1:
+            _, _, color = non_zero[0]
+            svg_lines.append(
+                f'<circle cx="{cx}" cy="{cy}" r="{radius}" fill="{color}" opacity="0.92"/>',
+            )
+        else:
+            start_angle = -90.0
+            for _, value, color in non_zero:
+                sweep = 360.0 * value / max(total_hits, 1)
+                end_angle = start_angle + sweep
+                x1 = cx + radius * math.cos(math.radians(start_angle))
+                y1 = cy + radius * math.sin(math.radians(start_angle))
+                x2 = cx + radius * math.cos(math.radians(end_angle))
+                y2 = cy + radius * math.sin(math.radians(end_angle))
+                large_arc = 1 if sweep > 180 else 0
+                svg_lines.append(
+                    "<path "
+                    f'd="M {cx:.2f} {cy:.2f} L {x1:.2f} {y1:.2f} '
+                    f'A {radius} {radius} 0 {large_arc} 1 {x2:.2f} {y2:.2f} Z" '
+                    f'fill="{color}" opacity="0.92"/>',
+                )
+                start_angle = end_angle
+        svg_lines.append(
+            f'<circle cx="{cx}" cy="{cy}" r="{inner_radius}" fill="#fcfcfc"/>',
+        )
+        svg_lines.append(
+            f'<text x="{cx}" y="{cy - 6}" font-size="36" font-weight="700" fill="#111111" text-anchor="middle">{total_hits}</text>',
+        )
+        svg_lines.append(
+            f'<text x="{cx}" y="{cy + 28}" font-size="18" fill="#666666" text-anchor="middle">10倍命中总数</text>',
+        )
+        legend_x = 690
+        legend_y = 240
+        legend_gap = 110
+        for index, (label, value, color) in enumerate(slices):
+            percent = (value / total_hits * 100) if total_hits else 0.0
+            y = legend_y + index * legend_gap
+            svg_lines.append(
+                f'<rect x="{legend_x}" y="{y - 18}" width="28" height="28" rx="6" fill="{color}"/>',
+            )
+            svg_lines.append(
+                f'<text x="{legend_x + 44}" y="{y}" font-size="24" font-weight="600" fill="#111111">{label}</text>',
+            )
+            svg_lines.append(
+                f'<text x="{legend_x + 44}" y="{y + 30}" font-size="18" fill="#555555">{value} 次，占比 {percent:.2f}%</text>',
+            )
+        svg_lines.append("</svg>")
+        with open(output_path, "w", encoding="utf-8") as file:
+            file.write("\n".join(svg_lines))
+
+    def render_event_volume_top10(output_path: str) -> None:
+        ranked = [
+            event for event in tenfold_events if event.get("volume_multiple") is not None
+        ]
+        ranked.sort(key=lambda item: float(item["volume_multiple"]), reverse=True)
+        ranked = ranked[:10]
+        if not ranked:
+            render_message_svg(output_path, "成交量倍数 Top 10", "当前没有可展示的成交量倍数数据。")
+            return
+        width = 1500
+        height = max(520, 160 + len(ranked) * 58)
+        left = 330
+        right = 120
+        top = 130
+        row_gap = 52
+        bar_height = 30
+        plot_width = width - left - right
+        max_value = max(float(item["volume_multiple"]) for item in ranked)
+        svg_lines = [
+            f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
+            '<rect width="100%" height="100%" fill="#fcfcfc"/>',
+            '<text x="48" y="58" font-size="30" font-weight="700" fill="#111111">成交量倍数 Top 10</text>',
+            f'<text x="48" y="96" font-size="18" fill="#555555">按{threshold:g}倍命中事件的成交量倍数排序</text>',
+        ]
+        for index, item in enumerate(ranked):
+            y = top + index * row_gap
+            value = float(item["volume_multiple"])
+            bar_width = plot_width * (value / max_value if max_value else 0.0)
+            label = f"{item['inst_id']} {item['time_cn']}"
+            svg_lines.append(
+                f'<text x="{left - 18}" y="{y + 22}" font-size="18" fill="#111111" text-anchor="end">{xml_escape(label)}</text>',
+            )
+            svg_lines.append(
+                f'<rect x="{left}" y="{y}" width="{plot_width:.2f}" height="{bar_height}" rx="8" fill="#efefef"/>',
+            )
+            svg_lines.append(
+                f'<rect x="{left}" y="{y}" width="{bar_width:.2f}" height="{bar_height}" rx="8" fill="#9b59b6"/>',
+            )
+            svg_lines.append(
+                f'<text x="{left + bar_width + 12:.2f}" y="{y + 22}" font-size="17" fill="#333333">{value:.2f}x | 倍数 {item["multiple"]:.2f}x</text>',
+            )
+        svg_lines.append("</svg>")
+        with open(output_path, "w", encoding="utf-8") as file:
+            file.write("\n".join(svg_lines))
+
+    def render_event_volume_compare(output_path: str) -> None:
+        ranked = [
+            event for event in tenfold_events if event.get("volume_multiple") is not None
+        ]
+        ranked.sort(key=lambda item: float(item["volume_multiple"]), reverse=True)
+        if not ranked:
+            render_message_svg(output_path, "10倍命中成交量倍数对比", "当前没有可展示的成交量倍数数据。")
+            return
+        width = 1600
+        height = max(560, 160 + len(ranked) * 34)
+        left = 380
+        right = 120
+        top = 130
+        row_gap = 30
+        bar_height = 18
+        plot_width = width - left - right
+        max_value = max(float(item["volume_multiple"]) for item in ranked)
+        svg_lines = [
+            f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
+            '<rect width="100%" height="100%" fill="#fcfcfc"/>',
+            '<text x="48" y="58" font-size="30" font-weight="700" fill="#111111">10倍命中成交量倍数对比</text>',
+            f'<text x="48" y="96" font-size="18" fill="#555555">展示所有{threshold:g}倍命中事件的成交量倍数，从高到低排序</text>',
+        ]
+        for index, item in enumerate(ranked):
+            y = top + index * row_gap
+            value = float(item["volume_multiple"])
+            bar_width = plot_width * (value / max_value if max_value else 0.0)
+            label = f"{item['inst_id']} {item['time_cn']}"
+            svg_lines.append(
+                f'<text x="{left - 18}" y="{y + 15}" font-size="14" fill="#111111" text-anchor="end">{xml_escape(label)}</text>',
+            )
+            svg_lines.append(
+                f'<rect x="{left}" y="{y}" width="{plot_width:.2f}" height="{bar_height}" rx="6" fill="#efefef"/>',
+            )
+            svg_lines.append(
+                f'<rect x="{left}" y="{y}" width="{bar_width:.2f}" height="{bar_height}" rx="6" fill="#8e44ad"/>',
+            )
+            svg_lines.append(
+                f'<text x="{left + bar_width + 10:.2f}" y="{y + 15}" font-size="13" fill="#333333">{value:.2f}x</text>',
+            )
+        svg_lines.append("</svg>")
+        with open(output_path, "w", encoding="utf-8") as file:
+            file.write("\n".join(svg_lines))
+
+    def render_next_high_top10(output_path: str) -> None:
+        ranked = [
+            event
+            for event in tenfold_events
+            if event.get("next_candle_high_vs_threshold_percent") is not None
+        ]
+        ranked.sort(
+            key=lambda item: float(item["next_candle_high_vs_threshold_percent"]),
+            reverse=True,
+        )
+        ranked = ranked[:10]
+        if not ranked:
+            render_message_svg(
+                output_path,
+                "第二根最高价相对10倍价 Top 10",
+                "当前没有第二根最高价相对10倍价的数据，需重新扫描后生成。",
+            )
+            return
+        width = 1500
+        height = max(520, 160 + len(ranked) * 58)
+        left = 340
+        right = 120
+        top = 130
+        row_gap = 52
+        bar_height = 30
+        plot_width = width - left - right
+        max_abs = max(
+            abs(float(item["next_candle_high_vs_threshold_percent"])) for item in ranked
+        ) or 1.0
+        zero_x = left + plot_width / 2
+        svg_lines = [
+            f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
+            '<rect width="100%" height="100%" fill="#fcfcfc"/>',
+            '<text x="48" y="58" font-size="30" font-weight="700" fill="#111111">第二根最高价相对10倍价 Top 10</text>',
+            f'<text x="48" y="96" font-size="18" fill="#555555">统计{threshold:g}倍命中后第二根K线最高价，相对10倍价是上涨还是回落</text>',
+            f'<line x1="{zero_x:.2f}" y1="{top - 20}" x2="{zero_x:.2f}" y2="{height - 30}" stroke="#999999" stroke-dasharray="4 4"/>',
+        ]
+        for index, item in enumerate(ranked):
+            y = top + index * row_gap
+            value = float(item["next_candle_high_vs_threshold_percent"])
+            label = f"{item['inst_id']} {item['time_cn']}"
+            bar_width = (abs(value) / max_abs) * (plot_width / 2 - 30)
+            if value >= 0:
+                x = zero_x
+                fill = "#27ae60"
+                text_x = x + bar_width + 10
+            else:
+                x = zero_x - bar_width
+                fill = "#e74c3c"
+                text_x = zero_x + 10
+            svg_lines.append(
+                f'<text x="{left - 20}" y="{y + 22}" font-size="17" fill="#111111" text-anchor="end">{xml_escape(label)}</text>',
+            )
+            svg_lines.append(
+                f'<rect x="{left}" y="{y}" width="{plot_width:.2f}" height="{bar_height}" rx="8" fill="#efefef"/>',
+            )
+            svg_lines.append(
+                f'<rect x="{x:.2f}" y="{y}" width="{bar_width:.2f}" height="{bar_height}" rx="8" fill="{fill}"/>',
+            )
+            multiple_label = item.get("next_candle_high_vs_threshold_multiple")
+            if multiple_label is None:
+                info = f"{value:.2f}%"
+            else:
+                info = f"{float(multiple_label):.3f}x ({value:.2f}%)"
+            svg_lines.append(
+                f'<text x="{text_x:.2f}" y="{y + 22}" font-size="16" fill="#333333">{info}</text>',
+            )
+        svg_lines.append("</svg>")
+        with open(output_path, "w", encoding="utf-8") as file:
+            file.write("\n".join(svg_lines))
+
     pie_path = os.path.join(summary_dir, "scan_result_pie.svg")
     top_bar_path = os.path.join(summary_dir, "highest_multiple_top10.svg")
     distribution_path = os.path.join(summary_dir, "highest_multiple_distribution.svg")
+    close_position_path = os.path.join(summary_dir, "tenfold_close_vs_threshold_pie.svg")
+    next_high_path = os.path.join(summary_dir, "next_candle_high_vs_threshold_top10.svg")
+    volume_compare_path = os.path.join(summary_dir, "tenfold_event_volume_compare.svg")
+    volume_top10_path = os.path.join(summary_dir, "volume_multiple_top10.svg")
 
     render_pie_svg(pie_path)
     saved_paths.append(pie_path)
@@ -1442,6 +1905,15 @@ def render_summary_charts(
         saved_paths.append(top_bar_path)
         render_distribution_bar_svg(distribution_path)
         saved_paths.append(distribution_path)
+
+    render_close_vs_threshold_pie(close_position_path)
+    saved_paths.append(close_position_path)
+    render_next_high_top10(next_high_path)
+    saved_paths.append(next_high_path)
+    render_event_volume_compare(volume_compare_path)
+    saved_paths.append(volume_compare_path)
+    render_event_volume_top10(volume_top10_path)
+    saved_paths.append(volume_top10_path)
 
     return saved_paths
 
@@ -1456,6 +1928,7 @@ def finalize_outputs(
     hit_list_file: str,
     hit_symbols: list[str],
     generate_charts: bool,
+    bar_label: str,
 ) -> tuple[list[str], list[str]]:
     if output_json:
         write_json(output_json, results)
@@ -1630,6 +2103,7 @@ def main() -> int:
                     summary=summary,
                     threshold=args.threshold,
                     chart_window=args.chart_window,
+                    bar_label=args.bar,
                 )
                 print(f"- 已生成单币SVG: {len(symbol_chart_paths)} 张")
             append_progress_record(
@@ -1690,6 +2164,7 @@ def main() -> int:
         hit_list_file=hit_list_file,
         hit_symbols=hit_symbols,
         generate_charts=True,
+        bar_label=args.bar,
     )
 
     if output_json:
