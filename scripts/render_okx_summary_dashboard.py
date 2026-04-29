@@ -86,13 +86,23 @@ def build_event_rows(results: dict[str, Any], threshold: float) -> list[dict[str
             next_close_below_threshold = None
             next_low = None
             next_low_below_threshold = None
+            next_high = None
+            next_high_above_threshold = None
+            next_high_vs_threshold_percent = None
             next_ohlc = event.get("next_candle_ohlc")
             if threshold_price and next_ohlc:
+                next_high = float(next_ohlc[1])
                 next_low = float(next_ohlc[2])
                 next_close = float(next_ohlc[3])
+                next_high_above_threshold = next_high > threshold_price
+                next_high_vs_threshold_percent = (next_high - threshold_price) / threshold_price * 100
                 next_close_below_threshold = next_close < threshold_price
                 next_low_below_threshold = next_low < threshold_price
             else:
+                next_high_vs_threshold_percent = event.get("next_candle_high_vs_threshold_percent")
+                if threshold_price and next_high_vs_threshold_percent is not None:
+                    next_high_vs_threshold_percent = float(next_high_vs_threshold_percent)
+                    next_high_above_threshold = next_high_vs_threshold_percent > 0
                 next_change = event.get("next_candle_change_percent")
                 if threshold_price and next_change is not None and hit_ohlc:
                     next_open_assumed = hit_ohlc[3]
@@ -120,6 +130,9 @@ def build_event_rows(results: dict[str, Any], threshold: float) -> list[dict[str
                     "next_close_below_threshold": next_close_below_threshold,
                     "next_low": next_low,
                     "next_low_below_threshold": next_low_below_threshold,
+                    "next_high": next_high,
+                    "next_high_above_threshold": next_high_above_threshold,
+                    "next_high_vs_threshold_percent": next_high_vs_threshold_percent,
                 },
             )
     return rows
@@ -155,6 +168,28 @@ def render_dashboard(
         1
         for row in event_rows
         if row["close_above_threshold"] is True and row["next_close_below_threshold"] is None
+    )
+    next_high_known_rows = [
+        row for row in event_rows if row["next_high_above_threshold"] is not None
+    ]
+    next_high_above_rows = [
+        row for row in next_high_known_rows if row["next_high_above_threshold"] is True
+    ]
+    next_high_below_rows = [
+        row for row in next_high_known_rows if row["next_high_above_threshold"] is False
+    ]
+    next_high_unknown_count = len(event_rows) - len(next_high_known_rows)
+    next_high_above_count = len(next_high_above_rows)
+    next_high_below_count = len(next_high_below_rows)
+    next_high_above_avg_percent = (
+        sum(float(row["next_high_vs_threshold_percent"]) for row in next_high_above_rows)
+        / next_high_above_count
+        if next_high_above_count
+        else None
+    )
+    next_high_above_max_percent = max(
+        (float(row["next_high_vs_threshold_percent"]) for row in next_high_above_rows),
+        default=None,
     )
 
     current_year = datetime.now().year
@@ -210,7 +245,7 @@ def render_dashboard(
     amplitude_top10 = amplitude_top10[:10]
 
     width = 1800
-    height = 3980
+    height = 4460
     svg_lines = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
         '<rect width="100%" height="100%" fill="#f7f8fa"/>',
@@ -510,6 +545,48 @@ def render_dashboard(
         svg_lines.append(
             f'<text x="{left_panel_x + 24}" y="{third_panel_top + 120}" font-size="18" fill="#666666">暂无符合条件的数据</text>',
         )
+
+    sixth_panel_top = 3920
+    sixth_panel_h = 420
+    svg_lines.extend(
+        [
+            f'<rect x="{left_panel_x}" y="{sixth_panel_top}" width="{width - 96}" height="{sixth_panel_h}" rx="20" fill="#ffffff" stroke="#ebedf0"/>',
+            f'<text x="{left_panel_x + 24}" y="{sixth_panel_top + 36}" font-size="26" font-weight="700" fill="#111111">总体第二根最高价是否高于10倍价</text>',
+            f'<text x="{left_panel_x + 24}" y="{sixth_panel_top + 66}" font-size="16" fill="#666666">统计命中后第二根K线最高价是否站上10倍价，以及高出10倍价多少</text>',
+        ],
+    )
+    summary_box_y = sixth_panel_top + 104
+    summary_box_w = 280
+    summary_gap = 24
+    second_high_cards = [
+        ("第二根高于10倍", str(next_high_above_count), "#27ae60"),
+        ("第二根未高于10倍", str(next_high_below_count), "#e74c3c"),
+        ("数据不足", str(next_high_unknown_count), "#95a5a6"),
+        ("平均高出", "--" if next_high_above_avg_percent is None else f"{next_high_above_avg_percent:.2f}%", "#8e44ad"),
+        ("最高高出", "--" if next_high_above_max_percent is None else f"{next_high_above_max_percent:.2f}%", "#f39c12"),
+    ]
+    for index, (label, value, color) in enumerate(second_high_cards):
+        x = left_panel_x + 24 + index * (summary_box_w + summary_gap)
+        svg_lines.append(
+            f'<rect x="{x}" y="{summary_box_y}" width="{summary_box_w}" height="120" rx="16" fill="#fafbfc" stroke="#edf0f2"/>',
+        )
+        svg_lines.append(
+            f'<text x="{x + 18}" y="{summary_box_y + 42}" font-size="18" fill="#666666">{xml_escape(label)}</text>',
+        )
+        svg_lines.append(
+            f'<text x="{x + 18}" y="{summary_box_y + 82}" font-size="32" font-weight="700" fill="{color}">{xml_escape(value)}</text>',
+        )
+    known_total = next_high_above_count + next_high_below_count
+    if known_total > 0:
+        ratio = next_high_above_count / known_total * 100
+        note = f"在可判断的 {known_total} 次里，第二根最高价高于10倍价 {next_high_above_count} 次，占比 {ratio:.2f}%"
+    else:
+        note = "当前 result.json 不含足够的第二根最高价数据，无法给出准确占比"
+    if next_high_unknown_count > 0:
+        note += f"；另有 {next_high_unknown_count} 次因缺少第二根 OHLC/最高价字段未纳入该统计"
+    svg_lines.append(
+        f'<text x="{left_panel_x + 24}" y="{sixth_panel_top + 280}" font-size="18" fill="#333333">{xml_escape(note)}</text>',
+    )
 
     # three-year monthly summary panel
     svg_lines.extend(
