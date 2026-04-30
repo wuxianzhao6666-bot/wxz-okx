@@ -1,0 +1,1132 @@
+[
+  {
+    "inst_id": "BANANA_USDT",
+    "time_cn": "2025-03-12 02:00:00",
+    "hit_ts": 1741716000000,
+    "multiple": 16.144399284062963,
+    "next_candle_low_below_threshold": false,
+    "next_candle_low_vs_threshold_percent": 4.289663051514197,
+    "btc_change_percent": 2.4110701107011034,
+    "btc_amplitude_percent": 2.698646986469865
+  },
+  {
+    "inst_id": "POWER_USDT",
+    "time_cn": "2025-03-17 03:00:00",
+    "hit_ts": 1742151600000,
+    "multiple": 10.643846866005802,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -8.855330001933822,
+    "btc_change_percent": -0.7146577718733986,
+    "btc_amplitude_percent": 1.4308686281724703
+  },
+  {
+    "inst_id": "BMT_USDT",
+    "time_cn": "2025-03-17 12:00:00",
+    "hit_ts": 1742184000000,
+    "multiple": 15.439698121826671,
+    "next_candle_low_below_threshold": false,
+    "next_candle_low_vs_threshold_percent": 4.10127851263398,
+    "btc_change_percent": -0.06489618403267386,
+    "btc_amplitude_percent": 0.44208284481925125
+  },
+  {
+    "inst_id": "CKB_USDT",
+    "time_cn": "2025-03-19 17:00:00",
+    "hit_ts": 1742374800000,
+    "multiple": 12.2602371092047,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -11.296436515679826,
+    "btc_change_percent": 0.14854583340326316,
+    "btc_amplitude_percent": 0.29984917622404145
+  },
+  {
+    "inst_id": "BROCCOLI_USDT",
+    "time_cn": "2025-03-20 00:00:00",
+    "hit_ts": 1742400000000,
+    "multiple": 13.313240740740747,
+    "next_candle_low_below_threshold": false,
+    "next_candle_low_vs_threshold_percent": 5.145059768052249,
+    "btc_change_percent": -0.19094149024050946,
+    "btc_amplitude_percent": 0.4754655526446326
+  },
+  {
+    "inst_id": "TAIKO_USDT",
+    "time_cn": "2025-03-22 08:00:00",
+    "hit_ts": 1742601600000,
+    "multiple": 10.279142767080756,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -12.064513964591015,
+    "btc_change_percent": 0.12629731243600056,
+    "btc_amplitude_percent": 0.23832374211087068
+  },
+  {
+    "inst_id": "TUT_USDT",
+    "time_cn": "2025-03-28 01:00:00",
+    "hit_ts": 1743094800000,
+    "multiple": 52.51052254831798,
+    "next_candle_low_below_threshold": false,
+    "next_candle_low_vs_threshold_percent": 93.05035403435377,
+    "btc_change_percent": 0.07624277449991494,
+    "btc_amplitude_percent": 0.43315570225700023
+  },
+  {
+    "inst_id": "VINE_USDT",
+    "time_cn": "2025-03-29 09:00:00",
+    "hit_ts": 1743210000000,
+    "multiple": 11.180938507959631,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -14.282427821019125,
+    "btc_change_percent": -0.13318166737759393,
+    "btc_amplitude_percent": 0.34847623110100695
+  },
+  {
+    "inst_id": "DEGEN_USDT",
+    "time_cn": "2025-04-07 16:00:00",
+    "hit_ts": 1744012800000,
+    "multiple": 30.39701338825951,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -35.250234711638754,
+    "btc_change_percent": 1.515450029020381,
+    "btc_amplitude_percent": 2.3290858843763886
+  },
+  {
+    "inst_id": "DIA_USDT",
+    "time_cn": "2025-04-07 16:00:00",
+    "hit_ts": 1744012800000,
+    "multiple": 11.70619809423887,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -12.017841152793372,
+    "btc_change_percent": 1.515450029020381,
+    "btc_amplitude_percent": 2.3290858843763886
+  },
+  {
+    "inst_id": "SNT_USDT",
+    "time_cn": "2025-04-10 13:00:00",
+    "hit_ts": 1744261200000,
+    "multiple": 34.36454289921014,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -6.145374863634703,
+    "btc_change_percent": 0.1686128877303985,
+    "btc_amplitude_percent": 0.4042807922733185
+  },
+  {
+    "inst_id": "BROCCOLIF3B_USDT",
+    "time_cn": "2025-04-12 10:00:00",
+    "hit_ts": 1744423200000,
+    "multiple": 251.43374209929195,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -29.5718807062696,
+    "btc_change_percent": -0.509743037597451,
+    "btc_amplitude_percent": 0.6264239639310397
+  },
+  {
+    "inst_id": "ALICE_USDT",
+    "time_cn": "2025-04-14 23:00:00",
+    "hit_ts": 1744642800000,
+    "multiple": 17.464995302151852,
+    "next_candle_low_below_threshold": false,
+    "next_candle_low_vs_threshold_percent": 1.1914689632087843,
+    "btc_change_percent": -1.538837980638094,
+    "btc_amplitude_percent": 2.077150293098055
+  },
+  {
+    "inst_id": "BROCCOLIF3B_USDT",
+    "time_cn": "2025-04-20 12:00:00",
+    "hit_ts": 1745121600000,
+    "multiple": 17.51557533375714,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -16.98841457311583,
+    "btc_change_percent": 0.030412268238547466,
+    "btc_amplitude_percent": 0.16321642027641112
+  },
+  {
+    "inst_id": "OGN_USDT",
+    "time_cn": "2025-04-20 16:00:00",
+    "hit_ts": 1745136000000,
+    "multiple": 11.671547817913392,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -4.740820471467927,
+    "btc_change_percent": -0.1547522018572589,
+    "btc_amplitude_percent": 0.21514330502106516
+  },
+  {
+    "inst_id": "FIO_USDT",
+    "time_cn": "2025-04-25 10:00:00",
+    "hit_ts": 1745546400000,
+    "multiple": 10.013527397260244,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -36.62471935302014,
+    "btc_change_percent": -0.726181740892282,
+    "btc_amplitude_percent": 1.090180472023469
+  },
+  {
+    "inst_id": "DOG_USDT",
+    "time_cn": "2025-04-26 09:00:00",
+    "hit_ts": 1745629200000,
+    "multiple": 12.554810998147286,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -6.0968434717039175,
+    "btc_change_percent": 0.11775260146807201,
+    "btc_amplitude_percent": 0.4758596625128154
+  },
+  {
+    "inst_id": "RARE_USDT",
+    "time_cn": "2025-04-27 18:00:00",
+    "hit_ts": 1745748000000,
+    "multiple": 10.852003722744884,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -3.9343418865063864,
+    "btc_change_percent": -0.11887814724316816,
+    "btc_amplitude_percent": 0.25900350578986814
+  },
+  {
+    "inst_id": "CTK_USDT",
+    "time_cn": "2025-04-29 23:00:00",
+    "hit_ts": 1745938800000,
+    "multiple": 11.092984698283322,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -10.117687031744692,
+    "btc_change_percent": -0.21506281876510247,
+    "btc_amplitude_percent": 0.4271781294903474
+  },
+  {
+    "inst_id": "DOLO_USDT",
+    "time_cn": "2025-04-30 18:00:00",
+    "hit_ts": 1746007200000,
+    "multiple": 10.255734136949632,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -8.077996338779405,
+    "btc_change_percent": -0.03602495201939564,
+    "btc_amplitude_percent": 0.18623425488391215
+  },
+  {
+    "inst_id": "STO_USDT",
+    "time_cn": "2025-05-02 18:00:00",
+    "hit_ts": 1746180000000,
+    "multiple": 19.89625223102482,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -4.215281908323418,
+    "btc_change_percent": 0.30641620412558424,
+    "btc_amplitude_percent": 0.3553972330378563
+  },
+  {
+    "inst_id": "HAEDAL_USDT",
+    "time_cn": "2025-05-21 18:00:00",
+    "hit_ts": 1747821600000,
+    "multiple": 11.486711638441292,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -10.058280619541408,
+    "btc_change_percent": 0.13678137964557147,
+    "btc_amplitude_percent": 0.29824369694069963
+  },
+  {
+    "inst_id": "FLOCK_USDT",
+    "time_cn": "2025-05-31 23:00:00",
+    "hit_ts": 1748703600000,
+    "multiple": 12.355285216230268,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -15.842621186229735,
+    "btc_change_percent": -0.018177973844765844,
+    "btc_amplitude_percent": 0.3989586891193346
+  },
+  {
+    "inst_id": "AIOT_USDT",
+    "time_cn": "2025-06-04 17:00:00",
+    "hit_ts": 1749027600000,
+    "multiple": 11.577569678086853,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -1.24257715634181,
+    "btc_change_percent": 0.35417457305503125,
+    "btc_amplitude_percent": 0.5510436432637461
+  },
+  {
+    "inst_id": "ALT_USDT",
+    "time_cn": "2025-06-16 17:00:00",
+    "hit_ts": 1750064400000,
+    "multiple": 53.38171508694068,
+    "next_candle_low_below_threshold": false,
+    "next_candle_low_vs_threshold_percent": 21.941356633326812,
+    "btc_change_percent": -0.20815442631519995,
+    "btc_amplitude_percent": 0.33043348392637123
+  },
+  {
+    "inst_id": "SKYAI_USDT",
+    "time_cn": "2025-07-03 00:00:00",
+    "hit_ts": 1751472000000,
+    "multiple": 16.479141782130863,
+    "next_candle_low_below_threshold": false,
+    "next_candle_low_vs_threshold_percent": 5.479362083882567,
+    "btc_change_percent": 0.6204243246077676,
+    "btc_amplitude_percent": 0.9428720200037113
+  },
+  {
+    "inst_id": "SKL_USDT",
+    "time_cn": "2025-07-11 04:00:00",
+    "hit_ts": 1752177600000,
+    "multiple": 13.68934391470285,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -7.646960051812812,
+    "btc_change_percent": 0.16718760073868866,
+    "btc_amplitude_percent": 0.282267074464285
+  },
+  {
+    "inst_id": "VIC_USDT",
+    "time_cn": "2025-07-11 05:00:00",
+    "hit_ts": 1752181200000,
+    "multiple": 11.745376801403888,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -8.600807795533981,
+    "btc_change_percent": 2.6842033797879328,
+    "btc_amplitude_percent": 3.914195074037567
+  },
+  {
+    "inst_id": "BANANAS31_USDT",
+    "time_cn": "2025-07-11 09:00:00",
+    "hit_ts": 1752195600000,
+    "multiple": 11.27868523023225,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -32.4695204261455,
+    "btc_change_percent": 0.3306341495494266,
+    "btc_amplitude_percent": 0.5002344984415855
+  },
+  {
+    "inst_id": "BB_USDT",
+    "time_cn": "2025-07-11 11:00:00",
+    "hit_ts": 1752202800000,
+    "multiple": 10.9124622102788,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -9.956833433079083,
+    "btc_change_percent": 0.18664554151212648,
+    "btc_amplitude_percent": 0.5263284241354841
+  },
+  {
+    "inst_id": "POLYX_USDT",
+    "time_cn": "2025-07-12 10:00:00",
+    "hit_ts": 1752285600000,
+    "multiple": 11.845275090595637,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -10.200181288298667,
+    "btc_change_percent": -0.041317501192334044,
+    "btc_amplitude_percent": 0.1962156229463484
+  },
+  {
+    "inst_id": "MOCA_USDT",
+    "time_cn": "2025-07-13 08:00:00",
+    "hit_ts": 1752364800000,
+    "multiple": 37.62562078597314,
+    "next_candle_low_below_threshold": false,
+    "next_candle_low_vs_threshold_percent": 14.640847836625204,
+    "btc_change_percent": -0.11294834359465838,
+    "btc_amplitude_percent": 0.17470365966262502
+  },
+  {
+    "inst_id": "SAFE_USDT",
+    "time_cn": "2025-07-14 08:00:00",
+    "hit_ts": 1752451200000,
+    "multiple": 15.315141567500968,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -4.153491515605063,
+    "btc_change_percent": -0.008483830323398422,
+    "btc_amplitude_percent": 0.4728265434691258
+  },
+  {
+    "inst_id": "VINE_USDT",
+    "time_cn": "2025-07-24 20:00:00",
+    "hit_ts": 1753358400000,
+    "multiple": 51.81292160095931,
+    "next_candle_low_below_threshold": false,
+    "next_candle_low_vs_threshold_percent": 29.18181280846406,
+    "btc_change_percent": -0.07854790874620605,
+    "btc_amplitude_percent": 0.38448021427060186
+  },
+  {
+    "inst_id": "FHE_USDT",
+    "time_cn": "2025-08-03 05:00:00",
+    "hit_ts": 1754168400000,
+    "multiple": 12.32884897078088,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -10.249636276435359,
+    "btc_change_percent": 0.044254144724350936,
+    "btc_amplitude_percent": 0.44972498576594366
+  },
+  {
+    "inst_id": "DOLO_USDT",
+    "time_cn": "2025-08-27 18:00:00",
+    "hit_ts": 1756288800000,
+    "multiple": 10.90912057553469,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -26.81045971892977,
+    "btc_change_percent": 0.13920661258492514,
+    "btc_amplitude_percent": 0.41355738797118174
+  },
+  {
+    "inst_id": "RLC_USDT",
+    "time_cn": "2025-08-28 06:00:00",
+    "hit_ts": 1756332000000,
+    "multiple": 10.00776635723498,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -6.501580675666132,
+    "btc_change_percent": -0.10996699196326584,
+    "btc_amplitude_percent": 0.5040004305396174
+  },
+  {
+    "inst_id": "ID_USDT",
+    "time_cn": "2025-08-28 22:00:00",
+    "hit_ts": 1756389600000,
+    "multiple": 13.331539393939382,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -5.497356645363833,
+    "btc_change_percent": 0.288665277716216,
+    "btc_amplitude_percent": 0.7049071324083566
+  },
+  {
+    "inst_id": "RED_USDT",
+    "time_cn": "2025-09-05 15:00:00",
+    "hit_ts": 1757055600000,
+    "multiple": 12.809814902936914,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -20.044035889249724,
+    "btc_change_percent": 0.9449262405006653,
+    "btc_amplitude_percent": 1.0376396960214493
+  },
+  {
+    "inst_id": "MYX_USDT",
+    "time_cn": "2025-09-08 18:00:00",
+    "hit_ts": 1757325600000,
+    "multiple": 12.750337882320254,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -23.20432033456256,
+    "btc_change_percent": -0.03766011124903694,
+    "btc_amplitude_percent": 0.30877721545421044
+  },
+  {
+    "inst_id": "TSTBSC_USDT",
+    "time_cn": "2025-09-10 18:00:00",
+    "hit_ts": 1757498400000,
+    "multiple": 15.95323986887078,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -6.326008561918342,
+    "btc_change_percent": 0.0012471349301953452,
+    "btc_amplitude_percent": 0.22181185544280863
+  },
+  {
+    "inst_id": "NAORIS_USDT",
+    "time_cn": "2025-09-10 22:00:00",
+    "hit_ts": 1757512800000,
+    "multiple": 11.189824594591757,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -9.872345010322,
+    "btc_change_percent": -0.02905807928730085,
+    "btc_amplitude_percent": 0.42314181922889865
+  },
+  {
+    "inst_id": "DAM_USDT",
+    "time_cn": "2025-09-11 22:00:00",
+    "hit_ts": 1757599200000,
+    "multiple": 10.51603475513425,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -22.211766352438183,
+    "btc_change_percent": -0.149230806823775,
+    "btc_amplitude_percent": 0.6432633199403825
+  },
+  {
+    "inst_id": "BTR_USDT",
+    "time_cn": "2025-09-14 20:00:00",
+    "hit_ts": 1757851200000,
+    "multiple": 10.877034893150125,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -5.631467716139083,
+    "btc_change_percent": -0.005527892102450998,
+    "btc_amplitude_percent": 0.18838019805401426
+  },
+  {
+    "inst_id": "SKYAI_USDT",
+    "time_cn": "2025-10-06 17:00:00",
+    "hit_ts": 1759741200000,
+    "multiple": 10.14900120310859,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -32.77018589521713,
+    "btc_change_percent": 0.08619164595348532,
+    "btc_amplitude_percent": 0.23684527266690614
+  },
+  {
+    "inst_id": "IN_USDT",
+    "time_cn": "2025-10-10 14:00:00",
+    "hit_ts": 1760076000000,
+    "multiple": 34.335317521826134,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -1.0572500733671129,
+    "btc_change_percent": -0.18101572862121967,
+    "btc_amplitude_percent": 0.4336149499244671
+  },
+  {
+    "inst_id": "SYS_USDT",
+    "time_cn": "2025-10-13 18:00:00",
+    "hit_ts": 1760349600000,
+    "multiple": 21.578600308047672,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -8.640613224520886,
+    "btc_change_percent": -0.2617737343257302,
+    "btc_amplitude_percent": 0.3578095830740485
+  },
+  {
+    "inst_id": "RARE_USDT",
+    "time_cn": "2025-10-15 13:00:00",
+    "hit_ts": 1760504400000,
+    "multiple": 10.987108878532991,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -7.9337131649031125,
+    "btc_change_percent": 0.06419885439325072,
+    "btc_amplitude_percent": 0.44307004086109386
+  },
+  {
+    "inst_id": "CYBER_USDT",
+    "time_cn": "2025-10-15 16:00:00",
+    "hit_ts": 1760515200000,
+    "multiple": 12.338433131099938,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -9.742872386164315,
+    "btc_change_percent": 0.3376261654501597,
+    "btc_amplitude_percent": 0.8678387748409406
+  },
+  {
+    "inst_id": "SUPER_USDT",
+    "time_cn": "2025-10-16 08:00:00",
+    "hit_ts": 1760572800000,
+    "multiple": 12.670262281340342,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -8.534789241268507,
+    "btc_change_percent": -0.28722602882015136,
+    "btc_amplitude_percent": 0.44809066948955584
+  },
+  {
+    "inst_id": "KOMA_USDT",
+    "time_cn": "2025-10-18 13:00:00",
+    "hit_ts": 1760763600000,
+    "multiple": 16.98007246376825,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -6.612497450193652,
+    "btc_change_percent": 0.3155984955751463,
+    "btc_amplitude_percent": 0.34519466291843975
+  },
+  {
+    "inst_id": "NOM_USDT",
+    "time_cn": "2025-10-19 05:00:00",
+    "hit_ts": 1760821200000,
+    "multiple": 11.922817755153117,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -6.153447695305918,
+    "btc_change_percent": 0.14895339899875162,
+    "btc_amplitude_percent": 0.36046161527945825
+  },
+  {
+    "inst_id": "B3_USDT",
+    "time_cn": "2025-10-26 14:00:00",
+    "hit_ts": 1761458400000,
+    "multiple": 11.02781276238459,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -12.622451388739808,
+    "btc_change_percent": 0.014880578872438719,
+    "btc_amplitude_percent": 0.1299809600304066
+  },
+  {
+    "inst_id": "KERNEL_USDT",
+    "time_cn": "2025-10-28 15:00:00",
+    "hit_ts": 1761634800000,
+    "multiple": 69.47718873454826,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -8.993406314721668,
+    "btc_change_percent": 0.05760100999030961,
+    "btc_amplitude_percent": 0.2518838686486583
+  },
+  {
+    "inst_id": "BLESS_USDT",
+    "time_cn": "2025-11-04 19:00:00",
+    "hit_ts": 1762254000000,
+    "multiple": 11.950516809922668,
+    "next_candle_low_below_threshold": false,
+    "next_candle_low_vs_threshold_percent": 1.9030066043977174,
+    "btc_change_percent": 0.7194320851101521,
+    "btc_amplitude_percent": 0.9056731753094223
+  },
+  {
+    "inst_id": "FLUX_USDT",
+    "time_cn": "2025-11-08 00:00:00",
+    "hit_ts": 1762531200000,
+    "multiple": 38.41502034557993,
+    "next_candle_low_below_threshold": false,
+    "next_candle_low_vs_threshold_percent": 23.53889106876739,
+    "btc_change_percent": 0.35593016781123915,
+    "btc_amplitude_percent": 1.1034232224087237
+  },
+  {
+    "inst_id": "TOWNS_USDT",
+    "time_cn": "2025-11-10 00:00:00",
+    "hit_ts": 1762704000000,
+    "multiple": 28.788219809147577,
+    "next_candle_low_below_threshold": false,
+    "next_candle_low_vs_threshold_percent": 12.864461935746075,
+    "btc_change_percent": 0.10135503288976201,
+    "btc_amplitude_percent": 0.5571151522398856
+  },
+  {
+    "inst_id": "SUPER_USDT",
+    "time_cn": "2025-11-13 09:00:00",
+    "hit_ts": 1762995600000,
+    "multiple": 10.634539072039006,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -12.2709414436556,
+    "btc_change_percent": 0.14182544273797176,
+    "btc_amplitude_percent": 0.773754042859966
+  },
+  {
+    "inst_id": "LSK_USDT",
+    "time_cn": "2025-11-14 08:00:00",
+    "hit_ts": 1763078400000,
+    "multiple": 13.527254840584906,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -1.6692015281202042,
+    "btc_change_percent": -0.692197448393802,
+    "btc_amplitude_percent": 1.0680535371620778
+  },
+  {
+    "inst_id": "TRADOOR_USDT",
+    "time_cn": "2025-11-15 21:00:00",
+    "hit_ts": 1763211600000,
+    "multiple": 20.01859493606388,
+    "next_candle_low_below_threshold": false,
+    "next_candle_low_vs_threshold_percent": 0.7236581371116674,
+    "btc_change_percent": 0.5803784468454461,
+    "btc_amplitude_percent": 0.6807281567084399
+  },
+  {
+    "inst_id": "CTSI_USDT",
+    "time_cn": "2025-11-20 20:00:00",
+    "hit_ts": 1763640000000,
+    "multiple": 29.178166224600368,
+    "next_candle_low_below_threshold": false,
+    "next_candle_low_vs_threshold_percent": 8.76483386297822,
+    "btc_change_percent": -0.10023235186888806,
+    "btc_amplitude_percent": 0.3415082737943037
+  },
+  {
+    "inst_id": "FLUID_USDT",
+    "time_cn": "2025-11-22 08:00:00",
+    "hit_ts": 1763769600000,
+    "multiple": 15.110667493887103,
+    "next_candle_low_below_threshold": false,
+    "next_candle_low_vs_threshold_percent": 5.931476592968367,
+    "btc_change_percent": -0.46364527434402125,
+    "btc_amplitude_percent": 1.2754064682335373
+  },
+  {
+    "inst_id": "TOSHI_USDT",
+    "time_cn": "2025-11-23 10:00:00",
+    "hit_ts": 1763863200000,
+    "multiple": 10.801990614592803,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -7.793983222012063,
+    "btc_change_percent": 0.14820493760129036,
+    "btc_amplitude_percent": 0.794620813239641
+  },
+  {
+    "inst_id": "AWE_USDT",
+    "time_cn": "2025-11-23 16:00:00",
+    "hit_ts": 1763884800000,
+    "multiple": 12.850257738081103,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -9.534263915502304,
+    "btc_change_percent": 0.4310671594703634,
+    "btc_amplitude_percent": 0.5108425753463641
+  },
+  {
+    "inst_id": "XNY_USDT",
+    "time_cn": "2025-12-05 01:00:00",
+    "hit_ts": 1764867600000,
+    "multiple": 14.394836480065043,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -48.40338869176343,
+    "btc_change_percent": -0.012229397523604264,
+    "btc_amplitude_percent": 0.8738066867748202
+  },
+  {
+    "inst_id": "CVC_USDT",
+    "time_cn": "2025-12-05 16:00:00",
+    "hit_ts": 1764921600000,
+    "multiple": 13.067804383970053,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -1.9883759439628539,
+    "btc_change_percent": -0.16016065946720512,
+    "btc_amplitude_percent": 0.3963352812137077
+  },
+  {
+    "inst_id": "RDNT_USDT",
+    "time_cn": "2025-12-08 19:00:00",
+    "hit_ts": 1765191600000,
+    "multiple": 17.389861751152175,
+    "next_candle_low_below_threshold": false,
+    "next_candle_low_vs_threshold_percent": 1.1837739678957249,
+    "btc_change_percent": -0.18047562167444575,
+    "btc_amplitude_percent": 0.3524812683244715
+  },
+  {
+    "inst_id": "PROMPT_USDT",
+    "time_cn": "2025-12-13 06:00:00",
+    "hit_ts": 1765576800000,
+    "multiple": 17.979271708683495,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -31.909695120508974,
+    "btc_change_percent": 0.17217527709458336,
+    "btc_amplitude_percent": 0.24173320153938094
+  },
+  {
+    "inst_id": "TNSR_USDT",
+    "time_cn": "2025-12-13 15:00:00",
+    "hit_ts": 1765609200000,
+    "multiple": 16.221922731356557,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -2.626745253955631,
+    "btc_change_percent": -0.017939424543122823,
+    "btc_amplitude_percent": 0.11029423978367028
+  },
+  {
+    "inst_id": "ORCA_USDT",
+    "time_cn": "2025-12-16 11:00:00",
+    "hit_ts": 1765854000000,
+    "multiple": 11.715068922305756,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -8.021923590125027,
+    "btc_change_percent": -0.07683791042795224,
+    "btc_amplitude_percent": 0.7466083629916058
+  },
+  {
+    "inst_id": "BGSC_USDT",
+    "time_cn": "2025-12-29 19:00:00",
+    "hit_ts": 1767006000000,
+    "multiple": 17.109742828882442,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -7.2520494111876195,
+    "btc_change_percent": -0.24581056518196148,
+    "btc_amplitude_percent": 0.27942860724439983
+  },
+  {
+    "inst_id": "TRADOOR_USDT",
+    "time_cn": "2025-12-30 22:00:00",
+    "hit_ts": 1767103200000,
+    "multiple": 11.09004647953077,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -11.106178649791634,
+    "btc_change_percent": 0.867318840168289,
+    "btc_amplitude_percent": 1.3409489635437597
+  },
+  {
+    "inst_id": "BROCCOLI_USDT",
+    "time_cn": "2026-01-01 03:00:00",
+    "hit_ts": 1767207600000,
+    "multiple": 37.47570850202432,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -17.032135275602073,
+    "btc_change_percent": -0.15780447534861655,
+    "btc_amplitude_percent": 0.430852999939532
+  },
+  {
+    "inst_id": "TLM_USDT",
+    "time_cn": "2026-01-01 04:00:00",
+    "hit_ts": 1767211200000,
+    "multiple": 19.618728076864397,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -17.420481927710874,
+    "btc_change_percent": 0.14331133759533424,
+    "btc_amplitude_percent": 0.5764452845541396
+  },
+  {
+    "inst_id": "BEL_USDT",
+    "time_cn": "2026-01-10 16:00:00",
+    "hit_ts": 1768032000000,
+    "multiple": 14.808204768583487,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -6.509853329212905,
+    "btc_change_percent": -0.022727824373501807,
+    "btc_amplitude_percent": 0.16560419604183446
+  },
+  {
+    "inst_id": "D_USDT",
+    "time_cn": "2026-01-20 21:00:00",
+    "hit_ts": 1768914000000,
+    "multiple": 19.910400000000124,
+    "next_candle_low_below_threshold": false,
+    "next_candle_low_vs_threshold_percent": 3.617009164911561,
+    "btc_change_percent": -0.3477679501090574,
+    "btc_amplitude_percent": 0.5720141606111357
+  },
+  {
+    "inst_id": "FLUID_USDT",
+    "time_cn": "2026-01-25 08:00:00",
+    "hit_ts": 1769299200000,
+    "multiple": 15.674957399548418,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -1.4792206882450345,
+    "btc_change_percent": 0.11202050681709727,
+    "btc_amplitude_percent": 0.16371365360657814
+  },
+  {
+    "inst_id": "G_USDT",
+    "time_cn": "2026-01-25 08:00:00",
+    "hit_ts": 1769299200000,
+    "multiple": 16.91102620087332,
+    "next_candle_low_below_threshold": false,
+    "next_candle_low_vs_threshold_percent": 2.853286665951206,
+    "btc_change_percent": 0.11202050681709727,
+    "btc_amplitude_percent": 0.16371365360657814
+  },
+  {
+    "inst_id": "BEAMX_USDT",
+    "time_cn": "2026-01-26 08:00:00",
+    "hit_ts": 1769385600000,
+    "multiple": 12.211885363250572,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -3.29087838267884,
+    "btc_change_percent": 0.20628243724950257,
+    "btc_amplitude_percent": 0.7863435716528419
+  },
+  {
+    "inst_id": "TAIKO_USDT",
+    "time_cn": "2026-01-26 08:00:00",
+    "hit_ts": 1769385600000,
+    "multiple": 17.405200112739557,
+    "next_candle_low_below_threshold": false,
+    "next_candle_low_vs_threshold_percent": 6.478070205860415,
+    "btc_change_percent": 0.20628243724950257,
+    "btc_amplitude_percent": 0.7863435716528419
+  },
+  {
+    "inst_id": "PLAY_USDT",
+    "time_cn": "2026-01-28 18:00:00",
+    "hit_ts": 1769594400000,
+    "multiple": 10.059594755661506,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -3.939064200217626,
+    "btc_change_percent": -0.19487365040225496,
+    "btc_amplitude_percent": 0.4316255924382323
+  },
+  {
+    "inst_id": "COW_USDT",
+    "time_cn": "2026-02-14 19:00:00",
+    "hit_ts": 1771066800000,
+    "multiple": 12.24446365462355,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -5.321764805905705,
+    "btc_change_percent": 1.1915736871580622,
+    "btc_amplitude_percent": 1.3281350967130612
+  },
+  {
+    "inst_id": "MIRA_USDT",
+    "time_cn": "2026-02-27 02:00:00",
+    "hit_ts": 1772128800000,
+    "multiple": 10.28473804100228,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -6.502381445433847,
+    "btc_change_percent": 0.71313949032383,
+    "btc_amplitude_percent": 1.2174566487832963
+  },
+  {
+    "inst_id": "DEGO_USDT",
+    "time_cn": "2026-03-08 14:00:00",
+    "hit_ts": 1772949600000,
+    "multiple": 11.797802828754746,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -22.042521292514873,
+    "btc_change_percent": 0.02652274847196622,
+    "btc_amplitude_percent": 0.3048626032226716
+  },
+  {
+    "inst_id": "SOLV_USDT",
+    "time_cn": "2026-03-11 23:00:00",
+    "hit_ts": 1773241200000,
+    "multiple": 17.022208121827468,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -11.588487311875149,
+    "btc_change_percent": -0.48570391625365167,
+    "btc_amplitude_percent": 1.4056492497533202
+  },
+  {
+    "inst_id": "DEGO_USDT",
+    "time_cn": "2026-03-12 02:00:00",
+    "hit_ts": 1773252000000,
+    "multiple": 13.956436098429366,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -25.233753884621997,
+    "btc_change_percent": -0.2291166077738598,
+    "btc_amplitude_percent": 0.7123674911660777
+  },
+  {
+    "inst_id": "OXT_USDT",
+    "time_cn": "2026-03-12 03:00:00",
+    "hit_ts": 1773255600000,
+    "multiple": 19.259962523422757,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -7.88877970376803,
+    "btc_change_percent": 0.03343353950681459,
+    "btc_amplitude_percent": 0.547545043194433
+  },
+  {
+    "inst_id": "C_USDT",
+    "time_cn": "2026-03-15 01:00:00",
+    "hit_ts": 1773507600000,
+    "multiple": 11.76490021363157,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -6.034175009249278,
+    "btc_change_percent": -0.06512499752241858,
+    "btc_amplitude_percent": 0.20684265517447245
+  },
+  {
+    "inst_id": "XAN_USDT",
+    "time_cn": "2026-03-15 08:00:00",
+    "hit_ts": 1773532800000,
+    "multiple": 10.607427055702894,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -7.179786899249242,
+    "btc_change_percent": -0.32020659577817473,
+    "btc_amplitude_percent": 0.35392734302991335
+  },
+  {
+    "inst_id": "LISTA_USDT",
+    "time_cn": "2026-03-15 20:00:00",
+    "hit_ts": 1773576000000,
+    "multiple": 20.01996257018094,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -13.435362746412762,
+    "btc_change_percent": -0.3176756338193021,
+    "btc_amplitude_percent": 0.40040221272708026
+  },
+  {
+    "inst_id": "MAV_USDT",
+    "time_cn": "2026-03-16 02:00:00",
+    "hit_ts": 1773597600000,
+    "multiple": 10.376586183613108,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -14.29219985416832,
+    "btc_change_percent": -0.601405927407779,
+    "btc_amplitude_percent": 0.7903117503322609
+  },
+  {
+    "inst_id": "PHA_USDT",
+    "time_cn": "2026-03-20 10:00:00",
+    "hit_ts": 1773972000000,
+    "multiple": 11.705385706276124,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -6.536903795575853,
+    "btc_change_percent": 0.012789540997584198,
+    "btc_amplitude_percent": 0.6268296148926975
+  },
+  {
+    "inst_id": "老子_USDT",
+    "time_cn": "2026-03-22 06:00:00",
+    "hit_ts": 1774130400000,
+    "multiple": 16.64814585251819,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -5.406540881049259,
+    "btc_change_percent": -0.09698396920403052,
+    "btc_amplitude_percent": 0.20463333091583613
+  },
+  {
+    "inst_id": "NAORIS_USDT",
+    "time_cn": "2026-03-24 10:00:00",
+    "hit_ts": 1774317600000,
+    "multiple": 20.267344621512496,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -11.11595993497817,
+    "btc_change_percent": -0.08853085598270553,
+    "btc_amplitude_percent": 0.48748721339200274
+  },
+  {
+    "inst_id": "C_USDT",
+    "time_cn": "2026-03-27 12:00:00",
+    "hit_ts": 1774584000000,
+    "multiple": 14.227593742928885,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -0.46896293306834796,
+    "btc_change_percent": -0.2761418129335672,
+    "btc_amplitude_percent": 0.7510242562502868
+  },
+  {
+    "inst_id": "KNC_USDT",
+    "time_cn": "2026-03-27 12:00:00",
+    "hit_ts": 1774584000000,
+    "multiple": 10.16008457298188,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -7.668553782810165,
+    "btc_change_percent": -0.2761418129335672,
+    "btc_amplitude_percent": 0.7510242562502868
+  },
+  {
+    "inst_id": "草根文化_USDT",
+    "time_cn": "2026-03-30 23:00:00",
+    "hit_ts": 1774882800000,
+    "multiple": 13.389900064157775,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -13.319126062209541,
+    "btc_change_percent": -0.24937214291827384,
+    "btc_amplitude_percent": 0.7577076650209089
+  },
+  {
+    "inst_id": "PRL_USDT",
+    "time_cn": "2026-04-01 17:00:00",
+    "hit_ts": 1775034000000,
+    "multiple": 19.53646366703581,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -2.3079264519652454,
+    "btc_change_percent": -0.01617347288173588,
+    "btc_amplitude_percent": 0.509828663182319
+  },
+  {
+    "inst_id": "USTC_USDT",
+    "time_cn": "2026-04-04 04:00:00",
+    "hit_ts": 1775246400000,
+    "multiple": 12.169973359619275,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -11.863781150646274,
+    "btc_change_percent": -0.0942350581340561,
+    "btc_amplitude_percent": 0.146288709293803
+  },
+  {
+    "inst_id": "BULLA_USDT",
+    "time_cn": "2026-04-05 22:00:00",
+    "hit_ts": 1775397600000,
+    "multiple": 12.337521147072694,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -18.908513614227804,
+    "btc_change_percent": 0.04741151097645524,
+    "btc_amplitude_percent": 0.2550051300152255
+  },
+  {
+    "inst_id": "SYS_USDT",
+    "time_cn": "2026-04-06 16:00:00",
+    "hit_ts": 1775462400000,
+    "multiple": 11.729146221786067,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -6.532318201175931,
+    "btc_change_percent": 0.15229866753142549,
+    "btc_amplitude_percent": 0.4015936347264041
+  },
+  {
+    "inst_id": "EDU_USDT",
+    "time_cn": "2026-04-08 12:00:00",
+    "hit_ts": 1775620800000,
+    "multiple": 11.019590416063535,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -4.915007387272272,
+    "btc_change_percent": 0.3808922558922559,
+    "btc_amplitude_percent": 0.5592031425364841
+  },
+  {
+    "inst_id": "SLP_USDT",
+    "time_cn": "2026-04-09 01:00:00",
+    "hit_ts": 1775667600000,
+    "multiple": 12.848080133555836,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -8.596126468449523,
+    "btc_change_percent": 0.4095783481038742,
+    "btc_amplitude_percent": 0.6833292808692955
+  },
+  {
+    "inst_id": "FF_USDT",
+    "time_cn": "2026-04-11 02:00:00",
+    "hit_ts": 1775844000000,
+    "multiple": 27.205738168959407,
+    "next_candle_low_below_threshold": false,
+    "next_candle_low_vs_threshold_percent": 27.198450022341632,
+    "btc_change_percent": -0.028457325640718546,
+    "btc_amplitude_percent": 0.42343953297150577
+  },
+  {
+    "inst_id": "FORM_USDT",
+    "time_cn": "2026-04-11 03:00:00",
+    "hit_ts": 1775847600000,
+    "multiple": 13.305800464037155,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -12.508826793099942,
+    "btc_change_percent": 0.16805526664404433,
+    "btc_amplitude_percent": 0.5268833685501265
+  },
+  {
+    "inst_id": "CROSS_USDT",
+    "time_cn": "2026-04-11 14:00:00",
+    "hit_ts": 1775887200000,
+    "multiple": 31.536002515315463,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -0.9709339061555671,
+    "btc_change_percent": 0.058599956256358665,
+    "btc_amplitude_percent": 0.25420826094313315
+  },
+  {
+    "inst_id": "CHILLGUY_USDT",
+    "time_cn": "2026-04-13 20:00:00",
+    "hit_ts": 1776081600000,
+    "multiple": 14.106806406029277,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -16.673276080639113,
+    "btc_change_percent": 0.20862544186557433,
+    "btc_amplitude_percent": 0.6413927546739674
+  },
+  {
+    "inst_id": "TREE_USDT",
+    "time_cn": "2026-04-14 15:00:00",
+    "hit_ts": 1776150000000,
+    "multiple": 10.59034027907779,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -9.066852295819126,
+    "btc_change_percent": 0.036380282692256134,
+    "btc_amplitude_percent": 0.6948499749633731
+  },
+  {
+    "inst_id": "HEMI_USDT",
+    "time_cn": "2026-04-15 00:00:00",
+    "hit_ts": 1776182400000,
+    "multiple": 12.354737045970694,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -15.914909359881124,
+    "btc_change_percent": -0.9034224047693573,
+    "btc_amplitude_percent": 1.5981583519747582
+  },
+  {
+    "inst_id": "SKL_USDT",
+    "time_cn": "2026-04-17 23:00:00",
+    "hit_ts": 1776438000000,
+    "multiple": 11.609741098333467,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -13.007204218552646,
+    "btc_change_percent": -0.13372865287329214,
+    "btc_amplitude_percent": 0.7062825489888815
+  },
+  {
+    "inst_id": "RARE_USDT",
+    "time_cn": "2026-04-18 05:00:00",
+    "hit_ts": 1776459600000,
+    "multiple": 15.004938764311145,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -3.427109053161106,
+    "btc_change_percent": 0.14412726670530007,
+    "btc_amplitude_percent": 0.27932744058954284
+  },
+  {
+    "inst_id": "DENT_USDT",
+    "time_cn": "2026-04-21 15:00:00",
+    "hit_ts": 1776754800000,
+    "multiple": 10.986206896551721,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -18.44828553790897,
+    "btc_change_percent": 0.1598841037797895,
+    "btc_amplitude_percent": 0.6598182536546819
+  },
+  {
+    "inst_id": "PLAY_USDT",
+    "time_cn": "2026-04-25 09:00:00",
+    "hit_ts": 1777078800000,
+    "multiple": 10.141151449817126,
+    "next_candle_low_below_threshold": true,
+    "next_candle_low_vs_threshold_percent": -28.568132330038715,
+    "btc_change_percent": 0.09947022416971428,
+    "btc_amplitude_percent": 0.23007333668346353
+  }
+]

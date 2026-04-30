@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1900" viewBox="0 0 1800 1900">
+<rect width="100%" height="100%" fill="#f7f8fa"/>
+<text x="48" y="58" font-size="34" font-weight="700" fill="#111111">Gate 15倍以上命中时 BTC 涨跌幅分析</text>
+<text x="48" y="94" font-size="18" fill="#555555">使用 OKX BTC-USDT-SWAP 1H K线，对齐 Gate 15倍以上命中时间点</text>
+<rect x="48" y="130" width="260" height="110" rx="18" fill="#ffffff" stroke="#ebedf0"/>
+<text x="68" y="172" font-size="18" fill="#666666">15倍以上事件</text>
+<text x="68" y="214" font-size="32" font-weight="700" fill="#8e44ad">43</text>
+<rect x="328" y="130" width="260" height="110" rx="18" fill="#ffffff" stroke="#ebedf0"/>
+<text x="348" y="172" font-size="18" fill="#666666">BTC上涨</text>
+<text x="348" y="214" font-size="32" font-weight="700" fill="#27ae60">21</text>
+<rect x="608" y="130" width="260" height="110" rx="18" fill="#ffffff" stroke="#ebedf0"/>
+<text x="628" y="172" font-size="18" fill="#666666">BTC下跌</text>
+<text x="628" y="214" font-size="32" font-weight="700" fill="#e74c3c">22</text>
+<rect x="888" y="130" width="260" height="110" rx="18" fill="#ffffff" stroke="#ebedf0"/>
+<text x="908" y="172" font-size="18" fill="#666666">BTC持平</text>
+<text x="908" y="214" font-size="32" font-weight="700" fill="#7f8c8d">0</text>
+<rect x="1168" y="130" width="260" height="110" rx="18" fill="#ffffff" stroke="#ebedf0"/>
+<text x="1188" y="172" font-size="18" fill="#666666">BTC平均涨跌</text>
+<text x="1188" y="214" font-size="32" font-weight="700" fill="#2d3436">0.05%</text>
+<rect x="1448" y="130" width="260" height="110" rx="18" fill="#ffffff" stroke="#ebedf0"/>
+<text x="1468" y="172" font-size="18" fill="#666666">BTC平均振幅</text>
+<text x="1468" y="214" font-size="32" font-weight="700" fill="#f39c12">0.60%</text>
+<rect x="48" y="290" width="1704" height="760" rx="20" fill="#ffffff" stroke="#ebedf0"/>
+<text x="72" y="326" font-size="26" font-weight="700" fill="#111111">BTC 同时段涨幅 Top 10</text>
+<text x="72" y="416" font-size="15" font-weight="600" fill="#111111">1. BANANA_USDT 2025-03-12 02:00:00</text>
+<rect x="748" y="400" width="260" height="16" rx="8" fill="#eef1f5"/>
+<rect x="748" y="400" width="260.00" height="16" rx="8" fill="#27ae60"/>
+<text x="1024" y="414" font-size="14" fill="#333333">+2.41%</text>
+<text x="92" y="436" font-size="13" fill="#666666">BTC +2.41% | 振幅 2.70% | 倍数 16.14x</text>
+<text x="72" y="476" font-size="15" font-weight="600" fill="#111111">2. DEGEN_USDT 2025-04-07 16:00:00</text>
+<rect x="748" y="460" width="260" height="16" rx="8" fill="#eef1f5"/>
+<rect x="748" y="460" width="163.42" height="16" rx="8" fill="#27ae60"/>
+<text x="1024" y="474" font-size="14" fill="#333333">+1.52%</text>
+<text x="92" y="496" font-size="13" fill="#666666">BTC +1.52% | 振幅 2.33% | 倍数 30.40x</text>
+<text x="72" y="536" font-size="15" font-weight="600" fill="#111111">3. SKYAI_USDT 2025-07-03 00:00:00</text>
+<rect x="748" y="520" width="260" height="16" rx="8" fill="#eef1f5"/>
+<rect x="748" y="520" width="66.90" height="16" rx="8" fill="#27ae60"/>
+<text x="1024" y="534" font-size="14" fill="#333333">+0.62%</text>
+<text x="92" y="556" font-size="13" fill="#666666">BTC +0.62% | 振幅 0.94% | 倍数 16.48x</text>
+<text x="72" y="596" font-size="15" font-weight="600" fill="#111111">4. TRADOOR_USDT 2025-11-15 21:00:00</text>
+<rect x="748" y="580" width="260" height="16" rx="8" fill="#eef1f5"/>
+<rect x="748" y="580" width="62.59" height="16" rx="8" fill="#27ae60"/>
+<text x="1024" y="594" font-size="14" fill="#333333">+0.58%</text>
+<text x="92" y="616" font-size="13" fill="#666666">BTC +0.58% | 振幅 0.68% | 倍数 20.02x</text>
+<text x="72" y="656" font-size="15" font-weight="600" fill="#111111">5. FLUX_USDT 2025-11-08 00:00:00</text>
+<rect x="748" y="640" width="260" height="16" rx="8" fill="#eef1f5"/>
+<rect x="748" y="640" width="38.38" height="16" rx="8" fill="#27ae60"/>
+<text x="1024" y="654" font-size="14" fill="#333333">+0.36%</text>
+<text x="92" y="676" font-size="13" fill="#666666">BTC +0.36% | 振幅 1.10% | 倍数 38.42x</text>
+<text x="72" y="716" font-size="15" font-weight="600" fill="#111111">6. KOMA_USDT 2025-10-18 13:00:00</text>
+<rect x="748" y="700" width="260" height="16" rx="8" fill="#eef1f5"/>
+<rect x="748" y="700" width="34.03" height="16" rx="8" fill="#27ae60"/>
+<text x="1024" y="714" font-size="14" fill="#333333">+0.32%</text>
+<text x="92" y="736" font-size="13" fill="#666666">BTC +0.32% | 振幅 0.35% | 倍数 16.98x</text>
+<text x="72" y="776" font-size="15" font-weight="600" fill="#111111">7. STO_USDT 2025-05-02 18:00:00</text>
+<rect x="748" y="760" width="260" height="16" rx="8" fill="#eef1f5"/>
+<rect x="748" y="760" width="33.04" height="16" rx="8" fill="#27ae60"/>
+<text x="1024" y="774" font-size="14" fill="#333333">+0.31%</text>
+<text x="92" y="796" font-size="13" fill="#666666">BTC +0.31% | 振幅 0.36% | 倍数 19.90x</text>
+<text x="72" y="836" font-size="15" font-weight="600" fill="#111111">8. TAIKO_USDT 2026-01-26 08:00:00</text>
+<rect x="748" y="820" width="260" height="16" rx="8" fill="#eef1f5"/>
+<rect x="748" y="820" width="22.24" height="16" rx="8" fill="#27ae60"/>
+<text x="1024" y="834" font-size="14" fill="#333333">+0.21%</text>
+<text x="92" y="856" font-size="13" fill="#666666">BTC +0.21% | 振幅 0.79% | 倍数 17.41x</text>
+<text x="72" y="896" font-size="15" font-weight="600" fill="#111111">9. PROMPT_USDT 2025-12-13 06:00:00</text>
+<rect x="748" y="880" width="260" height="16" rx="8" fill="#eef1f5"/>
+<rect x="748" y="880" width="18.57" height="16" rx="8" fill="#27ae60"/>
+<text x="1024" y="894" font-size="14" fill="#333333">+0.17%</text>
+<text x="92" y="916" font-size="13" fill="#666666">BTC +0.17% | 振幅 0.24% | 倍数 17.98x</text>
+<text x="72" y="956" font-size="15" font-weight="600" fill="#111111">10. SNT_USDT 2025-04-10 13:00:00</text>
+<rect x="748" y="940" width="260" height="16" rx="8" fill="#eef1f5"/>
+<rect x="748" y="940" width="18.18" height="16" rx="8" fill="#27ae60"/>
+<text x="1024" y="954" font-size="14" fill="#333333">+0.17%</text>
+<text x="92" y="976" font-size="13" fill="#666666">BTC +0.17% | 振幅 0.40% | 倍数 34.36x</text>
+<rect x="48" y="1080" width="1704" height="760" rx="20" fill="#ffffff" stroke="#ebedf0"/>
+<text x="72" y="1116" font-size="26" font-weight="700" fill="#111111">BTC 同时段跌幅 Top 10</text>
+<text x="72" y="1206" font-size="15" font-weight="600" fill="#111111">1. ALICE_USDT 2025-04-14 23:00:00</text>
+<rect x="748" y="1190" width="260" height="16" rx="8" fill="#eef1f5"/>
+<rect x="748" y="1190" width="260.00" height="16" rx="8" fill="#e74c3c"/>
+<text x="1024" y="1204" font-size="14" fill="#333333">-1.54%</text>
+<text x="92" y="1226" font-size="13" fill="#666666">BTC -1.54% | 振幅 2.08% | 倍数 17.46x</text>
+<text x="72" y="1266" font-size="15" font-weight="600" fill="#111111">2. BROCCOLIF3B_USDT 2025-04-12 10:00:00</text>
+<rect x="748" y="1250" width="260" height="16" rx="8" fill="#eef1f5"/>
+<rect x="748" y="1250" width="86.13" height="16" rx="8" fill="#e74c3c"/>
+<text x="1024" y="1264" font-size="14" fill="#333333">-0.51%</text>
+<text x="92" y="1286" font-size="13" fill="#666666">BTC -0.51% | 振幅 0.63% | 倍数 251.43x</text>
+<text x="72" y="1326" font-size="15" font-weight="600" fill="#111111">3. SOLV_USDT 2026-03-11 23:00:00</text>
+<rect x="748" y="1310" width="260" height="16" rx="8" fill="#eef1f5"/>
+<rect x="748" y="1310" width="82.06" height="16" rx="8" fill="#e74c3c"/>
+<text x="1024" y="1324" font-size="14" fill="#333333">-0.49%</text>
+<text x="92" y="1346" font-size="13" fill="#666666">BTC -0.49% | 振幅 1.41% | 倍数 17.02x</text>
+<text x="72" y="1386" font-size="15" font-weight="600" fill="#111111">4. FLUID_USDT 2025-11-22 08:00:00</text>
+<rect x="748" y="1370" width="260" height="16" rx="8" fill="#eef1f5"/>
+<rect x="748" y="1370" width="78.34" height="16" rx="8" fill="#e74c3c"/>
+<text x="1024" y="1384" font-size="14" fill="#333333">-0.46%</text>
+<text x="92" y="1406" font-size="13" fill="#666666">BTC -0.46% | 振幅 1.28% | 倍数 15.11x</text>
+<text x="72" y="1446" font-size="15" font-weight="600" fill="#111111">5. D_USDT 2026-01-20 21:00:00</text>
+<rect x="748" y="1430" width="260" height="16" rx="8" fill="#eef1f5"/>
+<rect x="748" y="1430" width="58.76" height="16" rx="8" fill="#e74c3c"/>
+<text x="1024" y="1444" font-size="14" fill="#333333">-0.35%</text>
+<text x="92" y="1466" font-size="13" fill="#666666">BTC -0.35% | 振幅 0.57% | 倍数 19.91x</text>
+<text x="72" y="1506" font-size="15" font-weight="600" fill="#111111">6. LISTA_USDT 2026-03-15 20:00:00</text>
+<rect x="748" y="1490" width="260" height="16" rx="8" fill="#eef1f5"/>
+<rect x="748" y="1490" width="53.67" height="16" rx="8" fill="#e74c3c"/>
+<text x="1024" y="1504" font-size="14" fill="#333333">-0.32%</text>
+<text x="92" y="1526" font-size="13" fill="#666666">BTC -0.32% | 振幅 0.40% | 倍数 20.02x</text>
+<text x="72" y="1566" font-size="15" font-weight="600" fill="#111111">7. SYS_USDT 2025-10-13 18:00:00</text>
+<rect x="748" y="1550" width="260" height="16" rx="8" fill="#eef1f5"/>
+<rect x="748" y="1550" width="44.23" height="16" rx="8" fill="#e74c3c"/>
+<text x="1024" y="1564" font-size="14" fill="#333333">-0.26%</text>
+<text x="92" y="1586" font-size="13" fill="#666666">BTC -0.26% | 振幅 0.36% | 倍数 21.58x</text>
+<text x="72" y="1626" font-size="15" font-weight="600" fill="#111111">8. BGSC_USDT 2025-12-29 19:00:00</text>
+<rect x="748" y="1610" width="260" height="16" rx="8" fill="#eef1f5"/>
+<rect x="748" y="1610" width="41.53" height="16" rx="8" fill="#e74c3c"/>
+<text x="1024" y="1624" font-size="14" fill="#333333">-0.25%</text>
+<text x="92" y="1646" font-size="13" fill="#666666">BTC -0.25% | 振幅 0.28% | 倍数 17.11x</text>
+<text x="72" y="1686" font-size="15" font-weight="600" fill="#111111">9. ALT_USDT 2025-06-16 17:00:00</text>
+<rect x="748" y="1670" width="260" height="16" rx="8" fill="#eef1f5"/>
+<rect x="748" y="1670" width="35.17" height="16" rx="8" fill="#e74c3c"/>
+<text x="1024" y="1684" font-size="14" fill="#333333">-0.21%</text>
+<text x="92" y="1706" font-size="13" fill="#666666">BTC -0.21% | 振幅 0.33% | 倍数 53.38x</text>
+<text x="72" y="1746" font-size="15" font-weight="600" fill="#111111">10. IN_USDT 2025-10-10 14:00:00</text>
+<rect x="748" y="1730" width="260" height="16" rx="8" fill="#eef1f5"/>
+<rect x="748" y="1730" width="30.58" height="16" rx="8" fill="#e74c3c"/>
+<text x="1024" y="1744" font-size="14" fill="#333333">-0.18%</text>
+<text x="92" y="1766" font-size="13" fill="#666666">BTC -0.18% | 振幅 0.43% | 倍数 34.34x</text>
+</svg>
