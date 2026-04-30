@@ -47,7 +47,6 @@ class _GateScannerPageState extends State<GateScannerPage> {
   List<_PinnedAlertEntry> _pinnedAlerts = const <_PinnedAlertEntry>[];
   CandleInterval _selectedInterval = CandleInterval.h1;
   bool _isRefreshing = false;
-  bool _hasShownMonitorDialog = false;
   bool _isMonitorDialogVisible = false;
   String? _errorMessage;
   DateTime? _lastUpdatedAt;
@@ -524,10 +523,7 @@ class _GateScannerPageState extends State<GateScannerPage> {
       );
     }
 
-    if (newHits.isNotEmpty &&
-        !_hasShownMonitorDialog &&
-        !_isMonitorDialogVisible) {
-      _hasShownMonitorDialog = true;
+    if (newHits.isNotEmpty && !_isMonitorDialogVisible) {
       _isMonitorDialogVisible = true;
       unawaited(_showMonitorDialog(nextEntry, nextBadges));
     }
@@ -654,7 +650,8 @@ class _GateScannerPageState extends State<GateScannerPage> {
             title: const Text('Gate 实时监控命中'),
             content: Text(
               '${entry.contract.displayName} 已进入置顶。\n命中标签: '
-              '${badges.map(_formatPinnedBadgeText).join(' / ')}',
+              '${badges.map(_formatPinnedBadgeText).join(' / ')}\n'
+              '命中时间: ${_formatDateTime(entry.triggeredAt)}',
             ),
             actions: [
               TextButton(
@@ -694,6 +691,39 @@ class _GateScannerPageState extends State<GateScannerPage> {
 
   Future<void> _toggleAlarmSound() async {
     await LocalNotificationService.instance.togglePersistentAlarm();
+  }
+
+  Future<void> _triggerTestAlert() async {
+    final badges = <_PinnedAlertBadge>[
+      _PinnedAlertBadge(
+        signature: 'test|gate|${DateTime.now().millisecondsSinceEpoch}',
+        label: '${_intervalLabel(_selectedInterval)} · 测试命中',
+        targetPrices: const <_TargetPriceLevel>[],
+        maxReachedMultiple: 10.0,
+      ),
+    ];
+    final contract =
+        _rankings.isNotEmpty
+            ? _rankings.first.contract
+            : const GateContract(
+              name: 'TEST_USDT',
+              orderSizeMin: 1,
+              inDelisting: false,
+              quantoMultiplier: 1,
+              leverageMax: 1,
+              status: 'trading',
+            );
+
+    final entry = _upsertPinnedAlert(contract: contract, badges: badges);
+    await LocalNotificationService.instance.showMonitorAlert(
+      title: '${contract.displayName} 测试命中',
+      body: '这是测试提醒，用于验证弹框、通知和警报声。',
+    );
+    if (!mounted || _isMonitorDialogVisible) {
+      return;
+    }
+    _isMonitorDialogVisible = true;
+    await _showMonitorDialog(entry, badges);
   }
 
   String _monitorSignature({
@@ -745,6 +775,11 @@ class _GateScannerPageState extends State<GateScannerPage> {
                 isActive ? Icons.notifications_active : Icons.volume_up_outlined,
               ),
             ),
+          ),
+          IconButton(
+            onPressed: _triggerTestAlert,
+            tooltip: '测试命中',
+            icon: const Icon(Icons.notification_add_outlined),
           ),
           IconButton(
             onPressed: _isRefreshing ? null : () => _bootstrapMarketData(),
@@ -1013,6 +1048,11 @@ class _PinnedAlertsSection extends StatelessWidget {
                           const SizedBox(height: 4),
                           Text(
                             alert.contract.name,
+                            style: theme.textTheme.bodySmall,
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            '命中时间: ${_formatDateTime(alert.triggeredAt)}',
                             style: theme.textTheme.bodySmall,
                           ),
                           const SizedBox(height: 10),

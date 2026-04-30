@@ -53,12 +53,12 @@ class LocalNotificationService {
       importance: Importance.max,
       priority: Priority.high,
       ticker: 'ticker',
-      playSound: false,
+      playSound: true,
     );
     const darwinDetails = DarwinNotificationDetails(
       presentAlert: true,
       presentBadge: true,
-      presentSound: false,
+      presentSound: true,
     );
     const details = NotificationDetails(
       android: androidDetails,
@@ -73,7 +73,7 @@ class LocalNotificationService {
       body: body,
       notificationDetails: details,
     );
-    await startPersistentAlarm();
+    await startPersistentAlarm(restart: true);
     await _requestDockAttention();
   }
 
@@ -85,9 +85,12 @@ class LocalNotificationService {
     await startPersistentAlarm();
   }
 
-  Future<void> startPersistentAlarm() async {
-    if (alarmActive.value) {
+  Future<void> startPersistentAlarm({bool restart = false}) async {
+    if (alarmActive.value && !restart) {
       return;
+    }
+    if (alarmActive.value && restart) {
+      await stopPersistentAlarm();
     }
     alarmActive.value = true;
 
@@ -98,11 +101,12 @@ class LocalNotificationService {
     try {
       switch (defaultTargetPlatform) {
         case TargetPlatform.iOS:
-          await _attentionChannel.invokeMethod<void>('startPersistentAlarm');
         case TargetPlatform.macOS:
           await _attentionChannel.invokeMethod<void>('startPersistentAlarm');
+          break;
         case TargetPlatform.android:
           await HapticFeedback.vibrate();
+          break;
         case TargetPlatform.fuchsia:
         case TargetPlatform.linux:
         case TargetPlatform.windows:
@@ -125,9 +129,10 @@ class LocalNotificationService {
 
     try {
       switch (defaultTargetPlatform) {
-        case TargetPlatform.macOS:
         case TargetPlatform.iOS:
+        case TargetPlatform.macOS:
           await _attentionChannel.invokeMethod<void>('stopPersistentAlarm');
+          break;
         case TargetPlatform.android:
         case TargetPlatform.fuchsia:
         case TargetPlatform.linux:
