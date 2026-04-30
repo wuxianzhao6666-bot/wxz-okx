@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="2200" viewBox="0 0 1800 2200">
+<rect width="100%" height="100%" fill="#f7f8fa"/>
+<text x="48" y="58" font-size="34" font-weight="700" fill="#111111">Gate 十倍前成交量总结图</text>
+<text x="48" y="94" font-size="18" fill="#555555">统计 Gate 10倍命中事件中，十倍前一根K线成交量的区间分布、占比和排名</text>
+<rect x="48" y="130" width="360" height="110" rx="18" fill="#ffffff" stroke="#ebedf0"/>
+<text x="68" y="172" font-size="18" fill="#666666">命中总数</text>
+<text x="68" y="214" font-size="34" font-weight="700" fill="#8e44ad">113</text>
+<rect x="432" y="130" width="360" height="110" rx="18" fill="#ffffff" stroke="#ebedf0"/>
+<text x="452" y="172" font-size="18" fill="#666666">最小成交量</text>
+<text x="452" y="214" font-size="34" font-weight="700" fill="#27ae60">219</text>
+<rect x="816" y="130" width="360" height="110" rx="18" fill="#ffffff" stroke="#ebedf0"/>
+<text x="836" y="172" font-size="18" fill="#666666">中位成交量</text>
+<text x="836" y="214" font-size="34" font-weight="700" fill="#2980b9">39649</text>
+<rect x="1200" y="130" width="360" height="110" rx="18" fill="#ffffff" stroke="#ebedf0"/>
+<text x="1220" y="172" font-size="18" fill="#666666">最大成交量</text>
+<text x="1220" y="214" font-size="34" font-weight="700" fill="#c0392b">24979931</text>
+<rect x="48" y="290" width="1704" height="760" rx="20" fill="#ffffff" stroke="#ebedf0"/>
+<text x="72" y="326" font-size="26" font-weight="700" fill="#111111">十倍前成交量区间分布</text>
+<text x="72" y="356" font-size="16" fill="#666666">按区间统计数量和占比，并列出每个区间内倍数最高的前三个事件</text>
+<text x="72" y="416" font-size="20" font-weight="700" fill="#111111">0-2k</text>
+<rect x="308" y="400" width="300" height="18" rx="9" fill="#eef1f5"/>
+<rect x="308" y="400" width="79.41" height="18" rx="9" fill="#16a085"/>
+<text x="626" y="415" font-size="16" fill="#333333">9 次 | 7.96%</text>
+<text x="92" y="448" font-size="15" fill="#666666">Top: TOWNS_USDT 28.79x / LISTA_USDT 20.02x / TRADOOR_USDT 20.02x</text>
+<text x="72" y="524" font-size="20" font-weight="700" fill="#111111">2k-10k</text>
+<rect x="308" y="508" width="300" height="18" rx="9" fill="#eef1f5"/>
+<rect x="308" y="508" width="176.47" height="18" rx="9" fill="#16a085"/>
+<text x="626" y="523" font-size="16" fill="#333333">20 次 | 17.70%</text>
+<text x="92" y="556" font-size="15" fill="#666666">Top: KERNEL_USDT 69.48x / SNT_USDT 34.36x / G_USDT 16.91x</text>
+<text x="72" y="632" font-size="20" font-weight="700" fill="#111111">10k-50k</text>
+<rect x="308" y="616" width="300" height="18" rx="9" fill="#eef1f5"/>
+<rect x="308" y="616" width="300.00" height="18" rx="9" fill="#16a085"/>
+<text x="626" y="631" font-size="16" fill="#333333">34 次 | 30.09%</text>
+<text x="92" y="664" font-size="15" fill="#666666">Top: BROCCOLIF3B_USDT 251.43x / ALT_USDT 53.38x / IN_USDT 34.34x</text>
+<text x="72" y="740" font-size="20" font-weight="700" fill="#111111">50k-100k</text>
+<rect x="308" y="724" width="300" height="18" rx="9" fill="#eef1f5"/>
+<rect x="308" y="724" width="176.47" height="18" rx="9" fill="#16a085"/>
+<text x="626" y="739" font-size="16" fill="#333333">20 次 | 17.70%</text>
+<text x="92" y="772" font-size="15" fill="#666666">Top: TUT_USDT 52.51x / MOCA_USDT 37.63x / CROSS_USDT 31.54x</text>
+<text x="72" y="848" font-size="20" font-weight="700" fill="#111111">100k-500k</text>
+<rect x="308" y="832" width="300" height="18" rx="9" fill="#eef1f5"/>
+<rect x="308" y="832" width="150.00" height="18" rx="9" fill="#16a085"/>
+<text x="626" y="847" font-size="16" fill="#333333">17 次 | 15.04%</text>
+<text x="92" y="880" font-size="15" fill="#666666">Top: VINE_USDT 51.81x / FLUX_USDT 38.42x / FF_USDT 27.21x</text>
+<text x="72" y="956" font-size="20" font-weight="700" fill="#111111">500k以上</text>
+<rect x="308" y="940" width="300" height="18" rx="9" fill="#eef1f5"/>
+<rect x="308" y="940" width="114.71" height="18" rx="9" fill="#16a085"/>
+<text x="626" y="955" font-size="16" fill="#333333">13 次 | 11.50%</text>
+<text x="92" y="988" font-size="15" fill="#666666">Top: BROCCOLI_USDT 37.48x / TLM_USDT 19.62x / RDNT_USDT 17.39x</text>
+<rect x="48" y="1090" width="1704" height="980" rx="20" fill="#ffffff" stroke="#ebedf0"/>
+<text x="72" y="1126" font-size="26" font-weight="700" fill="#111111">十倍前成交量 Top 10</text>
+<text x="72" y="1156" font-size="16" fill="#666666">按十倍前一根K线成交量从高到低排序，并显示对应倍数</text>
+<text x="72" y="1216" font-size="16" font-weight="600" fill="#111111">1. TLM_USDT 2026-01-01 04:00:00</text>
+<rect x="668" y="1200" width="320" height="16" rx="8" fill="#eef1f5"/>
+<rect x="668" y="1200" width="320.00" height="16" rx="8" fill="#8e44ad"/>
+<text x="1004" y="1214" font-size="14" fill="#333333">24979931 | 倍数 19.62x</text>
+<text x="92" y="1238" font-size="13" fill="#666666">前振幅 3.93% | 前涨幅 2.84% | 量能倍数 5.32x</text>
+<text x="72" y="1294" font-size="16" font-weight="600" fill="#111111">2. DEGO_USDT 2026-03-08 14:00:00</text>
+<rect x="668" y="1278" width="320" height="16" rx="8" fill="#eef1f5"/>
+<rect x="668" y="1278" width="99.30" height="16" rx="8" fill="#8e44ad"/>
+<text x="1004" y="1292" font-size="14" fill="#333333">7751655 | 倍数 11.80x</text>
+<text x="92" y="1316" font-size="13" fill="#666666">前振幅 5.88% | 前涨幅 2.11% | 量能倍数 6.51x</text>
+<text x="72" y="1372" font-size="16" font-weight="600" fill="#111111">3. DEGO_USDT 2026-03-12 02:00:00</text>
+<rect x="668" y="1356" width="320" height="16" rx="8" fill="#eef1f5"/>
+<rect x="668" y="1356" width="57.72" height="16" rx="8" fill="#8e44ad"/>
+<text x="1004" y="1370" font-size="14" fill="#333333">4506076 | 倍数 13.96x</text>
+<text x="92" y="1394" font-size="13" fill="#666666">前振幅 5.55% | 前涨幅 1.65% | 量能倍数 9.48x</text>
+<text x="72" y="1450" font-size="16" font-weight="600" fill="#111111">4. MYX_USDT 2025-09-08 18:00:00</text>
+<rect x="668" y="1434" width="320" height="16" rx="8" fill="#eef1f5"/>
+<rect x="668" y="1434" width="38.42" height="16" rx="8" fill="#8e44ad"/>
+<text x="1004" y="1448" font-size="14" fill="#333333">2999136 | 倍数 12.75x</text>
+<text x="92" y="1472" font-size="13" fill="#666666">前振幅 6.13% | 前涨幅 2.66% | 量能倍数 3.77x</text>
+<text x="72" y="1528" font-size="16" font-weight="600" fill="#111111">5. VINE_USDT 2025-03-29 09:00:00</text>
+<rect x="668" y="1512" width="320" height="16" rx="8" fill="#eef1f5"/>
+<rect x="668" y="1512" width="35.35" height="16" rx="8" fill="#8e44ad"/>
+<text x="1004" y="1526" font-size="14" fill="#333333">2759724 | 倍数 11.18x</text>
+<text x="92" y="1550" font-size="13" fill="#666666">前振幅 5.83% | 前涨幅 3.90% | 量能倍数 27.94x</text>
+<text x="72" y="1606" font-size="16" font-weight="600" fill="#111111">6. RED_USDT 2025-09-05 15:00:00</text>
+<rect x="668" y="1590" width="320" height="16" rx="8" fill="#eef1f5"/>
+<rect x="668" y="1590" width="13.58" height="16" rx="8" fill="#8e44ad"/>
+<text x="1004" y="1604" font-size="14" fill="#333333">1059911 | 倍数 12.81x</text>
+<text x="92" y="1628" font-size="13" fill="#666666">前振幅 6.27% | 前涨幅 4.56% | 量能倍数 9.55x</text>
+<text x="72" y="1684" font-size="16" font-weight="600" fill="#111111">7. BROCCOLI_USDT 2026-01-01 03:00:00</text>
+<rect x="668" y="1668" width="320" height="16" rx="8" fill="#eef1f5"/>
+<rect x="668" y="1668" width="9.03" height="16" rx="8" fill="#8e44ad"/>
+<text x="1004" y="1682" font-size="14" fill="#333333">704871 | 倍数 37.48x</text>
+<text x="92" y="1706" font-size="13" fill="#666666">前振幅 5.66% | 前涨幅 3.49% | 量能倍数 35.54x</text>
+<text x="72" y="1762" font-size="16" font-weight="600" fill="#111111">8. DENT_USDT 2026-04-21 15:00:00</text>
+<rect x="668" y="1746" width="320" height="16" rx="8" fill="#eef1f5"/>
+<rect x="668" y="1746" width="8.41" height="16" rx="8" fill="#8e44ad"/>
+<text x="1004" y="1760" font-size="14" fill="#333333">656859 | 倍数 10.99x</text>
+<text x="92" y="1784" font-size="13" fill="#666666">前振幅 3.95% | 前涨幅 2.26% | 量能倍数 11.05x</text>
+<text x="72" y="1840" font-size="16" font-weight="600" fill="#111111">9. XNY_USDT 2025-12-05 01:00:00</text>
+<rect x="668" y="1824" width="320" height="16" rx="8" fill="#eef1f5"/>
+<rect x="668" y="1824" width="8.35" height="16" rx="8" fill="#8e44ad"/>
+<text x="1004" y="1838" font-size="14" fill="#333333">652203 | 倍数 14.39x</text>
+<text x="92" y="1862" font-size="13" fill="#666666">前振幅 9.48% | 前涨幅 5.71% | 量能倍数 8.44x</text>
+<text x="72" y="1918" font-size="16" font-weight="600" fill="#111111">10. CYBER_USDT 2025-10-15 16:00:00</text>
+<rect x="668" y="1902" width="320" height="16" rx="8" fill="#eef1f5"/>
+<rect x="668" y="1902" width="8.07" height="16" rx="8" fill="#8e44ad"/>
+<text x="1004" y="1916" font-size="14" fill="#333333">629672 | 倍数 12.34x</text>
+<text x="92" y="1940" font-size="13" fill="#666666">前振幅 1.92% | 前涨幅 1.43% | 量能倍数 25.35x</text>
+</svg>

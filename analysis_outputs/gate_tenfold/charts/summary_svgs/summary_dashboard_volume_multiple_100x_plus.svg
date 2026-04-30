@@ -1,0 +1,485 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="5160" viewBox="0 0 1800 5160">
+<rect width="100%" height="100%" fill="#f7f8fa"/>
+<text x="48" y="58" font-size="34" font-weight="700" fill="#111111">Gate 10倍总结图（成交量倍数 100x以上）</text>
+<text x="48" y="94" font-size="18" fill="#555555">基于 result.json 生成；展示最高倍数、十倍前振幅、成交量倍数、10倍收盘位置统计</text>
+<rect x="48" y="130" width="260" height="110" rx="18" fill="#ffffff" stroke="#ebedf0"/>
+<text x="68" y="172" font-size="18" fill="#666666">总币数</text>
+<text x="68" y="214" font-size="34" font-weight="700" fill="#2d3436">19</text>
+<rect x="328" y="130" width="260" height="110" rx="18" fill="#ffffff" stroke="#ebedf0"/>
+<text x="348" y="172" font-size="18" fill="#666666">命中币种</text>
+<text x="348" y="214" font-size="34" font-weight="700" fill="#c0392b">17</text>
+<rect x="608" y="130" width="260" height="110" rx="18" fill="#ffffff" stroke="#ebedf0"/>
+<text x="628" y="172" font-size="18" fill="#666666">命中次数</text>
+<text x="628" y="214" font-size="34" font-weight="700" fill="#8e44ad">17</text>
+<rect x="888" y="130" width="260" height="110" rx="18" fill="#ffffff" stroke="#ebedf0"/>
+<text x="908" y="172" font-size="18" fill="#666666">错误数</text>
+<text x="908" y="214" font-size="34" font-weight="700" fill="#7f8c8d">0</text>
+<rect x="1168" y="130" width="260" height="110" rx="18" fill="#ffffff" stroke="#ebedf0"/>
+<text x="1188" y="172" font-size="18" fill="#666666">收盘高于10倍价</text>
+<text x="1188" y="214" font-size="34" font-weight="700" fill="#27ae60">12</text>
+<rect x="1448" y="130" width="260" height="110" rx="18" fill="#ffffff" stroke="#ebedf0"/>
+<text x="1468" y="172" font-size="18" fill="#666666">收盘低于10倍价</text>
+<text x="1468" y="214" font-size="34" font-weight="700" fill="#e74c3c">5</text>
+<rect x="48" y="290" width="820" height="520" rx="20" fill="#ffffff" stroke="#ebedf0"/>
+<text x="72" y="326" font-size="26" font-weight="700" fill="#111111">最高倍数 Top 10（含成交量倍数）</text>
+<text x="72" y="394" font-size="16" font-weight="600" fill="#111111">1. KERNEL_USDT</text>
+<rect x="298" y="378" width="250" height="16" rx="8" fill="#eef1f5"/>
+<rect x="298" y="378" width="250.00" height="16" rx="8" fill="#f39c12"/>
+<text x="564" y="392" font-size="14" fill="#333333">最高 69.48x | 命中 1 次</text>
+<text x="92" y="411" font-size="13" fill="#666666">前振幅 2.34% | 前涨跌 1.48% | 成交量 238.50x</text>
+<text x="72" y="438" font-size="16" font-weight="600" fill="#111111">2. ALT_USDT</text>
+<rect x="298" y="422" width="250" height="16" rx="8" fill="#eef1f5"/>
+<rect x="298" y="422" width="192.08" height="16" rx="8" fill="#f39c12"/>
+<text x="564" y="436" font-size="14" fill="#333333">最高 53.38x | 命中 1 次</text>
+<text x="92" y="455" font-size="13" fill="#666666">前振幅 1.88% | 前涨跌 1.38% | 成交量 2513.27x</text>
+<text x="72" y="482" font-size="16" font-weight="600" fill="#111111">3. VINE_USDT</text>
+<rect x="298" y="466" width="250" height="16" rx="8" fill="#eef1f5"/>
+<rect x="298" y="466" width="186.44" height="16" rx="8" fill="#f39c12"/>
+<text x="564" y="480" font-size="14" fill="#333333">最高 51.81x | 命中 1 次</text>
+<text x="92" y="499" font-size="13" fill="#666666">前振幅 2.42% | 前涨跌 1.62% | 成交量 115.93x</text>
+<text x="72" y="526" font-size="16" font-weight="600" fill="#111111">4. CTSI_USDT</text>
+<rect x="298" y="510" width="250" height="16" rx="8" fill="#eef1f5"/>
+<rect x="298" y="510" width="104.99" height="16" rx="8" fill="#f39c12"/>
+<text x="564" y="524" font-size="14" fill="#333333">最高 29.18x | 命中 1 次</text>
+<text x="92" y="543" font-size="13" fill="#666666">前振幅 1.47% | 前涨跌 1.25% | 成交量 105.09x</text>
+<text x="72" y="570" font-size="16" font-weight="600" fill="#111111">5. TOWNS_USDT</text>
+<rect x="298" y="554" width="250" height="16" rx="8" fill="#eef1f5"/>
+<rect x="298" y="554" width="103.59" height="16" rx="8" fill="#f39c12"/>
+<text x="564" y="568" font-size="14" fill="#333333">最高 28.79x | 命中 1 次</text>
+<text x="92" y="587" font-size="13" fill="#666666">前振幅 1.50% | 前涨跌 1.30% | 成交量 667.81x</text>
+<text x="72" y="614" font-size="16" font-weight="600" fill="#111111">6. LISTA_USDT</text>
+<rect x="298" y="598" width="250" height="16" rx="8" fill="#eef1f5"/>
+<rect x="298" y="598" width="72.04" height="16" rx="8" fill="#f39c12"/>
+<text x="564" y="612" font-size="14" fill="#333333">最高 20.02x | 命中 1 次</text>
+<text x="92" y="631" font-size="13" fill="#666666">前振幅 1.55% | 前涨跌 1.11% | 成交量 194.80x</text>
+<text x="72" y="658" font-size="16" font-weight="600" fill="#111111">7. TRADOOR_USDT</text>
+<rect x="298" y="642" width="250" height="16" rx="8" fill="#eef1f5"/>
+<rect x="298" y="642" width="72.03" height="16" rx="8" fill="#f39c12"/>
+<text x="564" y="656" font-size="14" fill="#333333">最高 20.02x | 命中 1 次</text>
+<text x="92" y="675" font-size="13" fill="#666666">前振幅 1.25% | 前涨跌 1.20% | 成交量 141.17x</text>
+<text x="72" y="702" font-size="16" font-weight="600" fill="#111111">8. D_USDT</text>
+<rect x="298" y="686" width="250" height="16" rx="8" fill="#eef1f5"/>
+<rect x="298" y="686" width="71.64" height="16" rx="8" fill="#f39c12"/>
+<text x="564" y="700" font-size="14" fill="#333333">最高 19.91x | 命中 1 次</text>
+<text x="92" y="719" font-size="13" fill="#666666">前振幅 1.64% | 前涨跌 1.64% | 成交量 265.10x</text>
+<text x="72" y="746" font-size="16" font-weight="600" fill="#111111">9. ALICE_USDT</text>
+<rect x="298" y="730" width="250" height="16" rx="8" fill="#eef1f5"/>
+<rect x="298" y="730" width="62.84" height="16" rx="8" fill="#f39c12"/>
+<text x="564" y="744" font-size="14" fill="#333333">最高 17.46x | 命中 1 次</text>
+<text x="92" y="763" font-size="13" fill="#666666">前振幅 1.69% | 前涨跌 1.20% | 成交量 121.53x</text>
+<text x="72" y="790" font-size="16" font-weight="600" fill="#111111">10. SOLV_USDT</text>
+<rect x="298" y="774" width="250" height="16" rx="8" fill="#eef1f5"/>
+<rect x="298" y="774" width="61.25" height="16" rx="8" fill="#f39c12"/>
+<text x="564" y="788" font-size="14" fill="#333333">最高 17.02x | 命中 1 次</text>
+<text x="92" y="807" font-size="13" fill="#666666">前振幅 2.07% | 前涨跌 1.81% | 成交量 148.54x</text>
+<rect x="930" y="290" width="820" height="520" rx="20" fill="#ffffff" stroke="#ebedf0"/>
+<text x="954" y="326" font-size="26" font-weight="700" fill="#111111">10倍命中收盘价位置</text>
+<text x="954" y="356" font-size="16" fill="#666666">统计所有10倍命中，收盘价在10倍价之上还是之下</text>
+<path d="M 1180.00 570.00 L 1180.00 425.00 A 145 145 0 1 1 1040.54 609.68 Z" fill="#27ae60" opacity="0.94"/>
+<path d="M 1180.00 570.00 L 1040.54 609.68 A 145 145 0 0 1 1180.00 425.00 Z" fill="#e74c3c" opacity="0.94"/>
+<circle cx="1180" cy="570" r="72" fill="#ffffff"/>
+<text x="1180" y="566" font-size="34" font-weight="700" fill="#111111" text-anchor="middle">17</text>
+<text x="1180" y="594" font-size="16" fill="#666666" text-anchor="middle">命中总数</text>
+<rect x="1450" y="494" width="26" height="26" rx="6" fill="#27ae60"/>
+<text x="1490" y="510" font-size="22" font-weight="600" fill="#111111">高于10倍价</text>
+<text x="1490" y="538" font-size="17" fill="#555555">12 次，占比 70.59%</text>
+<rect x="1450" y="584" width="26" height="26" rx="6" fill="#e74c3c"/>
+<text x="1490" y="600" font-size="22" font-weight="600" fill="#111111">低于10倍价</text>
+<text x="1490" y="628" font-size="17" fill="#555555">5 次，占比 29.41%</text>
+<rect x="48" y="850" width="820" height="760" rx="20" fill="#ffffff" stroke="#ebedf0"/>
+<text x="72" y="886" font-size="26" font-weight="700" fill="#111111">成交量倍数 Top 10</text>
+<text x="72" y="916" font-size="16" fill="#666666">按10倍命中事件的成交量倍数排序</text>
+<text x="72" y="966" font-size="15" font-weight="600" fill="#111111">1. SLP_USDT 2026-04-09 01:00:00</text>
+<rect x="408" y="950" width="220" height="16" rx="8" fill="#eef1f5"/>
+<rect x="408" y="950" width="220.00" height="16" rx="8" fill="#8e44ad"/>
+<text x="644" y="964" font-size="14" fill="#333333">9969.81x | 倍数 12.85x</text>
+<text x="92" y="986" font-size="13" fill="#666666">前振幅 1.01% | 前涨跌 1.01%</text>
+<text x="72" y="1024" font-size="15" font-weight="600" fill="#111111">2. ALT_USDT 2025-06-16 17:00:00</text>
+<rect x="408" y="1008" width="220" height="16" rx="8" fill="#eef1f5"/>
+<rect x="408" y="1008" width="55.46" height="16" rx="8" fill="#8e44ad"/>
+<text x="644" y="1022" font-size="14" fill="#333333">2513.27x | 倍数 53.38x</text>
+<text x="92" y="1044" font-size="13" fill="#666666">前振幅 1.88% | 前涨跌 1.38%</text>
+<text x="72" y="1082" font-size="15" font-weight="600" fill="#111111">3. TOWNS_USDT 2025-11-10 00:00:00</text>
+<rect x="408" y="1066" width="220" height="16" rx="8" fill="#eef1f5"/>
+<rect x="408" y="1066" width="14.74" height="16" rx="8" fill="#8e44ad"/>
+<text x="644" y="1080" font-size="14" fill="#333333">667.81x | 倍数 28.79x</text>
+<text x="92" y="1102" font-size="13" fill="#666666">前振幅 1.50% | 前涨跌 1.30%</text>
+<text x="72" y="1140" font-size="15" font-weight="600" fill="#111111">4. USTC_USDT 2026-04-04 04:00:00</text>
+<rect x="408" y="1124" width="220" height="16" rx="8" fill="#eef1f5"/>
+<rect x="408" y="1124" width="8.77" height="16" rx="8" fill="#8e44ad"/>
+<text x="644" y="1138" font-size="14" fill="#333333">397.65x | 倍数 12.17x</text>
+<text x="92" y="1160" font-size="13" fill="#666666">前振幅 1.56% | 前涨跌 1.56%</text>
+<text x="72" y="1198" font-size="15" font-weight="600" fill="#111111">5. SAFE_USDT 2025-07-14 08:00:00</text>
+<rect x="408" y="1182" width="220" height="16" rx="8" fill="#eef1f5"/>
+<rect x="408" y="1182" width="7.19" height="16" rx="8" fill="#8e44ad"/>
+<text x="644" y="1196" font-size="14" fill="#333333">326.02x | 倍数 15.32x</text>
+<text x="92" y="1218" font-size="13" fill="#666666">前振幅 1.72% | 前涨跌 1.20%</text>
+<text x="72" y="1256" font-size="15" font-weight="600" fill="#111111">6. COW_USDT 2026-02-14 19:00:00</text>
+<rect x="408" y="1240" width="220" height="16" rx="8" fill="#eef1f5"/>
+<rect x="408" y="1240" width="6.36" height="16" rx="8" fill="#8e44ad"/>
+<text x="644" y="1254" font-size="14" fill="#333333">288.01x | 倍数 12.24x</text>
+<text x="92" y="1276" font-size="13" fill="#666666">前振幅 1.76% | 前涨跌 1.09%</text>
+<text x="72" y="1314" font-size="15" font-weight="600" fill="#111111">7. D_USDT 2026-01-20 21:00:00</text>
+<rect x="408" y="1298" width="220" height="16" rx="8" fill="#eef1f5"/>
+<rect x="408" y="1298" width="5.85" height="16" rx="8" fill="#8e44ad"/>
+<text x="644" y="1312" font-size="14" fill="#333333">265.10x | 倍数 19.91x</text>
+<text x="92" y="1334" font-size="13" fill="#666666">前振幅 1.64% | 前涨跌 1.64%</text>
+<text x="72" y="1372" font-size="15" font-weight="600" fill="#111111">8. KERNEL_USDT 2025-10-28 15:00:00</text>
+<rect x="408" y="1356" width="220" height="16" rx="8" fill="#eef1f5"/>
+<rect x="408" y="1356" width="5.26" height="16" rx="8" fill="#8e44ad"/>
+<text x="644" y="1370" font-size="14" fill="#333333">238.50x | 倍数 69.48x</text>
+<text x="92" y="1392" font-size="13" fill="#666666">前振幅 2.34% | 前涨跌 1.48%</text>
+<text x="72" y="1430" font-size="15" font-weight="600" fill="#111111">9. BULLA_USDT 2026-04-05 22:00:00</text>
+<rect x="408" y="1414" width="220" height="16" rx="8" fill="#eef1f5"/>
+<rect x="408" y="1414" width="4.94" height="16" rx="8" fill="#8e44ad"/>
+<text x="644" y="1428" font-size="14" fill="#333333">224.05x | 倍数 12.34x</text>
+<text x="92" y="1450" font-size="13" fill="#666666">前振幅 3.23% | 前涨跌 2.50%</text>
+<text x="72" y="1488" font-size="15" font-weight="600" fill="#111111">10. AWE_USDT 2025-11-23 16:00:00</text>
+<rect x="408" y="1472" width="220" height="16" rx="8" fill="#eef1f5"/>
+<rect x="408" y="1472" width="4.46" height="16" rx="8" fill="#8e44ad"/>
+<text x="644" y="1486" font-size="14" fill="#333333">202.08x | 倍数 12.85x</text>
+<text x="92" y="1508" font-size="13" fill="#666666">前振幅 1.80% | 前涨跌 1.34%</text>
+<rect x="930" y="850" width="820" height="760" rx="20" fill="#ffffff" stroke="#ebedf0"/>
+<text x="954" y="886" font-size="26" font-weight="700" fill="#111111">10倍命中收盘价相对10倍价 Top 10</text>
+<text x="954" y="916" font-size="16" fill="#666666">按收盘相对10倍价的偏离涨跌幅从高到低排序</text>
+<text x="954" y="970" font-size="15" font-weight="600" fill="#111111">1. VINE_USDT 2025-07-24 20:00:00</text>
+<text x="1490" y="970" font-size="16" font-weight="600" fill="#27ae60">60.76%</text>
+<text x="974" y="990" font-size="13" fill="#666666">收盘高于10倍价 | 前振幅 2.42% | 前涨跌 1.62% | 成交量 115.93x</text>
+<text x="954" y="1028" font-size="15" font-weight="600" fill="#111111">2. ALT_USDT 2025-06-16 17:00:00</text>
+<text x="1490" y="1028" font-size="16" font-weight="600" fill="#27ae60">43.73%</text>
+<text x="974" y="1048" font-size="13" fill="#666666">收盘高于10倍价 | 前振幅 1.88% | 前涨跌 1.38% | 成交量 2513.27x</text>
+<text x="954" y="1086" font-size="15" font-weight="600" fill="#111111">3. TOWNS_USDT 2025-11-10 00:00:00</text>
+<text x="1490" y="1086" font-size="16" font-weight="600" fill="#27ae60">22.26%</text>
+<text x="974" y="1106" font-size="13" fill="#666666">收盘高于10倍价 | 前振幅 1.50% | 前涨跌 1.30% | 成交量 667.81x</text>
+<text x="954" y="1144" font-size="15" font-weight="600" fill="#111111">4. CTSI_USDT 2025-11-20 20:00:00</text>
+<text x="1490" y="1144" font-size="16" font-weight="600" fill="#27ae60">18.38%</text>
+<text x="974" y="1164" font-size="13" fill="#666666">收盘高于10倍价 | 前振幅 1.47% | 前涨跌 1.25% | 成交量 105.09x</text>
+<text x="954" y="1202" font-size="15" font-weight="600" fill="#111111">5. G_USDT 2026-01-25 08:00:00</text>
+<text x="1490" y="1202" font-size="16" font-weight="600" fill="#27ae60">9.15%</text>
+<text x="974" y="1222" font-size="13" fill="#666666">收盘高于10倍价 | 前振幅 1.78% | 前涨跌 1.78% | 成交量 105.08x</text>
+<text x="954" y="1260" font-size="15" font-weight="600" fill="#111111">6. ALICE_USDT 2025-04-14 23:00:00</text>
+<text x="1490" y="1260" font-size="16" font-weight="600" fill="#27ae60">7.68%</text>
+<text x="974" y="1280" font-size="13" fill="#666666">收盘高于10倍价 | 前振幅 1.69% | 前涨跌 1.20% | 成交量 121.53x</text>
+<text x="954" y="1318" font-size="15" font-weight="600" fill="#111111">7. D_USDT 2026-01-20 21:00:00</text>
+<text x="1490" y="1318" font-size="16" font-weight="600" fill="#27ae60">7.37%</text>
+<text x="974" y="1338" font-size="13" fill="#666666">收盘高于10倍价 | 前振幅 1.64% | 前涨跌 1.64% | 成交量 265.10x</text>
+<text x="954" y="1376" font-size="15" font-weight="600" fill="#111111">8. TRADOOR_USDT 2025-11-15 21:00:00</text>
+<text x="1490" y="1376" font-size="16" font-weight="600" fill="#27ae60">6.51%</text>
+<text x="974" y="1396" font-size="13" fill="#666666">收盘高于10倍价 | 前振幅 1.25% | 前涨跌 1.20% | 成交量 141.17x</text>
+<text x="954" y="1434" font-size="15" font-weight="600" fill="#111111">9. KERNEL_USDT 2025-10-28 15:00:00</text>
+<text x="1490" y="1434" font-size="16" font-weight="600" fill="#27ae60">4.79%</text>
+<text x="974" y="1454" font-size="13" fill="#666666">收盘高于10倍价 | 前振幅 2.34% | 前涨跌 1.48% | 成交量 238.50x</text>
+<text x="954" y="1492" font-size="15" font-weight="600" fill="#111111">10. BULLA_USDT 2026-04-05 22:00:00</text>
+<text x="1490" y="1492" font-size="16" font-weight="600" fill="#27ae60">1.85%</text>
+<text x="974" y="1512" font-size="13" fill="#666666">收盘高于10倍价 | 前振幅 3.23% | 前涨跌 2.50% | 成交量 224.05x</text>
+<rect x="48" y="1650" width="820" height="560" rx="20" fill="#ffffff" stroke="#ebedf0"/>
+<text x="72" y="1686" font-size="26" font-weight="700" fill="#111111">收盘高于10倍价后，第二根收盘是否跌回10倍价下</text>
+<text x="72" y="1716" font-size="16" fill="#666666">基于当前 result.json，用命中后第二根涨跌幅推算第二根收盘价</text>
+<path d="M 298.00 1930.00 L 298.00 1785.00 A 145 145 0 0 1 423.57 2002.50 Z" fill="#e74c3c" opacity="0.94"/>
+<path d="M 298.00 1930.00 L 423.57 2002.50 A 145 145 0 1 1 298.00 1785.00 Z" fill="#27ae60" opacity="0.94"/>
+<circle cx="298" cy="1930" r="72" fill="#ffffff"/>
+<text x="298" y="1926" font-size="34" font-weight="700" fill="#111111" text-anchor="middle">12</text>
+<text x="298" y="1954" font-size="16" fill="#666666" text-anchor="middle">高于10倍价样本</text>
+<rect x="568" y="1824" width="26" height="26" rx="6" fill="#e74c3c"/>
+<text x="608" y="1840" font-size="20" font-weight="600" fill="#111111">第二根收盘低于10倍价</text>
+<text x="608" y="1868" font-size="16" fill="#555555">4 次，占比 33.33%</text>
+<rect x="568" y="1914" width="26" height="26" rx="6" fill="#27ae60"/>
+<text x="608" y="1930" font-size="20" font-weight="600" fill="#111111">第二根收盘仍高于10倍价</text>
+<text x="608" y="1958" font-size="16" fill="#555555">8 次，占比 66.67%</text>
+<rect x="568" y="2004" width="26" height="26" rx="6" fill="#95a5a6"/>
+<text x="608" y="2020" font-size="20" font-weight="600" fill="#111111">无法判断</text>
+<text x="608" y="2048" font-size="16" fill="#555555">0 次，占比 0.00%</text>
+<rect x="48" y="3920" width="1704" height="620" rx="20" fill="#ffffff" stroke="#ebedf0"/>
+<text x="72" y="3956" font-size="26" font-weight="700" fill="#111111">总体第二根最高价是否高于10倍价</text>
+<text x="72" y="3986" font-size="16" fill="#666666">统计命中后第二根K线最高价是否站上10倍价，以及高出10倍价多少</text>
+<rect x="72" y="4024" width="280" height="120" rx="16" fill="#fafbfc" stroke="#edf0f2"/>
+<text x="90" y="4066" font-size="18" fill="#666666">第二根高于10倍</text>
+<text x="90" y="4106" font-size="32" font-weight="700" fill="#27ae60">13</text>
+<rect x="376" y="4024" width="280" height="120" rx="16" fill="#fafbfc" stroke="#edf0f2"/>
+<text x="394" y="4066" font-size="18" fill="#666666">第二根未高于10倍</text>
+<text x="394" y="4106" font-size="32" font-weight="700" fill="#e74c3c">4</text>
+<rect x="680" y="4024" width="280" height="120" rx="16" fill="#fafbfc" stroke="#edf0f2"/>
+<text x="698" y="4066" font-size="18" fill="#666666">数据不足</text>
+<text x="698" y="4106" font-size="32" font-weight="700" fill="#95a5a6">0</text>
+<rect x="984" y="4024" width="280" height="120" rx="16" fill="#fafbfc" stroke="#edf0f2"/>
+<text x="1002" y="4066" font-size="18" fill="#666666">平均高出</text>
+<text x="1002" y="4106" font-size="32" font-weight="700" fill="#8e44ad">21.92%</text>
+<rect x="1288" y="4024" width="280" height="120" rx="16" fill="#fafbfc" stroke="#edf0f2"/>
+<text x="1306" y="4066" font-size="18" fill="#666666">最高高出</text>
+<text x="1306" y="4106" font-size="32" font-weight="700" fill="#f39c12">63.28%</text>
+<text x="72" y="4200" font-size="18" fill="#333333">在可判断的 17 次里，第二根最高价高于10倍价 13 次，占比 76.47%</text>
+<rect x="72" y="4250" width="560" height="170" rx="16" fill="#fafbfc" stroke="#edf0f2"/>
+<text x="90" y="4292" font-size="20" fill="#666666">第二根最低价低于10倍价占比</text>
+<text x="90" y="4342" font-size="34" font-weight="700" fill="#e74c3c">52.94%</text>
+<text x="90" y="4380" font-size="18" fill="#555555">9/17</text>
+<rect x="664" y="4250" width="560" height="170" rx="16" fill="#fafbfc" stroke="#edf0f2"/>
+<text x="682" y="4292" font-size="20" fill="#666666">十倍这根收盘低于10倍价占比</text>
+<text x="682" y="4342" font-size="34" font-weight="700" fill="#c0392b">29.41%</text>
+<text x="682" y="4380" font-size="18" fill="#555555">5/17</text>
+<text x="72" y="4465" font-size="16" fill="#666666">第二根最低价占比仅统计有第二根K线数据的命中；十倍这根收盘占比统计所有10倍命中。</text>
+<rect x="48" y="4565" width="1704" height="520" rx="20" fill="#ffffff" stroke="#ebedf0"/>
+<text x="72" y="4601" font-size="26" font-weight="700" fill="#111111">10倍命中倍数区间分布</text>
+<text x="72" y="4631" font-size="16" fill="#666666">统计 10-11、11-12、12-13、13-14、14-15、15倍以上 的数量和占比</text>
+<text x="72" y="4701" font-size="18" font-weight="600" fill="#111111">10-11倍</text>
+<rect x="308" y="4685" width="720" height="18" rx="9" fill="#eef1f5"/>
+<rect x="308" y="4685" width="0.00" height="18" rx="9" fill="#2980b9"/>
+<text x="1046" y="4700" font-size="16" fill="#333333">0 次 | 0.00%</text>
+<text x="72" y="4759" font-size="18" font-weight="600" fill="#111111">11-12倍</text>
+<rect x="308" y="4743" width="720" height="18" rx="9" fill="#eef1f5"/>
+<rect x="308" y="4743" width="0.00" height="18" rx="9" fill="#2980b9"/>
+<text x="1046" y="4758" font-size="16" fill="#333333">0 次 | 0.00%</text>
+<text x="72" y="4817" font-size="18" font-weight="600" fill="#111111">12-13倍</text>
+<rect x="308" y="4801" width="720" height="18" rx="9" fill="#eef1f5"/>
+<rect x="308" y="4801" width="300.00" height="18" rx="9" fill="#2980b9"/>
+<text x="1046" y="4816" font-size="16" fill="#333333">5 次 | 29.41%</text>
+<text x="72" y="4875" font-size="18" font-weight="600" fill="#111111">13-14倍</text>
+<rect x="308" y="4859" width="720" height="18" rx="9" fill="#eef1f5"/>
+<rect x="308" y="4859" width="0.00" height="18" rx="9" fill="#2980b9"/>
+<text x="1046" y="4874" font-size="16" fill="#333333">0 次 | 0.00%</text>
+<text x="72" y="4933" font-size="18" font-weight="600" fill="#111111">14-15倍</text>
+<rect x="308" y="4917" width="720" height="18" rx="9" fill="#eef1f5"/>
+<rect x="308" y="4917" width="0.00" height="18" rx="9" fill="#2980b9"/>
+<text x="1046" y="4932" font-size="16" fill="#333333">0 次 | 0.00%</text>
+<text x="72" y="4991" font-size="18" font-weight="600" fill="#111111">15倍以上</text>
+<rect x="308" y="4975" width="720" height="18" rx="9" fill="#eef1f5"/>
+<rect x="308" y="4975" width="720.00" height="18" rx="9" fill="#2980b9"/>
+<text x="1046" y="4990" font-size="16" fill="#333333">12 次 | 70.59%</text>
+<rect x="930" y="1650" width="820" height="560" rx="20" fill="#ffffff" stroke="#ebedf0"/>
+<text x="954" y="1686" font-size="26" font-weight="700" fill="#111111">最近三年命中统计（2024 - 2026）</text>
+<text x="954" y="1716" font-size="16" fill="#666666">展示 2026、2025、2024 每个月的命中数量</text>
+<text x="1100" y="1760" font-size="14" fill="#666666" text-anchor="middle">1月</text>
+<text x="1148" y="1760" font-size="14" fill="#666666" text-anchor="middle">2月</text>
+<text x="1196" y="1760" font-size="14" fill="#666666" text-anchor="middle">3月</text>
+<text x="1244" y="1760" font-size="14" fill="#666666" text-anchor="middle">4月</text>
+<text x="1292" y="1760" font-size="14" fill="#666666" text-anchor="middle">5月</text>
+<text x="1340" y="1760" font-size="14" fill="#666666" text-anchor="middle">6月</text>
+<text x="1388" y="1760" font-size="14" fill="#666666" text-anchor="middle">7月</text>
+<text x="1436" y="1760" font-size="14" fill="#666666" text-anchor="middle">8月</text>
+<text x="1484" y="1760" font-size="14" fill="#666666" text-anchor="middle">9月</text>
+<text x="1532" y="1760" font-size="14" fill="#666666" text-anchor="middle">10月</text>
+<text x="1580" y="1760" font-size="14" fill="#666666" text-anchor="middle">11月</text>
+<text x="1628" y="1760" font-size="14" fill="#666666" text-anchor="middle">12月</text>
+<text x="954" y="1812" font-size="22" font-weight="700" fill="#e74c3c">2026</text>
+<text x="1022" y="1812" font-size="16" fill="#666666">全年 8 次</text>
+<rect x="1066" y="1794" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1066" y="1816.00" width="28" height="22.00" rx="8" fill="#e74c3c"/>
+<text x="1080" y="1862" font-size="13" fill="#444444" text-anchor="middle">2</text>
+<rect x="1114" y="1794" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1114" y="1827.00" width="28" height="11.00" rx="8" fill="#e74c3c"/>
+<text x="1128" y="1862" font-size="13" fill="#444444" text-anchor="middle">1</text>
+<rect x="1162" y="1794" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1162" y="1816.00" width="28" height="22.00" rx="8" fill="#e74c3c"/>
+<text x="1176" y="1862" font-size="13" fill="#444444" text-anchor="middle">2</text>
+<rect x="1210" y="1794" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1210" y="1805.00" width="28" height="33.00" rx="8" fill="#e74c3c"/>
+<text x="1224" y="1862" font-size="13" fill="#444444" text-anchor="middle">3</text>
+<rect x="1258" y="1794" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1258" y="1838.00" width="28" height="0.00" rx="8" fill="#e74c3c"/>
+<text x="1272" y="1862" font-size="13" fill="#444444" text-anchor="middle">0</text>
+<rect x="1306" y="1794" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1306" y="1838.00" width="28" height="0.00" rx="8" fill="#e74c3c"/>
+<text x="1320" y="1862" font-size="13" fill="#444444" text-anchor="middle">0</text>
+<rect x="1354" y="1794" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1354" y="1838.00" width="28" height="0.00" rx="8" fill="#e74c3c"/>
+<text x="1368" y="1862" font-size="13" fill="#444444" text-anchor="middle">0</text>
+<rect x="1402" y="1794" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1402" y="1838.00" width="28" height="0.00" rx="8" fill="#e74c3c"/>
+<text x="1416" y="1862" font-size="13" fill="#444444" text-anchor="middle">0</text>
+<rect x="1450" y="1794" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1450" y="1838.00" width="28" height="0.00" rx="8" fill="#e74c3c"/>
+<text x="1464" y="1862" font-size="13" fill="#444444" text-anchor="middle">0</text>
+<rect x="1498" y="1794" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1498" y="1838.00" width="28" height="0.00" rx="8" fill="#e74c3c"/>
+<text x="1512" y="1862" font-size="13" fill="#444444" text-anchor="middle">0</text>
+<rect x="1546" y="1794" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1546" y="1838.00" width="28" height="0.00" rx="8" fill="#e74c3c"/>
+<text x="1560" y="1862" font-size="13" fill="#444444" text-anchor="middle">0</text>
+<rect x="1594" y="1794" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1594" y="1838.00" width="28" height="0.00" rx="8" fill="#e74c3c"/>
+<text x="1608" y="1862" font-size="13" fill="#444444" text-anchor="middle">0</text>
+<text x="954" y="1908" font-size="22" font-weight="700" fill="#3498db">2025</text>
+<text x="1022" y="1908" font-size="16" fill="#666666">全年 9 次</text>
+<rect x="1066" y="1890" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1066" y="1934.00" width="28" height="0.00" rx="8" fill="#3498db"/>
+<text x="1080" y="1958" font-size="13" fill="#444444" text-anchor="middle">0</text>
+<rect x="1114" y="1890" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1114" y="1934.00" width="28" height="0.00" rx="8" fill="#3498db"/>
+<text x="1128" y="1958" font-size="13" fill="#444444" text-anchor="middle">0</text>
+<rect x="1162" y="1890" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1162" y="1934.00" width="28" height="0.00" rx="8" fill="#3498db"/>
+<text x="1176" y="1958" font-size="13" fill="#444444" text-anchor="middle">0</text>
+<rect x="1210" y="1890" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1210" y="1923.00" width="28" height="11.00" rx="8" fill="#3498db"/>
+<text x="1224" y="1958" font-size="13" fill="#444444" text-anchor="middle">1</text>
+<rect x="1258" y="1890" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1258" y="1934.00" width="28" height="0.00" rx="8" fill="#3498db"/>
+<text x="1272" y="1958" font-size="13" fill="#444444" text-anchor="middle">0</text>
+<rect x="1306" y="1890" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1306" y="1923.00" width="28" height="11.00" rx="8" fill="#3498db"/>
+<text x="1320" y="1958" font-size="13" fill="#444444" text-anchor="middle">1</text>
+<rect x="1354" y="1890" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1354" y="1912.00" width="28" height="22.00" rx="8" fill="#3498db"/>
+<text x="1368" y="1958" font-size="13" fill="#444444" text-anchor="middle">2</text>
+<rect x="1402" y="1890" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1402" y="1934.00" width="28" height="0.00" rx="8" fill="#3498db"/>
+<text x="1416" y="1958" font-size="13" fill="#444444" text-anchor="middle">0</text>
+<rect x="1450" y="1890" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1450" y="1934.00" width="28" height="0.00" rx="8" fill="#3498db"/>
+<text x="1464" y="1958" font-size="13" fill="#444444" text-anchor="middle">0</text>
+<rect x="1498" y="1890" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1498" y="1923.00" width="28" height="11.00" rx="8" fill="#3498db"/>
+<text x="1512" y="1958" font-size="13" fill="#444444" text-anchor="middle">1</text>
+<rect x="1546" y="1890" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1546" y="1890.00" width="28" height="44.00" rx="8" fill="#3498db"/>
+<text x="1560" y="1958" font-size="13" fill="#444444" text-anchor="middle">4</text>
+<rect x="1594" y="1890" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1594" y="1934.00" width="28" height="0.00" rx="8" fill="#3498db"/>
+<text x="1608" y="1958" font-size="13" fill="#444444" text-anchor="middle">0</text>
+<text x="954" y="2004" font-size="22" font-weight="700" fill="#27ae60">2024</text>
+<text x="1022" y="2004" font-size="16" fill="#666666">全年 0 次</text>
+<rect x="1066" y="1986" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1066" y="2030.00" width="28" height="0.00" rx="8" fill="#27ae60"/>
+<text x="1080" y="2054" font-size="13" fill="#444444" text-anchor="middle">0</text>
+<rect x="1114" y="1986" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1114" y="2030.00" width="28" height="0.00" rx="8" fill="#27ae60"/>
+<text x="1128" y="2054" font-size="13" fill="#444444" text-anchor="middle">0</text>
+<rect x="1162" y="1986" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1162" y="2030.00" width="28" height="0.00" rx="8" fill="#27ae60"/>
+<text x="1176" y="2054" font-size="13" fill="#444444" text-anchor="middle">0</text>
+<rect x="1210" y="1986" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1210" y="2030.00" width="28" height="0.00" rx="8" fill="#27ae60"/>
+<text x="1224" y="2054" font-size="13" fill="#444444" text-anchor="middle">0</text>
+<rect x="1258" y="1986" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1258" y="2030.00" width="28" height="0.00" rx="8" fill="#27ae60"/>
+<text x="1272" y="2054" font-size="13" fill="#444444" text-anchor="middle">0</text>
+<rect x="1306" y="1986" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1306" y="2030.00" width="28" height="0.00" rx="8" fill="#27ae60"/>
+<text x="1320" y="2054" font-size="13" fill="#444444" text-anchor="middle">0</text>
+<rect x="1354" y="1986" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1354" y="2030.00" width="28" height="0.00" rx="8" fill="#27ae60"/>
+<text x="1368" y="2054" font-size="13" fill="#444444" text-anchor="middle">0</text>
+<rect x="1402" y="1986" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1402" y="2030.00" width="28" height="0.00" rx="8" fill="#27ae60"/>
+<text x="1416" y="2054" font-size="13" fill="#444444" text-anchor="middle">0</text>
+<rect x="1450" y="1986" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1450" y="2030.00" width="28" height="0.00" rx="8" fill="#27ae60"/>
+<text x="1464" y="2054" font-size="13" fill="#444444" text-anchor="middle">0</text>
+<rect x="1498" y="1986" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1498" y="2030.00" width="28" height="0.00" rx="8" fill="#27ae60"/>
+<text x="1512" y="2054" font-size="13" fill="#444444" text-anchor="middle">0</text>
+<rect x="1546" y="1986" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1546" y="2030.00" width="28" height="0.00" rx="8" fill="#27ae60"/>
+<text x="1560" y="2054" font-size="13" fill="#444444" text-anchor="middle">0</text>
+<rect x="1594" y="1986" width="28" height="48" rx="8" fill="#f1f3f5"/>
+<rect x="1594" y="2030.00" width="28" height="0.00" rx="8" fill="#27ae60"/>
+<text x="1608" y="2054" font-size="13" fill="#444444" text-anchor="middle">0</text>
+<text x="954" y="2090" font-size="16" fill="#333333">2026 Top月份: 4月 3 / 1月 2 / 3月 2</text>
+<text x="954" y="2120" font-size="16" fill="#333333">2025 Top月份: 11月 4 / 7月 2 / 4月 1</text>
+<text x="954" y="2150" font-size="16" fill="#333333">2024 Top月份: 无命中</text>
+<rect x="48" y="2240" width="1704" height="980" rx="20" fill="#ffffff" stroke="#ebedf0"/>
+<text x="72" y="2276" font-size="26" font-weight="700" fill="#111111">十倍前振幅排行榜 Top 10（同时显示对应倍数）</text>
+<text x="72" y="2306" font-size="16" fill="#666666">按命中事件中十倍前一根K线的振幅排序</text>
+<text x="72" y="2366" font-size="16" font-weight="600" fill="#111111">1. BULLA_USDT 2026-04-05 22:00:00</text>
+<rect x="568" y="2350" width="320" height="16" rx="8" fill="#eef1f5"/>
+<rect x="568" y="2350" width="320.00" height="16" rx="8" fill="#16a085"/>
+<text x="904" y="2364" font-size="14" fill="#333333">3.23% | 倍数 12.34x</text>
+<text x="92" y="2388" font-size="13" fill="#666666">前涨跌 2.50% | 成交量 224.05x</text>
+<text x="72" y="2444" font-size="16" font-weight="600" fill="#111111">2. VINE_USDT 2025-07-24 20:00:00</text>
+<rect x="568" y="2428" width="320" height="16" rx="8" fill="#eef1f5"/>
+<rect x="568" y="2428" width="239.66" height="16" rx="8" fill="#16a085"/>
+<text x="904" y="2442" font-size="14" fill="#333333">2.42% | 倍数 51.81x</text>
+<text x="92" y="2466" font-size="13" fill="#666666">前涨跌 1.62% | 成交量 115.93x</text>
+<text x="72" y="2522" font-size="16" font-weight="600" fill="#111111">3. KERNEL_USDT 2025-10-28 15:00:00</text>
+<rect x="568" y="2506" width="320" height="16" rx="8" fill="#eef1f5"/>
+<rect x="568" y="2506" width="231.38" height="16" rx="8" fill="#16a085"/>
+<text x="904" y="2520" font-size="14" fill="#333333">2.34% | 倍数 69.48x</text>
+<text x="92" y="2544" font-size="13" fill="#666666">前涨跌 1.48% | 成交量 238.50x</text>
+<text x="72" y="2600" font-size="16" font-weight="600" fill="#111111">4. SOLV_USDT 2026-03-11 23:00:00</text>
+<rect x="568" y="2584" width="320" height="16" rx="8" fill="#eef1f5"/>
+<rect x="568" y="2584" width="205.07" height="16" rx="8" fill="#16a085"/>
+<text x="904" y="2598" font-size="14" fill="#333333">2.07% | 倍数 17.02x</text>
+<text x="92" y="2622" font-size="13" fill="#666666">前涨跌 1.81% | 成交量 148.54x</text>
+<text x="72" y="2678" font-size="16" font-weight="600" fill="#111111">5. ALT_USDT 2025-06-16 17:00:00</text>
+<rect x="568" y="2662" width="320" height="16" rx="8" fill="#eef1f5"/>
+<rect x="568" y="2662" width="186.48" height="16" rx="8" fill="#16a085"/>
+<text x="904" y="2676" font-size="14" fill="#333333">1.88% | 倍数 53.38x</text>
+<text x="92" y="2700" font-size="13" fill="#666666">前涨跌 1.38% | 成交量 2513.27x</text>
+<text x="72" y="2756" font-size="16" font-weight="600" fill="#111111">6. AWE_USDT 2025-11-23 16:00:00</text>
+<rect x="568" y="2740" width="320" height="16" rx="8" fill="#eef1f5"/>
+<rect x="568" y="2740" width="177.91" height="16" rx="8" fill="#16a085"/>
+<text x="904" y="2754" font-size="14" fill="#333333">1.80% | 倍数 12.85x</text>
+<text x="92" y="2778" font-size="13" fill="#666666">前涨跌 1.34% | 成交量 202.08x</text>
+<text x="72" y="2834" font-size="16" font-weight="600" fill="#111111">7. G_USDT 2026-01-25 08:00:00</text>
+<rect x="568" y="2818" width="320" height="16" rx="8" fill="#eef1f5"/>
+<rect x="568" y="2818" width="176.30" height="16" rx="8" fill="#16a085"/>
+<text x="904" y="2832" font-size="14" fill="#333333">1.78% | 倍数 16.91x</text>
+<text x="92" y="2856" font-size="13" fill="#666666">前涨跌 1.78% | 成交量 105.08x</text>
+<text x="72" y="2912" font-size="16" font-weight="600" fill="#111111">8. COW_USDT 2026-02-14 19:00:00</text>
+<rect x="568" y="2896" width="320" height="16" rx="8" fill="#eef1f5"/>
+<rect x="568" y="2896" width="174.09" height="16" rx="8" fill="#16a085"/>
+<text x="904" y="2910" font-size="14" fill="#333333">1.76% | 倍数 12.24x</text>
+<text x="92" y="2934" font-size="13" fill="#666666">前涨跌 1.09% | 成交量 288.01x</text>
+<text x="72" y="2990" font-size="16" font-weight="600" fill="#111111">9. SAFE_USDT 2025-07-14 08:00:00</text>
+<rect x="568" y="2974" width="320" height="16" rx="8" fill="#eef1f5"/>
+<rect x="568" y="2974" width="170.60" height="16" rx="8" fill="#16a085"/>
+<text x="904" y="2988" font-size="14" fill="#333333">1.72% | 倍数 15.32x</text>
+<text x="92" y="3012" font-size="13" fill="#666666">前涨跌 1.20% | 成交量 326.02x</text>
+<text x="72" y="3068" font-size="16" font-weight="600" fill="#111111">10. ALICE_USDT 2025-04-14 23:00:00</text>
+<rect x="568" y="3052" width="320" height="16" rx="8" fill="#eef1f5"/>
+<rect x="568" y="3052" width="166.81" height="16" rx="8" fill="#16a085"/>
+<text x="904" y="3066" font-size="14" fill="#333333">1.69% | 倍数 17.46x</text>
+<text x="92" y="3090" font-size="13" fill="#666666">前涨跌 1.20% | 成交量 121.53x</text>
+<rect x="48" y="3260" width="1704" height="650" rx="20" fill="#ffffff" stroke="#ebedf0"/>
+<text x="72" y="3296" font-size="26" font-weight="700" fill="#111111">收盘相对10倍价偏离幅度排行榜 Top 10（从低到高）</text>
+<text x="72" y="3326" font-size="16" fill="#666666">按收盘相对10倍价的偏离涨跌幅从低到高排序</text>
+<text x="72" y="3386" font-size="15" font-weight="600" fill="#111111">1. SOLV_USDT 2026-03-11 23:00:00</text>
+<rect x="608" y="3370" width="220" height="16" rx="8" fill="#eef1f5"/>
+<rect x="608" y="3370" width="220.00" height="16" rx="8" fill="#e74c3c"/>
+<text x="844" y="3384" font-size="14" fill="#333333">偏离 -6.92%</text>
+<text x="92" y="3406" font-size="13" fill="#666666">收盘低于10倍价 | 前振幅 2.07% | 前涨跌 1.81% | 成交量 148.54x</text>
+<text x="72" y="3438" font-size="15" font-weight="600" fill="#111111">2. USTC_USDT 2026-04-04 04:00:00</text>
+<rect x="608" y="3422" width="220" height="16" rx="8" fill="#eef1f5"/>
+<rect x="608" y="3422" width="202.81" height="16" rx="8" fill="#e74c3c"/>
+<text x="844" y="3436" font-size="14" fill="#333333">偏离 -6.38%</text>
+<text x="92" y="3458" font-size="13" fill="#666666">收盘低于10倍价 | 前振幅 1.56% | 前涨跌 1.56% | 成交量 397.65x</text>
+<text x="72" y="3490" font-size="15" font-weight="600" fill="#111111">3. SLP_USDT 2026-04-09 01:00:00</text>
+<rect x="608" y="3474" width="220" height="16" rx="8" fill="#eef1f5"/>
+<rect x="608" y="3474" width="196.07" height="16" rx="8" fill="#e74c3c"/>
+<text x="844" y="3488" font-size="14" fill="#333333">偏离 -6.17%</text>
+<text x="92" y="3510" font-size="13" fill="#666666">收盘低于10倍价 | 前振幅 1.01% | 前涨跌 1.01% | 成交量 9969.81x</text>
+<text x="72" y="3542" font-size="15" font-weight="600" fill="#111111">4. LISTA_USDT 2026-03-15 20:00:00</text>
+<rect x="608" y="3526" width="220" height="16" rx="8" fill="#eef1f5"/>
+<rect x="608" y="3526" width="186.15" height="16" rx="8" fill="#e74c3c"/>
+<text x="844" y="3540" font-size="14" fill="#333333">偏离 -5.86%</text>
+<text x="92" y="3562" font-size="13" fill="#666666">收盘低于10倍价 | 前振幅 1.55% | 前涨跌 1.11% | 成交量 194.80x</text>
+<text x="72" y="3594" font-size="15" font-weight="600" fill="#111111">5. AWE_USDT 2025-11-23 16:00:00</text>
+<rect x="608" y="3578" width="220" height="16" rx="8" fill="#eef1f5"/>
+<rect x="608" y="3578" width="96.79" height="16" rx="8" fill="#e74c3c"/>
+<text x="844" y="3592" font-size="14" fill="#333333">偏离 -3.05%</text>
+<text x="92" y="3614" font-size="13" fill="#666666">收盘低于10倍价 | 前振幅 1.80% | 前涨跌 1.34% | 成交量 202.08x</text>
+<text x="72" y="3646" font-size="15" font-weight="600" fill="#111111">6. SAFE_USDT 2025-07-14 08:00:00</text>
+<rect x="608" y="3630" width="220" height="16" rx="8" fill="#eef1f5"/>
+<rect x="608" y="3630" width="17.60" height="16" rx="8" fill="#27ae60"/>
+<text x="844" y="3644" font-size="14" fill="#333333">偏离 0.55%</text>
+<text x="92" y="3666" font-size="13" fill="#666666">收盘高于10倍价 | 前振幅 1.72% | 前涨跌 1.20% | 成交量 326.02x</text>
+<text x="72" y="3698" font-size="15" font-weight="600" fill="#111111">7. COW_USDT 2026-02-14 19:00:00</text>
+<rect x="608" y="3682" width="220" height="16" rx="8" fill="#eef1f5"/>
+<rect x="608" y="3682" width="31.71" height="16" rx="8" fill="#27ae60"/>
+<text x="844" y="3696" font-size="14" fill="#333333">偏离 1.00%</text>
+<text x="92" y="3718" font-size="13" fill="#666666">收盘高于10倍价 | 前振幅 1.76% | 前涨跌 1.09% | 成交量 288.01x</text>
+<text x="72" y="3750" font-size="15" font-weight="600" fill="#111111">8. BULLA_USDT 2026-04-05 22:00:00</text>
+<rect x="608" y="3734" width="220" height="16" rx="8" fill="#eef1f5"/>
+<rect x="608" y="3734" width="58.83" height="16" rx="8" fill="#27ae60"/>
+<text x="844" y="3748" font-size="14" fill="#333333">偏离 1.85%</text>
+<text x="92" y="3770" font-size="13" fill="#666666">收盘高于10倍价 | 前振幅 3.23% | 前涨跌 2.50% | 成交量 224.05x</text>
+<text x="72" y="3802" font-size="15" font-weight="600" fill="#111111">9. KERNEL_USDT 2025-10-28 15:00:00</text>
+<rect x="608" y="3786" width="220" height="16" rx="8" fill="#eef1f5"/>
+<rect x="608" y="3786" width="152.27" height="16" rx="8" fill="#27ae60"/>
+<text x="844" y="3800" font-size="14" fill="#333333">偏离 4.79%</text>
+<text x="92" y="3822" font-size="13" fill="#666666">收盘高于10倍价 | 前振幅 2.34% | 前涨跌 1.48% | 成交量 238.50x</text>
+<text x="72" y="3854" font-size="15" font-weight="600" fill="#111111">10. TRADOOR_USDT 2025-11-15 21:00:00</text>
+<rect x="608" y="3838" width="220" height="16" rx="8" fill="#eef1f5"/>
+<rect x="608" y="3838" width="206.90" height="16" rx="8" fill="#27ae60"/>
+<text x="844" y="3852" font-size="14" fill="#333333">偏离 6.51%</text>
+<text x="92" y="3874" font-size="13" fill="#666666">收盘高于10倍价 | 前振幅 1.25% | 前涨跌 1.20% | 成交量 141.17x</text>
+</svg>

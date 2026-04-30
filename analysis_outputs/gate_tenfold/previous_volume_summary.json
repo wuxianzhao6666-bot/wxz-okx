@@ -1,0 +1,1019 @@
+[
+  {
+    "inst_id": "AIOT_USDT",
+    "time_cn": "2025-06-04 17:00:00",
+    "multiple": 11.577569678086853,
+    "previous_volume": 2671.0,
+    "previous_amplitude_percent": 1.4708089449196982,
+    "previous_change_percent": 1.005553054179805,
+    "volume_multiple": 66.45713216023961
+  },
+  {
+    "inst_id": "ALICE_USDT",
+    "time_cn": "2025-04-14 23:00:00",
+    "multiple": 17.464995302151852,
+    "previous_volume": 171201.0,
+    "previous_amplitude_percent": 1.6858237547892705,
+    "previous_change_percent": 1.2005108556832649,
+    "volume_multiple": 121.5313578775825
+  },
+  {
+    "inst_id": "ALT_USDT",
+    "time_cn": "2025-06-16 17:00:00",
+    "multiple": 53.38171508694068,
+    "previous_volume": 41769.0,
+    "previous_amplitude_percent": 1.8846153846153881,
+    "previous_change_percent": 1.384615384615395,
+    "volume_multiple": 2513.2664176781823
+  },
+  {
+    "inst_id": "AWE_USDT",
+    "time_cn": "2025-11-23 16:00:00",
+    "multiple": 12.850257738081103,
+    "previous_volume": 219.0,
+    "previous_amplitude_percent": 1.7980347062513062,
+    "previous_change_percent": 1.3380723395358598,
+    "volume_multiple": 202.08219178082192
+  },
+  {
+    "inst_id": "B3_USDT",
+    "time_cn": "2025-10-26 14:00:00",
+    "multiple": 11.02781276238459,
+    "previous_volume": 4362.0,
+    "previous_amplitude_percent": 1.3628620102214613,
+    "previous_change_percent": 1.1925042589437926,
+    "volume_multiple": 17.30421824850986
+  },
+  {
+    "inst_id": "BANANAS31_USDT",
+    "time_cn": "2025-07-11 09:00:00",
+    "multiple": 11.27868523023225,
+    "previous_volume": 55751.0,
+    "previous_amplitude_percent": 8.934051144010773,
+    "previous_change_percent": 5.760430686406449,
+    "volume_multiple": 4.529945651199082
+  },
+  {
+    "inst_id": "BANANA_USDT",
+    "time_cn": "2025-03-12 02:00:00",
+    "multiple": 16.144399284062963,
+    "previous_volume": 63209.0,
+    "previous_amplitude_percent": 3.6636136552872567,
+    "previous_change_percent": 1.4987510407993314,
+    "volume_multiple": 43.790931671122785
+  },
+  {
+    "inst_id": "BB_USDT",
+    "time_cn": "2025-07-11 11:00:00",
+    "multiple": 10.9124622102788,
+    "previous_volume": 33218.0,
+    "previous_amplitude_percent": 2.338643790849674,
+    "previous_change_percent": 1.2152777777777886,
+    "volume_multiple": 8.478565837798783
+  },
+  {
+    "inst_id": "BEAMX_USDT",
+    "time_cn": "2026-01-26 08:00:00",
+    "multiple": 12.211885363250572,
+    "previous_volume": 280926.0,
+    "previous_amplitude_percent": 1.476945244956781,
+    "previous_change_percent": 1.1167146974063478,
+    "volume_multiple": 6.8421256843439195
+  },
+  {
+    "inst_id": "BEL_USDT",
+    "time_cn": "2026-01-10 16:00:00",
+    "multiple": 14.808204768583487,
+    "previous_volume": 43530.0,
+    "previous_amplitude_percent": 1.2738853503184684,
+    "previous_change_percent": 1.0615711252653937,
+    "volume_multiple": 21.258396508155297
+  },
+  {
+    "inst_id": "BGSC_USDT",
+    "time_cn": "2025-12-29 19:00:00",
+    "multiple": 17.109742828882442,
+    "previous_volume": 15880.0,
+    "previous_amplitude_percent": 2.0060180541624706,
+    "previous_change_percent": 1.7051153460381014,
+    "volume_multiple": 27.49162468513854
+  },
+  {
+    "inst_id": "BLESS_USDT",
+    "time_cn": "2025-11-04 19:00:00",
+    "multiple": 11.950516809922668,
+    "previous_volume": 11100.0,
+    "previous_amplitude_percent": 1.8582046883933814,
+    "previous_change_percent": 1.086335048599215,
+    "volume_multiple": 19.81918918918919
+  },
+  {
+    "inst_id": "BMT_USDT",
+    "time_cn": "2025-03-17 12:00:00",
+    "multiple": 15.439698121826671,
+    "previous_volume": 9264.0,
+    "previous_amplitude_percent": 2.303070761014689,
+    "previous_change_percent": 1.2349799732977302,
+    "volume_multiple": 67.50766407599309
+  },
+  {
+    "inst_id": "BROCCOLIF3B_USDT",
+    "time_cn": "2025-04-12 10:00:00",
+    "multiple": 251.43374209929195,
+    "previous_volume": 13638.0,
+    "previous_amplitude_percent": 5.824714207947749,
+    "previous_change_percent": 3.7561241154055507,
+    "volume_multiple": 27.265581463557705
+  },
+  {
+    "inst_id": "BROCCOLIF3B_USDT",
+    "time_cn": "2025-04-20 12:00:00",
+    "multiple": 17.51557533375714,
+    "previous_volume": 12464.0,
+    "previous_amplitude_percent": 6.305114638447976,
+    "previous_change_percent": 3.7698412698412773,
+    "volume_multiple": 16.966463414634145
+  },
+  {
+    "inst_id": "BROCCOLI_USDT",
+    "time_cn": "2025-03-20 00:00:00",
+    "multiple": 13.313240740740747,
+    "previous_volume": 472881.0,
+    "previous_amplitude_percent": 5.649717514124292,
+    "previous_change_percent": 1.946013810420598,
+    "volume_multiple": 16.906500789839303
+  },
+  {
+    "inst_id": "BROCCOLI_USDT",
+    "time_cn": "2026-01-01 03:00:00",
+    "multiple": 37.47570850202432,
+    "previous_volume": 704871.0,
+    "previous_amplitude_percent": 5.66448801742919,
+    "previous_change_percent": 3.4858387799564365,
+    "volume_multiple": 35.537164956424654
+  },
+  {
+    "inst_id": "BTR_USDT",
+    "time_cn": "2025-09-14 20:00:00",
+    "multiple": 10.877034893150125,
+    "previous_volume": 112759.0,
+    "previous_amplitude_percent": 3.1811629024507515,
+    "previous_change_percent": 2.1335896203748197,
+    "volume_multiple": 9.735533305545456
+  },
+  {
+    "inst_id": "BULLA_USDT",
+    "time_cn": "2026-04-05 22:00:00",
+    "multiple": 12.337521147072694,
+    "previous_volume": 21417.0,
+    "previous_amplitude_percent": 3.234069804674991,
+    "previous_change_percent": 2.4975984630163284,
+    "volume_multiple": 224.0454311995144
+  },
+  {
+    "inst_id": "CHILLGUY_USDT",
+    "time_cn": "2026-04-13 20:00:00",
+    "multiple": 14.106806406029277,
+    "previous_volume": 99362.0,
+    "previous_amplitude_percent": 1.9849624060150273,
+    "previous_change_percent": 1.3909774436090312,
+    "volume_multiple": 41.69690626195125
+  },
+  {
+    "inst_id": "CKB_USDT",
+    "time_cn": "2025-03-19 17:00:00",
+    "multiple": 12.2602371092047,
+    "previous_volume": 26543.0,
+    "previous_amplitude_percent": 1.6815235008103675,
+    "previous_change_percent": 1.3573743922204082,
+    "volume_multiple": 61.28512225445503
+  },
+  {
+    "inst_id": "COW_USDT",
+    "time_cn": "2026-02-14 19:00:00",
+    "multiple": 12.24446365462355,
+    "previous_volume": 849.0,
+    "previous_amplitude_percent": 1.7593913456966284,
+    "previous_change_percent": 1.093675701378994,
+    "volume_multiple": 288.0106007067138
+  },
+  {
+    "inst_id": "CROSS_USDT",
+    "time_cn": "2026-04-11 14:00:00",
+    "multiple": 31.536002515315463,
+    "previous_volume": 73064.0,
+    "previous_amplitude_percent": 1.654774555943537,
+    "previous_change_percent": 1.4725975406102911,
+    "volume_multiple": 11.884950180663528
+  },
+  {
+    "inst_id": "CTK_USDT",
+    "time_cn": "2025-04-29 23:00:00",
+    "multiple": 11.092984698283322,
+    "previous_volume": 24074.0,
+    "previous_amplitude_percent": 1.519213583556745,
+    "previous_change_percent": 1.2511170688114333,
+    "volume_multiple": 4.8461826036387805
+  },
+  {
+    "inst_id": "CTSI_USDT",
+    "time_cn": "2025-11-20 20:00:00",
+    "multiple": 29.178166224600368,
+    "previous_volume": 38508.0,
+    "previous_amplitude_percent": 1.4681107099879818,
+    "previous_change_percent": 1.2515042117930364,
+    "volume_multiple": 105.0920068557183
+  },
+  {
+    "inst_id": "CVC_USDT",
+    "time_cn": "2025-12-05 16:00:00",
+    "multiple": 13.067804383970053,
+    "previous_volume": 75763.0,
+    "previous_amplitude_percent": 1.862828111769684,
+    "previous_change_percent": 1.1219305673158397,
+    "volume_multiple": 11.793870358882304
+  },
+  {
+    "inst_id": "CYBER_USDT",
+    "time_cn": "2025-10-15 16:00:00",
+    "multiple": 12.338433131099938,
+    "previous_volume": 629672.0,
+    "previous_amplitude_percent": 1.9241047568145435,
+    "previous_change_percent": 1.4341706752182435,
+    "volume_multiple": 25.351995959801293
+  },
+  {
+    "inst_id": "C_USDT",
+    "time_cn": "2026-03-15 01:00:00",
+    "multiple": 11.76490021363157,
+    "previous_volume": 8378.0,
+    "previous_amplitude_percent": 2.7497101209209904,
+    "previous_change_percent": 1.9049196620838136,
+    "volume_multiple": 42.31057531630461
+  },
+  {
+    "inst_id": "C_USDT",
+    "time_cn": "2026-03-27 12:00:00",
+    "multiple": 14.227593742928885,
+    "previous_volume": 39775.0,
+    "previous_amplitude_percent": 2.2239999999999926,
+    "previous_change_percent": 1.1679999999999913,
+    "volume_multiple": 22.295311125078566
+  },
+  {
+    "inst_id": "DAM_USDT",
+    "time_cn": "2025-09-11 22:00:00",
+    "multiple": 10.51603475513425,
+    "previous_volume": 6711.0,
+    "previous_amplitude_percent": 3.007518796992492,
+    "previous_change_percent": 1.6477363621820558,
+    "volume_multiple": 4.457010877663538
+  },
+  {
+    "inst_id": "DEGEN_USDT",
+    "time_cn": "2025-04-07 16:00:00",
+    "multiple": 30.39701338825951,
+    "previous_volume": 34000.0,
+    "previous_amplitude_percent": 5.86979722518677,
+    "previous_change_percent": 3.575240128068303,
+    "volume_multiple": 7.74735294117647
+  },
+  {
+    "inst_id": "DEGO_USDT",
+    "time_cn": "2026-03-08 14:00:00",
+    "multiple": 11.797802828754746,
+    "previous_volume": 7751655.0,
+    "previous_amplitude_percent": 5.876639145216124,
+    "previous_change_percent": 2.1126760563380245,
+    "volume_multiple": 6.5148994634049116
+  },
+  {
+    "inst_id": "DEGO_USDT",
+    "time_cn": "2026-03-12 02:00:00",
+    "multiple": 13.956436098429366,
+    "previous_volume": 4506076.0,
+    "previous_amplitude_percent": 5.552391799544424,
+    "previous_change_percent": 1.6514806378132036,
+    "volume_multiple": 9.479037859104018
+  },
+  {
+    "inst_id": "DENT_USDT",
+    "time_cn": "2026-04-21 15:00:00",
+    "multiple": 10.986206896551721,
+    "previous_volume": 656859.0,
+    "previous_amplitude_percent": 3.954802259887006,
+    "previous_change_percent": 2.259887005649715,
+    "volume_multiple": 11.050867842261429
+  },
+  {
+    "inst_id": "DIA_USDT",
+    "time_cn": "2025-04-07 16:00:00",
+    "multiple": 11.70619809423887,
+    "previous_volume": 2381.0,
+    "previous_amplitude_percent": 1.49416909620993,
+    "previous_change_percent": 1.275510204081634,
+    "volume_multiple": 18.674506509869804
+  },
+  {
+    "inst_id": "DOG_USDT",
+    "time_cn": "2025-04-26 09:00:00",
+    "multiple": 12.554810998147286,
+    "previous_volume": 33863.0,
+    "previous_amplitude_percent": 2.6031434184675883,
+    "previous_change_percent": 1.1296660117878201,
+    "volume_multiple": 10.21005226943862
+  },
+  {
+    "inst_id": "DOLO_USDT",
+    "time_cn": "2025-04-30 18:00:00",
+    "multiple": 10.255734136949632,
+    "previous_volume": 2301.0,
+    "previous_amplitude_percent": 2.570093457943918,
+    "previous_change_percent": 1.5186915887850578,
+    "volume_multiple": 31.16818774445893
+  },
+  {
+    "inst_id": "DOLO_USDT",
+    "time_cn": "2025-08-27 18:00:00",
+    "multiple": 10.90912057553469,
+    "previous_volume": 7465.0,
+    "previous_amplitude_percent": 5.328752896061353,
+    "previous_change_percent": 3.547175840856435,
+    "volume_multiple": 9.0589417280643
+  },
+  {
+    "inst_id": "D_USDT",
+    "time_cn": "2026-01-20 21:00:00",
+    "multiple": 19.910400000000124,
+    "previous_volume": 12638.0,
+    "previous_amplitude_percent": 1.639344262295072,
+    "previous_change_percent": 1.639344262295072,
+    "volume_multiple": 265.0972463997468
+  },
+  {
+    "inst_id": "EDU_USDT",
+    "time_cn": "2026-04-08 12:00:00",
+    "multiple": 11.019590416063535,
+    "previous_volume": 70877.0,
+    "previous_amplitude_percent": 1.7577297755188575,
+    "previous_change_percent": 1.7577297755188575,
+    "volume_multiple": 23.965306093655204
+  },
+  {
+    "inst_id": "FF_USDT",
+    "time_cn": "2026-04-11 02:00:00",
+    "multiple": 27.205738168959407,
+    "previous_volume": 153678.0,
+    "previous_amplitude_percent": 3.793541108447325,
+    "previous_change_percent": 3.708926808630649,
+    "volume_multiple": 40.07744114316949
+  },
+  {
+    "inst_id": "FHE_USDT",
+    "time_cn": "2025-08-03 05:00:00",
+    "multiple": 12.32884897078088,
+    "previous_volume": 575.0,
+    "previous_amplitude_percent": 1.5460992907801527,
+    "previous_change_percent": 1.1063829787234085,
+    "volume_multiple": 26.53391304347826
+  },
+  {
+    "inst_id": "FIO_USDT",
+    "time_cn": "2025-04-25 10:00:00",
+    "multiple": 10.013527397260244,
+    "previous_volume": 26458.0,
+    "previous_amplitude_percent": 2.3028209556707027,
+    "previous_change_percent": 1.2089810017271063,
+    "volume_multiple": 77.37599213848364
+  },
+  {
+    "inst_id": "FLOCK_USDT",
+    "time_cn": "2025-05-31 23:00:00",
+    "multiple": 12.355285216230268,
+    "previous_volume": 507458.0,
+    "previous_amplitude_percent": 2.327066983026097,
+    "previous_change_percent": 1.533126482934843,
+    "volume_multiple": 12.794057833357638
+  },
+  {
+    "inst_id": "FLUID_USDT",
+    "time_cn": "2025-11-22 08:00:00",
+    "multiple": 15.110667493887103,
+    "previous_volume": 2383.0,
+    "previous_amplitude_percent": 3.3168666196189087,
+    "previous_change_percent": 2.787579393083971,
+    "volume_multiple": 65.97062526227444
+  },
+  {
+    "inst_id": "FLUID_USDT",
+    "time_cn": "2026-01-25 08:00:00",
+    "multiple": 15.674957399548418,
+    "previous_volume": 13642.0,
+    "previous_amplitude_percent": 3.2741617357001864,
+    "previous_change_percent": 2.9191321499013743,
+    "volume_multiple": 51.65767482773787
+  },
+  {
+    "inst_id": "FLUX_USDT",
+    "time_cn": "2025-11-08 00:00:00",
+    "multiple": 38.41502034557993,
+    "previous_volume": 110743.0,
+    "previous_amplitude_percent": 2.9053420805998176,
+    "previous_change_percent": 2.3430178069353347,
+    "volume_multiple": 48.09413687546843
+  },
+  {
+    "inst_id": "FORM_USDT",
+    "time_cn": "2026-04-11 03:00:00",
+    "multiple": 13.305800464037155,
+    "previous_volume": 154148.0,
+    "previous_amplitude_percent": 1.6949152542372843,
+    "previous_change_percent": 1.3653483992466975,
+    "volume_multiple": 14.270130004930326
+  },
+  {
+    "inst_id": "G_USDT",
+    "time_cn": "2026-01-25 08:00:00",
+    "multiple": 16.91102620087332,
+    "previous_volume": 6484.0,
+    "previous_amplitude_percent": 1.7817371937639246,
+    "previous_change_percent": 1.7817371937639246,
+    "volume_multiple": 105.07772979642196
+  },
+  {
+    "inst_id": "HAEDAL_USDT",
+    "time_cn": "2025-05-21 18:00:00",
+    "multiple": 11.486711638441292,
+    "previous_volume": 25975.0,
+    "previous_amplitude_percent": 3.779722717062966,
+    "previous_change_percent": 2.6953760359383554,
+    "volume_multiple": 44.21228103946102
+  },
+  {
+    "inst_id": "HEMI_USDT",
+    "time_cn": "2026-04-15 00:00:00",
+    "multiple": 12.354737045970694,
+    "previous_volume": 66555.0,
+    "previous_amplitude_percent": 3.1179458239277755,
+    "previous_change_percent": 1.6506772009029336,
+    "volume_multiple": 11.816768086544963
+  },
+  {
+    "inst_id": "ID_USDT",
+    "time_cn": "2025-08-28 22:00:00",
+    "multiple": 13.331539393939382,
+    "previous_volume": 35354.0,
+    "previous_amplitude_percent": 1.5365703749231727,
+    "previous_change_percent": 1.1677934849416012,
+    "volume_multiple": 74.05948407535216
+  },
+  {
+    "inst_id": "IN_USDT",
+    "time_cn": "2025-10-10 14:00:00",
+    "multiple": 34.335317521826134,
+    "previous_volume": 13399.0,
+    "previous_amplitude_percent": 4.203315290933697,
+    "previous_change_percent": 3.594384303112317,
+    "volume_multiple": 45.16374356295246
+  },
+  {
+    "inst_id": "KERNEL_USDT",
+    "time_cn": "2025-10-28 15:00:00",
+    "multiple": 69.47718873454826,
+    "previous_volume": 8110.0,
+    "previous_amplitude_percent": 2.3384615384615373,
+    "previous_change_percent": 1.476923076923068,
+    "volume_multiple": 238.50406905055488
+  },
+  {
+    "inst_id": "KNC_USDT",
+    "time_cn": "2026-03-27 12:00:00",
+    "multiple": 10.16008457298188,
+    "previous_volume": 39649.0,
+    "previous_amplitude_percent": 1.3768115942029078,
+    "previous_change_percent": 1.0144927536231771,
+    "volume_multiple": 23.768997957073317
+  },
+  {
+    "inst_id": "KOMA_USDT",
+    "time_cn": "2025-10-18 13:00:00",
+    "multiple": 16.98007246376825,
+    "previous_volume": 58326.0,
+    "previous_amplitude_percent": 2.3076923076922897,
+    "previous_change_percent": 1.5384615384615328,
+    "volume_multiple": 76.65130473545246
+  },
+  {
+    "inst_id": "LISTA_USDT",
+    "time_cn": "2026-03-15 20:00:00",
+    "multiple": 20.01996257018094,
+    "previous_volume": 865.0,
+    "previous_amplitude_percent": 1.5486725663716798,
+    "previous_change_percent": 1.1061946902654878,
+    "volume_multiple": 194.80462427745664
+  },
+  {
+    "inst_id": "LSK_USDT",
+    "time_cn": "2025-11-14 08:00:00",
+    "multiple": 13.527254840584906,
+    "previous_volume": 184766.0,
+    "previous_amplitude_percent": 1.6330038676407383,
+    "previous_change_percent": 1.3751611516974682,
+    "volume_multiple": 11.751924055291559
+  },
+  {
+    "inst_id": "MAV_USDT",
+    "time_cn": "2026-03-16 02:00:00",
+    "multiple": 10.376586183613108,
+    "previous_volume": 67989.0,
+    "previous_amplitude_percent": 1.9781718963165096,
+    "previous_change_percent": 1.0914051841746277,
+    "volume_multiple": 40.493888717292506
+  },
+  {
+    "inst_id": "MIRA_USDT",
+    "time_cn": "2026-02-27 02:00:00",
+    "multiple": 10.28473804100228,
+    "previous_volume": 233247.0,
+    "previous_amplitude_percent": 2.7906976744186043,
+    "previous_change_percent": 1.97674418604652,
+    "volume_multiple": 31.43552543012343
+  },
+  {
+    "inst_id": "MOCA_USDT",
+    "time_cn": "2025-07-13 08:00:00",
+    "multiple": 37.62562078597314,
+    "previous_volume": 79556.0,
+    "previous_amplitude_percent": 1.4099494546421993,
+    "previous_change_percent": 1.1439212556530989,
+    "volume_multiple": 43.591042787470464
+  },
+  {
+    "inst_id": "MYX_USDT",
+    "time_cn": "2025-09-08 18:00:00",
+    "multiple": 12.750337882320254,
+    "previous_volume": 2999136.0,
+    "previous_amplitude_percent": 6.134478740661208,
+    "previous_change_percent": 2.657131759921402,
+    "volume_multiple": 3.768684381101757
+  },
+  {
+    "inst_id": "NAORIS_USDT",
+    "time_cn": "2025-09-10 22:00:00",
+    "multiple": 11.189824594591757,
+    "previous_volume": 31015.0,
+    "previous_amplitude_percent": 4.627672069532534,
+    "previous_change_percent": 2.1611463471928687,
+    "volume_multiple": 19.621312268257295
+  },
+  {
+    "inst_id": "NAORIS_USDT",
+    "time_cn": "2026-03-24 10:00:00",
+    "multiple": 20.267344621512496,
+    "previous_volume": 12027.0,
+    "previous_amplitude_percent": 4.337736522670477,
+    "previous_change_percent": 1.9278828989646513,
+    "volume_multiple": 15.377982871871621
+  },
+  {
+    "inst_id": "NOM_USDT",
+    "time_cn": "2025-10-19 05:00:00",
+    "multiple": 11.922817755153117,
+    "previous_volume": 6920.0,
+    "previous_amplitude_percent": 2.036323610346719,
+    "previous_change_percent": 1.1557512383049084,
+    "volume_multiple": 9.160982658959538
+  },
+  {
+    "inst_id": "OGN_USDT",
+    "time_cn": "2025-04-20 16:00:00",
+    "multiple": 11.671547817913392,
+    "previous_volume": 49176.0,
+    "previous_amplitude_percent": 2.4673699266940807,
+    "previous_change_percent": 1.21580547112462,
+    "volume_multiple": 25.75725963884822
+  },
+  {
+    "inst_id": "ORCA_USDT",
+    "time_cn": "2025-12-16 11:00:00",
+    "multiple": 11.715068922305756,
+    "previous_volume": 52953.0,
+    "previous_amplitude_percent": 1.147227533460804,
+    "previous_change_percent": 1.147227533460804,
+    "volume_multiple": 39.23503861915283
+  },
+  {
+    "inst_id": "OXT_USDT",
+    "time_cn": "2026-03-12 03:00:00",
+    "multiple": 19.259962523422757,
+    "previous_volume": 34203.0,
+    "previous_amplitude_percent": 1.8939393939394045,
+    "previous_change_percent": 1.262626262626255,
+    "volume_multiple": 16.701458936350612
+  },
+  {
+    "inst_id": "PHA_USDT",
+    "time_cn": "2026-03-20 10:00:00",
+    "multiple": 11.705385706276124,
+    "previous_volume": 142209.0,
+    "previous_amplitude_percent": 2.9846246608381213,
+    "previous_change_percent": 2.562556526982224,
+    "volume_multiple": 94.91735403525797
+  },
+  {
+    "inst_id": "PLAY_USDT",
+    "time_cn": "2026-01-28 18:00:00",
+    "multiple": 10.059594755661506,
+    "previous_volume": 1729.0,
+    "previous_amplitude_percent": 2.2222222222222205,
+    "previous_change_percent": 2.168350168350169,
+    "volume_multiple": 53.747252747252745
+  },
+  {
+    "inst_id": "PLAY_USDT",
+    "time_cn": "2026-04-25 09:00:00",
+    "multiple": 10.141151449817126,
+    "previous_volume": 4049.0,
+    "previous_amplitude_percent": 3.848653332370569,
+    "previous_change_percent": 1.3863816882085385,
+    "volume_multiple": 8.319091133613238
+  },
+  {
+    "inst_id": "POLYX_USDT",
+    "time_cn": "2025-07-12 10:00:00",
+    "multiple": 11.845275090595637,
+    "previous_volume": 8725.0,
+    "previous_amplitude_percent": 1.9791967639410517,
+    "previous_change_percent": 1.8563998844264584,
+    "volume_multiple": 5.659828080229226
+  },
+  {
+    "inst_id": "POWER_USDT",
+    "time_cn": "2025-03-17 03:00:00",
+    "multiple": 10.643846866005802,
+    "previous_volume": 1892.0,
+    "previous_amplitude_percent": 1.2840729894120322,
+    "previous_change_percent": 1.2840729894120322,
+    "volume_multiple": 4.558139534883721
+  },
+  {
+    "inst_id": "PRL_USDT",
+    "time_cn": "2026-04-01 17:00:00",
+    "multiple": 19.53646366703581,
+    "previous_volume": 10736.0,
+    "previous_amplitude_percent": 2.7163461538461573,
+    "previous_change_percent": 1.9631410256410318,
+    "volume_multiple": 71.52496274217586
+  },
+  {
+    "inst_id": "PROMPT_USDT",
+    "time_cn": "2025-12-13 06:00:00",
+    "multiple": 17.979271708683495,
+    "previous_volume": 120540.0,
+    "previous_amplitude_percent": 7.306889352818365,
+    "previous_change_percent": 6.680584551148229,
+    "volume_multiple": 72.36730545876887
+  },
+  {
+    "inst_id": "RARE_USDT",
+    "time_cn": "2025-04-27 18:00:00",
+    "multiple": 10.852003722744884,
+    "previous_volume": 12016.0,
+    "previous_amplitude_percent": 1.4995162850693218,
+    "previous_change_percent": 1.06417284746856,
+    "volume_multiple": 67.72877829560586
+  },
+  {
+    "inst_id": "RARE_USDT",
+    "time_cn": "2025-10-15 13:00:00",
+    "multiple": 10.987108878532991,
+    "previous_volume": 88904.0,
+    "previous_amplitude_percent": 1.7305644302449357,
+    "previous_change_percent": 1.4909478168264056,
+    "volume_multiple": 25.011832988391973
+  },
+  {
+    "inst_id": "RARE_USDT",
+    "time_cn": "2026-04-18 05:00:00",
+    "multiple": 15.004938764311145,
+    "previous_volume": 21107.0,
+    "previous_amplitude_percent": 2.800953516090594,
+    "previous_change_percent": 1.6090584028605446,
+    "volume_multiple": 96.92443265267447
+  },
+  {
+    "inst_id": "RDNT_USDT",
+    "time_cn": "2025-12-08 19:00:00",
+    "multiple": 17.389861751152175,
+    "previous_volume": 585393.0,
+    "previous_amplitude_percent": 1.4044943820224634,
+    "previous_change_percent": 1.4044943820224634,
+    "volume_multiple": 32.93890429164681
+  },
+  {
+    "inst_id": "RED_USDT",
+    "time_cn": "2025-09-05 15:00:00",
+    "multiple": 12.809814902936914,
+    "previous_volume": 1059911.0,
+    "previous_amplitude_percent": 6.273062730627302,
+    "previous_change_percent": 4.55828087692642,
+    "volume_multiple": 9.549008360135899
+  },
+  {
+    "inst_id": "RLC_USDT",
+    "time_cn": "2025-08-28 06:00:00",
+    "multiple": 10.00776635723498,
+    "previous_volume": 36734.0,
+    "previous_amplitude_percent": 2.798541476754781,
+    "previous_change_percent": 2.11485870556063,
+    "volume_multiple": 20.45453803016279
+  },
+  {
+    "inst_id": "SAFE_USDT",
+    "time_cn": "2025-07-14 08:00:00",
+    "multiple": 15.315141567500968,
+    "previous_volume": 7870.0,
+    "previous_amplitude_percent": 1.7241379310344889,
+    "previous_change_percent": 1.2048192771084394,
+    "volume_multiple": 326.01905972045745
+  },
+  {
+    "inst_id": "SKL_USDT",
+    "time_cn": "2025-07-11 04:00:00",
+    "multiple": 13.68934391470285,
+    "previous_volume": 45748.0,
+    "previous_amplitude_percent": 1.7754569190600522,
+    "previous_change_percent": 1.7754569190600522,
+    "volume_multiple": 23.13113141558101
+  },
+  {
+    "inst_id": "SKL_USDT",
+    "time_cn": "2026-04-17 23:00:00",
+    "multiple": 11.609741098333467,
+    "previous_volume": 550508.0,
+    "previous_amplitude_percent": 3.3381712626995546,
+    "previous_change_percent": 2.757619738751815,
+    "volume_multiple": 30.25230151060475
+  },
+  {
+    "inst_id": "SKYAI_USDT",
+    "time_cn": "2025-07-03 00:00:00",
+    "multiple": 16.479141782130863,
+    "previous_volume": 111290.0,
+    "previous_amplitude_percent": 2.339751401413606,
+    "previous_change_percent": 1.9010480136485568,
+    "volume_multiple": 7.851684787492138
+  },
+  {
+    "inst_id": "SKYAI_USDT",
+    "time_cn": "2025-10-06 17:00:00",
+    "multiple": 10.14900120310859,
+    "previous_volume": 60252.0,
+    "previous_amplitude_percent": 5.1765512512855585,
+    "previous_change_percent": 5.039424065821046,
+    "volume_multiple": 32.4992365398659
+  },
+  {
+    "inst_id": "SLP_USDT",
+    "time_cn": "2026-04-09 01:00:00",
+    "multiple": 12.848080133555836,
+    "previous_volume": 26129.0,
+    "previous_amplitude_percent": 1.0135135135135198,
+    "previous_change_percent": 1.0135135135135198,
+    "volume_multiple": 9969.81415285698
+  },
+  {
+    "inst_id": "SNT_USDT",
+    "time_cn": "2025-04-10 13:00:00",
+    "multiple": 34.36454289921014,
+    "previous_volume": 4606.0,
+    "previous_amplitude_percent": 1.6315789473684277,
+    "previous_change_percent": 1.2105263157894792,
+    "volume_multiple": 31.774424663482414
+  },
+  {
+    "inst_id": "SOLV_USDT",
+    "time_cn": "2026-03-11 23:00:00",
+    "multiple": 17.022208121827468,
+    "previous_volume": 143888.0,
+    "previous_amplitude_percent": 2.072538860103621,
+    "previous_change_percent": 1.8134715025906782,
+    "volume_multiple": 148.53503419326142
+  },
+  {
+    "inst_id": "STO_USDT",
+    "time_cn": "2025-05-02 18:00:00",
+    "multiple": 19.89625223102482,
+    "previous_volume": 47388.0,
+    "previous_amplitude_percent": 3.813806311932718,
+    "previous_change_percent": 3.2475643267549343,
+    "volume_multiple": 30.961023887904112
+  },
+  {
+    "inst_id": "SUPER_USDT",
+    "time_cn": "2025-10-16 08:00:00",
+    "multiple": 12.670262281340342,
+    "previous_volume": 385754.0,
+    "previous_amplitude_percent": 1.7012351433232284,
+    "previous_change_percent": 1.3050570962479595,
+    "volume_multiple": 7.050724036562161
+  },
+  {
+    "inst_id": "SUPER_USDT",
+    "time_cn": "2025-11-13 09:00:00",
+    "multiple": 10.634539072039006,
+    "previous_volume": 57479.0,
+    "previous_amplitude_percent": 1.6188870151770747,
+    "previous_change_percent": 1.2141652613827967,
+    "volume_multiple": 50.57975956436264
+  },
+  {
+    "inst_id": "SYS_USDT",
+    "time_cn": "2025-10-13 18:00:00",
+    "multiple": 21.578600308047672,
+    "previous_volume": 117842.0,
+    "previous_amplitude_percent": 2.1406727828746246,
+    "previous_change_percent": 1.1552837240910634,
+    "volume_multiple": 3.294020807521936
+  },
+  {
+    "inst_id": "SYS_USDT",
+    "time_cn": "2026-04-06 16:00:00",
+    "multiple": 11.729146221786067,
+    "previous_volume": 12579.0,
+    "previous_amplitude_percent": 1.706827309236948,
+    "previous_change_percent": 1.706827309236948,
+    "volume_multiple": 17.692423881071626
+  },
+  {
+    "inst_id": "TAIKO_USDT",
+    "time_cn": "2025-03-22 08:00:00",
+    "multiple": 10.279142767080756,
+    "previous_volume": 57135.0,
+    "previous_amplitude_percent": 2.7253103076092815,
+    "previous_change_percent": 1.2007555315704288,
+    "volume_multiple": 13.853942417082349
+  },
+  {
+    "inst_id": "TAIKO_USDT",
+    "time_cn": "2026-01-26 08:00:00",
+    "multiple": 17.405200112739557,
+    "previous_volume": 87815.0,
+    "previous_amplitude_percent": 2.335084646818449,
+    "previous_change_percent": 2.335084646818449,
+    "volume_multiple": 26.46045664180379
+  },
+  {
+    "inst_id": "TLM_USDT",
+    "time_cn": "2026-01-01 04:00:00",
+    "multiple": 19.618728076864397,
+    "previous_volume": 24979931.0,
+    "previous_amplitude_percent": 3.9303482587064718,
+    "previous_change_percent": 2.8358208955223763,
+    "volume_multiple": 5.318468493768057
+  },
+  {
+    "inst_id": "TNSR_USDT",
+    "time_cn": "2025-12-13 15:00:00",
+    "multiple": 16.221922731356557,
+    "previous_volume": 387931.0,
+    "previous_amplitude_percent": 1.4861995753715629,
+    "previous_change_percent": 1.0615711252653937,
+    "volume_multiple": 68.08064320716828
+  },
+  {
+    "inst_id": "TOSHI_USDT",
+    "time_cn": "2025-11-23 10:00:00",
+    "multiple": 10.801990614592803,
+    "previous_volume": 2963.0,
+    "previous_amplitude_percent": 3.034560269738688,
+    "previous_change_percent": 2.7535824669851143,
+    "volume_multiple": 42.979750253121836
+  },
+  {
+    "inst_id": "TOWNS_USDT",
+    "time_cn": "2025-11-10 00:00:00",
+    "multiple": 28.788219809147577,
+    "previous_volume": 629.0,
+    "previous_amplitude_percent": 1.4985014985015068,
+    "previous_change_percent": 1.2987012987012978,
+    "volume_multiple": 667.8092209856916
+  },
+  {
+    "inst_id": "TRADOOR_USDT",
+    "time_cn": "2025-11-15 21:00:00",
+    "multiple": 20.01859493606388,
+    "previous_volume": 1202.0,
+    "previous_amplitude_percent": 1.2482662968099925,
+    "previous_change_percent": 1.2020342117429612,
+    "volume_multiple": 141.16555740432614
+  },
+  {
+    "inst_id": "TRADOOR_USDT",
+    "time_cn": "2025-12-30 22:00:00",
+    "multiple": 11.09004647953077,
+    "previous_volume": 50850.0,
+    "previous_amplitude_percent": 4.523646333104855,
+    "previous_change_percent": 2.0562028786840316,
+    "volume_multiple": 20.525860373647983
+  },
+  {
+    "inst_id": "TREE_USDT",
+    "time_cn": "2026-04-14 15:00:00",
+    "multiple": 10.59034027907779,
+    "previous_volume": 4481.0,
+    "previous_amplitude_percent": 1.673182173573106,
+    "previous_change_percent": 1.4229867083659016,
+    "volume_multiple": 64.50926132559697
+  },
+  {
+    "inst_id": "TSTBSC_USDT",
+    "time_cn": "2025-09-10 18:00:00",
+    "multiple": 15.95323986887078,
+    "previous_volume": 56187.0,
+    "previous_amplitude_percent": 2.0705521472392596,
+    "previous_change_percent": 1.6871165644171757,
+    "volume_multiple": 62.17658889066866
+  },
+  {
+    "inst_id": "TUT_USDT",
+    "time_cn": "2025-03-28 01:00:00",
+    "multiple": 52.51052254831798,
+    "previous_volume": 95578.0,
+    "previous_amplitude_percent": 3.4396497811131854,
+    "previous_change_percent": 3.064415259537216,
+    "volume_multiple": 27.864184226495638
+  },
+  {
+    "inst_id": "USTC_USDT",
+    "time_cn": "2026-04-04 04:00:00",
+    "multiple": 12.169973359619275,
+    "previous_volume": 1215.0,
+    "previous_amplitude_percent": 1.5579137502822418,
+    "previous_change_percent": 1.5579137502822418,
+    "volume_multiple": 397.6469135802469
+  },
+  {
+    "inst_id": "VIC_USDT",
+    "time_cn": "2025-07-11 05:00:00",
+    "multiple": 11.745376801403888,
+    "previous_volume": 90077.0,
+    "previous_amplitude_percent": 1.8836748182419163,
+    "previous_change_percent": 1.421017845340392,
+    "volume_multiple": 13.841713200928094
+  },
+  {
+    "inst_id": "VINE_USDT",
+    "time_cn": "2025-03-29 09:00:00",
+    "multiple": 11.180938507959631,
+    "previous_volume": 2759724.0,
+    "previous_amplitude_percent": 5.833333333333332,
+    "previous_change_percent": 3.9015151515151505,
+    "volume_multiple": 27.943965411033858
+  },
+  {
+    "inst_id": "VINE_USDT",
+    "time_cn": "2025-07-24 20:00:00",
+    "multiple": 51.81292160095931,
+    "previous_volume": 240892.0,
+    "previous_amplitude_percent": 2.422145328719726,
+    "previous_change_percent": 1.6236358796912413,
+    "volume_multiple": 115.92641100576192
+  },
+  {
+    "inst_id": "XAN_USDT",
+    "time_cn": "2026-03-15 08:00:00",
+    "multiple": 10.607427055702894,
+    "previous_volume": 8912.0,
+    "previous_amplitude_percent": 2.6881720430107596,
+    "previous_change_percent": 1.2096774193548359,
+    "volume_multiple": 26.177513464991023
+  },
+  {
+    "inst_id": "XNY_USDT",
+    "time_cn": "2025-12-05 01:00:00",
+    "multiple": 14.394836480065043,
+    "previous_volume": 652203.0,
+    "previous_amplitude_percent": 9.484536082474234,
+    "previous_change_percent": 5.711340206185556,
+    "volume_multiple": 8.440119104021294
+  },
+  {
+    "inst_id": "老子_USDT",
+    "time_cn": "2026-03-22 06:00:00",
+    "multiple": 16.64814585251819,
+    "previous_volume": 10721.0,
+    "previous_amplitude_percent": 5.355884425651883,
+    "previous_change_percent": 3.3121916842847114,
+    "volume_multiple": 37.56962969872213
+  },
+  {
+    "inst_id": "草根文化_USDT",
+    "time_cn": "2026-03-30 23:00:00",
+    "multiple": 13.389900064157775,
+    "previous_volume": 4593.0,
+    "previous_amplitude_percent": 2.8181818181818175,
+    "previous_change_percent": 1.4727272727272591,
+    "volume_multiple": 15.244284781188766
+  }
+]

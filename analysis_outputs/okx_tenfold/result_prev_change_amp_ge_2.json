@@ -1,0 +1,1622 @@
+{
+  "2Z-USDT-SWAP": {
+    "confirmed_candle_count": 5005,
+    "hit_count": 1,
+    "highest_candidate": {
+      "time_cn": "2025-11-22 00:00:00",
+      "hit_ts": 1763740800000,
+      "multiple": 14.931071049840908,
+      "previous_amplitude_percent": 3.8333333333333393,
+      "previous_change_percent": 2.5833333333333384,
+      "previous_volume": 649636.0,
+      "hit_amplitude_percent": 57.23577235772357,
+      "hit_change_percent": 25.6910569105691,
+      "hit_volume": 17402024.0,
+      "volume_multiple": 26.78734552888079,
+      "hit_ohlc": [
+        0.123,
+        0.1919,
+        0.1215,
+        0.1546
+      ],
+      "next_candle_change_percent": -3.1715210355986976,
+      "next_candle_time_cn": "2025-11-22 01:00:00"
+    },
+    "first_hit": {
+      "time_cn": "2025-11-22 00:00:00",
+      "hit_ts": 1763740800000,
+      "multiple": 14.931071049840908,
+      "previous_amplitude_percent": 3.8333333333333393,
+      "previous_change_percent": 2.5833333333333384,
+      "previous_volume": 649636.0,
+      "hit_amplitude_percent": 57.23577235772357,
+      "hit_change_percent": 25.6910569105691,
+      "hit_volume": 17402024.0,
+      "volume_multiple": 26.78734552888079,
+      "hit_ohlc": [
+        0.123,
+        0.1919,
+        0.1215,
+        0.1546
+      ],
+      "next_candle_change_percent": -3.1715210355986976,
+      "next_candle_time_cn": "2025-11-22 01:00:00"
+    },
+    "highest_hit": {
+      "time_cn": "2025-11-22 00:00:00",
+      "hit_ts": 1763740800000,
+      "multiple": 14.931071049840908,
+      "previous_amplitude_percent": 3.8333333333333393,
+      "previous_change_percent": 2.5833333333333384,
+      "previous_volume": 649636.0,
+      "hit_amplitude_percent": 57.23577235772357,
+      "hit_change_percent": 25.6910569105691,
+      "hit_volume": 17402024.0,
+      "volume_multiple": 26.78734552888079,
+      "hit_ohlc": [
+        0.123,
+        0.1919,
+        0.1215,
+        0.1546
+      ],
+      "next_candle_change_percent": -3.1715210355986976,
+      "next_candle_time_cn": "2025-11-22 01:00:00"
+    },
+    "ninefold_hit_count": 0,
+    "ninefold_events": [],
+    "events": [
+      {
+        "time_cn": "2025-11-22 00:00:00",
+        "hit_ts": 1763740800000,
+        "multiple": 14.931071049840908,
+        "previous_amplitude_percent": 3.8333333333333393,
+        "previous_change_percent": 2.5833333333333384,
+        "previous_volume": 649636.0,
+        "hit_amplitude_percent": 57.23577235772357,
+        "hit_change_percent": 25.6910569105691,
+        "hit_volume": 17402024.0,
+        "volume_multiple": 26.78734552888079,
+        "hit_ohlc": [
+          0.123,
+          0.1919,
+          0.1215,
+          0.1546
+        ],
+        "next_candle_change_percent": -3.1715210355986976,
+        "next_candle_time_cn": "2025-11-22 01:00:00"
+      }
+    ]
+  },
+  "ANIME-USDT-SWAP": {
+    "confirmed_candle_count": 11052,
+    "hit_count": 1,
+    "highest_candidate": {
+      "time_cn": "2025-11-22 04:00:00",
+      "hit_ts": 1763755200000,
+      "multiple": 12.733026819923383,
+      "previous_amplitude_percent": 2.9416366765764326,
+      "previous_change_percent": 2.081051478641845,
+      "previous_volume": 5276547.0,
+      "hit_amplitude_percent": 37.455938697318004,
+      "hit_change_percent": 2.298850574712643,
+      "hit_volume": 94119142.0,
+      "volume_multiple": 17.837260238561317,
+      "hit_ohlc": [
+        0.006525,
+        0.008947,
+        0.006503,
+        0.006675
+      ],
+      "next_candle_change_percent": 0.22471910112358634,
+      "next_candle_time_cn": "2025-11-22 05:00:00"
+    },
+    "first_hit": {
+      "time_cn": "2025-11-22 04:00:00",
+      "hit_ts": 1763755200000,
+      "multiple": 12.733026819923383,
+      "previous_amplitude_percent": 2.9416366765764326,
+      "previous_change_percent": 2.081051478641845,
+      "previous_volume": 5276547.0,
+      "hit_amplitude_percent": 37.455938697318004,
+      "hit_change_percent": 2.298850574712643,
+      "hit_volume": 94119142.0,
+      "volume_multiple": 17.837260238561317,
+      "hit_ohlc": [
+        0.006525,
+        0.008947,
+        0.006503,
+        0.006675
+      ],
+      "next_candle_change_percent": 0.22471910112358634,
+      "next_candle_time_cn": "2025-11-22 05:00:00"
+    },
+    "highest_hit": {
+      "time_cn": "2025-11-22 04:00:00",
+      "hit_ts": 1763755200000,
+      "multiple": 12.733026819923383,
+      "previous_amplitude_percent": 2.9416366765764326,
+      "previous_change_percent": 2.081051478641845,
+      "previous_volume": 5276547.0,
+      "hit_amplitude_percent": 37.455938697318004,
+      "hit_change_percent": 2.298850574712643,
+      "hit_volume": 94119142.0,
+      "volume_multiple": 17.837260238561317,
+      "hit_ohlc": [
+        0.006525,
+        0.008947,
+        0.006503,
+        0.006675
+      ],
+      "next_candle_change_percent": 0.22471910112358634,
+      "next_candle_time_cn": "2025-11-22 05:00:00"
+    },
+    "ninefold_hit_count": 0,
+    "ninefold_events": [],
+    "events": [
+      {
+        "time_cn": "2025-11-22 04:00:00",
+        "hit_ts": 1763755200000,
+        "multiple": 12.733026819923383,
+        "previous_amplitude_percent": 2.9416366765764326,
+        "previous_change_percent": 2.081051478641845,
+        "previous_volume": 5276547.0,
+        "hit_amplitude_percent": 37.455938697318004,
+        "hit_change_percent": 2.298850574712643,
+        "hit_volume": 94119142.0,
+        "volume_multiple": 17.837260238561317,
+        "hit_ohlc": [
+          0.006525,
+          0.008947,
+          0.006503,
+          0.006675
+        ],
+        "next_candle_change_percent": 0.22471910112358634,
+        "next_candle_time_cn": "2025-11-22 05:00:00"
+      }
+    ]
+  },
+  "ARKM-USDT-SWAP": {
+    "confirmed_candle_count": 12571,
+    "hit_count": 1,
+    "highest_candidate": {
+      "time_cn": "2025-03-11 14:00:00",
+      "hit_ts": 1741672800000,
+      "multiple": 12.510029904306217,
+      "previous_amplitude_percent": 3.838604143947656,
+      "previous_change_percent": 3.664122137404576,
+      "previous_volume": 389057.0,
+      "hit_amplitude_percent": 48.02105263157894,
+      "hit_change_percent": 34.063157894736854,
+      "hit_volume": 37639601.0,
+      "volume_multiple": 96.74572363432607,
+      "hit_ohlc": [
+        0.475,
+        0.702,
+        0.4739,
+        0.6368
+      ],
+      "next_candle_change_percent": -9.563442211055285,
+      "next_candle_time_cn": "2025-03-11 15:00:00"
+    },
+    "first_hit": {
+      "time_cn": "2025-03-11 14:00:00",
+      "hit_ts": 1741672800000,
+      "multiple": 12.510029904306217,
+      "previous_amplitude_percent": 3.838604143947656,
+      "previous_change_percent": 3.664122137404576,
+      "previous_volume": 389057.0,
+      "hit_amplitude_percent": 48.02105263157894,
+      "hit_change_percent": 34.063157894736854,
+      "hit_volume": 37639601.0,
+      "volume_multiple": 96.74572363432607,
+      "hit_ohlc": [
+        0.475,
+        0.702,
+        0.4739,
+        0.6368
+      ],
+      "next_candle_change_percent": -9.563442211055285,
+      "next_candle_time_cn": "2025-03-11 15:00:00"
+    },
+    "highest_hit": {
+      "time_cn": "2025-03-11 14:00:00",
+      "hit_ts": 1741672800000,
+      "multiple": 12.510029904306217,
+      "previous_amplitude_percent": 3.838604143947656,
+      "previous_change_percent": 3.664122137404576,
+      "previous_volume": 389057.0,
+      "hit_amplitude_percent": 48.02105263157894,
+      "hit_change_percent": 34.063157894736854,
+      "hit_volume": 37639601.0,
+      "volume_multiple": 96.74572363432607,
+      "hit_ohlc": [
+        0.475,
+        0.702,
+        0.4739,
+        0.6368
+      ],
+      "next_candle_change_percent": -9.563442211055285,
+      "next_candle_time_cn": "2025-03-11 15:00:00"
+    },
+    "ninefold_hit_count": 0,
+    "ninefold_events": [],
+    "events": [
+      {
+        "time_cn": "2025-03-11 14:00:00",
+        "hit_ts": 1741672800000,
+        "multiple": 12.510029904306217,
+        "previous_amplitude_percent": 3.838604143947656,
+        "previous_change_percent": 3.664122137404576,
+        "previous_volume": 389057.0,
+        "hit_amplitude_percent": 48.02105263157894,
+        "hit_change_percent": 34.063157894736854,
+        "hit_volume": 37639601.0,
+        "volume_multiple": 96.74572363432607,
+        "hit_ohlc": [
+          0.475,
+          0.702,
+          0.4739,
+          0.6368
+        ],
+        "next_candle_change_percent": -9.563442211055285,
+        "next_candle_time_cn": "2025-03-11 15:00:00"
+      }
+    ]
+  },
+  "BAND-USDT-SWAP": {
+    "confirmed_candle_count": 24999,
+    "hit_count": 1,
+    "highest_candidate": {
+      "time_cn": "2026-04-17 19:00:00",
+      "hit_ts": 1776423600000,
+      "multiple": 13.365488565488564,
+      "previous_amplitude_percent": 2.678571428571429,
+      "previous_change_percent": 2.2959183673469457,
+      "previous_volume": 508775.0,
+      "hit_amplitude_percent": 35.8004158004158,
+      "hit_change_percent": 28.399168399168413,
+      "hit_volume": 14523177.0,
+      "volume_multiple": 28.545382536484695,
+      "hit_ohlc": [
+        0.2405,
+        0.3253,
+        0.2392,
+        0.3088
+      ],
+      "next_candle_change_percent": -21.488673139158575,
+      "next_candle_time_cn": "2026-04-17 20:00:00"
+    },
+    "first_hit": {
+      "time_cn": "2026-04-17 19:00:00",
+      "hit_ts": 1776423600000,
+      "multiple": 13.365488565488564,
+      "previous_amplitude_percent": 2.678571428571429,
+      "previous_change_percent": 2.2959183673469457,
+      "previous_volume": 508775.0,
+      "hit_amplitude_percent": 35.8004158004158,
+      "hit_change_percent": 28.399168399168413,
+      "hit_volume": 14523177.0,
+      "volume_multiple": 28.545382536484695,
+      "hit_ohlc": [
+        0.2405,
+        0.3253,
+        0.2392,
+        0.3088
+      ],
+      "next_candle_change_percent": -21.488673139158575,
+      "next_candle_time_cn": "2026-04-17 20:00:00"
+    },
+    "highest_hit": {
+      "time_cn": "2026-04-17 19:00:00",
+      "hit_ts": 1776423600000,
+      "multiple": 13.365488565488564,
+      "previous_amplitude_percent": 2.678571428571429,
+      "previous_change_percent": 2.2959183673469457,
+      "previous_volume": 508775.0,
+      "hit_amplitude_percent": 35.8004158004158,
+      "hit_change_percent": 28.399168399168413,
+      "hit_volume": 14523177.0,
+      "volume_multiple": 28.545382536484695,
+      "hit_ohlc": [
+        0.2405,
+        0.3253,
+        0.2392,
+        0.3088
+      ],
+      "next_candle_change_percent": -21.488673139158575,
+      "next_candle_time_cn": "2026-04-17 20:00:00"
+    },
+    "ninefold_hit_count": 0,
+    "ninefold_events": [],
+    "events": [
+      {
+        "time_cn": "2026-04-17 19:00:00",
+        "hit_ts": 1776423600000,
+        "multiple": 13.365488565488564,
+        "previous_amplitude_percent": 2.678571428571429,
+        "previous_change_percent": 2.2959183673469457,
+        "previous_volume": 508775.0,
+        "hit_amplitude_percent": 35.8004158004158,
+        "hit_change_percent": 28.399168399168413,
+        "hit_volume": 14523177.0,
+        "volume_multiple": 28.545382536484695,
+        "hit_ohlc": [
+          0.2405,
+          0.3253,
+          0.2392,
+          0.3088
+        ],
+        "next_candle_change_percent": -21.488673139158575,
+        "next_candle_time_cn": "2026-04-17 20:00:00"
+      }
+    ]
+  },
+  "BEAT-USDT-SWAP": {
+    "confirmed_candle_count": 4019,
+    "hit_count": 1,
+    "highest_candidate": {
+      "time_cn": "2025-11-20 21:00:00",
+      "hit_ts": 1763643600000,
+      "multiple": 14.050850897666567,
+      "previous_amplitude_percent": 11.654602617533072,
+      "previous_change_percent": 8.009797470205449,
+      "previous_volume": 3374769.0,
+      "hit_amplitude_percent": 163.7570836505117,
+      "hit_change_percent": 58.21365135752349,
+      "hit_volume": 12169347.0,
+      "volume_multiple": 3.6059792536911415,
+      "hit_ohlc": [
+        0.59115,
+        1.55462,
+        0.58657,
+        0.93528
+      ],
+      "next_candle_change_percent": -16.61394949874015,
+      "next_candle_time_cn": "2025-11-20 22:00:00"
+    },
+    "first_hit": {
+      "time_cn": "2025-11-20 21:00:00",
+      "hit_ts": 1763643600000,
+      "multiple": 14.050850897666567,
+      "previous_amplitude_percent": 11.654602617533072,
+      "previous_change_percent": 8.009797470205449,
+      "previous_volume": 3374769.0,
+      "hit_amplitude_percent": 163.7570836505117,
+      "hit_change_percent": 58.21365135752349,
+      "hit_volume": 12169347.0,
+      "volume_multiple": 3.6059792536911415,
+      "hit_ohlc": [
+        0.59115,
+        1.55462,
+        0.58657,
+        0.93528
+      ],
+      "next_candle_change_percent": -16.61394949874015,
+      "next_candle_time_cn": "2025-11-20 22:00:00"
+    },
+    "highest_hit": {
+      "time_cn": "2025-11-20 21:00:00",
+      "hit_ts": 1763643600000,
+      "multiple": 14.050850897666567,
+      "previous_amplitude_percent": 11.654602617533072,
+      "previous_change_percent": 8.009797470205449,
+      "previous_volume": 3374769.0,
+      "hit_amplitude_percent": 163.7570836505117,
+      "hit_change_percent": 58.21365135752349,
+      "hit_volume": 12169347.0,
+      "volume_multiple": 3.6059792536911415,
+      "hit_ohlc": [
+        0.59115,
+        1.55462,
+        0.58657,
+        0.93528
+      ],
+      "next_candle_change_percent": -16.61394949874015,
+      "next_candle_time_cn": "2025-11-20 22:00:00"
+    },
+    "ninefold_hit_count": 0,
+    "ninefold_events": [],
+    "events": [
+      {
+        "time_cn": "2025-11-20 21:00:00",
+        "hit_ts": 1763643600000,
+        "multiple": 14.050850897666567,
+        "previous_amplitude_percent": 11.654602617533072,
+        "previous_change_percent": 8.009797470205449,
+        "previous_volume": 3374769.0,
+        "hit_amplitude_percent": 163.7570836505117,
+        "hit_change_percent": 58.21365135752349,
+        "hit_volume": 12169347.0,
+        "volume_multiple": 3.6059792536911415,
+        "hit_ohlc": [
+          0.59115,
+          1.55462,
+          0.58657,
+          0.93528
+        ],
+        "next_candle_change_percent": -16.61394949874015,
+        "next_candle_time_cn": "2025-11-20 22:00:00"
+      }
+    ]
+  },
+  "BERA-USDT-SWAP": {
+    "confirmed_candle_count": 10717,
+    "hit_count": 0,
+    "highest_candidate": {
+      "time_cn": "2026-02-07 02:00:00",
+      "hit_ts": 1770400800000,
+      "multiple": 9.183544976504807,
+      "previous_amplitude_percent": 5.886575735821969,
+      "previous_change_percent": 4.331179708064131,
+      "previous_volume": 25140152.0,
+      "hit_amplitude_percent": 54.059633027522935,
+      "hit_change_percent": 18.279816513761478,
+      "hit_volume": 334431194.0,
+      "volume_multiple": 13.302671917019437,
+      "hit_ohlc": [
+        0.436,
+        0.6669,
+        0.4312,
+        0.5157
+      ],
+      "next_candle_change_percent": -3.2570763861962075,
+      "next_candle_time_cn": "2026-02-07 03:00:00"
+    },
+    "first_hit": null,
+    "highest_hit": null,
+    "ninefold_hit_count": 1,
+    "ninefold_events": [
+      {
+        "time_cn": "2026-02-07 02:00:00",
+        "hit_ts": 1770400800000,
+        "multiple": 9.183544976504807,
+        "previous_amplitude_percent": 5.886575735821969,
+        "previous_change_percent": 4.331179708064131,
+        "previous_volume": 25140152.0,
+        "hit_amplitude_percent": 54.059633027522935,
+        "hit_change_percent": 18.279816513761478,
+        "hit_volume": 334431194.0,
+        "volume_multiple": 13.302671917019437,
+        "hit_ohlc": [
+          0.436,
+          0.6669,
+          0.4312,
+          0.5157
+        ],
+        "next_candle_change_percent": -3.2570763861962075,
+        "next_candle_time_cn": "2026-02-07 03:00:00"
+      }
+    ],
+    "events": []
+  },
+  "FLOKI-USDT-SWAP": {
+    "confirmed_candle_count": 24999,
+    "hit_count": 0,
+    "highest_candidate": {
+      "time_cn": "2023-12-05 20:00:00",
+      "hit_ts": 1701777600000,
+      "multiple": 9.299661546472326,
+      "previous_amplitude_percent": 2.4999999999999853,
+      "previous_change_percent": 2.2074468085106487,
+      "previous_volume": 213232.0,
+      "hit_amplitude_percent": 23.249153866180674,
+      "hit_change_percent": 15.438687841707887,
+      "hit_volume": 4517811.0,
+      "volume_multiple": 21.187303031439935,
+      "hit_ohlc": [
+        3.841e-05,
+        4.727e-05,
+        3.834e-05,
+        4.434e-05
+      ],
+      "next_candle_change_percent": -3.8556933483652815,
+      "next_candle_time_cn": "2023-12-05 21:00:00"
+    },
+    "first_hit": null,
+    "highest_hit": null,
+    "ninefold_hit_count": 1,
+    "ninefold_events": [
+      {
+        "time_cn": "2023-12-05 20:00:00",
+        "hit_ts": 1701777600000,
+        "multiple": 9.299661546472326,
+        "previous_amplitude_percent": 2.4999999999999853,
+        "previous_change_percent": 2.2074468085106487,
+        "previous_volume": 213232.0,
+        "hit_amplitude_percent": 23.249153866180674,
+        "hit_change_percent": 15.438687841707887,
+        "hit_volume": 4517811.0,
+        "volume_multiple": 21.187303031439935,
+        "hit_ohlc": [
+          3.841e-05,
+          4.727e-05,
+          3.834e-05,
+          4.434e-05
+        ],
+        "next_candle_change_percent": -3.8556933483652815,
+        "next_candle_time_cn": "2023-12-05 21:00:00"
+      }
+    ],
+    "events": []
+  },
+  "FLOW-USDT-SWAP": {
+    "confirmed_candle_count": 21691,
+    "hit_count": 1,
+    "highest_candidate": {
+      "time_cn": "2026-02-06 23:00:00",
+      "hit_ts": 1770390000000,
+      "multiple": 17.215335479202544,
+      "previous_amplitude_percent": 2.7105087758275914,
+      "previous_change_percent": 2.1550766496334117,
+      "previous_volume": 439983.0,
+      "hit_amplitude_percent": 46.66231789519459,
+      "hit_change_percent": 8.828006088280048,
+      "hit_volume": 2142350.0,
+      "volume_multiple": 4.869165399572256,
+      "hit_ohlc": [
+        0.04599,
+        0.06713,
+        0.04567,
+        0.05005
+      ],
+      "next_candle_change_percent": 1.2387612387612439,
+      "next_candle_time_cn": "2026-02-07 00:00:00"
+    },
+    "first_hit": {
+      "time_cn": "2026-02-06 23:00:00",
+      "hit_ts": 1770390000000,
+      "multiple": 17.215335479202544,
+      "previous_amplitude_percent": 2.7105087758275914,
+      "previous_change_percent": 2.1550766496334117,
+      "previous_volume": 439983.0,
+      "hit_amplitude_percent": 46.66231789519459,
+      "hit_change_percent": 8.828006088280048,
+      "hit_volume": 2142350.0,
+      "volume_multiple": 4.869165399572256,
+      "hit_ohlc": [
+        0.04599,
+        0.06713,
+        0.04567,
+        0.05005
+      ],
+      "next_candle_change_percent": 1.2387612387612439,
+      "next_candle_time_cn": "2026-02-07 00:00:00"
+    },
+    "highest_hit": {
+      "time_cn": "2026-02-06 23:00:00",
+      "hit_ts": 1770390000000,
+      "multiple": 17.215335479202544,
+      "previous_amplitude_percent": 2.7105087758275914,
+      "previous_change_percent": 2.1550766496334117,
+      "previous_volume": 439983.0,
+      "hit_amplitude_percent": 46.66231789519459,
+      "hit_change_percent": 8.828006088280048,
+      "hit_volume": 2142350.0,
+      "volume_multiple": 4.869165399572256,
+      "hit_ohlc": [
+        0.04599,
+        0.06713,
+        0.04567,
+        0.05005
+      ],
+      "next_candle_change_percent": 1.2387612387612439,
+      "next_candle_time_cn": "2026-02-07 00:00:00"
+    },
+    "ninefold_hit_count": 0,
+    "ninefold_events": [],
+    "events": [
+      {
+        "time_cn": "2026-02-06 23:00:00",
+        "hit_ts": 1770390000000,
+        "multiple": 17.215335479202544,
+        "previous_amplitude_percent": 2.7105087758275914,
+        "previous_change_percent": 2.1550766496334117,
+        "previous_volume": 439983.0,
+        "hit_amplitude_percent": 46.66231789519459,
+        "hit_change_percent": 8.828006088280048,
+        "hit_volume": 2142350.0,
+        "volume_multiple": 4.869165399572256,
+        "hit_ohlc": [
+          0.04599,
+          0.06713,
+          0.04567,
+          0.05005
+        ],
+        "next_candle_change_percent": 1.2387612387612439,
+        "next_candle_time_cn": "2026-02-07 00:00:00"
+      }
+    ]
+  },
+  "HMSTR-USDT-SWAP": {
+    "confirmed_candle_count": 13913,
+    "hit_count": 1,
+    "highest_candidate": {
+      "time_cn": "2025-11-05 04:00:00",
+      "hit_ts": 1762286400000,
+      "multiple": 18.92213272048265,
+      "previous_amplitude_percent": 3.705899792469605,
+      "previous_change_percent": 3.261191817373257,
+      "previous_volume": 5197354.0,
+      "hit_amplitude_percent": 70.12352772191898,
+      "hit_change_percent": 29.12956047112898,
+      "hit_volume": 163625296.0,
+      "volume_multiple": 31.482422786671833,
+      "hit_ohlc": [
+        0.0003481,
+        0.0005918,
+        0.0003477,
+        0.0004495
+      ],
+      "next_candle_change_percent": -0.6675567423230896,
+      "next_candle_time_cn": "2025-11-05 05:00:00"
+    },
+    "first_hit": {
+      "time_cn": "2025-11-05 04:00:00",
+      "hit_ts": 1762286400000,
+      "multiple": 18.92213272048265,
+      "previous_amplitude_percent": 3.705899792469605,
+      "previous_change_percent": 3.261191817373257,
+      "previous_volume": 5197354.0,
+      "hit_amplitude_percent": 70.12352772191898,
+      "hit_change_percent": 29.12956047112898,
+      "hit_volume": 163625296.0,
+      "volume_multiple": 31.482422786671833,
+      "hit_ohlc": [
+        0.0003481,
+        0.0005918,
+        0.0003477,
+        0.0004495
+      ],
+      "next_candle_change_percent": -0.6675567423230896,
+      "next_candle_time_cn": "2025-11-05 05:00:00"
+    },
+    "highest_hit": {
+      "time_cn": "2025-11-05 04:00:00",
+      "hit_ts": 1762286400000,
+      "multiple": 18.92213272048265,
+      "previous_amplitude_percent": 3.705899792469605,
+      "previous_change_percent": 3.261191817373257,
+      "previous_volume": 5197354.0,
+      "hit_amplitude_percent": 70.12352772191898,
+      "hit_change_percent": 29.12956047112898,
+      "hit_volume": 163625296.0,
+      "volume_multiple": 31.482422786671833,
+      "hit_ohlc": [
+        0.0003481,
+        0.0005918,
+        0.0003477,
+        0.0004495
+      ],
+      "next_candle_change_percent": -0.6675567423230896,
+      "next_candle_time_cn": "2025-11-05 05:00:00"
+    },
+    "ninefold_hit_count": 0,
+    "ninefold_events": [],
+    "events": [
+      {
+        "time_cn": "2025-11-05 04:00:00",
+        "hit_ts": 1762286400000,
+        "multiple": 18.92213272048265,
+        "previous_amplitude_percent": 3.705899792469605,
+        "previous_change_percent": 3.261191817373257,
+        "previous_volume": 5197354.0,
+        "hit_amplitude_percent": 70.12352772191898,
+        "hit_change_percent": 29.12956047112898,
+        "hit_volume": 163625296.0,
+        "volume_multiple": 31.482422786671833,
+        "hit_ohlc": [
+          0.0003481,
+          0.0005918,
+          0.0003477,
+          0.0004495
+        ],
+        "next_candle_change_percent": -0.6675567423230896,
+        "next_candle_time_cn": "2025-11-05 05:00:00"
+      }
+    ]
+  },
+  "IP-USDT-SWAP": {
+    "confirmed_candle_count": 10555,
+    "hit_count": 1,
+    "highest_candidate": {
+      "time_cn": "2025-02-21 04:00:00",
+      "hit_ts": 1740081600000,
+      "multiple": 15.797820853870709,
+      "previous_amplitude_percent": 8.491407089151448,
+      "previous_change_percent": 3.55531686358753,
+      "previous_volume": 32499467.0,
+      "hit_amplitude_percent": 134.14572799170233,
+      "hit_change_percent": 56.03085699468431,
+      "hit_volume": 69146504.0,
+      "volume_multiple": 2.1276196314234936,
+      "hit_ohlc": [
+        3.8565,
+        9.0,
+        3.82667,
+        6.01733
+      ],
+      "next_candle_change_percent": -4.44587071757797,
+      "next_candle_time_cn": "2025-02-21 05:00:00"
+    },
+    "first_hit": {
+      "time_cn": "2025-02-21 04:00:00",
+      "hit_ts": 1740081600000,
+      "multiple": 15.797820853870709,
+      "previous_amplitude_percent": 8.491407089151448,
+      "previous_change_percent": 3.55531686358753,
+      "previous_volume": 32499467.0,
+      "hit_amplitude_percent": 134.14572799170233,
+      "hit_change_percent": 56.03085699468431,
+      "hit_volume": 69146504.0,
+      "volume_multiple": 2.1276196314234936,
+      "hit_ohlc": [
+        3.8565,
+        9.0,
+        3.82667,
+        6.01733
+      ],
+      "next_candle_change_percent": -4.44587071757797,
+      "next_candle_time_cn": "2025-02-21 05:00:00"
+    },
+    "highest_hit": {
+      "time_cn": "2025-02-21 04:00:00",
+      "hit_ts": 1740081600000,
+      "multiple": 15.797820853870709,
+      "previous_amplitude_percent": 8.491407089151448,
+      "previous_change_percent": 3.55531686358753,
+      "previous_volume": 32499467.0,
+      "hit_amplitude_percent": 134.14572799170233,
+      "hit_change_percent": 56.03085699468431,
+      "hit_volume": 69146504.0,
+      "volume_multiple": 2.1276196314234936,
+      "hit_ohlc": [
+        3.8565,
+        9.0,
+        3.82667,
+        6.01733
+      ],
+      "next_candle_change_percent": -4.44587071757797,
+      "next_candle_time_cn": "2025-02-21 05:00:00"
+    },
+    "ninefold_hit_count": 0,
+    "ninefold_events": [],
+    "events": [
+      {
+        "time_cn": "2025-02-21 04:00:00",
+        "hit_ts": 1740081600000,
+        "multiple": 15.797820853870709,
+        "previous_amplitude_percent": 8.491407089151448,
+        "previous_change_percent": 3.55531686358753,
+        "previous_volume": 32499467.0,
+        "hit_amplitude_percent": 134.14572799170233,
+        "hit_change_percent": 56.03085699468431,
+        "hit_volume": 69146504.0,
+        "volume_multiple": 2.1276196314234936,
+        "hit_ohlc": [
+          3.8565,
+          9.0,
+          3.82667,
+          6.01733
+        ],
+        "next_candle_change_percent": -4.44587071757797,
+        "next_candle_time_cn": "2025-02-21 05:00:00"
+      }
+    ]
+  },
+  "METIS-USDT-SWAP": {
+    "confirmed_candle_count": 20469,
+    "hit_count": 0,
+    "highest_candidate": {
+      "time_cn": "2026-04-17 15:00:00",
+      "hit_ts": 1776409200000,
+      "multiple": 9.727892240362698,
+      "previous_amplitude_percent": 8.25577904533173,
+      "previous_change_percent": 4.05283698589013,
+      "previous_volume": 1020618.0,
+      "hit_amplitude_percent": 80.31132891323148,
+      "hit_change_percent": 56.15451138656673,
+      "hit_volume": 27245141.0,
+      "volume_multiple": 26.694748671883115,
+      "hit_ohlc": [
+        3.469,
+        6.24,
+        3.454,
+        5.417
+      ],
+      "next_candle_change_percent": -13.810930576070904,
+      "next_candle_time_cn": "2026-04-17 16:00:00"
+    },
+    "first_hit": null,
+    "highest_hit": null,
+    "ninefold_hit_count": 1,
+    "ninefold_events": [
+      {
+        "time_cn": "2026-04-17 15:00:00",
+        "hit_ts": 1776409200000,
+        "multiple": 9.727892240362698,
+        "previous_amplitude_percent": 8.25577904533173,
+        "previous_change_percent": 4.05283698589013,
+        "previous_volume": 1020618.0,
+        "hit_amplitude_percent": 80.31132891323148,
+        "hit_change_percent": 56.15451138656673,
+        "hit_volume": 27245141.0,
+        "volume_multiple": 26.694748671883115,
+        "hit_ohlc": [
+          3.469,
+          6.24,
+          3.454,
+          5.417
+        ],
+        "next_candle_change_percent": -13.810930576070904,
+        "next_candle_time_cn": "2026-04-17 16:00:00"
+      }
+    ],
+    "events": []
+  },
+  "MON-USDT-SWAP": {
+    "confirmed_candle_count": 4822,
+    "hit_count": 1,
+    "highest_candidate": {
+      "time_cn": "2025-11-05 05:00:00",
+      "hit_ts": 1762290000000,
+      "multiple": 11.88697044236492,
+      "previous_amplitude_percent": 7.46197718631178,
+      "previous_change_percent": 2.281368821292782,
+      "previous_volume": 483588.0,
+      "hit_amplitude_percent": 88.70030225528947,
+      "hit_change_percent": 21.971634503603813,
+      "hit_volume": 11132668.0,
+      "volume_multiple": 23.0209765337436,
+      "hit_ohlc": [
+        0.04301,
+        0.08,
+        0.04185,
+        0.05246
+      ],
+      "next_candle_change_percent": 0.838574423480076,
+      "next_candle_time_cn": "2025-11-05 06:00:00"
+    },
+    "first_hit": {
+      "time_cn": "2025-11-05 05:00:00",
+      "hit_ts": 1762290000000,
+      "multiple": 11.88697044236492,
+      "previous_amplitude_percent": 7.46197718631178,
+      "previous_change_percent": 2.281368821292782,
+      "previous_volume": 483588.0,
+      "hit_amplitude_percent": 88.70030225528947,
+      "hit_change_percent": 21.971634503603813,
+      "hit_volume": 11132668.0,
+      "volume_multiple": 23.0209765337436,
+      "hit_ohlc": [
+        0.04301,
+        0.08,
+        0.04185,
+        0.05246
+      ],
+      "next_candle_change_percent": 0.838574423480076,
+      "next_candle_time_cn": "2025-11-05 06:00:00"
+    },
+    "highest_hit": {
+      "time_cn": "2025-11-05 05:00:00",
+      "hit_ts": 1762290000000,
+      "multiple": 11.88697044236492,
+      "previous_amplitude_percent": 7.46197718631178,
+      "previous_change_percent": 2.281368821292782,
+      "previous_volume": 483588.0,
+      "hit_amplitude_percent": 88.70030225528947,
+      "hit_change_percent": 21.971634503603813,
+      "hit_volume": 11132668.0,
+      "volume_multiple": 23.0209765337436,
+      "hit_ohlc": [
+        0.04301,
+        0.08,
+        0.04185,
+        0.05246
+      ],
+      "next_candle_change_percent": 0.838574423480076,
+      "next_candle_time_cn": "2025-11-05 06:00:00"
+    },
+    "ninefold_hit_count": 0,
+    "ninefold_events": [],
+    "events": [
+      {
+        "time_cn": "2025-11-05 05:00:00",
+        "hit_ts": 1762290000000,
+        "multiple": 11.88697044236492,
+        "previous_amplitude_percent": 7.46197718631178,
+        "previous_change_percent": 2.281368821292782,
+        "previous_volume": 483588.0,
+        "hit_amplitude_percent": 88.70030225528947,
+        "hit_change_percent": 21.971634503603813,
+        "hit_volume": 11132668.0,
+        "volume_multiple": 23.0209765337436,
+        "hit_ohlc": [
+          0.04301,
+          0.08,
+          0.04185,
+          0.05246
+        ],
+        "next_candle_change_percent": 0.838574423480076,
+        "next_candle_time_cn": "2025-11-05 06:00:00"
+      }
+    ]
+  },
+  "MOODENG-USDT-SWAP": {
+    "confirmed_candle_count": 13751,
+    "hit_count": 1,
+    "highest_candidate": {
+      "time_cn": "2025-12-07 05:00:00",
+      "hit_ts": 1765054800000,
+      "multiple": 37.123804508008845,
+      "previous_amplitude_percent": 4.93538630739622,
+      "previous_change_percent": 3.4094033544129725,
+      "previous_volume": 1278461.0,
+      "hit_amplitude_percent": 183.2203164472809,
+      "hit_change_percent": 15.543145858263538,
+      "hit_volume": 36907141.0,
+      "volume_multiple": 28.86841366299011,
+      "hit_ohlc": [
+        0.07521,
+        0.21,
+        0.0722,
+        0.0869
+      ],
+      "next_candle_change_percent": 0.8975834292289862,
+      "next_candle_time_cn": "2025-12-07 06:00:00"
+    },
+    "first_hit": {
+      "time_cn": "2025-12-07 05:00:00",
+      "hit_ts": 1765054800000,
+      "multiple": 37.123804508008845,
+      "previous_amplitude_percent": 4.93538630739622,
+      "previous_change_percent": 3.4094033544129725,
+      "previous_volume": 1278461.0,
+      "hit_amplitude_percent": 183.2203164472809,
+      "hit_change_percent": 15.543145858263538,
+      "hit_volume": 36907141.0,
+      "volume_multiple": 28.86841366299011,
+      "hit_ohlc": [
+        0.07521,
+        0.21,
+        0.0722,
+        0.0869
+      ],
+      "next_candle_change_percent": 0.8975834292289862,
+      "next_candle_time_cn": "2025-12-07 06:00:00"
+    },
+    "highest_hit": {
+      "time_cn": "2025-12-07 05:00:00",
+      "hit_ts": 1765054800000,
+      "multiple": 37.123804508008845,
+      "previous_amplitude_percent": 4.93538630739622,
+      "previous_change_percent": 3.4094033544129725,
+      "previous_volume": 1278461.0,
+      "hit_amplitude_percent": 183.2203164472809,
+      "hit_change_percent": 15.543145858263538,
+      "hit_volume": 36907141.0,
+      "volume_multiple": 28.86841366299011,
+      "hit_ohlc": [
+        0.07521,
+        0.21,
+        0.0722,
+        0.0869
+      ],
+      "next_candle_change_percent": 0.8975834292289862,
+      "next_candle_time_cn": "2025-12-07 06:00:00"
+    },
+    "ninefold_hit_count": 0,
+    "ninefold_events": [],
+    "events": [
+      {
+        "time_cn": "2025-12-07 05:00:00",
+        "hit_ts": 1765054800000,
+        "multiple": 37.123804508008845,
+        "previous_amplitude_percent": 4.93538630739622,
+        "previous_change_percent": 3.4094033544129725,
+        "previous_volume": 1278461.0,
+        "hit_amplitude_percent": 183.2203164472809,
+        "hit_change_percent": 15.543145858263538,
+        "hit_volume": 36907141.0,
+        "volume_multiple": 28.86841366299011,
+        "hit_ohlc": [
+          0.07521,
+          0.21,
+          0.0722,
+          0.0869
+        ],
+        "next_candle_change_percent": 0.8975834292289862,
+        "next_candle_time_cn": "2025-12-07 06:00:00"
+      }
+    ]
+  },
+  "PEOPLE-USDT-SWAP": {
+    "confirmed_candle_count": 24999,
+    "hit_count": 1,
+    "highest_candidate": {
+      "time_cn": "2025-11-08 00:00:00",
+      "hit_ts": 1762531200000,
+      "multiple": 11.071412801657505,
+      "previous_amplitude_percent": 4.934823091247682,
+      "previous_change_percent": 3.445065176908758,
+      "previous_volume": 1449418.0,
+      "hit_amplitude_percent": 54.63546354635464,
+      "hit_change_percent": 51.93519351935193,
+      "hit_volume": 20460012.0,
+      "volume_multiple": 14.11601898141185,
+      "hit_ohlc": [
+        0.01111,
+        0.01717,
+        0.0111,
+        0.01688
+      ],
+      "next_candle_change_percent": -13.913558318531663,
+      "next_candle_time_cn": "2025-11-08 01:00:00"
+    },
+    "first_hit": {
+      "time_cn": "2025-11-08 00:00:00",
+      "hit_ts": 1762531200000,
+      "multiple": 11.071412801657505,
+      "previous_amplitude_percent": 4.934823091247682,
+      "previous_change_percent": 3.445065176908758,
+      "previous_volume": 1449418.0,
+      "hit_amplitude_percent": 54.63546354635464,
+      "hit_change_percent": 51.93519351935193,
+      "hit_volume": 20460012.0,
+      "volume_multiple": 14.11601898141185,
+      "hit_ohlc": [
+        0.01111,
+        0.01717,
+        0.0111,
+        0.01688
+      ],
+      "next_candle_change_percent": -13.913558318531663,
+      "next_candle_time_cn": "2025-11-08 01:00:00"
+    },
+    "highest_hit": {
+      "time_cn": "2025-11-08 00:00:00",
+      "hit_ts": 1762531200000,
+      "multiple": 11.071412801657505,
+      "previous_amplitude_percent": 4.934823091247682,
+      "previous_change_percent": 3.445065176908758,
+      "previous_volume": 1449418.0,
+      "hit_amplitude_percent": 54.63546354635464,
+      "hit_change_percent": 51.93519351935193,
+      "hit_volume": 20460012.0,
+      "volume_multiple": 14.11601898141185,
+      "hit_ohlc": [
+        0.01111,
+        0.01717,
+        0.0111,
+        0.01688
+      ],
+      "next_candle_change_percent": -13.913558318531663,
+      "next_candle_time_cn": "2025-11-08 01:00:00"
+    },
+    "ninefold_hit_count": 0,
+    "ninefold_events": [],
+    "events": [
+      {
+        "time_cn": "2025-11-08 00:00:00",
+        "hit_ts": 1762531200000,
+        "multiple": 11.071412801657505,
+        "previous_amplitude_percent": 4.934823091247682,
+        "previous_change_percent": 3.445065176908758,
+        "previous_volume": 1449418.0,
+        "hit_amplitude_percent": 54.63546354635464,
+        "hit_change_percent": 51.93519351935193,
+        "hit_volume": 20460012.0,
+        "volume_multiple": 14.11601898141185,
+        "hit_ohlc": [
+          0.01111,
+          0.01717,
+          0.0111,
+          0.01688
+        ],
+        "next_candle_change_percent": -13.913558318531663,
+        "next_candle_time_cn": "2025-11-08 01:00:00"
+      }
+    ]
+  },
+  "PIEVERSE-USDT-SWAP": {
+    "confirmed_candle_count": 3939,
+    "hit_count": 1,
+    "highest_candidate": {
+      "time_cn": "2025-11-21 02:00:00",
+      "hit_ts": 1763661600000,
+      "multiple": 10.962979900600565,
+      "previous_amplitude_percent": 8.330416520826036,
+      "previous_change_percent": 4.515225761288052,
+      "previous_volume": 1475382.0,
+      "hit_amplitude_percent": 91.32618888144674,
+      "hit_change_percent": 72.63898191560617,
+      "hit_volume": 5996474.0,
+      "volume_multiple": 4.0643535030249796,
+      "hit_ohlc": [
+        0.2986,
+        0.571,
+        0.2983,
+        0.5155
+      ],
+      "next_candle_change_percent": -3.295212250436134,
+      "next_candle_time_cn": "2025-11-21 03:00:00"
+    },
+    "first_hit": {
+      "time_cn": "2025-11-21 02:00:00",
+      "hit_ts": 1763661600000,
+      "multiple": 10.962979900600565,
+      "previous_amplitude_percent": 8.330416520826036,
+      "previous_change_percent": 4.515225761288052,
+      "previous_volume": 1475382.0,
+      "hit_amplitude_percent": 91.32618888144674,
+      "hit_change_percent": 72.63898191560617,
+      "hit_volume": 5996474.0,
+      "volume_multiple": 4.0643535030249796,
+      "hit_ohlc": [
+        0.2986,
+        0.571,
+        0.2983,
+        0.5155
+      ],
+      "next_candle_change_percent": -3.295212250436134,
+      "next_candle_time_cn": "2025-11-21 03:00:00"
+    },
+    "highest_hit": {
+      "time_cn": "2025-11-21 02:00:00",
+      "hit_ts": 1763661600000,
+      "multiple": 10.962979900600565,
+      "previous_amplitude_percent": 8.330416520826036,
+      "previous_change_percent": 4.515225761288052,
+      "previous_volume": 1475382.0,
+      "hit_amplitude_percent": 91.32618888144674,
+      "hit_change_percent": 72.63898191560617,
+      "hit_volume": 5996474.0,
+      "volume_multiple": 4.0643535030249796,
+      "hit_ohlc": [
+        0.2986,
+        0.571,
+        0.2983,
+        0.5155
+      ],
+      "next_candle_change_percent": -3.295212250436134,
+      "next_candle_time_cn": "2025-11-21 03:00:00"
+    },
+    "ninefold_hit_count": 0,
+    "ninefold_events": [],
+    "events": [
+      {
+        "time_cn": "2025-11-21 02:00:00",
+        "hit_ts": 1763661600000,
+        "multiple": 10.962979900600565,
+        "previous_amplitude_percent": 8.330416520826036,
+        "previous_change_percent": 4.515225761288052,
+        "previous_volume": 1475382.0,
+        "hit_amplitude_percent": 91.32618888144674,
+        "hit_change_percent": 72.63898191560617,
+        "hit_volume": 5996474.0,
+        "volume_multiple": 4.0643535030249796,
+        "hit_ohlc": [
+          0.2986,
+          0.571,
+          0.2983,
+          0.5155
+        ],
+        "next_candle_change_percent": -3.295212250436134,
+        "next_candle_time_cn": "2025-11-21 03:00:00"
+      }
+    ]
+  },
+  "PIPPIN-USDT-SWAP": {
+    "confirmed_candle_count": 3543,
+    "hit_count": 0,
+    "highest_candidate": {
+      "time_cn": "2025-12-24 18:00:00",
+      "hit_ts": 1766570400000,
+      "multiple": 9.634945330658864,
+      "previous_amplitude_percent": 5.50282606377306,
+      "previous_change_percent": 3.4147381891863122,
+      "previous_volume": 1688769.0,
+      "hit_amplitude_percent": 53.01942828857814,
+      "hit_change_percent": 4.223899682382544,
+      "hit_volume": 11268394.0,
+      "volume_multiple": 6.6725490579232565,
+      "hit_ohlc": [
+        0.48486,
+        0.736,
+        0.47893,
+        0.50534
+      ],
+      "next_candle_change_percent": -8.598763964820527,
+      "next_candle_time_cn": "2025-12-24 19:00:00"
+    },
+    "first_hit": null,
+    "highest_hit": null,
+    "ninefold_hit_count": 1,
+    "ninefold_events": [
+      {
+        "time_cn": "2025-12-24 18:00:00",
+        "hit_ts": 1766570400000,
+        "multiple": 9.634945330658864,
+        "previous_amplitude_percent": 5.50282606377306,
+        "previous_change_percent": 3.4147381891863122,
+        "previous_volume": 1688769.0,
+        "hit_amplitude_percent": 53.01942828857814,
+        "hit_change_percent": 4.223899682382544,
+        "hit_volume": 11268394.0,
+        "volume_multiple": 6.6725490579232565,
+        "hit_ohlc": [
+          0.48486,
+          0.736,
+          0.47893,
+          0.50534
+        ],
+        "next_candle_change_percent": -8.598763964820527,
+        "next_candle_time_cn": "2025-12-24 19:00:00"
+      }
+    ],
+    "events": []
+  },
+  "RENDER-USDT-SWAP": {
+    "confirmed_candle_count": 15095,
+    "hit_count": 1,
+    "highest_candidate": {
+      "time_cn": "2024-12-05 11:00:00",
+      "hit_ts": 1733367600000,
+      "multiple": 10.50446579663769,
+      "previous_amplitude_percent": 3.7483427744968054,
+      "previous_change_percent": 2.518982764854762,
+      "previous_volume": 238461.0,
+      "hit_amplitude_percent": 39.37433846877572,
+      "hit_change_percent": 28.53110666823474,
+      "hit_volume": 7424818.0,
+      "volume_multiple": 31.136403856395805,
+      "hit_ohlc": [
+        8.503,
+        11.85,
+        8.502,
+        10.929
+      ],
+      "next_candle_change_percent": -11.057208237986272,
+      "next_candle_time_cn": "2024-12-05 12:00:00"
+    },
+    "first_hit": {
+      "time_cn": "2024-12-05 11:00:00",
+      "hit_ts": 1733367600000,
+      "multiple": 10.50446579663769,
+      "previous_amplitude_percent": 3.7483427744968054,
+      "previous_change_percent": 2.518982764854762,
+      "previous_volume": 238461.0,
+      "hit_amplitude_percent": 39.37433846877572,
+      "hit_change_percent": 28.53110666823474,
+      "hit_volume": 7424818.0,
+      "volume_multiple": 31.136403856395805,
+      "hit_ohlc": [
+        8.503,
+        11.85,
+        8.502,
+        10.929
+      ],
+      "next_candle_change_percent": -11.057208237986272,
+      "next_candle_time_cn": "2024-12-05 12:00:00"
+    },
+    "highest_hit": {
+      "time_cn": "2024-12-05 11:00:00",
+      "hit_ts": 1733367600000,
+      "multiple": 10.50446579663769,
+      "previous_amplitude_percent": 3.7483427744968054,
+      "previous_change_percent": 2.518982764854762,
+      "previous_volume": 238461.0,
+      "hit_amplitude_percent": 39.37433846877572,
+      "hit_change_percent": 28.53110666823474,
+      "hit_volume": 7424818.0,
+      "volume_multiple": 31.136403856395805,
+      "hit_ohlc": [
+        8.503,
+        11.85,
+        8.502,
+        10.929
+      ],
+      "next_candle_change_percent": -11.057208237986272,
+      "next_candle_time_cn": "2024-12-05 12:00:00"
+    },
+    "ninefold_hit_count": 0,
+    "ninefold_events": [],
+    "events": [
+      {
+        "time_cn": "2024-12-05 11:00:00",
+        "hit_ts": 1733367600000,
+        "multiple": 10.50446579663769,
+        "previous_amplitude_percent": 3.7483427744968054,
+        "previous_change_percent": 2.518982764854762,
+        "previous_volume": 238461.0,
+        "hit_amplitude_percent": 39.37433846877572,
+        "hit_change_percent": 28.53110666823474,
+        "hit_volume": 7424818.0,
+        "volume_multiple": 31.136403856395805,
+        "hit_ohlc": [
+          8.503,
+          11.85,
+          8.502,
+          10.929
+        ],
+        "next_candle_change_percent": -11.057208237986272,
+        "next_candle_time_cn": "2024-12-05 12:00:00"
+      }
+    ]
+  },
+  "SUSHI-USDT-SWAP": {
+    "confirmed_candle_count": 24999,
+    "hit_count": 1,
+    "highest_candidate": {
+      "time_cn": "2023-11-02 02:00:00",
+      "hit_ts": 1698861600000,
+      "multiple": 10.674789576109726,
+      "previous_amplitude_percent": 3.9313954783383447,
+      "previous_change_percent": 2.026951776367078,
+      "previous_volume": 4556322.0,
+      "hit_amplitude_percent": 41.96681947173107,
+      "hit_change_percent": 23.444662737393582,
+      "hit_volume": 44052115.0,
+      "volume_multiple": 9.668349822510349,
+      "hit_ohlc": [
+        0.9162,
+        1.296,
+        0.9115,
+        1.131
+      ],
+      "next_candle_change_percent": -0.9908873750331858,
+      "next_candle_time_cn": "2023-11-02 03:00:00"
+    },
+    "first_hit": {
+      "time_cn": "2023-11-02 02:00:00",
+      "hit_ts": 1698861600000,
+      "multiple": 10.674789576109726,
+      "previous_amplitude_percent": 3.9313954783383447,
+      "previous_change_percent": 2.026951776367078,
+      "previous_volume": 4556322.0,
+      "hit_amplitude_percent": 41.96681947173107,
+      "hit_change_percent": 23.444662737393582,
+      "hit_volume": 44052115.0,
+      "volume_multiple": 9.668349822510349,
+      "hit_ohlc": [
+        0.9162,
+        1.296,
+        0.9115,
+        1.131
+      ],
+      "next_candle_change_percent": -0.9908873750331858,
+      "next_candle_time_cn": "2023-11-02 03:00:00"
+    },
+    "highest_hit": {
+      "time_cn": "2023-11-02 02:00:00",
+      "hit_ts": 1698861600000,
+      "multiple": 10.674789576109726,
+      "previous_amplitude_percent": 3.9313954783383447,
+      "previous_change_percent": 2.026951776367078,
+      "previous_volume": 4556322.0,
+      "hit_amplitude_percent": 41.96681947173107,
+      "hit_change_percent": 23.444662737393582,
+      "hit_volume": 44052115.0,
+      "volume_multiple": 9.668349822510349,
+      "hit_ohlc": [
+        0.9162,
+        1.296,
+        0.9115,
+        1.131
+      ],
+      "next_candle_change_percent": -0.9908873750331858,
+      "next_candle_time_cn": "2023-11-02 03:00:00"
+    },
+    "ninefold_hit_count": 0,
+    "ninefold_events": [],
+    "events": [
+      {
+        "time_cn": "2023-11-02 02:00:00",
+        "hit_ts": 1698861600000,
+        "multiple": 10.674789576109726,
+        "previous_amplitude_percent": 3.9313954783383447,
+        "previous_change_percent": 2.026951776367078,
+        "previous_volume": 4556322.0,
+        "hit_amplitude_percent": 41.96681947173107,
+        "hit_change_percent": 23.444662737393582,
+        "hit_volume": 44052115.0,
+        "volume_multiple": 9.668349822510349,
+        "hit_ohlc": [
+          0.9162,
+          1.296,
+          0.9115,
+          1.131
+        ],
+        "next_candle_change_percent": -0.9908873750331858,
+        "next_candle_time_cn": "2023-11-02 03:00:00"
+      }
+    ]
+  },
+  "VANA-USDT-SWAP": {
+    "confirmed_candle_count": 11956,
+    "hit_count": 0,
+    "highest_candidate": {
+      "time_cn": "2026-04-17 16:00:00",
+      "hit_ts": 1776412800000,
+      "multiple": 9.055352277150664,
+      "previous_amplitude_percent": 2.4373259052924734,
+      "previous_change_percent": 2.2980501392757757,
+      "previous_volume": 778636.0,
+      "hit_amplitude_percent": 22.070844686648506,
+      "hit_change_percent": 2.588555858310629,
+      "hit_volume": 29568126.0,
+      "volume_multiple": 37.97426011640869,
+      "hit_ohlc": [
+        1.468,
+        1.768,
+        1.444,
+        1.506
+      ],
+      "next_candle_change_percent": -2.2546419098143256,
+      "next_candle_time_cn": "2026-04-17 17:00:00"
+    },
+    "first_hit": null,
+    "highest_hit": null,
+    "ninefold_hit_count": 1,
+    "ninefold_events": [
+      {
+        "time_cn": "2026-04-17 16:00:00",
+        "hit_ts": 1776412800000,
+        "multiple": 9.055352277150664,
+        "previous_amplitude_percent": 2.4373259052924734,
+        "previous_change_percent": 2.2980501392757757,
+        "previous_volume": 778636.0,
+        "hit_amplitude_percent": 22.070844686648506,
+        "hit_change_percent": 2.588555858310629,
+        "hit_volume": 29568126.0,
+        "volume_multiple": 37.97426011640869,
+        "hit_ohlc": [
+          1.468,
+          1.768,
+          1.444,
+          1.506
+        ],
+        "next_candle_change_percent": -2.2546419098143256,
+        "next_candle_time_cn": "2026-04-17 17:00:00"
+      }
+    ],
+    "events": []
+  },
+  "YGG-USDT-SWAP": {
+    "confirmed_candle_count": 24999,
+    "hit_count": 1,
+    "highest_candidate": {
+      "time_cn": "2025-10-15 13:00:00",
+      "hit_ts": 1760504400000,
+      "multiple": 10.893304155213368,
+      "previous_amplitude_percent": 7.033426183844009,
+      "previous_change_percent": 3.272980501392745,
+      "previous_volume": 22795712.0,
+      "hit_amplitude_percent": 76.61725067385444,
+      "hit_change_percent": 36.65768194070081,
+      "hit_volume": 290576336.0,
+      "volume_multiple": 12.746973465886917,
+      "hit_ohlc": [
+        0.1484,
+        0.2621,
+        0.1484,
+        0.2028
+      ],
+      "next_candle_change_percent": -2.9107054760730087,
+      "next_candle_time_cn": "2025-10-15 14:00:00"
+    },
+    "first_hit": {
+      "time_cn": "2025-10-15 13:00:00",
+      "hit_ts": 1760504400000,
+      "multiple": 10.893304155213368,
+      "previous_amplitude_percent": 7.033426183844009,
+      "previous_change_percent": 3.272980501392745,
+      "previous_volume": 22795712.0,
+      "hit_amplitude_percent": 76.61725067385444,
+      "hit_change_percent": 36.65768194070081,
+      "hit_volume": 290576336.0,
+      "volume_multiple": 12.746973465886917,
+      "hit_ohlc": [
+        0.1484,
+        0.2621,
+        0.1484,
+        0.2028
+      ],
+      "next_candle_change_percent": -2.9107054760730087,
+      "next_candle_time_cn": "2025-10-15 14:00:00"
+    },
+    "highest_hit": {
+      "time_cn": "2025-10-15 13:00:00",
+      "hit_ts": 1760504400000,
+      "multiple": 10.893304155213368,
+      "previous_amplitude_percent": 7.033426183844009,
+      "previous_change_percent": 3.272980501392745,
+      "previous_volume": 22795712.0,
+      "hit_amplitude_percent": 76.61725067385444,
+      "hit_change_percent": 36.65768194070081,
+      "hit_volume": 290576336.0,
+      "volume_multiple": 12.746973465886917,
+      "hit_ohlc": [
+        0.1484,
+        0.2621,
+        0.1484,
+        0.2028
+      ],
+      "next_candle_change_percent": -2.9107054760730087,
+      "next_candle_time_cn": "2025-10-15 14:00:00"
+    },
+    "ninefold_hit_count": 0,
+    "ninefold_events": [],
+    "events": [
+      {
+        "time_cn": "2025-10-15 13:00:00",
+        "hit_ts": 1760504400000,
+        "multiple": 10.893304155213368,
+        "previous_amplitude_percent": 7.033426183844009,
+        "previous_change_percent": 3.272980501392745,
+        "previous_volume": 22795712.0,
+        "hit_amplitude_percent": 76.61725067385444,
+        "hit_change_percent": 36.65768194070081,
+        "hit_volume": 290576336.0,
+        "volume_multiple": 12.746973465886917,
+        "hit_ohlc": [
+          0.1484,
+          0.2621,
+          0.1484,
+          0.2028
+        ],
+        "next_candle_change_percent": -2.9107054760730087,
+        "next_candle_time_cn": "2025-10-15 14:00:00"
+      }
+    ]
+  },
+  "ZKP-USDT-SWAP": {
+    "confirmed_candle_count": 2683,
+    "hit_count": 0,
+    "highest_candidate": {
+      "time_cn": "2026-02-01 08:00:00",
+      "hit_ts": 1769904000000,
+      "multiple": 9.229699593335972,
+      "previous_amplitude_percent": 3.249097472924181,
+      "previous_change_percent": 2.0457280385078307,
+      "previous_volume": 491974.0,
+      "hit_amplitude_percent": 29.98819362455725,
+      "hit_change_percent": 25.855962219598588,
+      "hit_volume": 5474830.0,
+      "volume_multiple": 11.12829133246879,
+      "hit_ohlc": [
+        0.0847,
+        0.1089,
+        0.0835,
+        0.1066
+      ],
+      "next_candle_change_percent": 21.462043111527638,
+      "next_candle_time_cn": "2026-02-01 09:00:00"
+    },
+    "first_hit": null,
+    "highest_hit": null,
+    "ninefold_hit_count": 1,
+    "ninefold_events": [
+      {
+        "time_cn": "2026-02-01 08:00:00",
+        "hit_ts": 1769904000000,
+        "multiple": 9.229699593335972,
+        "previous_amplitude_percent": 3.249097472924181,
+        "previous_change_percent": 2.0457280385078307,
+        "previous_volume": 491974.0,
+        "hit_amplitude_percent": 29.98819362455725,
+        "hit_change_percent": 25.855962219598588,
+        "hit_volume": 5474830.0,
+        "volume_multiple": 11.12829133246879,
+        "hit_ohlc": [
+          0.0847,
+          0.1089,
+          0.0835,
+          0.1066
+        ],
+        "next_candle_change_percent": 21.462043111527638,
+        "next_candle_time_cn": "2026-02-01 09:00:00"
+      }
+    ],
+    "events": []
+  }
+}
