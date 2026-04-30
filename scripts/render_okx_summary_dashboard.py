@@ -44,6 +44,11 @@ def parse_args() -> argparse.Namespace:
         default=10.0,
         help="Multiple threshold used in the scan. Default: 10",
     )
+    parser.add_argument(
+        "--title-suffix",
+        default="",
+        help="Optional suffix appended to the dashboard title.",
+    )
     return parser.parse_args()
 
 
@@ -63,6 +68,13 @@ def load_results(path: str) -> dict[str, Any]:
     if not isinstance(payload, dict):
         raise RuntimeError(f"Unexpected JSON shape in {path}")
     return payload
+
+
+def infer_exchange_label(input_path: str) -> str:
+    lower = input_path.lower()
+    if "gate_tenfold" in lower:
+        return "Gate"
+    return "OKX"
 
 
 def build_event_rows(results: dict[str, Any], threshold: float) -> list[dict[str, Any]]:
@@ -142,6 +154,8 @@ def render_dashboard(
     results: dict[str, Any],
     output_path: str,
     threshold: float,
+    exchange_label: str,
+    title_suffix: str,
 ) -> None:
     event_rows = build_event_rows(results, threshold)
     ok_summaries = [
@@ -191,6 +205,47 @@ def render_dashboard(
         (float(row["next_high_vs_threshold_percent"]) for row in next_high_above_rows),
         default=None,
     )
+    next_low_known_rows = [
+        row for row in event_rows if row["next_low_below_threshold"] is not None
+    ]
+    next_low_below_count = sum(
+        1 for row in next_low_known_rows if row["next_low_below_threshold"] is True
+    )
+    next_low_known_total = len(next_low_known_rows)
+    next_low_below_ratio = (
+        next_low_below_count / next_low_known_total * 100
+        if next_low_known_total
+        else None
+    )
+    hit_close_below_ratio = (
+        close_below_count / hit_event_count * 100
+        if hit_event_count
+        else None
+    )
+    multiple_buckets = [
+        ("10-11倍", 10.0, 11.0),
+        ("11-12倍", 11.0, 12.0),
+        ("12-13倍", 12.0, 13.0),
+        ("13-14倍", 13.0, 14.0),
+        ("14-15倍", 14.0, 15.0),
+        ("15倍以上", 15.0, None),
+    ]
+    multiple_bucket_stats: list[dict[str, Any]] = []
+    for label, lower, upper in multiple_buckets:
+        count = sum(
+            1
+            for row in event_rows
+            if row["multiple"] >= lower
+            and (upper is None or row["multiple"] < upper)
+        )
+        ratio = count / hit_event_count * 100 if hit_event_count else 0.0
+        multiple_bucket_stats.append(
+            {
+                "label": label,
+                "count": count,
+                "ratio": ratio,
+            },
+        )
 
     current_year = datetime.now().year
     target_years = [current_year, current_year - 1, current_year - 2]
@@ -245,11 +300,11 @@ def render_dashboard(
     amplitude_top10 = amplitude_top10[:10]
 
     width = 1800
-    height = 4460
+    height = 5160
     svg_lines = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
         '<rect width="100%" height="100%" fill="#f7f8fa"/>',
-        '<text x="48" y="58" font-size="34" font-weight="700" fill="#111111">OKX 10倍总结图</text>',
+        f'<text x="48" y="58" font-size="34" font-weight="700" fill="#111111">{xml_escape((exchange_label + " 10倍总结图" + title_suffix).strip())}</text>',
         f'<text x="48" y="94" font-size="18" fill="#555555">基于 result.json 生成；展示最高倍数、十倍前振幅、成交量倍数、10倍收盘位置统计</text>',
     ]
 
@@ -547,7 +602,7 @@ def render_dashboard(
         )
 
     sixth_panel_top = 3920
-    sixth_panel_h = 420
+    sixth_panel_h = 620
     svg_lines.extend(
         [
             f'<rect x="{left_panel_x}" y="{sixth_panel_top}" width="{width - 96}" height="{sixth_panel_h}" rx="20" fill="#ffffff" stroke="#ebedf0"/>',
@@ -587,6 +642,74 @@ def render_dashboard(
     svg_lines.append(
         f'<text x="{left_panel_x + 24}" y="{sixth_panel_top + 280}" font-size="18" fill="#333333">{xml_escape(note)}</text>',
     )
+    ratio_box_y = sixth_panel_top + 330
+    ratio_box_w = 560
+    ratio_gap = 32
+    ratio_cards = [
+        (
+            "第二根最低价低于10倍价占比",
+            "--" if next_low_below_ratio is None else f"{next_low_below_ratio:.2f}%",
+            f"{next_low_below_count}/{next_low_known_total}" if next_low_known_total else "数据不足",
+            "#e74c3c",
+        ),
+        (
+            "十倍这根收盘低于10倍价占比",
+            "--" if hit_close_below_ratio is None else f"{hit_close_below_ratio:.2f}%",
+            f"{close_below_count}/{hit_event_count}" if hit_event_count else "数据不足",
+            "#c0392b",
+        ),
+    ]
+    for index, (label, value, detail, color) in enumerate(ratio_cards):
+        x = left_panel_x + 24 + index * (ratio_box_w + ratio_gap)
+        svg_lines.append(
+            f'<rect x="{x}" y="{ratio_box_y}" width="{ratio_box_w}" height="170" rx="16" fill="#fafbfc" stroke="#edf0f2"/>',
+        )
+        svg_lines.append(
+            f'<text x="{x + 18}" y="{ratio_box_y + 42}" font-size="20" fill="#666666">{xml_escape(label)}</text>',
+        )
+        svg_lines.append(
+            f'<text x="{x + 18}" y="{ratio_box_y + 92}" font-size="34" font-weight="700" fill="{color}">{xml_escape(value)}</text>',
+        )
+        svg_lines.append(
+            f'<text x="{x + 18}" y="{ratio_box_y + 130}" font-size="18" fill="#555555">{xml_escape(detail)}</text>',
+        )
+    ratio_note = (
+        "第二根最低价占比仅统计有第二根K线数据的命中；"
+        "十倍这根收盘占比统计所有10倍命中。"
+    )
+    svg_lines.append(
+        f'<text x="{left_panel_x + 24}" y="{sixth_panel_top + 545}" font-size="16" fill="#666666">{xml_escape(ratio_note)}</text>',
+    )
+
+    seventh_panel_top = 4565
+    seventh_panel_h = 520
+    svg_lines.extend(
+        [
+            f'<rect x="{left_panel_x}" y="{seventh_panel_top}" width="{width - 96}" height="{seventh_panel_h}" rx="20" fill="#ffffff" stroke="#ebedf0"/>',
+            f'<text x="{left_panel_x + 24}" y="{seventh_panel_top + 36}" font-size="26" font-weight="700" fill="#111111">10倍命中倍数区间分布</text>',
+            f'<text x="{left_panel_x + 24}" y="{seventh_panel_top + 66}" font-size="16" fill="#666666">统计 10-11、11-12、12-13、13-14、14-15、15倍以上 的数量和占比</text>',
+        ],
+    )
+    bucket_max_count = max((item["count"] for item in multiple_bucket_stats), default=1) or 1
+    bucket_row_y = seventh_panel_top + 120
+    bucket_row_gap = 58
+    bucket_bar_x = left_panel_x + 260
+    bucket_bar_w = 720
+    for index, item in enumerate(multiple_bucket_stats):
+        y = bucket_row_y + index * bucket_row_gap
+        fill_w = bucket_bar_w * (item["count"] / bucket_max_count if bucket_max_count else 0.0)
+        svg_lines.append(
+            f'<text x="{left_panel_x + 24}" y="{y + 16}" font-size="18" font-weight="600" fill="#111111">{xml_escape(item["label"])}</text>',
+        )
+        svg_lines.append(
+            f'<rect x="{bucket_bar_x}" y="{y}" width="{bucket_bar_w}" height="18" rx="9" fill="#eef1f5"/>',
+        )
+        svg_lines.append(
+            f'<rect x="{bucket_bar_x}" y="{y}" width="{fill_w:.2f}" height="18" rx="9" fill="#2980b9"/>',
+        )
+        svg_lines.append(
+            f'<text x="{bucket_bar_x + bucket_bar_w + 18}" y="{y + 15}" font-size="16" fill="#333333">{item["count"]} 次 | {item["ratio"]:.2f}%</text>',
+        )
 
     # three-year monthly summary panel
     svg_lines.extend(
@@ -742,7 +865,13 @@ def render_dashboard(
 def main() -> int:
     args = parse_args()
     results = load_results(args.input)
-    render_dashboard(results, args.output, args.threshold)
+    render_dashboard(
+        results,
+        args.output,
+        args.threshold,
+        infer_exchange_label(args.input),
+        args.title_suffix,
+    )
     print(args.output)
     return 0
 

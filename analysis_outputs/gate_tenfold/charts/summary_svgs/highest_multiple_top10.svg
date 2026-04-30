@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="730" viewBox="0 0 1400 730">
+<rect width="100%" height="100%" fill="#fcfcfc"/>
+<text x="48" y="58" font-size="30" font-weight="700" fill="#111111">最高倍数 Top 10</text>
+<text x="48" y="96" font-size="18" fill="#555555">按每个币历史最高候选倍数排序；同时显示该最高样本对应的成交量倍数</text>
+<text x="240" y="142" font-size="19" fill="#111111" text-anchor="end">BROCCOLIF3B_USDT</text>
+<rect x="260" y="120" width="1020.00" height="30" rx="8" fill="#efefef"/>
+<rect x="260" y="120" width="1020.00" height="30" rx="8" fill="#e74c3c"/>
+<text x="1292.00" y="142" font-size="18" fill="#333333">251.43x | 命中 2 次 | 成交量 27.27x</text>
+<text x="240" y="194" font-size="19" fill="#111111" text-anchor="end">KERNEL_USDT</text>
+<rect x="260" y="172" width="1020.00" height="30" rx="8" fill="#efefef"/>
+<rect x="260" y="172" width="281.85" height="30" rx="8" fill="#e74c3c"/>
+<text x="553.85" y="194" font-size="18" fill="#333333">69.48x | 命中 1 次 | 成交量 238.50x</text>
+<text x="240" y="246" font-size="19" fill="#111111" text-anchor="end">ALT_USDT</text>
+<rect x="260" y="224" width="1020.00" height="30" rx="8" fill="#efefef"/>
+<rect x="260" y="224" width="216.56" height="30" rx="8" fill="#e74c3c"/>
+<text x="488.56" y="246" font-size="18" fill="#333333">53.38x | 命中 1 次 | 成交量 2513.27x</text>
+<text x="240" y="298" font-size="19" fill="#111111" text-anchor="end">TUT_USDT</text>
+<rect x="260" y="276" width="1020.00" height="30" rx="8" fill="#efefef"/>
+<rect x="260" y="276" width="213.02" height="30" rx="8" fill="#e74c3c"/>
+<text x="485.02" y="298" font-size="18" fill="#333333">52.51x | 命中 1 次 | 成交量 27.86x</text>
+<text x="240" y="350" font-size="19" fill="#111111" text-anchor="end">VINE_USDT</text>
+<rect x="260" y="328" width="1020.00" height="30" rx="8" fill="#efefef"/>
+<rect x="260" y="328" width="210.19" height="30" rx="8" fill="#e74c3c"/>
+<text x="482.19" y="350" font-size="18" fill="#333333">51.81x | 命中 2 次 | 成交量 115.93x</text>
+<text x="240" y="402" font-size="19" fill="#111111" text-anchor="end">FLUX_USDT</text>
+<rect x="260" y="380" width="1020.00" height="30" rx="8" fill="#efefef"/>
+<rect x="260" y="380" width="155.84" height="30" rx="8" fill="#e74c3c"/>
+<text x="427.84" y="402" font-size="18" fill="#333333">38.42x | 命中 1 次 | 成交量 48.09x</text>
+<text x="240" y="454" font-size="19" fill="#111111" text-anchor="end">MOCA_USDT</text>
+<rect x="260" y="432" width="1020.00" height="30" rx="8" fill="#efefef"/>
+<rect x="260" y="432" width="152.64" height="30" rx="8" fill="#e74c3c"/>
+<text x="424.64" y="454" font-size="18" fill="#333333">37.63x | 命中 1 次 | 成交量 43.59x</text>
+<text x="240" y="506" font-size="19" fill="#111111" text-anchor="end">BROCCOLI_USDT</text>
+<rect x="260" y="484" width="1020.00" height="30" rx="8" fill="#efefef"/>
+<rect x="260" y="484" width="152.03" height="30" rx="8" fill="#e74c3c"/>
+<text x="424.03" y="506" font-size="18" fill="#333333">37.48x | 命中 2 次 | 成交量 35.54x</text>
+<text x="240" y="558" font-size="19" fill="#111111" text-anchor="end">SNT_USDT</text>
+<rect x="260" y="536" width="1020.00" height="30" rx="8" fill="#efefef"/>
+<rect x="260" y="536" width="139.41" height="30" rx="8" fill="#e74c3c"/>
+<text x="411.41" y="558" font-size="18" fill="#333333">34.36x | 命中 1 次 | 成交量 31.77x</text>
+<text x="240" y="610" font-size="19" fill="#111111" text-anchor="end">IN_USDT</text>
+<rect x="260" y="588" width="1020.00" height="30" rx="8" fill="#efefef"/>
+<rect x="260" y="588" width="139.29" height="30" rx="8" fill="#e74c3c"/>
+<text x="411.29" y="610" font-size="18" fill="#333333">34.34x | 命中 1 次 | 成交量 45.16x</text>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="740" viewBox="0 0 1500 740">
+<rect width="100%" height="100%" fill="#fcfcfc"/>
+<text x="48" y="58" font-size="30" font-weight="700" fill="#111111">成交量倍数 Top 10</text>
+<text x="48" y="96" font-size="18" fill="#555555">按10倍命中事件的成交量倍数排序</text>
+<text x="312" y="152" font-size="18" fill="#111111" text-anchor="end">SLP_USDT 2026-04-09 01:00:00</text>
+<rect x="330" y="130" width="1050.00" height="30" rx="8" fill="#efefef"/>
+<rect x="330" y="130" width="1050.00" height="30" rx="8" fill="#9b59b6"/>
+<text x="1392.00" y="152" font-size="17" fill="#333333">9969.81x | 倍数 12.85x</text>
+<text x="312" y="204" font-size="18" fill="#111111" text-anchor="end">ALT_USDT 2025-06-16 17:00:00</text>
+<rect x="330" y="182" width="1050.00" height="30" rx="8" fill="#efefef"/>
+<rect x="330" y="182" width="264.69" height="30" rx="8" fill="#9b59b6"/>
+<text x="606.69" y="204" font-size="17" fill="#333333">2513.27x | 倍数 53.38x</text>
+<text x="312" y="256" font-size="18" fill="#111111" text-anchor="end">TOWNS_USDT 2025-11-10 00:00:00</text>
+<rect x="330" y="234" width="1050.00" height="30" rx="8" fill="#efefef"/>
+<rect x="330" y="234" width="70.33" height="30" rx="8" fill="#9b59b6"/>
+<text x="412.33" y="256" font-size="17" fill="#333333">667.81x | 倍数 28.79x</text>
+<text x="312" y="308" font-size="18" fill="#111111" text-anchor="end">USTC_USDT 2026-04-04 04:00:00</text>
+<rect x="330" y="286" width="1050.00" height="30" rx="8" fill="#efefef"/>
+<rect x="330" y="286" width="41.88" height="30" rx="8" fill="#9b59b6"/>
+<text x="383.88" y="308" font-size="17" fill="#333333">397.65x | 倍数 12.17x</text>
+<text x="312" y="360" font-size="18" fill="#111111" text-anchor="end">SAFE_USDT 2025-07-14 08:00:00</text>
+<rect x="330" y="338" width="1050.00" height="30" rx="8" fill="#efefef"/>
+<rect x="330" y="338" width="34.34" height="30" rx="8" fill="#9b59b6"/>
+<text x="376.34" y="360" font-size="17" fill="#333333">326.02x | 倍数 15.32x</text>
+<text x="312" y="412" font-size="18" fill="#111111" text-anchor="end">COW_USDT 2026-02-14 19:00:00</text>
+<rect x="330" y="390" width="1050.00" height="30" rx="8" fill="#efefef"/>
+<rect x="330" y="390" width="30.33" height="30" rx="8" fill="#9b59b6"/>
+<text x="372.33" y="412" font-size="17" fill="#333333">288.01x | 倍数 12.24x</text>
+<text x="312" y="464" font-size="18" fill="#111111" text-anchor="end">D_USDT 2026-01-20 21:00:00</text>
+<rect x="330" y="442" width="1050.00" height="30" rx="8" fill="#efefef"/>
+<rect x="330" y="442" width="27.92" height="30" rx="8" fill="#9b59b6"/>
+<text x="369.92" y="464" font-size="17" fill="#333333">265.10x | 倍数 19.91x</text>
+<text x="312" y="516" font-size="18" fill="#111111" text-anchor="end">KERNEL_USDT 2025-10-28 15:00:00</text>
+<rect x="330" y="494" width="1050.00" height="30" rx="8" fill="#efefef"/>
+<rect x="330" y="494" width="25.12" height="30" rx="8" fill="#9b59b6"/>
+<text x="367.12" y="516" font-size="17" fill="#333333">238.50x | 倍数 69.48x</text>
+<text x="312" y="568" font-size="18" fill="#111111" text-anchor="end">BULLA_USDT 2026-04-05 22:00:00</text>
+<rect x="330" y="546" width="1050.00" height="30" rx="8" fill="#efefef"/>
+<rect x="330" y="546" width="23.60" height="30" rx="8" fill="#9b59b6"/>
+<text x="365.60" y="568" font-size="17" fill="#333333">224.05x | 倍数 12.34x</text>
+<text x="312" y="620" font-size="18" fill="#111111" text-anchor="end">AWE_USDT 2025-11-23 16:00:00</text>
+<rect x="330" y="598" width="1050.00" height="30" rx="8" fill="#efefef"/>
+<rect x="330" y="598" width="21.28" height="30" rx="8" fill="#9b59b6"/>
+<text x="363.28" y="620" font-size="17" fill="#333333">202.08x | 倍数 12.85x</text>
+</svg>
